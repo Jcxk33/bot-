@@ -1,27 +1,22 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "name": "mayflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
-  },
-  "engines": {
-    "node": "12.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+    "discord.js": "^11.6.1",
+    "discord.js-commando": "^0.10.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "trello": "^0.10.0",
+    "winston": "^3.2.1"
+  }
 }
