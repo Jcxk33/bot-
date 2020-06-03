@@ -40,7 +40,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/4553254598/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/4553950954/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -56,7 +56,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[Server Link](https://www.roblox.com/games/4553254598/Content-Deleted?jobId=${Data.id})`
+          `[Server Link](https://www.roblox.com/games/4553950954/New-Haven-CountyjobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
@@ -67,8 +67,8 @@ module.exports = class getservercommand extends Command {
       }
     } else {
       var trello = new Trello(
-        "b5dc90bcb80d54169f0259164",
-        "47581308df34b1330141f47a0c526e"
+        "b5dc90bc4169f0259164",
+        "4758130141f47a0c526e"
       );
       let Servers = 0;
       let valid = false;

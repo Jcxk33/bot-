@@ -24,7 +24,7 @@ module.exports = class gtban extends Command {
         },
         {
           type: "string",
-          prompt: "What is the reason for unbanning this user?",
+          prompt: "What is the reason for temp banning this user?",
           key: "reason"
         }
       ]

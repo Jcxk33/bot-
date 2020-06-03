@@ -48,7 +48,7 @@ client.on("message", msgObject => {
   if (msgObject.channel.id == 3) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
-      .get("673619643533099027")
+      .get("713095003441725525")
       .channels.find("id", Arguments[0]);
     if (channel) {
       channel
@@ -66,7 +66,7 @@ client.on("message", msgObject => {
   } else if (msgObject.channel.id == 3) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
-      .get("673619643533099027")
+      .get("713095003441725525")
       .channels.find("id", Arguments[0]);
     let idMessage = Arguments[1];
     let JobId = Arguments[2];
