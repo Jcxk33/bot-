@@ -81,7 +81,7 @@ client.on("message", msgObject => {
           .setTitle(`Server ${pppeh}`)
           .setTimestamp()
           .setURL(
-            `https://www.roblox.com/games/GAME ID/GAME NAME?jobId=${JobId}`
+            `https://www.roblox.com/games/4553950954/New-Haven-County?jobId=${JobId}`
           );
         Players = Players.split("|");
         Players.forEach(m => {

@@ -60,7 +60,7 @@ module.exports = class pager extends Command {
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games//)`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/4553950954/)`
               )
               .setTimestamp()
               .setColor("RED");
