@@ -67,8 +67,8 @@ module.exports = class getservercommand extends Command {
       }
     } else {
       var trello = new Trello(
-        "b5dc90bc4169f0259164",
-        "4758130141f47a0c526e"
+        "b5dc90fsdfsfsf9f0259164",
+        "47581301fdsfsf47a0c526e"
       );
       let Servers = 0;
       let valid = false;

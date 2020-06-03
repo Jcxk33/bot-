@@ -19,7 +19,7 @@ const request = require("request-promise");
 const path = require("path");
 const config = require(path.join(__dirname, "config", "config.json"));
 const client = new commando.CommandoClient({
-  owner: "278173596050915328",
+  owner: "138391403788107776",
   commandPrefix: ";",
   unknownCommandResponse: false,
   selfbot: false,
@@ -28,7 +28,7 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "with Cleo" },
+    game: { name: "with Cleo >.<!" },
     status: "online"
   });
 });
@@ -45,7 +45,7 @@ client.registry
 let timeout = new Set();
 let cdseconds = 15; // 1 Minute
 client.on("message", msgObject => {
-  if (msgObject.channel.id == 698153560797478942) {
+  if (msgObject.channel.id == 717540896740081706) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
       .get("713095003441725525")
@@ -63,7 +63,7 @@ client.on("message", msgObject => {
         });
     } else {
     }
-  } else if (msgObject.channel.id == 698153609757720587) {
+  } else if (msgObject.channel.id == 717540896740081706) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
       .get("713095003441725525")
@@ -81,7 +81,7 @@ client.on("message", msgObject => {
           .setTitle(`Server ${pppeh}`)
           .setTimestamp()
           .setURL(
-            `https://www.roblox.com/games/4553254598/Content-Deleted?jobId=${JobId}`
+            `https://www.roblox.com/games/4553950954/New-Haven-County?jobId=${JobId}`
           );
         Players = Players.split("|");
         Players.forEach(m => {
