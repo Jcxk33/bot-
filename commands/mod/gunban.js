@@ -31,8 +31,8 @@ module.exports = class gunban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("673619643533099027");
-    if (msgObject.guild.id == 673619643533099027) {
+    const MainServer = msgObject.client.guilds.get("706280206456979496");
+    if (msgObject.guild.id == 706280206456979496) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {

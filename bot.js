@@ -10,7 +10,7 @@ const listener = server.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
 setInterval(() => {
-  http.get(`https://glitch.com/classified-bot`);
+  http.get(`https://glitch.com/~mayflow-bot`);
 }, 280000);
 
 const Discord = require("discord.js");
@@ -28,7 +28,7 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "with Cleo" },
+    game: { name: "with Cleo!" },
     status: "online"
   });
 });
