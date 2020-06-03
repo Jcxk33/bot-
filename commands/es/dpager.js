@@ -26,7 +26,7 @@ module.exports = class dpager extends Command {
     }
   }
   async run(msgObject, { pager }) {
-    if (msgObject.channel.id == 713095004301819927) {
+    if (msgObject.channel.id == 713095004301819929) {
       mongoose.connect(
         "mongodb+srv://mayflow:Be4K2HqWgI8BGyEv@mayflowdata-dtfz1.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {

@@ -51,8 +51,8 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("713095004301819929");
-          let channel = mainserver.channels.find("id", "713095004301819927");
+          const mainserver = msgObject.client.guilds.get("713095003441725525");
+          let channel = mainserver.channels.find("id", "713095004301819929");
           channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
@@ -60,7 +60,7 @@ module.exports = class pager extends Command {
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${auth  orData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/4553950954/)`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/4553950954/)`
               )
               .setTimestamp()
               .setColor("RED");
