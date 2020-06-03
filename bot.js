@@ -45,7 +45,7 @@ client.registry
 let timeout = new Set();
 let cdseconds = 15; // 1 Minute
 client.on("message", msgObject => {
-  if (msgObject.channel.id == 3) {
+  if (msgObject.channel.id == 717540896740081706) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
       .get("713095003441725525")
@@ -63,7 +63,7 @@ client.on("message", msgObject => {
         });
     } else {
     }
-  } else if (msgObject.channel.id == 3) {
+  } else if (msgObject.channel.id == 717540896740081706) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
       .get("713095003441725525")
