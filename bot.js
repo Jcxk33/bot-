@@ -10,7 +10,7 @@ const listener = server.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
 setInterval(() => {
-  http.get(`https://glitch.com/~mayflow-bot`);
+  http.get(`https://glitch.com/~gavins-mayflow`);
 }, 280000);
 
 const Discord = require("discord.js");
@@ -45,7 +45,7 @@ client.registry
 let timeout = new Set();
 let cdseconds = 15; // 1 Minute
 client.on("message", msgObject => {
-  if (msgObject.channel.id == 698153560797478942) {
+  if (msgObject.channel.id == 3) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
       .get("673619643533099027")
@@ -63,7 +63,7 @@ client.on("message", msgObject => {
         });
     } else {
     }
-  } else if (msgObject.channel.id == 698153609757720587) {
+  } else if (msgObject.channel.id == 3) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
       .get("673619643533099027")
@@ -81,7 +81,7 @@ client.on("message", msgObject => {
           .setTitle(`Server ${pppeh}`)
           .setTimestamp()
           .setURL(
-            `https://www.roblox.com/games/4553254598/Content-Deleted?jobId=${JobId}`
+            `https://www.roblox.com/games/GAME ID/GAME NAME?jobId=${JobId}`
           );
         Players = Players.split("|");
         Players.forEach(m => {

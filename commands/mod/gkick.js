@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b5dc90bcb52437cb80d54169f0259164",
-  "475813010ff5cca5bbdd1e8f54890c6d8f229efb38df34b1330141f47a0c526e"
+  "b5dc90b7cb80d54169f0259164",
+  "47581301f229efb38df34b1330141f47a0c526e"
 );
 
 module.exports = class gkick extends Command {
@@ -31,8 +31,8 @@ module.exports = class gkick extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("673619643533099027");
-    if (msgObject.guild.id == 673619643533099027) {
+    const MainServer = msgObject.client.guilds.get("713095003441725525");
+    if (msgObject.guild.id == 713095003441725525) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
