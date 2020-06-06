@@ -21,14 +21,14 @@ const config = require(path.join(__dirname, "config", "config.json"));
 const client = new commando.CommandoClient({
   owner: "238728990049697804",
   commandPrefix: ";",
-  unknownCommandResponse: false,
+  unknownCommandResponse: true,
   selfbot: false,
   commandEditableDuration: 60
 });
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "with Cleo >.<!" },
+    game: { name: "with Gavin_cowan" },
     status: "online"
   });
 });
