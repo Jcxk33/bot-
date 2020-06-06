@@ -17,6 +17,7 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
     "trello": "^0.10.0",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "axios": "^0.19.2"
   }
 }
