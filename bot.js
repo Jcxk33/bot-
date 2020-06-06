@@ -10,7 +10,7 @@ const listener = server.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
 setInterval(() => {
-  http.get(`https://glitch.com/~gavins-mayflow`);
+  http.get(`mayflow-bot-daddy`);
 }, 280000);
 
 const Discord = require("discord.js");
@@ -19,7 +19,7 @@ const request = require("request-promise");
 const path = require("path");
 const config = require(path.join(__dirname, "config", "config.json"));
 const client = new commando.CommandoClient({
-  owner: "138391403788107776",
+  owner: "238728990049697804",
   commandPrefix: ";",
   unknownCommandResponse: false,
   selfbot: false,
@@ -45,10 +45,10 @@ client.registry
 let timeout = new Set();
 let cdseconds = 15; // 1 Minute
 client.on("message", msgObject => {
-  if (msgObject.channel.id == 717540896740081706) {
+  if (msgObject.channel.id == 718614816205439088) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
-      .get("713095003441725525")
+      .get("718610214101712926")
       .channels.find("id", Arguments[0]);
     if (channel) {
       channel
@@ -63,10 +63,10 @@ client.on("message", msgObject => {
         });
     } else {
     }
-  } else if (msgObject.channel.id == 717540896740081706) {
+  } else if (msgObject.channel.id == 718614816205439088) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
-      .get("713095003441725525")
+      .get("718610214101712926")
       .channels.find("id", Arguments[0]);
     let idMessage = Arguments[1];
     let JobId = Arguments[2];

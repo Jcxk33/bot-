@@ -12,8 +12,8 @@ module.exports = class whois extends Command {
     });
   }
   async run(msgObject) {
-    const mainserver = msgObject.client.guilds.get("673619643533099027");
-    let channel = mainserver.channels.find("id", "674439554291204112");
+    const mainserver = msgObject.client.guilds.get("718610214101712926");
+    let channel = mainserver.channels.find("id", "718614816205439088");
     let editMessage = await msgObject.reply("Fetching your data...");
     let authorData = await request({
       uri: `https://verify.eryn.io/api/user/${msgObject.author.id}`,
