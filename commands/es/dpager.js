@@ -26,7 +26,7 @@ module.exports = class dpager extends Command {
     }
   }
   async run(msgObject, { pager }) {
-    if (msgObject.channel.id == 718992674635382835) {
+    if (msgObject.channel.id == 718992674366947385) {
       mongoose.connect(
         "mongodb+srv://mayflow:Be4K2HqWgI8BGyEv@mayflowdata-dtfz1.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -44,7 +44,7 @@ module.exports = class dpager extends Command {
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "713095003441725525"
+              "718992673205125291"
             );
             let channel = mainserver.channels.find("id", "718992674635382835");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
