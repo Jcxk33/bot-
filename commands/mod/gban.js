@@ -74,9 +74,6 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      editMessage.edit(
-         `Wowzers, your command has been executed in-game on server fadbd70d-4179-4319-a8e8-fba9d19fdc8a!`
-      );
       trello.addCard(
         `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} ban ${data.Id} ${reason}`,
         "",
