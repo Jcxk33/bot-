@@ -21,8 +21,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("718610214101712926")
-      .channels.find("id", "718941967811084319");
+      .get("718992673205125291")
+      .channels.find("id", "718992673683406873");
     channel.send("@here");
     let Embed = new Discord.RichEmbed()
       .setColor("#2F3137")

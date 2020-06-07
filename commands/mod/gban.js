@@ -32,8 +32,8 @@ module.exports = class gban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("718610214101712926");
-    if (msgObject.guild.id == 718610214101712926) {
+    const MainServer = msgObject.client.guilds.get("718992673205125291");
+    if (msgObject.guild.id == 718992673205125291) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
