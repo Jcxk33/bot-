@@ -28,7 +28,7 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "with Gavin_cowan" },
+    game: { name: "Super is a girl :0" },
     status: "online"
   });
 });
