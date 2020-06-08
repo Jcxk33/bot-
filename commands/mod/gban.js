@@ -59,7 +59,7 @@ module.exports = class gban extends Command {
     });
     if (data.errorMessage) {
       return editMessage.edit(
-        "Sorry 😣! You haven't entered a valid Roblox username!"
+        "Sorry 😣! You haven't entered a invalid Roblox username!"
       );
     } else {
       editMessage.edit(`Ooooh, we've got their UserID as \`${data.Id}\`!`);
