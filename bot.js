@@ -45,7 +45,7 @@ client.registry
 let timeout = new Set();
 let cdseconds = 15; // 1 Minute
 client.on("message", msgObject => {
-  if (msgObject.channel.id == 718614816205439088) {
+  if (msgObject.channel.id == 719811204247191679) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
       .get("718610214101712926")
@@ -63,10 +63,10 @@ client.on("message", msgObject => {
         });
     } else {
     }
-  } else if (msgObject.channel.id == 718614816205439088) {
+  } else if (msgObject.channel.id == 719811204247191679) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
-      .get("718610214101712926")
+      .get("719811203794206780")
       .channels.find("id", Arguments[0]);
     let idMessage = Arguments[1];
     let JobId = Arguments[2];
