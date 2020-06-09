@@ -26,7 +26,7 @@ module.exports = class pager extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.channel.id == 718992674366947385) {
+      if (msgObject.channel.id == 719811204687855709) {
       return true;
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
@@ -51,8 +51,8 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("718992673205125291");
-          let channel = mainserver.channels.find("id", "718992674635382835");
+          const mainserver = msgObject.client.guilds.get("719811203794206780");
+          let channel = mainserver.channels.find("id", "719811204687855711");
           channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
