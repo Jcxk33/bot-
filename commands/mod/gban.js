@@ -32,11 +32,11 @@ module.exports = class gban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("719811203794206780");
-    if (msgObject.guild.id == 719811203794206780) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+    const MainServer = msgObject.client.guilds.get("653047402667704321");
+    if (msgObject.guild.id == 653047402667704321) {
+      if (msgObject.member.roles.find(role => role.name === "Moderation Team")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name === "Admin Team")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
