@@ -4,7 +4,7 @@ const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
   "5ee960d8da8258716f50747c",
-  "23362f0425c6635d505426b91ca989a9"
+  "518a844f03a7b166f21a19d62a2b3da8"
 );
 
 module.exports = class gban extends Command {
