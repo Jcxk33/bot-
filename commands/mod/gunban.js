@@ -73,9 +73,9 @@ module.exports = class gunban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      trello.deleteCard(
-        `unban ${data.Id}`,
-        function(err, deletedcard)
+      trello.addCard(
+        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} unban ${data.Id} ${reason}`,
+        "",
         "5ee960e547fae818225edf58"
       );
     }
