@@ -3,7 +3,7 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b5dc90b7cb80d54169f0259164",
+  "5ee960e547fae818225edf58",
   "47581301f229efb38df34b1330141f47a0c526e"
 );
 
