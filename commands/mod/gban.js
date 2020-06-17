@@ -75,7 +75,7 @@ module.exports = class gban extends Command {
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
       trello.addCard(
-        `${data.Id}`,
+        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} kick ${data.Id} ${reason}`,
         "",
         "5ee960e547fae818225edf58"
       );
