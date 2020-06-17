@@ -19,7 +19,7 @@ const request = require("request-promise");
 const path = require("path");
 const config = require(path.join(__dirname, "config", "config.json"));
 const client = new commando.CommandoClient({
-  owner: "238728990049697804",
+  owner: "682438427232436269",
   commandPrefix: ";",
   unknownCommandResponse: true,
   selfbot: false,
@@ -28,8 +28,8 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "big ass cock" },
-    status: "online"
+    game: { name: "Playing With MrLerosche" },
+    status: "idle"
   });
 });
 
@@ -45,10 +45,10 @@ client.registry
 let timeout = new Set();
 let cdseconds = 15; // 1 Minute
 client.on("message", msgObject => {
-  if (msgObject.channel.id == 653049908244512804) {
+  if (msgObject.channel.id == 719627673839861834) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
-      .get("653047402667704321")
+      .get("719627673839861830")
       .channels.find("id", Arguments[0]);
     if (channel) {
       channel
@@ -63,10 +63,10 @@ client.on("message", msgObject => {
         });
     } else {
     }
-  } else if (msgObject.channel.id == 653049908244512804) {
+  } else if (msgObject.channel.id == 719627673839861834) {
     let Arguments = msgObject.content.split(" ");
     let channel = msgObject.client.guilds
-      .get("653047402667704321")
+      .get("719627673839861830")
       .channels.find("id", Arguments[0]);
     let idMessage = Arguments[1];
     let JobId = Arguments[2];
@@ -81,7 +81,7 @@ client.on("message", msgObject => {
           .setTitle(`Server ${pppeh}`)
           .setTimestamp()
           .setURL(
-            `https://www.roblox.com/games/4553950954/New-Haven-County?jobId=${JobId}`
+            `https://www.roblox.com/games/300410481/Testing-Place?jobId=${JobId}`
           );
         Players = Players.split("|");
         Players.forEach(m => {
