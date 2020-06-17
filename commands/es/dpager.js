@@ -19,14 +19,14 @@ module.exports = class dpager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 719811204687855709) {
+    if (msgObject.channel.id == 719627673839861834) {
       return true;
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
     }
   }
   async run(msgObject, { pager }) {
-    if (msgObject.channel.id == 719811204687855711) {
+    if (msgObject.channel.id == 719627673839861834) {
       mongoose.connect(
         "mongodb+srv://mayflow:Be4K2HqWgI8BGyEv@mayflowdata-dtfz1.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -44,9 +44,9 @@ module.exports = class dpager extends Command {
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "719811203794206780"
+              "719627673839861830"
             );
-            let channel = mainserver.channels.find("id", "719811204687855711");
+            let channel = mainserver.channels.find("id", "719627673839861834");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();
