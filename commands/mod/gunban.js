@@ -7,25 +7,24 @@ var trello = new Trello(
   "bd175d77a563fdcf48e4c9cb5d65ac405e89cb9d36ccd50d530345996b398522"
 );
 
-module.exports = class gban extends Command {
+module.exports = class gunban extends Command {
   constructor(client) {
     super(client, {
-      name: "gban",
-      aliases: ["gameban", "remoteban"],
+      name: "gunban",
+      aliases: ["gameunban", "remoteunban"],
       group: "mod",
-      memberName: "gban",
-      description: "Bans a user from the game",
+      memberName: "guhban",
+      description: "Unbans a user from the game",
       guildOnly: true,
       args: [
         {
           type: "string",
-          label: "username",
           prompt: "What is the Roblox username?",
           key: "username"
         },
         {
           type: "string",
-          prompt: "What is the reason for moderating this user?",
+          prompt: "What is the reason for unbanning this user?",
           key: "reason"
         }
       ]
@@ -50,7 +49,7 @@ module.exports = class gban extends Command {
   }
   async run(msgObject, { username, reason }) {
     const editMessage = await msgObject.reply(
-      `Coolio!! Let's get on with this and ban \`${username}\``
+      `Coolio!! Let's get on with this and unban \`${username}\``
     );
     let data = await request({
       uri: `https://api.roblox.com/users/get-by-username?username=${username}`,
@@ -75,7 +74,7 @@ module.exports = class gban extends Command {
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
       trello.addCard(
-        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} kick ${data.Id} ${reason}`,
+        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} unban ${data.Id} ${reason}`,
         "",
         "5ee960e547fae818225edf58"
       );

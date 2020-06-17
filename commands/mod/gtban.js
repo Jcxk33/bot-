@@ -7,25 +7,24 @@ var trello = new Trello(
   "bd175d77a563fdcf48e4c9cb5d65ac405e89cb9d36ccd50d530345996b398522"
 );
 
-module.exports = class gban extends Command {
+module.exports = class gtban extends Command {
   constructor(client) {
     super(client, {
-      name: "gban",
-      aliases: ["gameban", "remoteban"],
+      name: "gtban",
+      aliases: ["gametban", "remotetban"],
       group: "mod",
-      memberName: "gban",
-      description: "Bans a user from the game",
+      memberName: "gtban",
+      description: "TBans a user from the game",
       guildOnly: true,
       args: [
         {
           type: "string",
-          label: "username",
           prompt: "What is the Roblox username?",
           key: "username"
         },
         {
           type: "string",
-          prompt: "What is the reason for moderating this user?",
+          prompt: "What is the reason for temp banning this user?",
           key: "reason"
         }
       ]
@@ -75,7 +74,7 @@ module.exports = class gban extends Command {
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
       trello.addCard(
-        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} kick ${data.Id} ${reason}`,
+        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} tban ${data.Id} ${reason}`,
         "",
         "5ee960e547fae818225edf58"
       );
