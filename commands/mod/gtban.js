@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "5ee960d8da8258716f50747c",
-  "23362f0425c6635d505426b91ca989a9"
+  "518a844f03a7b166f21a19d62a2b3da8",
+  "bd175d77a563fdcf48e4c9cb5d65ac405e89cb9d36ccd50d530345996b398522"
 );
 
 module.exports = class gtban extends Command {
@@ -31,9 +31,9 @@ module.exports = class gtban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("713095003441725525");
-    if (msgObject.guild.id == 713095003441725525) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+    const MainServer = msgObject.client.guilds.get("719627673839861830");
+    if (msgObject.guild.id == 719627673839861830) {
+      if (msgObject.member.roles.find(role => role.name === "Mod")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
@@ -76,7 +76,7 @@ module.exports = class gtban extends Command {
       trello.addCard(
         `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} tban ${data.Id} ${reason}`,
         "",
-        "5e52881f69f20046d66f3f61"
+        "5ee960e547fae818225edf58"
       );
     }
   }

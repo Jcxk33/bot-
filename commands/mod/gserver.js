@@ -22,9 +22,9 @@ module.exports = class getservercommand extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("718992673205125291");
-    if (msgObject.guild.id == 718992673205125291) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+    const MainServer = msgObject.client.guilds.get("719627673839861830");
+    if (msgObject.guild.id == 719627673839861830) {
+      if (msgObject.member.roles.find(role => role.name === "Mod")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
@@ -67,8 +67,8 @@ module.exports = class getservercommand extends Command {
       }
     } else {
       var trello = new Trello(
-        "b5dc90fsdfsfsf9f0259164",
-        "47581301fdsfsf47a0c526e"
+        "518a844f03a7b166f21a19d62a2b3da8",
+        "bd175d77a563fdcf48e4c9cb5d65ac405e89cb9d36ccd50d530345996b398522"
       );
       let Servers = 0;
       let valid = false;
@@ -87,7 +87,7 @@ module.exports = class getservercommand extends Command {
           trello.addCard(
             `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
             "",
-            "5e5a96342b90e254f6ca5e3e"
+            "5ee960e547fae818225edf58"
           );
         }
       }
