@@ -28,8 +28,8 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "Playing With MrLerosche" },
-    status: "idle"
+    game: { name: "Fucking people up" },
+    status: "Invisible"
   });
 });
 
