@@ -28,7 +28,7 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "with gavins massive horse dick" },
+    game: { name: "big ass cock" },
     status: "online"
   });
 });

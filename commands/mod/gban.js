@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b5dc90bcb524259164",
-  "475813010ff5cc6d8f229efb38df34b1330141f47a0c526e"
+  "5ee960d8da8258716f50747c",
+  "23362f0425c6635d505426b91ca989a9"
 );
 
 module.exports = class gban extends Command {
@@ -32,11 +32,11 @@ module.exports = class gban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("653047402667704321");
-    if (msgObject.guild.id == 653047402667704321) {
-      if (msgObject.member.roles.find(role => role.name === "Moderation Team")) {
+    const MainServer = msgObject.client.guilds.get("719627673839861830");
+    if (msgObject.guild.id == 719627673839861830) {
+      if (msgObject.member.roles.find(role => role.name === "Mod")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name === "Admin Team")) {
+      } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
@@ -77,7 +77,7 @@ module.exports = class gban extends Command {
       trello.addCard(
         `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} ban ${data.Id} ${reason}`,
         "",
-        "5e52881f69f20046d66f3f61"
+        "5ab58846d6e20da9f396be76"
       );
     }
   }
