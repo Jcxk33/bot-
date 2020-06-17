@@ -31,8 +31,8 @@ module.exports = class gkick extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("713095003441725525");
-    if (msgObject.guild.id == 713095003441725525) {
+    const MainServer = msgObject.client.guilds.get("653047402667704321");
+    if (msgObject.guild.id == 653047402667704321) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {

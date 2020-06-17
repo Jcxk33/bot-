@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "5ab58846d6e20da9f396be76",
-  "518a844f03a7b166f21a19d62a2b3da8"
+  "b5dc90bcb524259164",
+  "475813010ff5cc6d8f229efb38df34b1330141f47a0c526e"
 );
 
 module.exports = class gban extends Command {
@@ -32,11 +32,11 @@ module.exports = class gban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("719811203794206780");
-    if (msgObject.guild.id == 719811203794206780) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+    const MainServer = msgObject.client.guilds.get("653047402667704321");
+    if (msgObject.guild.id == 653047402667704321) {
+      if (msgObject.member.roles.find(role => role.name === "Moderation Team")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name === "Admin Team")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
