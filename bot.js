@@ -28,7 +28,7 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "Minecraft" },
+    game: { name: "Touching iiSnxwySloth" },
     status: "Invisible"
   });
 });
