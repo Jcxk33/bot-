@@ -41,7 +41,7 @@ module.exports = class gtban extends Command {
             } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
         return true;
       
-            } else if (msgObject.member.roles.find(role => role.name === " Bot Developer")) {
+            } else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
@@ -82,7 +82,7 @@ module.exports = class gtban extends Command {
       trello.addCard(
         `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} tban ${data.Id} ${reason}`,
         "",
-        "5ee960e547fae818225edf58"
+        "5f756b6f029515837f3c301a"
       );
     }
   }

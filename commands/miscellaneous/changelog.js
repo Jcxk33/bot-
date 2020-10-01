@@ -25,7 +25,7 @@ module.exports = class changelog extends Command {
       .channels.find("id", "718992673683406873");
     channel.send("@here");
     let Embed = new Discord.RichEmbed()
-      .setColor("#2F3137")
+      .setColor("#00FFFF")
       .setTitle("Change Log")
       .setDescription(description)
       .setTimestamp();
