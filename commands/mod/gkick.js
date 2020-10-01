@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b5dc90b7cb80d54169f0259164",
-  "47581301f229efb38df34b1330141f47a0c526e"
+  "1c29d4f8d0ca29591d3b38ce675d85a8",
+  "65211bcf92cecf0baa5c222b2c139bcb27d589d4bcfdcecc342f39a32ae43e75"
 );
 
 module.exports = class gkick extends Command {
@@ -31,8 +31,8 @@ module.exports = class gkick extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("653047402667704321");
-    if (msgObject.guild.id == 653047402667704321) {
+    const MainServer = msgObject.client.guilds.get("753560739935158312");
+    if (msgObject.guild.id == 753560739935158312) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
@@ -76,7 +76,7 @@ module.exports = class gkick extends Command {
       trello.addCard(
         `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} kick ${data.Id} ${reason}`,
         "",
-        "5e52881f69f20046d66f3f61"
+        "5f755c20ae36457f7ca1fde5"
       );
     }
   }
