@@ -11,7 +11,6 @@ module.exports = class gtban extends Command {
   constructor(client) {
     super(client, {
       name: "gtban",
-      aliases: ["gametban", "remotetban"],
       group: "mod",
       memberName: "gtban",
       description: "TBans a user from the game",

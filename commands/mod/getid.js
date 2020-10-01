@@ -5,7 +5,6 @@ module.exports = class id extends Command {
   constructor(client) {
     super(client, {
       name: "getid",
-      aliases: ["gid"],
       group: "mod",
       memberName: "getid",
       description: "Gets the userId of the specified username",

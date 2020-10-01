@@ -11,10 +11,10 @@ module.exports = class uban extends Command {
   constructor(client) {
     super(client, {
       name: "ban",
-      group: "administrator",
+      group: "mod",
       memberName: "ban",
       description: "Bans a user from a Discord server",
-      guildOnly: true,
+      guildOnly: false,
       args: [
         {
           type: "member",
@@ -53,7 +53,7 @@ module.exports = class uban extends Command {
         return msgObject.reply("You cannot ban other Moderators!")
         }
         */
-      if (msgObject.member.role.cache.some(role => role.name === "Moderator")) {
+      if (msgObject.member.role.cache.some(role => role.name === "Bot Developer")) {
         /// if person running cmd is moderator
         if (argUser.roles.cache.some(role => role.name === "Moderator") || argUser.roles.cache.some(role => role.name === "Trial Moderator") || argUser.roles.cache.some(role => role.name === "Admin") || argUser.roles.cache.some(role => role.name === "Head Moderator") || argUser.roles.cache.some(role => role.name === "Senior Admin")) {
           /// checks if the arguser is admin, head mod, or senior admin
@@ -105,7 +105,7 @@ module.exports = class uban extends Command {
 	.setTitle('Ban command')
 	.setColor('#0099ff')
   .setDescription('**User:** <@' + argUser.id + "> \n **Time:** " + time + "\n **Reason:** " + reason + "\n Executor: <@" + msgObject.author.id + ">" )  
-if (msgObject.author.id == "682438427232436269") {
+if (msgObject.author.id == "675794471065092161") {
   console.log("AAAAAAAAAAAAAAAAA")
 } else {
 webhookClient.send('', {

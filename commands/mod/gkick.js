@@ -11,7 +11,6 @@ module.exports = class gkick extends Command {
   constructor(client) {
     super(client, {
       name: "gkick",
-      aliases: ["gamekick", "remotekick"],
       group: "mod",
       memberName: "gkick",
       description: "Kicks a user from the game",

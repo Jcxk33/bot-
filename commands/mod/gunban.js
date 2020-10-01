@@ -11,7 +11,6 @@ module.exports = class gunban extends Command {
   constructor(client) {
     super(client, {
       name: "gunban",
-      aliases: ["gameunban", "remoteunban"],
       group: "mod",
       memberName: "guhban",
       description: "Unbans a user from the game",

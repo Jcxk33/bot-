@@ -6,7 +6,6 @@ module.exports = class getservercommand extends Command {
   constructor(client) {
     super(client, {
       name: "getserver",
-      aliases: ["gserver", "gameserver", "server"],
       group: "mod",
       memberName: "getserver",
       description: "Retrieves information about a given player's server",
