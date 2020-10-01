@@ -28,6 +28,12 @@ module.exports = class getservercommand extends Command {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
+      
+            } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
+        return true;
+      
+            } else if (msgObject.member.roles.find(role => role.name === " 1Bot Developer")) {
+        return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
@@ -40,7 +46,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/4957735276/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/5561650167/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -56,7 +62,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[Server Link](https://www.roblox.com/games/5103835364/New-Haven-CountyjobId=${Data.id})`
+          `[Server Link](https://games.roblox.com/v1/games/5561650167/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);

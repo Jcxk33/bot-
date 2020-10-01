@@ -36,9 +36,13 @@ module.exports = class gban extends Command {
     if (msgObject.guild.id == 746921954803581008) {
       if (msgObject.member.roles.find(role => role.name === "Mod")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
+      } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
-              } else if (msgObject.member.roles.find(role => role.name === "cool kid")) {
+      
+            } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
+        return true;
+      
+            } else if (msgObject.member.roles.find(role => role.name === " 1Bot Developer")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
