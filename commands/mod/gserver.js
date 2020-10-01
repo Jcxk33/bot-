@@ -32,7 +32,7 @@ module.exports = class getservercommand extends Command {
             } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
         return true;
       
-            } else if (msgObject.member.roles.find(role => role.name === " 1Bot Developer")) {
+            } else if (msgObject.member.roles.find(role => role.name === " Bot Developer")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";

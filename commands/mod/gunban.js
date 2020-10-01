@@ -33,9 +33,15 @@ module.exports = class gunban extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("719627673839861830");
     if (msgObject.guild.id == 719627673839861830) {
-      if (msgObject.member.roles.find(role => role.name === "Mod")) {
+       if (msgObject.member.roles.find(role => role.name === "Mod")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+        return true;
+      
+            } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
+        return true;
+      
+            } else if (msgObject.member.roles.find(role => role.name === " Bot Developer")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
