@@ -31,11 +31,11 @@ module.exports = class gtban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("719627673839861830");
-    if (msgObject.guild.id == 719627673839861830) {
+    const MainServer = msgObject.client.guilds.get("746921954803581008");
+    if (msgObject.guild.id == 746921954803581008) {
       if (msgObject.member.roles.find(role => role.name === "Mod")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name === "Administrator")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";

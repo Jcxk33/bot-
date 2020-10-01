@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "1c29d4f8d0ca29591d3b38ce675d85a8",
-  "65211bcf92cecf0baa5c222b2c139bcb27d589d4bcfdcecc342f39a32ae43e75"
+  "b3e86d17c55b6dc170e3e426e4e1a491",
+  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
 );
 
 module.exports = class gkick extends Command {
@@ -31,11 +31,11 @@ module.exports = class gkick extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("753560739935158312");
-    if (msgObject.guild.id == 753560739935158312) {
+    const MainServer = msgObject.client.guilds.get("746921954803581008");
+    if (msgObject.guild.id == 746921954803581008) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
@@ -73,10 +73,10 @@ module.exports = class gkick extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      trello.addCard(
-        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} kick ${data.Id} ${reason}`,
-        "",
-        "5f755c20ae36457f7ca1fde5"
+trello.addCard(
+        `${data.Username}`,
+        `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
+        "5f7571edd9a18d44fa202708"
       );
     }
   }
