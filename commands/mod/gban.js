@@ -38,6 +38,8 @@ module.exports = class gban extends Command {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
+              } else if (msgObject.member.roles.find(role => role.name === "cool kid")) {
+        return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
@@ -74,9 +76,9 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      trello.addCard(
-        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} kick ${data.Id} ${reason}`,
-        "",
+trello.addCard(
+        `${data.Username}`,
+        `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
         "5f756bd1c525792dbca9c632"
       );
     }
