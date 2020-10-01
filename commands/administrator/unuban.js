@@ -24,7 +24,10 @@ module.exports = class uban extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    if (msgObject.member.roles.find(role => role.name === "Administrator")) {
+      return true;
+    }
+      if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
       return true;
     }
     return "Sorry :persevere:! You must be a Admin!";
