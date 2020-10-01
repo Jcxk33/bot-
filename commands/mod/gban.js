@@ -74,6 +74,7 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
+
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
