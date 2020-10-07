@@ -23,12 +23,12 @@ module.exports = class uban extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Mod")) {
+      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       
-            } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
+            } else if (msgObject.member.roles.find(role => role.name === "Trainee Moderator")) {
         return true;
       
             } else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
