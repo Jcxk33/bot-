@@ -13,22 +13,51 @@ module.exports = class changelog extends Command {
       args: [
         {
           type: "string",
-          prompt: "What is the Description?",
-          key: "description"
+          prompt: "What is the notes?",
+          key: "notes"
         }
       ]
     });
   }
-  async run(msgObject, { description }) {
+  hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("746921954803581008");
+    if (msgObject.guild.id == 746921954803581008) {
+            if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
+        return true;
+            
+      } else if(msgObject.author == this.client.users.get("0")){
+      return true;
+    }else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+        return true;
+      } else if(msgObject.member.roles.find(role => role.name == "Moderator")){
+        return true;
+      }
+      return "Sorry 😣! You must be a Moderator or Admin!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the " +
+        MainServer.name +
+        "!"
+      );
+    }
+  }
+  async run(msgObject, { notes }) {
     let channel = this.client.guilds
       .get("746921954803581008")
-      .channels.find("id", "746923991339630682");
+      .channels.find("id", "759213217859239946");
     channel.send("@mention");
     let Embed = new Discord.RichEmbed()
       .setColor("#e58049")
-      .setAuthor(`${msgObject.member.displayName}`)
-      .setDescription(`no`)
+      .setAuthor(`${msgObject.member.displayName}`, `${msgObject.author.avatarURL}`)
+      .setTitle(`Server Startup`)
+      .setDescription(`${msgObject.author} is conducting a server startup!`)
+      .addField(`:link: Link`, `[gunFIGHTS](https://www.roblox.com/games/5561650167/gunFIGHTS)`)
+      .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
     channel.send(Embed);
+    
+    msgObject.reply(
+      `Congrats 🙌! You have announced a server startup!`
+    )
   }
 };
