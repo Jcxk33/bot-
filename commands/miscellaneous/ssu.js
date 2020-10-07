@@ -27,7 +27,6 @@ module.exports = class changelog extends Command {
     let Embed = new Discord.RichEmbed()
       .setColor("#e58049")
       .setAuthor(`${msgObject.member.displayName}`)
-      .setAvatarURL(`${msgObject.member.avatarURL}`)
       .setDescription(`no`)
       .setTimestamp();
     channel.send(Embed);
