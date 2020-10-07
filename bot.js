@@ -38,7 +38,8 @@ client.registry
     ["mod", "Moderation commands"],
     ["miscellaneous", "Miscellaneous commands"],
     ["administrator", "Administrator commands"],
-    ["es", "ES commands"]
+    ["es", "ES commands"],
+    ["no", "no no square"]
   ])
   .registerDefaults()
   .registerCommandsIn(path.join(__dirname, "commands"));

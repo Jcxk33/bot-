@@ -11,9 +11,9 @@ module.exports = class uban extends Command {
   constructor(client) {
     super(client, {
       name: "kms",
-      group: "mod",
+      group: "no",
       memberName: "kms",
-      description: "Bans a user from a Discord server",
+      description: "please do not use this command as you will break the bot :)",
       guildOnly: false,
       args: [
         {
