@@ -25,7 +25,7 @@ module.exports = class changelog extends Command {
             if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
             
-      } else if(msgObject.author == this.client.users.get("0")){
+      } else if(msgObject.author == this.client.users.get("242876771387572224")){
       return true;
     }else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;

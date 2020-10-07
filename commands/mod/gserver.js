@@ -5,9 +5,10 @@ const request = require("request-promise");
 module.exports = class getservercommand extends Command {
   constructor(client) {
     super(client, {
-      name: "getserver",
+      name: "gserver",
+      aliases: ["getserver"],
       group: "mod",
-      memberName: "getserver",
+      memberName: "gserver",
       description: "Retrieves information about a given player's server",
       guildOnly: true,
       args: [
@@ -23,7 +24,7 @@ module.exports = class getservercommand extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("746921954803581008");
     if (msgObject.guild.id == 746921954803581008) {
-      if (msgObject.member.roles.find(role => role.name === "Mod")) {
+      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
@@ -63,7 +64,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[Server Link](https://games.roblox.com/v1/games/5561650167/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[gunFIGHTS Link](https://www.roblox.com/games/5561650167/gunFIGHTS)\n[Detailed Link](https://games.roblox.com/v1/games/5561650167/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
@@ -74,8 +75,8 @@ module.exports = class getservercommand extends Command {
       }
     } else {
       var trello = new Trello(
-        "518a844f03a7b166f21a19d62a2b3da8",
-        "bd175d77a563fdcf48e4c9cb5d65ac405e89cb9d36ccd50d530345996b398522"
+        "b3e86d17c55b6dc170e3e426e4e1a491",
+        "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
       );
       let Servers = 0;
       let valid = false;
@@ -91,11 +92,14 @@ module.exports = class getservercommand extends Command {
         if (!valid) {
           msgObject.reply("Sorry :persevere:! This server does not exist!");
         } else {
-          trello.addCard(
-            `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
-            "",
-            "5ee960e547fae818225edf58"
-          );
+          let embed = new Discord.RichEmbed()
+          .setTitle(`Server Information`)
+          .set
+          // trello.addCard(
+          //   `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
+          //   "",
+          //   "5f7614bdbe45c32d22e5591c"
+          // );
         }
       }
     }
