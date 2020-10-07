@@ -92,6 +92,7 @@ module.exports = class getservercommand extends Command {
         if (!valid) {
           msgObject.reply("Sorry :persevere:! This server does not exist!");
         } else {
+          
           let data = await request({
             uri: `https://games.roblox.com/v1/games/5561650167/servers/Public?sortOrder=Asc&limit=100`,
             json: true,
@@ -100,27 +101,9 @@ module.exports = class getservercommand extends Command {
             msgObject.reply("Sorry 😣! There are currently no running servers!");
           });
           
-          data.data.forEach(Data => {
-            if(Data.id == serverUser){
-              let data = await request({
-                uri: `https://verify.eryn.io/api/user/${argUser.id}`,
-                json: true,
-                simple: false
-    });
-              
-              let embed = new Discord.RichEmbed() 
-              .setTitle(`Server ${Data.id}`)
-              .setDescription(`${Data.playing}/${Data.maxPlayers}`)
-              
-              Data.playerIds.forEach(person => {
-                embed.addField(`${person}`, "no")
-              })
-              
-              msgObject.reply("here", embed)
-            } else {
-              msgObject.reply("Sorry 😣! This server does not exist!")
-            }
-          })
+          msgObject.reply("Sorry 😣! I currently do not work!")
+          
+          
           
           // trello.addCard(
           //   `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
