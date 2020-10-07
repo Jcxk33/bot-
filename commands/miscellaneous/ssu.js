@@ -47,7 +47,7 @@ module.exports = class changelog extends Command {
     let channel = this.client.guilds
       .get("746921954803581008")
       .channels.find("id", "759213217859239946");
-    channel.send("@mention");
+    channel.send("@here");
     let Embed = new Discord.RichEmbed()
       .setColor("#e58049")
       .setAuthor(`${msgObject.member.displayName}`, `${msgObject.author.avatarURL}`)
