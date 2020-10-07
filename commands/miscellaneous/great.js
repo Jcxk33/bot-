@@ -20,7 +20,7 @@ module.exports = class great extends Command {
         let made = new Date(randomMsg.createdTimestamp);
         let date = made.toDateString();
         msgObject.reply(
-          `<#759420741987991583> - ${date}:\n\  ${randomMsg.content}`
+          `<#759420741987991583> - ${date}:\n${randomMsg.content}`
         );
       })
       .catch(console.error);
