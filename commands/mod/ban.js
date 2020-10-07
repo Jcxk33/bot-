@@ -4,7 +4,7 @@ module.exports = class uban extends Command {
   constructor(client) {
     super(client, {
       name: "ban",
-      group: "administrator",
+      group: "mod",
       memberName: "ban",
       description: "Bans a user from the Discord",
       guildOnly: true,
@@ -16,7 +16,7 @@ module.exports = class uban extends Command {
         },
         {
           type: "string",
-          prompt: "What is the reason for ultra banning this user?",
+          prompt: "What is the reason for banning this user?",
           key: "reason"
         }
       ]
@@ -41,7 +41,8 @@ module.exports = class uban extends Command {
       msgObject.reply(
         "Okay, this is a very dangerous situation. This action shall be done with no approval."
       );
-      msgObject.
+      let options = { reason: reason };
+      msgObject.channel.guild.members.ban(argUser.id, options)
      msgObject.channel.send(
        `Banned ${argUser.tag} in all the servers :triumph::relieved:! All done!`
      );
@@ -50,7 +51,7 @@ module.exports = class uban extends Command {
     
     if (msgObject.guild.member(argUser.id)) {
       const msg = await msgObject.reply(
-        `Hey, I heard you want to ultra ban ${argUser.tag} for ` +
+        `Hey, I heard you want to ban ${argUser.tag} for ` +
           "`" +
           reason +
           "` is this correct?"
@@ -64,13 +65,12 @@ module.exports = class uban extends Command {
             reaction.message === msg
           ) {
             msgObject.reply(
-              "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
+              "Coolio :joy::joy:! Let's ban em'! :gun:"
             );
-            this.client.guilds.forEach(m => {
-              m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
-            });
+            let options = { reason: reason };
+            msgObject.channel.guild.members.ban(argUser.id, options)
             msgObject.channel.send(
-              `Banned ${argUser.tag} in all the servers :triumph::relieved:! All done!`
+              `Banned ${argUser.tag} in the server :triumph::relieved:! All done!`
             );
           }
         };
@@ -78,16 +78,16 @@ module.exports = class uban extends Command {
       });
     } else {
       msgObject.reply(
-        "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
+        "Coolio :joy::joy:! Let's ban em'! :gun:"
       );
       let msg = await msgObject.channel.send(
-        `Banning ${argUser.tag} in all the servers!`
+        `Banning ${argUser.tag} in the server!`
       );
       this.client.guilds.forEach(m => {
         m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
       });
       msg.edit(
-        `Banned ${argUser.tag} in all the servers :triumph::relieved:! All done!`
+        `Banned ${argUser.tag} in the server :triumph::relieved:! All done!`
       );
     }
   }

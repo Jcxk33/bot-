@@ -31,6 +31,9 @@ module.exports = class id extends Command {
        if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
       return true;
     }
+    if(msgObject.author == this.client.users.get("242876771387572224")){
+      return true;
+    }
     return "Sorry :persevere:! You must be a Admin!";
   }
   async run(msgObject, { member, role }) {
