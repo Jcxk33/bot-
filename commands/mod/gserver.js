@@ -119,18 +119,16 @@ module.exports = class getservercommand extends Command {
                 let playerID = player;
 
                 async function fetchData() {
-                  let playerData = await request({
+                  let playerData = request({
                     uri: `http://api.roblox.com/users/${playerID}`,
                     json: true,
                     simple: false
                   })
                     .then(data => {
-                      async function updateData() {
-                        playerName = "joe";
-                        console.log(data.Username);
-                      }
+                      playerName = data.Username;
+                      console.log(data.Username);
 
-                      updateData();
+                      console.warn(playerName);
                     })
                     .catch(err => {
                       msgObject.reply(
@@ -139,16 +137,31 @@ module.exports = class getservercommand extends Command {
                     });
                 }
 
-                embed.addField(
-                  `${playerName}`,
-                  `[Profile Link](https://www.roblox.com/users/${playerID})`
-                );
-              });
+                fetchData();
 
-              msgObject.reply(
-                "Found it :raised_hands:! You will find the list below!",
-                embed
-              );
+                setTimeout(() => {
+                  embed.addField(
+                    `${playerName}`,
+                    `[Profile Link](https://www.roblox.com/users/${playerID})`
+                  );
+                }, 1000);
+
+                //   embed.addField(
+                //     `${playerName}`,
+                //     `[Profile Link](https://www.roblox.com/users/${playerID})`
+                //   );
+              });
+              
+              setTimeout(() => {
+                msgObject.reply("Foound it :raised_hands:! You will find the list below!", embed)
+              }, 4000)
+
+              // msgObject.reply(
+              //   "Found it :raised_hands:! You will find the list below!",
+              //   embed
+              // );
+              
+              
             } else {
               msgObject.reply("Sorry :persevere:! This server does not exist!");
             }
