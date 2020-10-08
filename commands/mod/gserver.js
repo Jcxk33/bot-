@@ -115,36 +115,34 @@ module.exports = class getservercommand extends Command {
                 );
 
               Data.playerIds.forEach(player => {
-                var playerName;
+                let playerName;
                 let playerID = player;
 
-                let playerData = request({
-                  uri: `http://api.roblox.com/users/${playerID}`,
-                  json: true,
-                  simple: false
-                })
-                  .then(data => {
-                    async function updateData() {
-                      embed.addField(
-                        `${data.Username}`,
-                        `[Profile Link](https://www.roblox.com/users/${playerID}`
-                      );
-                      console.log(`Field added`);
-                    }
-
-                    updateData()
-                    console.log(data.Username);
+                async function fetchData() {
+                  let playerData = await request({
+                    uri: `http://api.roblox.com/users/${playerID}`,
+                    json: true,
+                    simple: false
                   })
-                  .catch(err => {
-                    msgObject.reply(
-                      "Sorry 😣! There has been an issue with obtaining information!"
-                    );
-                  });
+                    .then(data => {
+                      async function updateData() {
+                        playerName = "joe";
+                        console.log(data.Username);
+                      }
 
-                // embed.addField(
-                //   `${playerName}`,
-                //   `[Profile Link](https://www.roblox.com/users/${playerID})`
-                // );
+                      updateData();
+                    })
+                    .catch(err => {
+                      msgObject.reply(
+                        "Sorry 😣! There has been an issue with obtaining information!"
+                      );
+                    });
+                }
+
+                embed.addField(
+                  `${playerName}`,
+                  `[Profile Link](https://www.roblox.com/users/${playerID})`
+                );
               });
 
               msgObject.reply(
