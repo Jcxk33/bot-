@@ -28,13 +28,17 @@ module.exports = class getservercommand extends Command {
         return true;
       } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
-      
-            } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name === "Junior Moderator")
+      ) {
         return true;
-      
-            } else if(msgObject.author == this.client.users.get("242876771387572224")){
-      return true;
-    }else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
+      } else if (
+        msgObject.author == this.client.users.get("242876771387572224")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name === "Bot Developer")
+      ) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
@@ -92,54 +96,60 @@ module.exports = class getservercommand extends Command {
         if (!valid) {
           msgObject.reply("Sorry :persevere:! This server does not exist!");
         } else {
-          
           let data = await request({
             uri: `https://games.roblox.com/v1/games/5561650167/servers/Public?sortOrder=Asc&limit=100`,
             json: true,
             simple: false
           }).catch(err => {
-            msgObject.reply("Sorry 😣! There are currently no running servers!");
-          });      
-          
+            msgObject.reply(
+              "Sorry 😣! There are currently no running servers!"
+            );
+          });
+
           data.data.forEach(Data => {
-            if(Data.id == serverUser){
-              let embed = new Discord.RichEmbed() 
-              .setTitle(`Detailed Information`)
-              .setDescription(`Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`)
-              
+            if (Data.id == serverUser) {
+              let embed = new Discord.RichEmbed()
+                .setTitle(`Detailed Information`)
+                .setDescription(
+                  `Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`
+                );
+
               Data.playerIds.forEach(player => {
-                try {
-                  let playerName 
-                  let playerID = player 
-                  
-                  let playerData = request({
-                    uri: `http://api.roblox.com/users/${playerID}`,
-                    json: true,
-                    simple: false
-                  }).then(data => {
-                    console.log(data.Username)
+                let playerName;
+                let playerID = player;
+
+                let playerData = request({
+                  uri: `http://api.roblox.com/users/${playerID}`,
+                  json: true,
+                  simple: false
+                })
+                  .then(data => {
+                    console.log(data.Username);
                     playerName = data.Username
-                  }).catch(err => {
-                    msgObject.reply("Sorry 😣! There has been an issue with obtaining information!")
                   })
-                  
-                  embed.addField(`${playerName}`, `[Profile Link](https://www.roblox.com/users/${playerID})`)
-                } catch(err){
-                   msgObject.reply("Sorry 😣! There has been an issue with obtaining information!")
-                }
+                  .catch(err => {
+                    msgObject.reply(
+                      "Sorry 😣! There has been an issue with obtaining information!"
+                    );
+                  });
                 
-              })
-              
-              msgObject.reply("Found it :raised_hands:! You will find the list below!", embed)
+                
+
+                embed.addField(
+                  `${playerName}`,
+                  `[Profile Link](https://www.roblox.com/users/${playerID})`
+                );
+              });
+
+              msgObject.reply(
+                "Found it :raised_hands:! You will find the list below!",
+                embed
+              );
             } else {
-              msgObject.reply("Sorry :persevere:! This server does not exist!")
+              msgObject.reply("Sorry :persevere:! This server does not exist!");
             }
-          })
-          
-          
-          
-          
-          
+          });
+
           // trello.addCard(
           //   `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
           //   "",
