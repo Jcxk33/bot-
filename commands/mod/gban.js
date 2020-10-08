@@ -38,9 +38,9 @@ module.exports = class gban extends Command {
             
       } else if(msgObject.author == this.client.users.get("242876771387572224")){
       return true;
-    }else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    }else if (msgObject.member.roles.find(role => role.name === "Admi")) {
         return true;
-      } else if(msgObject.member.roles.find(role => role.name == "Moderator")){
+      } else if(msgObject.member.roles.find(role => role.name == "Mod")){
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
