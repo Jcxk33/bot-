@@ -126,11 +126,6 @@ module.exports = class getservercommand extends Command {
                   .then(data => {
                     console.log(data.Username);
                     playerName = data.Username;
-
-                    embed.addField(
-                      `${playerName}`,
-                      `[Profile Link](https://www.roblox.com/users/${playerID})`
-                    );
                   })
                   .catch(err => {
                     msgObject.reply(
@@ -138,10 +133,10 @@ module.exports = class getservercommand extends Command {
                     );
                   });
 
-                // embed.addField(
-                //   `${playerName}`,
-                //   `[Profile Link](https://www.roblox.com/users/${playerID})`
-                // );
+                embed.addField(
+                  `${playerName}`,
+                  `[Profile Link](https://www.roblox.com/users/${playerID})`
+                );
               });
 
               msgObject.reply(
@@ -162,4 +157,4 @@ module.exports = class getservercommand extends Command {
       }
     }
   }
-}
+};
