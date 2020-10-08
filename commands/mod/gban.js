@@ -36,7 +36,7 @@ module.exports = class gban extends Command {
             if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
             
-      } else if(msgObject.author == this.client.users.get("242876771387572224")){
+      } else if(msgObject.author == this.client.users.get("675794471065092161")){
       return true;
     }else if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
@@ -97,7 +97,7 @@ module.exports = class gban extends Command {
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        "5f756bd1c525792dbca9c632"
+        ""
       );
     }
   }

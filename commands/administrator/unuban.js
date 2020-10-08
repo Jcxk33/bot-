@@ -30,7 +30,7 @@ module.exports = class uban extends Command {
       if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
       return true;
     }
-    if(msgObject.author == this.client.users.get("242876771387572224")){
+    if(msgObject.author == this.client.users.get("675794471065092161")){
       return true;
     }
     return "Sorry :persevere:! You must be a Admin!";
