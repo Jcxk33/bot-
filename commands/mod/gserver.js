@@ -101,15 +101,19 @@ module.exports = class getservercommand extends Command {
             msgObject.reply("Sorry 😣! There are currently no running servers!");
           });
           
+          let playerName
           let playerId 
-          
           let playerData = await request({
             uri: `http://api.roblox.com/users/${playerId}`,
-            json: true, 
+            json: false, 
             simple: false
           }).catch(err => {
             msgObject.reply("Sorry 😣! There has been an error fetching information!")
+          }).then(idk => {
+            playerName = 
           })
+          
+          
           
           data.data.forEach(Data => {
             if(Data.id == serverUser){
@@ -119,11 +123,7 @@ module.exports = class getservercommand extends Command {
               
               Data.playerIds.forEach(player => {
                 playerId = player 
-                
-                console.log(playerId)
-                console.log(player)
-                
-                
+                embed.addField(`${playerName}`, `[Profile Link](https://www.roblox.com/users/${playerId})`)
               })
               
               msgObject.reply("Found it :raised_hands:! You will find the list below!", embed)
