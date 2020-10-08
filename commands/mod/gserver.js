@@ -115,7 +115,7 @@ module.exports = class getservercommand extends Command {
                 );
 
               Data.playerIds.forEach(player => {
-                let playerName;
+                var playerName;
                 let playerID = player;
 
                 let playerData = request({
