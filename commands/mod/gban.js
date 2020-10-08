@@ -89,6 +89,10 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
+            editMessage.edit(
+        `Wowzers, Your command has been executed in-game`
+      );
+
 
 trello.addCard(
         `${data.Username}`,

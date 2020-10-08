@@ -108,11 +108,11 @@ module.exports = class getservercommand extends Command {
 
           data.data.forEach(Data => {
             if (Data.id == serverUser) {
-              // let embed = new Discord.RichEmbed()
-              //   .setTitle(`Detailed Information`)
-              //   .setDescription(
-              //     `Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`
-              //   );
+              let embed = new Discord.RichEmbed()
+                .setTitle(`Detailed Information`)
+                .setDescription(
+                  `Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`
+                );
 
               Data.playerIds.forEach(player => {
                 var playerName;
