@@ -100,24 +100,7 @@ module.exports = class getservercommand extends Command {
           }).catch(err => {
             msgObject.reply("Sorry 😣! There are currently no running servers!");
           });
-          
-          
-          let playerName 
-          let playerID
-          
-          function checkData(userID){
-            let playerData = request({
-              uri: `http://api.roblox.com/users/${userID}`,
-              json: true, 
-              simple: false
-            }).catch(error => {
-              msgObject.reply("Sorry 😣! There has been an error fetching information!")
-            })
             
-            playerName = playerData.Username
-            
-            console.log(playerData)
-          }       
           
           data.data.forEach(Data => {
             if(Data.id == serverUser){
@@ -126,7 +109,19 @@ module.exports = class getservercommand extends Command {
               .setDescription(`Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`)
               
               Data.playerIds.forEach(player => {
-                checkData(player)
+                let playerName 
+                let playerID 
+                
+                let playerData = request({
+                  uri: `http://api.roblox.com/users/${playerID}`,
+                  json: true, 
+                  simple: false
+                }).then(data => {
+                  playerName = data.Username
+                }).catch(err => {
+                  msgObject.reply("Sorry 😣! There has been an issue with obtaining information!")
+                }) 
+                
                 
                 embed.addField(`${playerName}`, `[Profile Link](https://www.roblox.com/users/${playerID})`)
               })
