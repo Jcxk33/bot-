@@ -75,7 +75,10 @@ module.exports = class getservercommand extends Command {
       if (Servers === 0) {
         msgObject.reply("Sorry 😣! There are currently no running servers!");
       } else {
-        msgObject.channel.send(embed);
+        msgObject.reply(
+          "Ayo :raised_hands:! Here's a list of running servers!",
+          embed
+        );
       }
     } else {
       var trello = new Trello(
@@ -126,9 +129,6 @@ module.exports = class getservercommand extends Command {
                   })
                     .then(data => {
                       playerName = data.Username;
-                      console.log(data.Username);
-
-                      console.warn(playerName);
                     })
                     .catch(err => {
                       msgObject.reply(
@@ -142,26 +142,28 @@ module.exports = class getservercommand extends Command {
                 setTimeout(() => {
                   embed.addField(
                     `${playerName}`,
-                    `[Profile Link](https://www.roblox.com/users/${playerID})`
+                    `[Profile Link](https://www.roblox.com/users/${playerID})`,
+                    true
                   );
-                }, 1000);
+                }, 350);
 
                 //   embed.addField(
                 //     `${playerName}`,
                 //     `[Profile Link](https://www.roblox.com/users/${playerID})`
                 //   );
               });
-              
+
               setTimeout(() => {
-                msgObject.reply("Foound it :raised_hands:! You will find the list below!", embed)
-              }, 4000)
+                msgObject.reply(
+                  "Found it :raised_hands:! You will find the list below!",
+                  embed
+                );
+              }, 650);
 
               // msgObject.reply(
               //   "Found it :raised_hands:! You will find the list below!",
               //   embed
               // );
-              
-              
             } else {
               msgObject.reply("Sorry :persevere:! This server does not exist!");
             }
