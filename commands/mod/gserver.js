@@ -6,7 +6,7 @@ module.exports = class getservercommand extends Command {
   constructor(client) {
     super(client, {
       name: "gserver",
-      aliases: ["getserver"],
+      aliases: ["getserver", "getservers", "gservers"],
       group: "mod",
       memberName: "gserver",
       description: "Retrieves information about a given player's server",
@@ -34,7 +34,7 @@ module.exports = class getservercommand extends Command {
       
             } else if(msgObject.author == this.client.users.get("242876771387572224")){
       return true;
-    }else if (msgObject.member.roles.find(role => role.name === " Bot Developer")) {
+    }else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";

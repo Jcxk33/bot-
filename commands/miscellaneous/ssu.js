@@ -47,7 +47,6 @@ module.exports = class changelog extends Command {
     let channel = this.client.guilds
       .get("746921954803581008")
       .channels.find("id", "759213217859239946");
-    channel.send("@here");
     let Embed = new Discord.RichEmbed()
       .setColor("#e58049")
       .setAuthor(`${msgObject.member.displayName}`, `${msgObject.author.avatarURL}`)
@@ -56,7 +55,7 @@ module.exports = class changelog extends Command {
       .addField(`:link: Link`, `[gunFIGHTS](https://www.roblox.com/games/5561650167/gunFIGHTS)`)
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
-    channel.send(Embed);
+    channel.send("@here", Embed);
     
     msgObject.reply(
       `Congrats 🙌! You have announced a server startup!`
