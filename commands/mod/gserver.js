@@ -101,7 +101,18 @@ module.exports = class getservercommand extends Command {
             msgObject.reply("Sorry 😣! There are currently no running servers!");
           });
           
-          msgObject.reply("Sorry 😣! I currently do not work!")
+          data.data.forEach(Data => {
+            if(Data.id == serverUser){
+              let embed = new Discord.RichEmbed() 
+              .setTitle(`Server ${Data.id}`)
+              
+              msgObject.reply("Found it :raised_hands:! You will find the list below!", embed)
+            } else {
+              msgObject.reply("Sorry :persevere:! This server does not exist!")
+            }
+          })
+          
+          
           
           
           
