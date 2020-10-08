@@ -57,7 +57,7 @@ module.exports = class getservercommand extends Command {
     if (!serverUser) {
       let embed = new Discord.RichEmbed()
         .setAuthor("")
-        .setTitle("Servers")
+        .setTitle("Active Servers")
         .setTimestamp();
       let Servers = 0;
       data.data.forEach(Data => {
@@ -101,10 +101,30 @@ module.exports = class getservercommand extends Command {
             msgObject.reply("Sorry 😣! There are currently no running servers!");
           });
           
+          let playerId 
+          
+          let playerData = await request({
+            uri: `http://api.roblox.com/users/${playerId}`,
+            json: true, 
+            simple: false
+          }).catch(err => {
+            msgObject.reply("Sorry 😣! There has been an error fetching information!")
+          })
+          
           data.data.forEach(Data => {
             if(Data.id == serverUser){
               let embed = new Discord.RichEmbed() 
-              .setTitle(`Server ${Data.id}`)
+              .setTitle(`Detailed Information`)
+              .setDescription(`Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`)
+              
+              Data.playerIds.forEach(player => {
+                playerId = player 
+                
+                console.log(playerId)
+                console.log(player)
+                
+                
+              })
               
               msgObject.reply("Found it :raised_hands:! You will find the list below!", embed)
             } else {
