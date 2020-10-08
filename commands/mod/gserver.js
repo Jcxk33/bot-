@@ -108,20 +108,26 @@ module.exports = class getservercommand extends Command {
               .setDescription(`Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`)
               
               Data.playerIds.forEach(player => {
-                let playerName = "playerName" 
-                let playerID = player
+                try {
+                  let playerName 
+                  let playerID = player 
+                  
+                  let playerData = request({
+                    uri: `http://api.roblox.com/users/${playerID}`,
+                    json: true,
+                    simple: false
+                  }).then(data => {
+                    console.log(data.Username)
+                    playerName = data.Username
+                  }).catch(err => {
+                    msgObject.reply("Sorry 😣! There has been an issue with obtaining information!")
+                  })
+                  
+                  embed.addField(`${playerName}`, `[Profile Link](https://www.roblox.com/users/${playerID})`)
+                } catch(err){
+                   msgObject.reply("Sorry 😣! There has been an issue with obtaining information!")
+                }
                 
-                let playerData = request({
-                  uri: `http://api.roblox.com/users/${playerID}`,
-                  json: true,
-                  simple: false
-                }).then(data => {
-                  playerName = `${data.`
-                }).catch(err => {
-                  msgObject.reply("Sorry 😣! There has been an issue with obtaining information!")
-                })              
-                
-                embed.addField(`${playerName}`, `[Profile Link](https://www.roblox.com/users/${playerID})`)
               })
               
               msgObject.reply("Found it :raised_hands:! You will find the list below!", embed)
