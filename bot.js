@@ -19,7 +19,7 @@ const request = require("request-promise");
 const path = require("path");
 const config = require(path.join(__dirname, "config", "config.json"));
 const client = new commando.CommandoClient({
-  owner: ["275000633847709696", "675794471065092161"],
+  owner: ["275000633847709696", "675794471065092161","242876771387572224"],
   commandPrefix: ";",
   unknownCommandResponse: true,
   selfbot: false,
