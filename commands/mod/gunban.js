@@ -40,7 +40,7 @@ module.exports = class gunban extends Command {
             } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
         return true;
       
-            } else if(msgObject.author == this.client.users.get("675794471065092161")){
+            } else if(msgObject.author == this.client.users.get("242876771387572224")){
       return true;
     }else if (msgObject.member.roles.find(role => role.name === " Bot Developer")) {
         return true;
