@@ -18,7 +18,7 @@ module.exports = class changelog extends Command {
         },
         {
           type: "string",
-          prompt: "What do you want to post ?",
+          prompt: "What do you want the content to be?",
           key: "content"
         }
       ]
@@ -39,7 +39,9 @@ module.exports = class changelog extends Command {
     return "Sorry 😣! You must be a Moderator or Admin!";
   }
   async run(msgObject, { title, content }) {
-    let embed = new Discord.RichEmbed().setTitle(title).setDescription(content);
+    let embed = new Discord.RichEmbed().setTitle(title).setDescription(content).setColor("RANDOM");
+    
+    msgObject.delete()
     
     msgObject.channel.send(embed)
   }
