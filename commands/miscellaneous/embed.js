@@ -4,17 +4,17 @@ const request = require("request-promise");
 module.exports = class changelog extends Command {
   constructor(client) {
     super(client, {
-      name: "ssu",
-      aliases: ["startup"],
+      name: "embed",
+      aliases: ["sayembed"],
       group: "miscellaneous",
-      memberName: "ssu",
-      description: "Posts a server startup to the #ssu channel",
+      memberName: "embed",
+      description: "Posts an embed with desired content",
       ownerOnly: true,
       args: [
         {
           type: "string",
-          prompt: "What do you want to post in an embed?",
-          key: "content"
+          prompt: "What is the notes?",
+          key: "notes"
         }
       ]
     });
