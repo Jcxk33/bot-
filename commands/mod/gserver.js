@@ -149,7 +149,7 @@ module.exports = class getservercommand extends Command {
                     `[Profile Link](https://www.roblox.com/users/${playerID})`,
                     true
                   );
-                }, 500);
+                }, 1000);
 
                 //   embed.addField(
                 //     `${playerName}`,
@@ -162,7 +162,7 @@ module.exports = class getservercommand extends Command {
                   "Found it :raised_hands:! More information below!",
                   embed
                 );
-              }, 1000);
+              }, 4000);
 
               // msgObject.reply(
               //   "Found it :raised_hands:! You will find the list below!",
