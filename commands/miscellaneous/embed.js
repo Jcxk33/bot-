@@ -13,6 +13,11 @@ module.exports = class changelog extends Command {
       args: [
         {
           type: "string",
+          prompt: "What channel do you want to send this in?",
+          key: "channel",
+        },
+        {
+          type: "string",
           prompt: "What do you want the title to be?",
           key: "title"
         },
@@ -43,8 +48,6 @@ module.exports = class changelog extends Command {
       .setTitle(title)
       .setDescription(content)
       .setColor("RANDOM");
-
-    msgObject.delete();
 
     msgObject.channel.send(embed);
   }
