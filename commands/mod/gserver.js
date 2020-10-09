@@ -109,12 +109,16 @@ module.exports = class getservercommand extends Command {
             );
           });
 
+          let editMessage = await msgObject.reply(
+            "Uhh :thinking:! Let me search for the info!"
+          );
+
           data.data.forEach(Data => {
             if (Data.id == serverUser) {
               let embed = new Discord.RichEmbed()
                 .setTitle(`Detailed Information`)
                 .setDescription(
-                  `Server ${Data.id} with ${Data.playing}/${Data.maxPlayers} players active!`
+                  `Server \`${Data.id}\` with ${Data.playing}/${Data.maxPlayers} players active!`
                 );
 
               Data.playerIds.forEach(player => {
@@ -145,7 +149,7 @@ module.exports = class getservercommand extends Command {
                     `[Profile Link](https://www.roblox.com/users/${playerID})`,
                     true
                   );
-                }, 350);
+                }, 500);
 
                 //   embed.addField(
                 //     `${playerName}`,
@@ -154,11 +158,11 @@ module.exports = class getservercommand extends Command {
               });
 
               setTimeout(() => {
-                msgObject.reply(
-                  "Found it :raised_hands:! You will find the list below!",
+                editMessage.edit(
+                  "Found it :raised_hands:! More information below!",
                   embed
                 );
-              }, 650);
+              }, 1000);
 
               // msgObject.reply(
               //   "Found it :raised_hands:! You will find the list below!",
