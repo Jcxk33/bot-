@@ -23,7 +23,6 @@ module.exports = class changelog extends Command {
     let channel = this.client.guilds
       .get("746921954803581008")
       .channels.find("id", "748410042046480475");
-    channel.send("@here");
     let Embed = new Discord.RichEmbed()
       .setColor("#00FFFF")
       .setTitle("Change Log")
