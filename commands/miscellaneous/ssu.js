@@ -13,8 +13,8 @@ module.exports = class changelog extends Command {
       args: [
         {
           type: "string",
-          prompt: "What do you want to post in an embed?",
-          key: "content"
+          prompt: "What are the notes for the ssu?",
+          key: "notes"
         }
       ]
     });

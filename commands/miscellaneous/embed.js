@@ -13,52 +13,34 @@ module.exports = class changelog extends Command {
       args: [
         {
           type: "string",
-          prompt: "What is the notes?",
-          key: "notes"
+          prompt: "What do you want the title to be?",
+          key: "title"
+        },
+        {
+          type: "string",
+          prompt: "What do you want to post ?",
+          key: "content"
         }
       ]
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("746921954803581008");
-    if (msgObject.guild.id == 746921954803581008) {
-            if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
-        return true;
-            
-      } else if(msgObject.author == this.client.users.get("242876771387572224")){
+    if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
       return true;
-    }else if (msgObject.member.roles.find(role => role.name === "Admin")) {
-        return true;
-      } else if(msgObject.member.roles.find(role => role.name == "Moderator")){
-        return true;
-            } else if(msgObject.member.roles.find(role => role.name == "Trainee Moderator")){
-        return true;
-      }
-      return "Sorry 😣! You must be a Moderator or Admin!";
-    } else {
-      return (
-        "Sorry :persevere:! You must use this command in the " +
-        MainServer.name +
-        "!"
-      );
+    } else if (
+      msgObject.author == this.client.users.get("242876771387572224")
+    ) {
+      return true;
+    } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      return true;
+    } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      return true;
     }
+    return "Sorry 😣! You must be a Moderator or Admin!";
   }
-  async run(msgObject, { notes }) {
-    let channel = this.client.guilds
-      .get("746921954803581008")
-      .channels.find("id", "759213217859239946");
-    let Embed = new Discord.RichEmbed()
-      .setColor("#e58049")
-      .setAuthor(`${msgObject.member.displayName}`, `${msgObject.author.avatarURL}`)
-      .setTitle(`Server Startup`)
-      .setDescription(`${msgObject.author} is conducting a server startup!`)
-      .addField(`:link: Link`, `[gunFIGHTS](https://www.roblox.com/games/5561650167/gunFIGHTS)`)
-      .addField(`:book: Notes`, `${notes}`)
-      .setTimestamp();
-    channel.send("@here", Embed);
+  async run(msgObject, { title, content }) {
+    let embed = new Discord.RichEmbed().setTitle(title).setDescription(content);
     
-    msgObject.reply(
-      `Congrats 🙌! You have announced a server startup!`
-    )
+    msgObject.channel.send(embed)
   }
 };
