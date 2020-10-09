@@ -39,10 +39,13 @@ module.exports = class changelog extends Command {
     return "Sorry 😣! You must be a Moderator or Admin!";
   }
   async run(msgObject, { title, content }) {
-    let embed = new Discord.RichEmbed().setTitle(title).setDescription(content).setColor("RANDOM");
-    
-    msgObject.delete()
-    
-    msgObject.channel.send(embed)
+    let embed = new Discord.RichEmbed()
+      .setTitle(title)
+      .setDescription(content)
+      .setColor("RANDOM");
+
+    msgObject.delete();
+
+    msgObject.channel.send(embed);
   }
 };
