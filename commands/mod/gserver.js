@@ -125,7 +125,6 @@ module.exports = class getservercommand extends Command {
                 editMessage.edit(
                   "Sorry 😣! The information is too large to upload!"
                 );
-                return;
               }
 
               Data.playerIds.forEach(player => {
