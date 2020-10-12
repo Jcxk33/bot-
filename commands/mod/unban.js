@@ -31,9 +31,7 @@ module.exports = class uban extends Command {
   hasPermission(msgObject) {
     if (msgObject.member.roles.cache.some(role => role.name === "Admin")) {
         return true;
-              } else if (msgObject.member.roles.cache.some(role => role.name === "Head Moderator")) {
-        return true;
-                } else if (msgObject.member.roles.cache.some(role => role.name === "Moderator")) {
+              } else if (msgObject.member.roles.cache.some(role => role.name === "Staff")) {
         return true;
     }
     return "Sorry :persevere:! You must be a Moderator!";

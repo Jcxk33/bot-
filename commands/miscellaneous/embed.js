@@ -36,11 +36,12 @@ module.exports = class changelog extends Command {
       msgObject.author == this.client.users.get("242876771387572224")
     ) {
       return true;
-    } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
-      return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
-      return true;
+    if (msgObject.member.roles.cache.some(role => role.name === "Admin")) {
+        return true;
+              } else if (msgObject.member.roles.cache.some(role => role.name === "Staff")) {
+        return true;
     }
+  }
     return "Sorry 😣! You must be a Moderator or Admin!";
   }
   async run(msgObject, { title, content }) {
