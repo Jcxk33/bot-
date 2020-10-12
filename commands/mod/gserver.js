@@ -148,9 +148,9 @@ module.exports = class getservercommand extends Command {
                       );
                     })
                     .catch(err => {
-                      // msgObject.reply(
-                      //   "Sorry 😣! There has been an issue with obtaining information!"
-                      // );
+                      msgObject.reply(
+                        "Sorry 😣! There has been an issue with obtaining information!"
+                      );
                     });
                 }
 
