@@ -125,6 +125,7 @@ module.exports = class getservercommand extends Command {
                 editMessage.edit(
                   "Sorry 😣! The information is too large to upload!"
                 );
+                return
               }
 
               Data.playerIds.forEach(player => {
@@ -139,23 +140,29 @@ module.exports = class getservercommand extends Command {
                   })
                     .then(data => {
                       playerName = data.Username;
+
+                      embed.addField(
+                        `${playerName}`,
+                        `[Profile Link](https://www.roblox.com/users/${playerID})`,
+                        true
+                      );
                     })
                     .catch(err => {
-                      msgObject.reply(
-                        "Sorry 😣! There has been an issue with obtaining information!"
-                      );
+                      // msgObject.reply(
+                      //   "Sorry 😣! There has been an issue with obtaining information!"
+                      // );
                     });
                 }
 
                 fetchData();
 
-                setTimeout(() => {
-                  embed.addField(
-                    `${playerName}`,
-                    `[Profile Link](https://www.roblox.com/users/${playerID})`,
-                    true
-                  );
-                }, 1000);
+                // setTimeout(() => {
+                //   embed.addField(
+                //     `${playerName}`,
+                //     `[Profile Link](https://www.roblox.com/users/${playerID})`,
+                //     true
+                //   );
+                // }, 1000);
 
                 //   embed.addField(
                 //     `${playerName}`,
