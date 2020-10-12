@@ -34,7 +34,7 @@ module.exports = class changelog extends Command {
         return true;
     }
   }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a Staff Member!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +

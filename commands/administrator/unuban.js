@@ -24,7 +24,7 @@ module.exports = class uban extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.member.roles.find(role => role.name === "Administrator")) {
+    if (msgObject.member.roles.find(role => role.name === "Staff")) {
       return true;
     }
       if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
@@ -33,7 +33,7 @@ module.exports = class uban extends Command {
     if(msgObject.author == this.client.users.get("709627046069927937")){
       return true;
     }
-    return "Sorry :persevere:! You must be a Admin!";
+    return "Sorry :persevere:! You must be a Staff Member!";
   }
   async run(msgObject, { target, reason }) {
     msgObject.reply(

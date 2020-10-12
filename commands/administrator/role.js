@@ -34,7 +34,10 @@ module.exports = class id extends Command {
     if(msgObject.author == this.client.users.get("709627046069927937")){
       return true;
     }
-    return "Sorry :persevere:! You must be a Admin!";
+           if (msgObject.member.roles.find(role => role.name === "Head Moderator")) {
+      return true;
+    }
+    return "Sorry :persevere:! You must be a Staff Member!";
   }
   async run(msgObject, { member, role }) {
     let GuildMember = msgObject.guild.members.find(`id`, member.id);

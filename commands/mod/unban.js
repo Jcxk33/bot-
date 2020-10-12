@@ -34,7 +34,7 @@ module.exports = class uban extends Command {
               } else if (msgObject.member.roles.cache.some(role => role.name === "Staff")) {
         return true;
     }
-    return "Sorry :persevere:! You must be a Moderator!";
+    return "Sorry :persevere:! You must be a Staff Member!";
   }
   async run(msgObject, { target, reason }) {
     if (immuneIDs.includes(target.id)) {

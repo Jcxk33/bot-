@@ -42,7 +42,7 @@ module.exports = class changelog extends Command {
         return true;
     }
   }
-    return "Sorry 😣! You must be a Moderator or Admin!";
+    return "Sorry 😣! You must be a Staff Member!";
   }
   async run(msgObject, { title, content }) {
     let embed = new Discord.RichEmbed()
