@@ -22,18 +22,20 @@ module.exports = class changelog extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("746921954803581008");
     if (msgObject.guild.id == 746921954803581008) {
-    if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
-      return true;
-    } else if (
-      msgObject.author == this.client.users.get("242876771387572224")
-    ) {
-      return true;
-    if (msgObject.member.roles.cache.some(role => role.name === "Admin")) {
+      if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
-              } else if (msgObject.member.roles.cache.some(role => role.name === "Staff")) {
+      } else if (
+        msgObject.author == this.client.users.get("242876771387572224")
+      ) {
         return true;
-    }
-  }
+        if (msgObject.member.roles.cache.some(role => role.name === "Admin")) {
+          return true;
+        } else if (
+          msgObject.member.roles.cache.some(role => role.name === "Staff")
+        ) {
+          return true;
+        }
+      }
       return "Sorry 😣! You must be a Staff Member!";
     } else {
       return (
@@ -49,16 +51,20 @@ module.exports = class changelog extends Command {
       .channels.find("id", "759213217859239946");
     let Embed = new Discord.RichEmbed()
       .setColor("#e58049")
-      .setAuthor(`${msgObject.member.displayName}`, `${msgObject.author.avatarURL}`)
+      .setAuthor(
+        `${msgObject.member.displayName}`,
+        `${msgObject.author.avatarURL}`
+      )
       .setTitle(`Server Startup`)
       .setDescription(`${msgObject.author} is conducting a server startup!`)
-      .addField(`:link: Link`, `[gunFIGHTS](https://www.roblox.com/games/5561650167/gunFIGHTS)`)
+      .addField(
+        `:link: Link`,
+        `[gunFIGHTS](https://www.roblox.com/games/5561650167/gunFIGHTS)`
+      )
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
     channel.send("@here", Embed);
-    
-    msgObject.reply(
-      `Congrats 🙌! You have announced a server startup!`
-    )
+
+    msgObject.reply(`Congrats 🙌! You have announced a server startup!`);
   }
 };

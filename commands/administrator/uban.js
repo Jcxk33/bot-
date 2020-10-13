@@ -28,7 +28,7 @@ module.exports = class uban extends Command {
             } else if (msgObject.member.roles.find(role => role.name === "Staff")) {
         return true;
       
-            } else if(msgObject.author == this.client.users.get("709627046069927937")){
+            } else if(msgObject.author == this.client.users.get("242876771387572224")){
       return true;
     }else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
         return true;
