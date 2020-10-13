@@ -32,17 +32,13 @@ module.exports = class gunban extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("719627673839861830");
     if (msgObject.guild.id == 719627673839861830) {
-       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+      if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      } else if (
+        msgObject.author == this.client.users.get("242876771387572224")
+      ) {
         return true;
-      
-            } else if (msgObject.member.roles.find(role => role.name === "Junior Moderator")) {
-        return true;
-      
-            } else if(msgObject.author == this.client.users.get("242876771387572224")){
-      return true;
-    }else if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
       }
       return "Sorry 😣! You must be a Staff Member!";

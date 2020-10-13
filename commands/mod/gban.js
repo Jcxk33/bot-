@@ -33,7 +33,7 @@ module.exports = class gban extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("746921954803581008");
     if (msgObject.guild.id == 746921954803581008) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("242876771387572224")
