@@ -22,19 +22,14 @@ module.exports = class changelog extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("746921954803581008");
     if (msgObject.guild.id == 746921954803581008) {
-      if (msgObject.member.roles.find(role => role.name === "Bot Developer")) {
+      if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("242876771387572224")
       ) {
         return true;
-        if (msgObject.member.roles.cache.some(role => role.name === "Admin")) {
-          return true;
-        } else if (
-          msgObject.member.roles.cache.some(role => role.name === "Staff")
-        ) {
-          return true;
-        }
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+        return true;
       }
       return "Sorry 😣! You must be a Staff Member!";
     } else {

@@ -33,12 +33,13 @@ module.exports = class gban extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("746921954803581008");
     if (msgObject.guild.id == 746921954803581008) {
-            if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
-            
-      } else if(msgObject.author == this.client.users.get("242876771387572224")){
-      return true;
-      } else if(msgObject.member.roles.find(role => role.name == "Staff")){
+      } else if (
+        msgObject.author == this.client.users.get("242876771387572224")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
       }
       return "Sorry 😣! You must be a Staff Member!";
@@ -73,26 +74,28 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
-      const webhook = new Discord.WebhookClient("748267360862863423", "t7dfEfkoP8bUScbGJF99kBLJyhn8CqASwINL8_QgJ-cOQ7xW1IQQJt7FVSfekNlpnNMp")
+      const webhook = new Discord.WebhookClient(
+        "748267360862863423",
+        "t7dfEfkoP8bUScbGJF99kBLJyhn8CqASwINL8_QgJ-cOQ7xW1IQQJt7FVSfekNlpnNMp"
+      );
       webhook.send("", {
-        "embeds": [{
-          "author": {
-            "name": `${authorData.robloxUsername}`,
-          },
-          "title": `Banned ${data.Username}`,
-          "description": `"${reason}"`
-        }]
-      })
+        embeds: [
+          {
+            author: {
+              name: `${authorData.robloxUsername}`
+            },
+            title: `Banned ${data.Username}`,
+            description: `"${reason}"`
+          }
+        ]
+      });
 
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-            editMessage.edit(
-        `Wowzers, Your command has been executed in-game`
-      );
+      editMessage.edit(`Wowzers, Your command has been executed in-game`);
 
-
-trello.addCard(
+      trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
         ""
