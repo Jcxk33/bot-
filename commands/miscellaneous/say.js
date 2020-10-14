@@ -38,7 +38,6 @@ module.exports = class changelog extends Command {
   async run(msgObject, { channel, content }) {
     try {
       msgObject.guild.channels.find("name", channel).send(content)
-      msgObject.reply(`Done :raised_hands:! Your message has been posted in #${channel}`)
     } catch(error){
       msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
     }
