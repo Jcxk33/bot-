@@ -41,12 +41,17 @@ module.exports = class changelog extends Command {
       }
     return "Sorry 😣! You must be a Staff Member!";
   }
-  async run(msgObject, { title, content }) {
+  async run(msgObject, { channel, title, content }) {
     let embed = new Discord.RichEmbed()
       .setTitle(title)
       .setDescription(content)
       .setColor("RANDOM");
 
-    msgObject.channel.send(embed);
+    try {
+      msgObject.guild.channels.find("name", channel).send(embed)
+      msgObject.reply(`Done :raised_hands:! Your message has been posted in #${channel}`)
+    } catch(error){
+      msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
+    }
   }
 };

@@ -12,6 +12,11 @@ module.exports = class changelog extends Command {
       args: [
         {
           type: "string",
+          prompt: "What channel do you want to send it in? (channel name like `general` not `#general`)",
+          key: "channel"
+        },
+        {
+          type: "string",
           prompt: "What do you want the content to be?",
           key: "content"
         }
@@ -30,8 +35,12 @@ module.exports = class changelog extends Command {
       }
     return "Sorry 😣! You must be a Staff Member!";
   }
-  async run(msgObject, { content }) {
-
-    msgObject.channel.send(content);
+  async run(msgObject, { channel, content }) {
+    try {
+      msgObject.guild.channels.find("name", channel).send(content)
+      msgObject.reply(`Done :raised_hands:! Your message has been posted in #${channel}`)
+    } catch(error){
+      msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
+    }
   }
 };
