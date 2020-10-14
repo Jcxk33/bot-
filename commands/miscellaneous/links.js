@@ -10,9 +10,24 @@ module.exports = class links extends Command {
       guildOnly: false
     });
   }
-  async run(msgObject, { }) {
-    const embed = new Discord.RichEmbed() 
-    .setTitle("Informational Links")
-    .setDescription("Th")
+  async run(msgObject, {}) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("Informational Links")
+      .setDescription(
+        "The following will provide a list of all current links relating to gunFIGHTS"
+      )
+      .addField("Discord", "[Discord Link](https://discord.gg/ev7cUN5)", true)
+      .addField(
+        "Group",
+        "[Roblox Link](https://www.roblox.com/my/groups)",
+        true
+      )
+      .addField(
+        "Game",
+        "[Roblox Link](https://www.roblox.com/games/5561650167/gunFIGHTS)",
+        true
+      );
+
+    msgObject.reply(embed);
   }
 };
