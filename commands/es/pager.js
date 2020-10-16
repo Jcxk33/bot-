@@ -26,7 +26,7 @@ module.exports = class pager extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.channel.id == 761080927694094336) {
+      if (msgObject.channel.id == 760949227832082442) {
       return true;
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
@@ -51,8 +51,8 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("753560739935158312");
-          let channel = mainserver.channels.find("id", "761080927694094336");
+          const mainserver = msgObject.client.guilds.get("746921954803581008");
+          let channel = mainserver.channels.find("id", "766565513261481984");
           channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
@@ -60,7 +60,7 @@ module.exports = class pager extends Command {
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/4553950954/)`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5561650167/)`
               )
               .setTimestamp()
               .setColor("RED");
@@ -75,7 +75,7 @@ module.exports = class pager extends Command {
               });
               newPAGER.save();
               msgObject.reply(
-                "Cheers, that's been added to <#713095004301819929>!"
+                "Cheers, that's been added to <#766565513261481984>!"
               );
             });
           });
