@@ -19,7 +19,7 @@ module.exports = class dpager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 766565513261481984) {
+    if (msgObject.channel.id == 760949227832082442) {
       return true;
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
