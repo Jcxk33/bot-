@@ -26,6 +26,11 @@ module.exports = class links extends Command {
         "Game",
         "[Roblox Link](https://www.roblox.com/games/5561650167/gunFIGHTS)",
         true
+      )
+         .addField(
+        "RoVer Website",
+        "[RoVer Website](https://rover.link)",
+        true
       );
 
     msgObject.reply(embed);
