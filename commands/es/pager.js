@@ -34,7 +34,7 @@ module.exports = class pager extends Command {
   }
   async run(msgObject, { reason }) {
     mongoose.connect(
-      "mongodb+srv://NotCINDERS:Blackie3323@cluster0.aeqnw.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
+      "mongodb+srv://NotCINDERS:Blackie3323@gunfights.sgjjq.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true
