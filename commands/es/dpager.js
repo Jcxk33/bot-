@@ -19,7 +19,7 @@ module.exports = class dpager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 760949227832082442) {
+    if (msgObject.channel.id == 766565513261481984) {
       return true;
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
@@ -28,9 +28,10 @@ module.exports = class dpager extends Command {
   async run(msgObject, { pager }) {
     if (msgObject.channel.id == 766565513261481984) {
       mongoose.connect(
-        "mongodb+srv://mayflow:Be4K2HqWgI8BGyEv@mayflowdata-dtfz1.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
+        "mongodb+srv://NotCINDERS:Blackie3323@cluster0.aeqnw.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
-          useNewUrlParser: true
+          useNewUrlParser: true,
+          useUnifiedTopology: true
         }
       );
       pagerSchema.findOne(

@@ -29,16 +29,18 @@ module.exports = class pager extends Command {
       if (msgObject.channel.id == 760949227832082442) {
       return true;
     } else {
-      return "Sorry :persevere:! You must use this in #es-general!";
+      return "Sorry :persevere:! You must use this in #mod-chat!";
     }
   }
   async run(msgObject, { reason }) {
     mongoose.connect(
-      "mongodb+srv://NotCINDERS:Blackie3323@cluster0.gmzdy.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
+      "mongodb+srv://NotCINDERS:Blackie3323@cluster0.aeqnw.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
       {
-        useNewUrlParser: true, useUnifiedTopology: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
       }
     );
+
     let authorData = await request({
       uri: `https://verify.eryn.io/api/user/${msgObject.author.id}`,
       json: true,
@@ -60,7 +62,7 @@ module.exports = class pager extends Command {
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5561650167/)`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5697456957/letiVERSITY#!/game-instances/)`
               )
               .setTimestamp()
               .setColor("RED");
