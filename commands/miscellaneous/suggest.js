@@ -5,10 +5,10 @@ module.exports = class changelog extends Command {
   constructor(client) {
     super(client, {
       name: "suggest",
-      aliases: ["cl"],
+      aliases: ["sg"],
       group: "miscellaneous",
-      memberName: "changelog",
-      description: "Suggests a",
+      memberName: "suggest",
+      description: "Suggests something to be added into the game",
       ownerOnly: true,
       args: [
         {
@@ -19,15 +19,32 @@ module.exports = class changelog extends Command {
       ]
     });
   }
+  hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Owner")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Verified")) {
+        return true;
+      }
+    return "Sorry 😣! You must be a Staff Member!";
+  }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("746921954803581008")
-      .channels.find("id", "748410042046480475");
+      .channels.find("id", "763212903616217129");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Change Log")
+      .setTitle("Game Suggestion")
       .setDescription(description)
+      .setAuthor(
+        `${msgObject.member.displayName}`,
+        `${msgObject.author.avatarURL}`
+      )
       .setTimestamp();
+    channel.send("<@752658669316997210>")
     channel.send(Embed);
   }
 };
