@@ -3,9 +3,9 @@ const { Command } = require("discord.js-commando");
 module.exports = class uban extends Command {
   constructor(client) {
     super(client, {
-      name: "uban",
+      name: "ban",
       group: "administrator",
-      memberName: "uban",
+      memberName: "ban",
       description: "Bans a user from all Discords",
       guildOnly: true,
       args: [

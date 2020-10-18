@@ -29,7 +29,7 @@ module.exports = class changelog extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Verified")) {
         return true;
       }
-    return "Sorry 😣! You must be a Staff Member!";
+    return "Sorry 😣! You must be Verified!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
@@ -44,7 +44,6 @@ module.exports = class changelog extends Command {
         `${msgObject.author.avatarURL}`
       )
       .setTimestamp();
-    channel.send("<@752658669316997210>")
-    channel.send(Embed);
+      channel.send("@Developer ", Embed);
   }
 };
