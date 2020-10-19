@@ -10,6 +10,10 @@ module.exports = class changelog extends Command {
       memberName: "embed",
       description: "Posts an embed with desired content",
       ownerOnly: true,
+                  throtting: {
+        usages: 1,
+        duration: 15
+            },
       args: [
         {
           type: "string",
@@ -33,7 +37,7 @@ module.exports = class changelog extends Command {
       if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
