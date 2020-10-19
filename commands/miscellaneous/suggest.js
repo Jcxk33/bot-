@@ -10,9 +10,9 @@ module.exports = class suggest extends Command {
       memberName: "suggest",
       description: "Suggests something to be added into the game",
       ownerOnly: true,
-       throttling: {
-        usages: 1,
-        duration: 40
+ throttling: {
+        usages: 2,
+        duration: 10
     },
       args: [
         {
@@ -37,8 +37,8 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("746921954803581008")
-      .channels.find("id", "763212903616217129");
+      .get("760707893027667979")
+      .channels.find("id", "760707893027667982");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("Game Suggestion")

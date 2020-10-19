@@ -9,6 +9,10 @@ module.exports = class avatar extends Command {
       group: "miscellaneous",
       memberName: "avatar",
       description: "Gets a user's avatar",
+             throttling: {
+        usages: 1,
+        duration: 60
+    },
       args: [
         {
           type: "user",
