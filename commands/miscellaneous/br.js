@@ -4,11 +4,11 @@ const request = require("request-promise");
 module.exports = class suggest extends Command {
   constructor(client) {
     super(client, {
-      name: "suggest",
-      aliases: ["sg"],
+      name: "br",
+      aliases: ["bugreport"],
       group: "miscellaneous",
-      memberName: "suggest",
-      description: "Suggests something to be added into the game",
+      memberName: "br",
+      description: "Reports a bug to the developer",
       ownerOnly: true,
       args: [
         {
@@ -34,16 +34,16 @@ module.exports = class suggest extends Command {
   async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("746921954803581008")
-      .channels.find("id", "763212903616217129");
+      .channels.find("id", "765087980833734686");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Game Suggestion")
+      .setTitle("Bug Report")
       .setDescription(description)
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setTimestamp();
-      channel.send("a", Embed);
+      channel.send("@752658669316997210", Embed);
   }
 };
