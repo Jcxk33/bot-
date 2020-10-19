@@ -10,6 +10,10 @@ module.exports = class suggest extends Command {
       memberName: "suggest",
       description: "Suggests something to be added into the game",
       ownerOnly: true,
+       throttling: {
+        usages: 1,
+        duration: 40
+    },
       args: [
         {
           type: "string",

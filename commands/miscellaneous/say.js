@@ -9,6 +9,10 @@ module.exports = class changelog extends Command {
       memberName: "say",
       description: "Posts a raw message",
       ownerOnly: true,
+ throttling: {
+        usages: 1,
+        duration: 10
+    },
       args: [
         {
           type: "string",

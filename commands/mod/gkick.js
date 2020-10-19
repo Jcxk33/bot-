@@ -14,6 +14,10 @@ module.exports = class gkick extends Command {
       group: "mod",
       memberName: "gkick",
       description: "Kicks a user from the game",
+       throttling: {
+        usages: 1,
+        duration: 10
+    },
       guildOnly: true,
       args: [
         {

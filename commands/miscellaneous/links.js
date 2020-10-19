@@ -7,6 +7,10 @@ module.exports = class links extends Command {
       group: "miscellaneous",
       memberName: "links",
       description: "Provides informational links",
+       throttling: {
+        usages: 1,
+        duration: 10
+    },
       guildOnly: false
     });
   }
