@@ -10,10 +10,6 @@ module.exports = class changelog extends Command {
       memberName: "ssu",
       description: "Posts a server startup to the #ssu channel",
       ownerOnly: true,
-       throttling: {
-        usages: 1,
-        duration: 300
-    },
       args: [
         {
           type: "string",

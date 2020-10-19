@@ -15,10 +15,6 @@ module.exports = class gban extends Command {
       memberName: "gban",
       description: "Bans a user from the game",
       guildOnly: true,
-       throttling: {
-        usages: 1,
-        duration: 10
-    },
       args: [
         {
           type: "string",

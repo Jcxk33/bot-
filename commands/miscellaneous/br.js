@@ -10,10 +10,6 @@ module.exports = class suggest extends Command {
       memberName: "br",
       description: "Reports a bug to the developer",
       ownerOnly: true,
-       throttling: {
-        usages: 1,
-        duration: 60
-    },
       args: [
         {
           type: "string",
