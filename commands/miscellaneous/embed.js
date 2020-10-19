@@ -37,7 +37,7 @@ module.exports = class changelog extends Command {
       if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
