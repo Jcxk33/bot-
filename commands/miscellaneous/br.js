@@ -44,6 +44,6 @@ module.exports = class suggest extends Command {
         `${msgObject.author.avatarURL}`
       )
       .setTimestamp();
-      channel.send("@752658669316997210", Embed);
+      channel.send("", Embed);
   }
 };
