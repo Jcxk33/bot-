@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const request = require("request-promise");
-module.exports = class changelog extends Command {
+module.exports = class suggest extends Command {
   constructor(client) {
     super(client, {
       name: "suggest",
