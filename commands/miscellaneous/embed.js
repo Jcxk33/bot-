@@ -10,10 +10,10 @@ module.exports = class changelog extends Command {
       memberName: "embed",
       description: "Posts an embed with desired content",
       ownerOnly: true,
- throttling: {
+                  throttling: {
         usages: 2,
         duration: 10
-    },
+      },
       args: [
         {
           type: "string",
