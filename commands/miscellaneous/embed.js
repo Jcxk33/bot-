@@ -11,7 +11,7 @@ module.exports = class changelog extends Command {
       description: "Posts an embed with desired content",
       guildOnly: true,
                   throttling: {
-        usages: 1,
+        usages: 2,
         duration: 10
       },
       args: [
