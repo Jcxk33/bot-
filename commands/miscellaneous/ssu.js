@@ -20,8 +20,8 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("746921954803581008");
-    if (msgObject.guild.id == 746921954803581008) {
+    const MainServer = msgObject.client.guilds.get("768020388348166145");
+    if (msgObject.guild.id == 768020388348166145) {
       if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (
@@ -42,8 +42,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("746921954803581008")
-      .channels.find("id", "759213217859239946");
+      .get("768020388348166145")
+      .channels.find("id", "768020388823171075");
     let Embed = new Discord.RichEmbed()
       .setColor("#e58049")
       .setAuthor(
