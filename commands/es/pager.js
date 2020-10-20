@@ -1,93 +1,57 @@
 const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const request = require("request-promise");
-const mongoose = require("mongoose");
-const path = require("path");
-const pagerSchema = require(path.join(
-  __dirname + "/../../models",
-  "pagersch.js"
-));
-
-module.exports = class pager extends Command {
+module.exports = class suggest extends Command {
   constructor(client) {
     super(client, {
       name: "pager",
-      group: "es",
+      aliases: ["pg"],
+      group: "miscellaneous",
       memberName: "pager",
-      description: "Sends an alert to the pager.",
-      guildOnly: true,
+      description: "Creates a Pager",
+      ownerOnly: true,
       args: [
         {
           type: "string",
-          prompt: "What is the reason for the pager?",
-          key: "reason"
+          prompt: "What is the Description?",
+          key: "description"
         }
       ]
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.channel.id == 760949227832082442) {
-      return true;
-    } else {
-      return "Sorry :persevere:! You must use this in #mod-chat!";
-    }
+      if (msgObject.member.roles.find(role => role.name === "LPD")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+        return true;
+            } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+        return true;
+                } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
+        return true;
+                    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+                          } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+        return true;
+      }
+    return "Sorry 😣! You must be Verified!";
   }
-  async run(msgObject, { reason }) {
-    mongoose.connect(
-      "mongodb+srv://NotCINDERS:Blackie3323@gunfights.sgjjq.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }
-    );
-
-    let authorData = await request({
-      uri: `https://verify.eryn.io/api/user/${msgObject.author.id}`,
-      json: true,
-      simple: false
-    });
-
-    pagerSchema.findOne(
-      {
-        pagerplayer: msgObject.author.id
-      },
-      (err, pg) => {
-        if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("746921954803581008");
-          let channel = mainserver.channels.find("id", "766565513261481984");
-          channel.send("@here").then(PM => {
-            let embed = new Discord.RichEmbed()
-              .setAuthor(msgObject.member.displayName)
-              .setTitle("New Pager!")
-              .setDescription(reason)
-              .addField(
-                "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5697456957/letiVERSITY#!/game-instances/)`
-              )
-              .setTimestamp()
-              .setColor("RED");
-            channel.send(embed).then(m => {
-              m.react("✅");
-              const newPAGER = new pagerSchema({
-                _id: mongoose.Types.ObjectId(),
-                pagerplayer: msgObject.author.id,
-                pagerid: m.id,
-                pagertagid: PM.id,
-                secondarypagerid: ""
-              });
-              newPAGER.save();
-              msgObject.reply(
-                "Cheers, that's been added to <#766565513261481984>!"
-              );
-            });
-          });
-        } else {
-          msgObject.reply(
-            "Sorry :persevere:! You already have an active pager."
-          );
-          return;
-        }
-      }
-    );
+  async run(msgObject, { description }) {
+    let channel = this.client.guilds
+      .get("760707893027667979")
+      .channels.find("id", "740496274175819777");
+    let Embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Game Suggestion")
+      .setDescription(description)
+      .setAuthor(
+        `${msgObject.member.displayName}`,
+        `${msgObject.author.avatarURL}`
+      )
+      .setTimestamp();
+      channel.send("a", Embed);
   }
 };
