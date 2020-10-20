@@ -9,7 +9,7 @@ module.exports = class changelog extends Command {
       group: "miscellaneous",
       memberName: "embed",
       description: "Posts an embed with desired content",
-      ownerOnly: true,
+      guildOnly: true,
                   throttling: {
         usages: 2,
         duration: 10
@@ -34,6 +34,7 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
+        const mainserver = msgObject.client.guilds.get("706999196124840009");
       if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (

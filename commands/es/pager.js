@@ -37,21 +37,21 @@ module.exports = class suggest extends Command {
                           } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-    return "Sorry 😣! You must be Verified!";
+    return "Sorry 😣! You must be ES!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("760707893027667979")
+      .get("706999196124840009")
       .channels.find("id", "740496274175819777");
     let Embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle("Game Suggestion")
+      .setColor("")
+      .setTitle("Pager!")
       .setDescription(description)
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setTimestamp();
-      channel.send("a", Embed);
+      channel.send("@her", Embed);
   }
 };
