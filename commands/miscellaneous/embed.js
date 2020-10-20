@@ -11,7 +11,7 @@ module.exports = class changelog extends Command {
       description: "Posts an embed with desired content",
       guildOnly: true,
                   throttling: {
-        usages: 2,
+        usages: 1,
         duration: 10
       },
       args: [
@@ -35,13 +35,13 @@ module.exports = class changelog extends Command {
   }
   hasPermission(msgObject) {
         const mainserver = msgObject.client.guilds.get("706999196124840009");
-      if (msgObject.member.roles.find(role => role.name === "Bots")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
     return "Sorry 😣! You must be a Staff Member!";
