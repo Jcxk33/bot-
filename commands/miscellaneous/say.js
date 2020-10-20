@@ -8,7 +8,7 @@ module.exports = class changelog extends Command {
       group: "miscellaneous",
       memberName: "say",
       description: "Posts a raw message",
-      ownerOnly: true,
+      oguildOnly: true,
       args: [
         {
           type: "string",
@@ -24,6 +24,7 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
+    const mainserver = msgObject.client.guilds.get("706999196124840009");
       if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (

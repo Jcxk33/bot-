@@ -20,8 +20,8 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("768020388348166145");
-    if (msgObject.guild.id == 768020388348166145) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
@@ -42,10 +42,10 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("768020388348166145")
-      .channels.find("id", "768020388823171075");
+      .get("706999196124840009")
+      .channels.find("id", "763539950360592414");
     let Embed = new Discord.RichEmbed()
-      .setColor("#e58049")
+      .setColor("RANDOM")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
@@ -54,7 +54,7 @@ module.exports = class changelog extends Command {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[gunFIGHTS](https://www.roblox.com/games/5561650167/gunFIGHTS)`
+        `[Mayflower Remade](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)`
       )
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
