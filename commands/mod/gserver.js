@@ -24,13 +24,13 @@ module.exports = class getservercommand extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("746921954803581008");
     if (msgObject.guild.id == 746921954803581008) {
-      if (msgObject.member.roles.find(role => role.name === "Bots")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("242876771387572224")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
       return "Sorry 😣! You must be a Staff Member!";
