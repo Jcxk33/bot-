@@ -28,7 +28,7 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "Moderating Tyzar| ;help all" },
+    game: { name: "Moderating Tyzar | ;help all" },
     status: "Invisible"
   });
 });
