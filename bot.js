@@ -19,7 +19,7 @@ const request = require("request-promise");
 const path = require("path");
 const config = require(path.join(__dirname, "config", "config.json"));
 const client = new commando.CommandoClient({
-  owner: ["275000633847709696", "675794471065092161"],
+  owner: ["669518615199875082", "675794471065092161"],
   commandPrefix: ";",
   unknownCommandResponse: true,
   selfbot: false,
@@ -28,7 +28,7 @@ const client = new commando.CommandoClient({
 
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "Moderating Tyzar | ;help all" },
+    game: { name: "Playing with Cleo" },
     status: "Invisible"
   });
 });
