@@ -53,7 +53,7 @@ module.exports = class changelog extends Command {
       .setColor("RANDOM");
 
     try {
-      msgObject.guild.channels.find("name", channel).send(embed)
+      msgObject.guild.channels.find(x => x.name === "channel").send(embed)
     } catch(error){
       msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
     }
