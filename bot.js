@@ -10,7 +10,7 @@ const listener = server.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
 setInterval(() => {
-  http.get(`mayflow-bot-daddy`);
+  http.get(`cute-selective-meteorology`);
 }, 280000);
 
 const Discord = require("discord.js");
