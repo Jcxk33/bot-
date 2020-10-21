@@ -41,7 +41,7 @@ module.exports = class changelog extends Command {
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Bots")) {
         return true;
       }
     return "Sorry 😣! You must be a Staff Member!";
