@@ -29,7 +29,7 @@ const client = new commando.CommandoClient({
 client.once("ready", () => {
   client.user.setPresence({
     game: { name: "Playing with Cleo" },
-    status: "Invisible"
+    status: "Invisible" 
   });
 });
 
