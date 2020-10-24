@@ -35,15 +35,10 @@ module.exports = class gban extends Command {
     if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
-      } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
-      ) {
-        return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
-      }
       return "Sorry 😣! You must be a Mayflower Moderator or Admin!";
-    } else {
+    } else 
       return (
         "Sorry :persevere:! You must use this command in the " +
         MainServer.name +

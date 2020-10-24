@@ -30,9 +30,9 @@ client.once("ready", () => {
 // Registrys
 client.registry
   .registerGroups([
-    ["mod", "Moderation commands"],
-    ["miscellaneous", "Miscellaneous commands"],
-    ["administrator", "Administrator commands"],
+    ["mod", "Moderation Commands"],
+    ["miscellaneous", "Miscellaneous Commands"],
+    ["administrator", "Administrator Commands"],
     ["es", "ES commands"],
   ])
   .registerDefaults()

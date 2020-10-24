@@ -23,11 +23,7 @@ module.exports = class uban extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Bots")) {
-        return true;
-      } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
-      ) {
+      if (msgObject.member.roles.find(role => role.name === "Bot")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
@@ -36,7 +32,7 @@ module.exports = class uban extends Command {
   }
   async run(msgObject, { argUser, reason }) {
     
-    if(argUser.id == 11) {
+    if(argUser.id == 329719053168148481) {
       msgObject.reply(
         "Okay, this is a very dangerous situation. This action shall be done with no approval."
       );
