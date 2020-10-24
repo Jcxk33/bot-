@@ -41,7 +41,7 @@ module.exports = class gkick extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry 😣! You must be a Mayflower Moderator or Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
