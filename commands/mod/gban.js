@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b3e86d17c55b6dc170e3e426e4e1a491",
-  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
+  "c9e52d011d3d704bd452fced273f2d43",
+  "f5d12ed1404cc5d144690ea480a1a640e879dd3cd79ff5801db849d6df0092cc"
 );
 
 module.exports = class gban extends Command {
