@@ -12,7 +12,7 @@ module.exports = class id extends Command {
       args: [
         {
           type: "string",
-          prompt: "What is the Roblox username?",
+          prompt: "What is the Roblox/Discord username/ID?",
           key: "username"
         }
       ]
@@ -35,23 +35,36 @@ module.exports = class id extends Command {
     }
   }
   async run(msgObject, { username, reason }) {
-    let target = await request({
-      uri: `https://api.roblox.com/users/get-by-username?username=${username}`,
+      let target = await request({
+      uri: `https://verify.eryn.io/api/user/${username}`,
       json: true,
       simple: false
     });
+    
+
     let msg = await msgObject.reply(
       `Coolio!! Let's get on with this and get \`${
         /*target.Username*/ username
       }\`Info`
     );
-    
-
            
     if (target.errorMessage) {
       return msg.edit("Sorry 😣! You haven't entered a valid Roblox username!");
-    } else {
-      msg.edit(`Wowzers, We got the information on ${target.Username}!`)
+      } else {
+        msg.channel.send(`Wow we found a discord account linked to a roblox account! Discord User: <@${username}`)
+                     const newem = new Discord.RichEmbed()
+    .setAuthor(msgObject.member.displayName)
+    .setTitle(`${target.Username}'s Information!`)
+    .addField(
+    "Profile Link",
+    `[Roblox Profile](https://www.roblox.com/users/${target2.robloxId}/profile)`
+    )
+    .addField(
+    "ID",
+    `${target.Id}`)
+    .setTimestamp()
+    .setColor("RED");
+    msg.channel.send(newem)
+      }
     }
-  }
-};
+  };
