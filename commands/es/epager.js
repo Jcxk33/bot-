@@ -36,6 +36,14 @@ key: "edited"
   }
   async run(msgObject, { pager, edited }) {
     if (msgObject.channel.id == 746255037931454485) {
+      mongoose.connect(
+        "mongodb+srv://Azflakes:leodoj667>@testingroblox.4ykci.mongodb.net/<dbname>?retryWrites=true&w=majority",
+        {
+          useNewUrlParser: true,
+          useUnifiedTopology: true
+        }
+      );
+
 let newembed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
               .setTitle("New Pager!")

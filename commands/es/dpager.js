@@ -28,7 +28,7 @@ module.exports = class dpager extends Command {
   async run(msgObject, { pager }) {
     if (msgObject.channel.id == 746255037931454485) {
       mongoose.connect(
-        "mongodb+srv://Azflakes:leodoj667>@testingroblox.4ykci.mongodb.net/TestingRoblox?retryWrites=true&w=majority",
+        "mongodb+srv://Azflakes:leodoj667>@testingroblox.4ykci.mongodb.net/pager?retryWrites=true&w=majority",
         {
           useNewUrlParser: true,
           useUnifiedTopology: true
