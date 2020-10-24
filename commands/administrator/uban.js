@@ -32,6 +32,7 @@ module.exports = class uban extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
       }
+    return "Sorry 😣! You must be a Staff Member!";
   }
   async run(msgObject, { argUser, reason }) {
     

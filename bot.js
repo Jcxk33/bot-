@@ -34,7 +34,6 @@ client.registry
     ["miscellaneous", "Miscellaneous commands"],
     ["administrator", "Administrator commands"],
     ["es", "ES commands"],
-    ["no", "no no square"]
   ])
   .registerDefaults()
   .registerCommandsIn(path.join(__dirname, "commands"));
@@ -48,8 +47,6 @@ app.get("/", (request, response) => {
 const listener = server.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
-
-// I dont know what the fuck all this shit is
 
 // Client Login
 client.login(config.token);

@@ -14,7 +14,7 @@ module.exports = class epager extends Command {
       name: "epager",
       group: "es",
       memberName: "epager",
-      description: "Deletes a user's post from pagers",
+      description: "Edits a user's post from pagers",
       guildOnly: true,
 args: [
 
