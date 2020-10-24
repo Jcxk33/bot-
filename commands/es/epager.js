@@ -35,15 +35,7 @@ key: "edited"
     }
   }
   async run(msgObject, { pager, edited }) {
-    if (msgObject.channel.id == 766565513261481984) {
-      mongoose.connect(
-        "mongodb+srv://NotCINDERS:Blackie3323@cluster0.aeqnw.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
-        {
-          useNewUrlParser: true,
-          useUnifiedTopology: true
-        }
-      );
-
+    if (msgObject.channel.id == 746255037931454485) {
 let newembed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
               .setTitle("New Pager!")
