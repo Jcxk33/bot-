@@ -38,15 +38,5 @@ client.registry
   .registerDefaults()
   .registerCommandsIn(path.join(__dirname, "commands"));
 
-// Port
-var server = require("http").createServer(app);
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping Received");
-  response.sendStatus(200);
-});
-const listener = server.listen(process.env.PORT, function() {
-  console.log("Your app is listening on port " + listener.address().port);
-});
-
 // Client Login
 client.login(config.token);

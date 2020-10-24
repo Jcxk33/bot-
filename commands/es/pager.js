@@ -1,56 +1,92 @@
 const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const request = require("request-promise");
-module.exports = class suggest extends Command {
+const mongoose = require("mongoose");
+const path = require("path");
+const pagerSchema = require(path.join(
+  __dirname + "/../../models",
+  "pagersch.js"
+));
+
+module.exports = class pager extends Command {
   constructor(client) {
     super(client, {
       name: "pager",
-      aliases: ["pg"],
-      group: "miscellaneous",
+      group: "es",
       memberName: "pager",
-      description: "Creates a Pager",
+      description: "Sends an alert to the pager.",
+      guildOnly: true,
       args: [
         {
           type: "string",
-          prompt: "What is the Description?",
-          key: "description"
+          prompt: "What is the reason for the pager?",
+          key: "reason"
         }
       ]
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "LPD")) {
-        return true;
-      } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
-      ) {
-        return true;
-      } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
-        return true;
-            } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
-        return true;
-                } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
-        return true;
-                    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
-                          } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
-        return true;
-      }
-    return "Sorry 😣! You must be ES!";
+      if (msgObject.channel.id == 746255037931454485) {
+      return true;
+    } else {
+      return "Sorry :persevere:! You must use this in #es-general!";
+    }
   }
-  async run(msgObject, { description }) {
-    let channel = this.client.guilds
-      .get("706999196124840009")
-      .channels.find("id", "740496274175819777");
-    let Embed = new Discord.RichEmbed()
-      .setColor("")
-      .setTitle("Pager!")
-      .setDescription(description)
-      .setAuthor(
-        `${msgObject.member.displayName}`,
-        `${msgObject.author.avatarURL}`
-      )
-      .setTimestamp();
-      channel.send("@her", Embed);
+  async run(msgObject, { reason }) { 
+    mongoose.connect(
+      "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      }
+    );
+    let authorData = await request({
+      uri: `https://verify.eryn.io/api/user/${msgObject.author.id}`,
+      json: true,
+      simple: false
+    });
+
+    pagerSchema.findOne(
+      {
+        pagerplayer: msgObject.author.id
+      },
+      (err, pg) => {
+        if (!pg || pg === null) {
+          const mainserver = msgObject.client.guilds.get("706999196124840009");
+          let channel = mainserver.channels.find("id", "740496274175819777");
+          channel.send("@").then(PM => {
+            let embed = new Discord.RichEmbed()
+              .setAuthor(msgObject.member.displayName)
+              .setTitle("New Pager!")
+              .setDescription(reason)
+              .addField(
+                "Links",
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/4553950954/)`
+              )
+              .setTimestamp()
+              .setColor("RED");
+            channel.send(embed).then(m => {
+              m.react("✅");
+              const newPAGER = new pagerSchema({
+                _id: mongoose.Types.ObjectId(),
+                pagerplayer: msgObject.author.id,
+                pagerid: m.id,
+                pagertagid: PM.id,
+                secondarypagerid: ""
+              });
+              newPAGER.save();
+              msgObject.reply(
+                "Cheers, that's been added to <#740496274175819777>!"
+              );
+            });
+          });
+        } else {
+          msgObject.reply(
+            "Sorry :persevere:! You already have an active pager."
+          );
+          return;
+        }
+      }
+    );
   }
 };
