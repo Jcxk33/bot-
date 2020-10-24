@@ -25,13 +25,13 @@ module.exports = class whois extends Command {
     let Embed = new Discord.RichEmbed()
       .setAuthor(argUser.tag, argUser.avatarURL)
       .setColor("RANDOM")
-      .setTitle("**User Information**")
+      .setTitle("**__User Information__**")
       .setDescription(`<@${argUser.id}>`)
-      .addField("*Created At*", date)
-      .addField("*Id*", argUser.id, true)
-      .addField("*Username*", argUser.username, true)
-      .addField("*Discord Tag*", argUser.discriminator, true)
-      .addField("*Bot*", argUser.bot, true)
+      .addField(":label: **__Created At__** :label:", date)
+      .addField(":pencil: **__Id__** :pencil:", argUser.id, true)
+      .addField(":speech_balloon: **__Username__** :speech_balloon:", argUser.username, true)
+      .addField(":performing_arts: **__Discord Tag__** :performing_arts:", argUser.discriminator, true)
+      .addField(":robot: **__Bot__** :robot:", argUser.bot, true)
       .setTimestamp();
     editMessage.edit("Done!");
     editMessage.edit(Embed);
