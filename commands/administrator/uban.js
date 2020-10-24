@@ -8,6 +8,7 @@ module.exports = class uban extends Command {
       memberName: "uban",
       description: "Bans a user from all Discords",
       guildOnly: true,
+      hidden: true,
       args: [
         {
           type: "user",

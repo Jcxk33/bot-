@@ -8,6 +8,7 @@ const commando = require("discord.js-commando");
 const request = require("request-promise");
 const path = require("path");
 const config = require(path.join(__dirname, "config", "config.json"));
+const oneLine = require('common-tags').oneLine;
 
 
 // Client
@@ -26,6 +27,8 @@ client.once("ready", () => {
   });
 });
 
+
+// CONSOLE LOGGERS FOR ANY ERRORS ETC
 client
 	.on('error', console.error)
 	.on('warn', console.warn)
@@ -65,7 +68,6 @@ client
 			${guild ? `in guild ${guild.name} (${guild.id})` : 'globally'}.
 		`);
 	});
-
 
 
 // Registrys
