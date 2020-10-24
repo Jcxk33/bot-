@@ -26,8 +26,21 @@ module.exports = class pager extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 746255037931454485) {
       return true;
+    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
     }
@@ -54,7 +67,7 @@ module.exports = class pager extends Command {
         if (!pg || pg === null) {
           const mainserver = msgObject.client.guilds.get("706999196124840009");
           let channel = mainserver.channels.find("id", "740496274175819777");
-          channel.send("@here").then(PM => {
+          channel.send("@here).then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
               .setTitle("New Pager!")

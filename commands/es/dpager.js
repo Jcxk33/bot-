@@ -21,6 +21,19 @@ module.exports = class dpager extends Command {
   hasPermission(msgObject) {
     if (msgObject.channel.id == 746255037931454485) {
       return true;
+    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
     }

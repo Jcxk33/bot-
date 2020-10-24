@@ -18,8 +18,9 @@ module.exports = class dupager extends Command {
       guildOnly: true,
       args: [
         {
-          type: user,
-          prompt: "Wh",
+          type: "user",
+          prompt: "Who's pager do you want to delete?",
+          key: "argUser"
         }
       ]
     });
@@ -32,7 +33,7 @@ module.exports = class dupager extends Command {
       }
     return "Sorry 😣! You must be ES Command!";
   }
-  async run(msgObject, { pager }) {
+  async run(msgObject, { pager, argUser }) {
     if (msgObject.channel.id == 746255037931454485) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
@@ -43,12 +44,12 @@ module.exports = class dupager extends Command {
       );
       pagerSchema.findOne(
         {
-          pagerplayer: msgObject.author.id
+          pagerplayer: argUser.id
         },
         (err, pg) => {
           if (!pg || pg === null) {
             msgObject.reply(
-              "Sorry :persevere:! You don't have any active pagers."
+              "Sorry :persevere:! " + argUser + " doesn't have any active pagers."
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
@@ -66,7 +67,7 @@ module.exports = class dupager extends Command {
               }
             });
             pg.remove();
-            msgObject.reply("Successfully deleted your pager.");
+            msgObject.reply("Successfully deleted " + argUser + "'s pager.");
             return;
           }
         }
