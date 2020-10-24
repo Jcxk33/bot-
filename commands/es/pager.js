@@ -19,7 +19,7 @@ module.exports = class pager extends Command {
       args: [
         {
           type: "string",
-          prompt: "What is the reason for the pager?",
+          prompt: "What is the pager about?",
           key: "reason"
         }
       ]

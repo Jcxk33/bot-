@@ -69,6 +69,8 @@ module.exports = class dupager extends Command {
             pg.remove();
             msgObject.reply("Successfully deleted " + argUser + "'s pager.");
             return;
+            
+            argUser.send("Next time delete your own pager, Don't make ES Command do it! 😣")
           }
         }
       );
