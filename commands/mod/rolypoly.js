@@ -36,7 +36,7 @@ module.exports = class id extends Command {
   }
   async run(msgObject, { username, reason }) {
       let target = await request({
-      uri: `https://verify.eryn.io/api/user/${username.displayName}`,
+      uri: `https://verify.eryn.io/api/user/${username.Id}`,
       json: true,
       simple: false
     });
@@ -51,6 +51,7 @@ module.exports = class id extends Command {
     if (target.errorMessage) {
       return msg.edit("Sorry 😣! No accounts linked!");
       } else {
+    msgObject.channel.send(`Wow we found a discord account linked to a roblox account! Discord User: ${username}`)
     const newem = new Discord.RichEmbed()
     .setAuthor(msgObject.member.displayName)
     .setTitle(`${target.Username}'s Information!`)
@@ -63,7 +64,7 @@ module.exports = class id extends Command {
     `${target.Id}`)
     .setTimestamp()
     .setColor("RED");
-    msg.channel.send(newem)
+    msgObject.channel.send(newem)
       }
     }
   };
