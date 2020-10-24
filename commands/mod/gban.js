@@ -31,12 +31,12 @@ module.exports = class gban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("746921954803581008");
-    if (msgObject.guild.id == 746921954803581008) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
