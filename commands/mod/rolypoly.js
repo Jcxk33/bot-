@@ -11,8 +11,8 @@ module.exports = class id extends Command {
       guildOnly: true,
       args: [
         {
-          type: "string",
-          prompt: "What is the Roblox/Discord username/ID?",
+          type: "user",
+          prompt: "What is the user you want to search?",
           key: "username"
         }
       ]
@@ -36,28 +36,27 @@ module.exports = class id extends Command {
   }
   async run(msgObject, { username, reason }) {
       let target = await request({
-      uri: `https://verify.eryn.io/api/user/${username}`,
+      uri: `https://verify.eryn.io/api/user/${username.displayName}`,
       json: true,
       simple: false
     });
     
 
-    let msg = await msgObject.reply(
+    const msg = msgObject.reply(
       `Coolio!! Let's get on with this and get \`${
         /*target.Username*/ username
       }\`Info`
     );
            
     if (target.errorMessage) {
-      return msg.edit("Sorry 😣! You haven't entered a valid Roblox username!");
+      return msg.edit("Sorry 😣! No accounts linked!");
       } else {
-        msg.channel.send(`Wow we found a discord account linked to a roblox account! Discord User: <@${username}`)
-                     const newem = new Discord.RichEmbed()
+    const newem = new Discord.RichEmbed()
     .setAuthor(msgObject.member.displayName)
     .setTitle(`${target.Username}'s Information!`)
     .addField(
     "Profile Link",
-    `[Roblox Profile](https://www.roblox.com/users/${target2.robloxId}/profile)`
+    `[Roblox Profile](https://www.roblox.com/users/${target.robloxId}/profile)`
     )
     .addField(
     "ID",
