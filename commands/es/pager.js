@@ -9,7 +9,6 @@ module.exports = class suggest extends Command {
       group: "miscellaneous",
       memberName: "pager",
       description: "Creates a Pager",
-      ownerOnly: true,
       args: [
         {
           type: "string",
