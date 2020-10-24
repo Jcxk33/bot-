@@ -4,10 +4,10 @@ const request = require("request-promise");
 module.exports = class id extends Command {
   constructor(client) {
     super(client, {
-      name: "getid",
+      name: "rolypoly",
       group: "mod",
-      memberName: "getid",
-      description: "Gets the userId of the specified username",
+      memberName: "rolypoly",
+      description: "Checks for possible alt accounts.",
       guildOnly: true,
       args: [
         {

@@ -7,7 +7,7 @@ const pagerSchema = require(path.join(
   __dirname + "/../../models",
   "pagersch.js"
 ));
-
+// Command Constructor
 module.exports = class dpager extends Command {
   constructor(client) {
     super(client, {
@@ -18,6 +18,8 @@ module.exports = class dpager extends Command {
       guildOnly: true
     });
   }
+  
+  // Permission and Response
   hasPermission(msgObject) {
     if (msgObject.channel.id == 746255037931454485) {
       return true;
@@ -39,6 +41,8 @@ module.exports = class dpager extends Command {
     }
   }
   async run(msgObject, { pager }) {
+    
+    // Login to MongoDB
     if (msgObject.channel.id == 746255037931454485) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
@@ -47,30 +51,42 @@ module.exports = class dpager extends Command {
           useUnifiedTopology: true
         }
       );
+      
+      // Finds Pager
       pagerSchema.findOne(
         {
           pagerplayer: msgObject.author.id
         },
+        
+        // If No Pager
         (err, pg) => {
           if (!pg || pg === null) {
             msgObject.reply(
               "Sorry :persevere:! You don't have any active pagers."
             );
+            
+            // If has pager
           } else {
             const mainserver = msgObject.client.guilds.get(
               "706999196124840009"
             );
+            
+            // Deletes pager
             let channel = mainserver.channels.find("id", "740496274175819777");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();
               }
             });
+            
+            // Deletes a second pager if user has created one.
             channel.fetchMessage(pg.pagertagid).then(daNextMsg => {
               if (daNextMsg) {
                 daNextMsg.delete();
               }
             });
+            
+            // Removes it from mongodb
             pg.remove();
             msgObject.reply("Successfully deleted your pager.");
             return;
@@ -78,6 +94,8 @@ module.exports = class dpager extends Command {
         }
       );
     } else {
+      
+      // If bypassed channel
       msgObject.reply(
         "Sorry :persevere:! You must use this in #es-general, how'd you bypass that?"
       );
