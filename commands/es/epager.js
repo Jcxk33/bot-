@@ -1,19 +1,20 @@
-const Discord = require("discord.js);
+const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 
 const mongoose = require("mongoose");
+const request = require("request-promise");
 const path = require("path");
 const pagerSchema = require(path.join(
   __dirname + "/../../models",
   "pagersch.js"
 ));
 
-module.exports = class dpager extends Command {
+module.exports = class epager extends Command {
   constructor(client) {
     super(client, {
-      name: "dpager",
+      name: "epager",
       group: "es",
-      memberName: "dpager",
+      memberName: "epager",
       description: "Deletes a user's post from pagers",
       guildOnly: true,
       args: [
@@ -45,7 +46,10 @@ module.exports = class dpager extends Command {
       return "Sorry :persevere:! You must use this in #es-general!";
     }
   }
-  async run(msgObject, { pager, upd, {
+  async run(msgObject, { pager, upd }) {
+
+
+                          
     if (msgObject.channel.id == 746255037931454485) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
@@ -54,17 +58,24 @@ module.exports = class dpager extends Command {
           useUnifiedTopology: true
         }
       );
-      
-       let newem = new Discord.RichEmbed()
-              .setAuthor(msgObject.member.displayName)
-              .setTitle("Edited Pager!")
-              .setDescription(upd
-          .addField(
-                "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)`
-              )
-              .setTimestamp()
-              .setColor("RED");
+        let authorData = await request({
+      uri: `https://verify.eryn.io/api/user/${msgObject.author.id}`,
+      json: true,
+      simple: false
+    });
+      // New Embed
+          const newem = new Discord.RichEmbed()
+    .setAuthor(msgObject.member.displayName)
+    .setTitle("Edited Pager!")
+    .setDescription(upd)
+    .addField(
+          "Links",
+          `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)`
+          )
+    .setTimestamp()
+    .setColor("RED")
+          
+          // End of Embed
       
       pagerSchema.findOne(
         {
