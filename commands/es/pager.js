@@ -54,14 +54,14 @@ module.exports = class pager extends Command {
         if (!pg || pg === null) {
           const mainserver = msgObject.client.guilds.get("706999196124840009");
           let channel = mainserver.channels.find("id", "740496274175819777");
-          channel.send("test123").then(PM => {
+          channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
               .setTitle("New Pager!")
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5488843612/New-Haven-County-Remade`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)`
               )
               .setTimestamp()
               .setColor("RED");
