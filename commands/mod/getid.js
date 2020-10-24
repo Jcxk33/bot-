@@ -8,7 +8,6 @@ module.exports = class id extends Command {
       group: "mod",
       memberName: "getid",
       description: "Gets the userId of the specified username",
-      guildOnly: true,
       args: [
         {
           type: "string",
