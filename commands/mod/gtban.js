@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "518a844f03a7b166f21a19d62a2b3da8",
-  "bd175d77a563fdcf48e4c9cb5d65ac405e89cb9d36ccd50d530345996b398522"
+  "b3e86d17c55b6dc170e3e426e4e1a491",
+  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
 );
 
 module.exports = class gtban extends Command {
@@ -30,8 +30,8 @@ module.exports = class gtban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("746921954803581008");
-    if (msgObject.guild.id == 746921954803581008) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
