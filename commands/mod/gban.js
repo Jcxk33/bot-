@@ -38,12 +38,7 @@ module.exports = class gban extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       return "Sorry 😣! You must be a Mayflower Moderator or Admin!";
-    } else 
-      return (
-        "Sorry :persevere:! You must use this command in the " +
-        MainServer.name +
-        "!"
-      );
+      };
     }
   }
   async run(msgObject, { username, reason }) {
