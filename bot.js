@@ -13,7 +13,7 @@ const oneLine = require('common-tags').oneLine;
 
 // Client
 const client = new commando.CommandoClient({
-  owner: ["675794471065092161", "669518615199875082"],
+  owner: ["675794471065092161", "329719053168148481","669518615199875082","764415581800890378"],
   commandPrefix: ";",
   unknownCommandResponse: false,
   selfbot: false,
@@ -77,6 +77,7 @@ client.registry
     ["miscellaneous", "Miscellaneous Commands"],
     ["administrator", "Administrator Commands"],
     ["es", "ES commands"],
+    ["icf", "ICF Commands"],
   ])
   .registerDefaults()
   .registerCommandsIn(path.join(__dirname, "commands"));
