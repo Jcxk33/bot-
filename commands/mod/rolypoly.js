@@ -5,7 +5,7 @@ module.exports = class whois extends Command {
   constructor(client) {
     super(client, {
       name: "rolypoly",
-      aliases: ["roly"],
+      aliases: ["whois"],
       group: "miscellaneous",
       memberName: "rolypoly",
       description: "Checks a user",
@@ -26,12 +26,13 @@ module.exports = class whois extends Command {
       .setAuthor(argUser.tag, argUser.avatarURL)
       .setColor("RANDOM")
       .setTitle("**__User Information__**")
+      .setThumbnail(argUser.avatarURL, {size: 128})
       .setDescription(`<@${argUser.id}>`)
-      .addField(":label: **__Created At__** :label:", date)
-      .addField(":pencil: **__Id__** :pencil:", argUser.id, true)
-      .addField(":speech_balloon: **__Username__** :speech_balloon:", argUser.username, true)
-      .addField(":performing_arts: **__Discord Tag__** :performing_arts:", argUser.discriminator, true)
-      .addField(":robot: **__Bot__** :robot:", argUser.bot, true)
+      .addField("**__Created At__** :label:", date)
+      .addField("**__ID__** :pencil:", argUser.id, true)
+      .addField("**__Username__** :speech_balloon:", argUser.username, true)
+      .addField("**__Discord Tag__** :performing_arts:", argUser.discriminator, true)
+      .addField("**Self Bot** :robot:", argUser.bot, true)
       .setTimestamp();
     editMessage.edit("Done!");
     editMessage.edit(Embed);
