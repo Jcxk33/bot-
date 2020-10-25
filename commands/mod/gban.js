@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b3e86d17c55b6dc170e3e426e4e1a491",
-  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
+  "b3e86d17c55b6dc170e3e426e4e1a491", // Key
+  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9" // Token
 );
 
 module.exports = class gban extends Command {
@@ -30,6 +30,8 @@ module.exports = class gban extends Command {
       ]
     });
   }
+  
+  // Checks for Permission
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("706999196124840009");
     if (msgObject.guild.id == 706999196124840009) {
@@ -45,6 +47,8 @@ module.exports = class gban extends Command {
     const editMessage = await msgObject.reply(
       `Coolio!! Let's get on with this and ban \`${username}\``
     );
+    
+    // Get's users username
     let data = await request({
       uri: `https://api.roblox.com/users/get-by-username?username=${username}`,
       json: true,
@@ -55,12 +59,15 @@ module.exports = class gban extends Command {
         "Sorry 😣! You haven't entered a valid Roblox username!"
       );
     } else {
+      // Checks it on rover
       editMessage.edit(`Ooooh, we've got their UserID as \`${data.Id}\`!`);
       let authorData = await request({
         uri: `https://verify.eryn.io/api/user/${msgObject.author.id}`,
         json: true,
         simple: false
       });
+      
+      // Sends webhook to moderation-logs
       const webhook = new Discord.WebhookClient(
         "765510011451211776",
         "cw3hfPDKfvMpS_zOWiNd-Mwn-rTOip8-kgngj8ZZ4CRH5n6G7974pKf-g_nWevP7XqQw"
@@ -81,7 +88,8 @@ module.exports = class gban extends Command {
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
       editMessage.edit(`Wowzers, Your command has been executed in-game`);
-
+      
+// Add's card to trello
       trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
