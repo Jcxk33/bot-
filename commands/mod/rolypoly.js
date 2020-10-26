@@ -5,7 +5,7 @@ module.exports = class whois extends Command {
   constructor(client) {
     super(client, {
       name: "rolypoly",
-      aliases: ["whois"],
+      aliases: ["roly"],
       group: "miscellaneous",
       memberName: "rolypoly",
       description: "Checks a user",
@@ -32,6 +32,7 @@ module.exports = class whois extends Command {
       .addField("**__ID__** :pencil:", argUser.id, true)
       .addField("**__Username__** :speech_balloon:", argUser.username, true)
       .addField("**__Discord Tag__** :performing_arts:", argUser.discriminator, true)
+      .addField("**__Roles__** :brain: ", argUser.roles, true)
       .addField("**Self Bot** :robot:", argUser.bot, true)
       .setTimestamp();
     editMessage.edit("Done!");
