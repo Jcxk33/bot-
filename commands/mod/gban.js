@@ -33,15 +33,12 @@ module.exports = class gban extends Command {
   
   // Checks for Permission
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       return "Sorry 😣! You must be a Mayflower Moderator or Admin!";
       };
-    }
   }
   async run(msgObject, { username, reason }) {
     const editMessage = await msgObject.reply(
