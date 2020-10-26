@@ -28,7 +28,8 @@ module.exports = class uban extends Command {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-      }
+      } else if (msgObject.member.id == 329719053168148481)
+        return true;
     return "Sorry 😣! You must be a Mayflower Admin!";
   }
   async run(msgObject, { argUser, reason }) {
