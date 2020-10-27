@@ -70,7 +70,7 @@ module.exports = class epager extends Command {
     .setDescription(upd)
     .addField(
           "Links",
-          `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)`
+          `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5883511054/New-Haven-County)`
           )
     .setTimestamp()
     .setColor("RED")

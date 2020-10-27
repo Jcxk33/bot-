@@ -74,7 +74,7 @@ module.exports = class pager extends Command {
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5883511054/New-Haven-County?refPageId=021519da-3ed4-468a-9bc2-d1d014beddc9#)`
               )
               .setTimestamp()
               .setColor("RED");

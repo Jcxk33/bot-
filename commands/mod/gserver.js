@@ -34,7 +34,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/5488843612/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/5883511054/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -50,7 +50,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[NHC Remade Link](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)\n[Detailed Link](https://games.roblox.com/v1/games/5488843612/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[NHC Remade Link](https://www.roblox.com/games/5883511054/New-Haven-County)\n[Detailed Link](https://games.roblox.com/v1/games/5883511054/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
@@ -82,7 +82,7 @@ module.exports = class getservercommand extends Command {
           msgObject.reply("Sorry :persevere:! This server does not exist!");
         } else {
           let data = await request({
-            uri: `https://games.roblox.com/v1/games/5488843612/servers/Public?sortOrder=Asc&limit=100`,
+            uri: `https://games.roblox.com/v1/games/5883511054/servers/Public?sortOrder=Asc&limit=100`,
             json: true,
             simple: false
           }).catch(err => {
