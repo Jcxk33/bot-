@@ -5,14 +5,14 @@ const {
 module.exports = class credits extends Command {
     constructor(client) {
         super(client, {
-            name: 'cappeal',
+            name: 'appeal',
             description: 'Handles specified target\'s citizenship appeal',
             group: 'mod',
             guildOnly: true,
-            memberName: 'cappeal',
+            memberName: 'appeal',
             args: [{
                     key: 'target',
-                    prompt: 'Who\'s citizenship appeal do you wish to handle?',
+                    prompt: 'Who\'s Appeal appeal do you wish to handle?',
                     type: 'string'
                 },
                 {
