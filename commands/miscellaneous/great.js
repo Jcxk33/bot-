@@ -6,7 +6,7 @@ module.exports = class great extends Command {
       name: "great",
       group: "miscellaneous",
       memberName: "great",
-      description: "Find a random #great-logs message",
+      description: "Find a random #great-logs meassage",
       guildOnly: true
     });
   }
