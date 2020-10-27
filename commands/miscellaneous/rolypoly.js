@@ -18,6 +18,16 @@ module.exports = class whois extends Command {
       ]
     });
   }
+  hasPermission(msgObject) {
+    if (msgObject.channel.id == 746255037931454485) {
+      return true;
+    } else if (msgObject.member.roles.find(role => role.name == "Verified"
+        return true;
+    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
+    } else {
+      return "Sorry :persevere:! You must use this in #es-general!";
+    }
+  }
   async run(msgObject, { argUser }) {
     let made = new Date(argUser.createdTimestamp);
     let date = made.toDateString();
