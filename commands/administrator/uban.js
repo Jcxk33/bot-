@@ -28,13 +28,15 @@ module.exports = class uban extends Command {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-      } else if (msgObject.member.id == 329719053168148481)
+          msgObject.author == this.client.users.get("675794471065092161")
+      {}
+      } else if (msgObject.member.id == 675794471065092161)
         return true;
     return "Sorry 😣! You must be a Mayflower Admin!";
   }
   async run(msgObject, { argUser, reason }) {
     
-    if(argUser.id == 329719053168148481) {
+    if(argUser.id == 1) {
       msgObject.reply(
         "Okay, this is a very dangerous situation. This action shall be done with no approval."
       );
@@ -58,18 +60,20 @@ module.exports = class uban extends Command {
         msg.react("❎");
         const filter = (reaction, user) => {
           if (
-            reaction.emoji.name === "💣" &&
+            reaction.emoji.name === "❎" &&
             user.id === msgObject.author.id &&
             reaction.message === msg
           ) {
             msgObject.reply(
               "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
+              
             );
             this.client.guilds.forEach(m => {
               m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
             });
             msgObject.channel.send(
               `Banned ${argUser.tag} in all the servers :triumph::relieved:! All done!`
+              
             );
           }
         };
