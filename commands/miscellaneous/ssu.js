@@ -44,7 +44,7 @@ module.exports = class changelog extends Command {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[Mayflower Remade](https://www.roblox.com/games/5488843612/New-Haven-County-Remade)`
+        `[Mayflower Remade](https://www.roblox.com/games/5883511054/New-Haven-County)`
       )
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
