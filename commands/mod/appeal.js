@@ -6,7 +6,7 @@ module.exports = class credits extends Command {
     constructor(client) {
         super(client, {
             name: 'appeal',
-            description: 'Handles specified target\'s citizenship appeal',
+            description: 'Handles specified target\'s Appeal appeal',
             group: 'mod',
             guildOnly: true,
             memberName: 'appeal',
@@ -17,7 +17,7 @@ module.exports = class credits extends Command {
                 },
                 {
                     key: 'option',
-                    prompt: 'Do you wish to `accept`/`deny`/`invprivate` this citizenship appeal?',
+                    prompt: 'Do you wish to `accept`/`deny`/`invprivate` this  appeal?',
                     type: 'string',
                     validate: text => {
                         if(text == "accept" || text == "deny" || text == "invprivate") return true
@@ -32,7 +32,7 @@ module.exports = class credits extends Command {
         return true
     }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('770561695910330388', '2DiYa41--iZiQU6UKlYP5NlOIlbZK2Bgm36RgfhgyR2Ve-R6DtEDfUDxxrsY9N7bmyPP')
+        var webhook = new Discord.WebhookClient('770596745411297300', 'AkHVCAMLZ4LMDiGfCmo848rCfW0wVmx-mbXjXJfH_C6vlg8_mP5Vag9eS7tH5O-shDWJ')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname
@@ -51,10 +51,10 @@ module.exports = class credits extends Command {
             }
             const embed = new Discord.RichEmbed()
                 .setTimestamp()
-                .setTitle(`${args.target}'s Citizenship Appeal`)
+                .setTitle(`${args.target}'s Appeal`)
                 .setDescription(choice)
             webhook.send('', {
-                username: 'Citizenship',
+                username: 'Appeal',
                 embeds: [embed]
             })
             message.reply('Successfully sent your appeal message! 🤗')

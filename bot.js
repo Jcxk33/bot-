@@ -77,6 +77,7 @@ client.registry
     ["miscellaneous", "Miscellaneous Commands"],
     ["administrator", "Administrator Commands"],
     ["es", "ES commands"],
+    ["icf", "ICF Commands"],
   ])
   .registerDefaults()
   .registerCommandsIn(path.join(__dirname, "commands"));
