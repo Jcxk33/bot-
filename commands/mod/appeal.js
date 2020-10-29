@@ -7,7 +7,7 @@ module.exports = class credits extends Command {
         super(client, {
             name: 'appeal',
             description: 'Handles specified target\'s Appeal appeal',
-            group: 'ICF',
+            group: 'mod',
             guildOnly: true,
             memberName: 'appeal',
             args: [{
