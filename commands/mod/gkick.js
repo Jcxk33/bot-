@@ -30,14 +30,24 @@ module.exports = class gkick extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("746921954803581008");
-    if (msgObject.guild.id == 746921954803581008) {
+    const MainServer = msgObject.client.guilds.get("675794471065092161");
+    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("1")
+      ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
-      return "Sorry 😣! You must be a Mayflower Moderator or Admin!";
-    };
+    }
+      return "Sorry :persevere:! You must be a Moderator!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the " +
+        MainServer.name +
+        "!"
+      );
     }
   }
   async run(msgObject, { username, reason }) {
