@@ -20,7 +20,7 @@ module.exports = class credits extends Command {
                     prompt: 'Do you wish to `accept`/`deny`/`invprivate` this  appeal?',
                     type: 'string',
                     validate: text => {
-                        if(text == "accept" || text == "deny" || text == "invprivate") return true
+                        if(text == "accept" || text == "deny" ) return true
                     }
                 }
             ]
@@ -46,9 +46,7 @@ module.exports = class credits extends Command {
             if (args.option == 'deny') {
                 choice = 'Denied'
             }
-            if (args.option == 'invprivate') {
-                choice = 'Inventory Private'
-            }
+            
             const embed = new Discord.RichEmbed()
                 .setTimestamp()
                 .setTitle(`${args.target}'s Appeal`)
