@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b3e86d17c55b6dc170e3e426e4e1a491",
-  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
+  "",
+  ""
 );
 
 module.exports = class gkick extends Command {
@@ -79,7 +79,7 @@ module.exports = class gkick extends Command {
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        "5f7571edd9a18d44fa202708"
+        ""
       );
     }
   }
