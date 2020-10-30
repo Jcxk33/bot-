@@ -60,7 +60,7 @@ module.exports = class uban extends Command {
         msg.react("❎");
         const filter = (reaction, user) => {
           if (
-            reaction.emoji.name === "❎" &&
+            reaction.emoji.name === "💣" &&
             user.id === msgObject.author.id &&
             reaction.message === msg
           ) {
