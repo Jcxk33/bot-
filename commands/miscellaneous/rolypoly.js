@@ -19,10 +19,20 @@ module.exports = class whois extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 742703525150326828) {
-    } else if (msgObject.member.roles.find(role => role.name == "Verified")) {
-    }
-  }
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("709627046069927937")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+        return true;
+      }
+      return "Sorry 😣! You must be a Moderator!";
+    } else {
+    }}
   async run(msgObject, { argUser }) {
     let made = new Date(argUser.createdTimestamp);
     let date = made.toDateString();
