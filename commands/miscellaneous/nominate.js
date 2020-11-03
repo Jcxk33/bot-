@@ -22,11 +22,17 @@ module.exports = class credits extends Command {
             ]
         })
     }
-
-    hasPermission(message) {
-        if (!message.member.roles.has('706999434730405982')) return 'Sorry :tired_face: You must be a citizen! :raised_hands:'
-        return true
+  hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
+      if (msgObject.member.roles.find(role => role.name === "Citizen")) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Bots")) {
+        return true;
+      return "Sorry 😣! You Must be a Citizen!";
+    };
     }
+  }
     async run(message, args) {
         let senatecandidate = message.guild.roles.find(r => r.name === "Senate Candidate");
         let sheriffcand = message.guild.roles.find(r => r.name === "Sheriff Elec");
