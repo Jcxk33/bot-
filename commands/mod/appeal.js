@@ -17,7 +17,7 @@ module.exports = class credits extends Command {
                 },
                 {
                     key: 'option',
-                    prompt: 'Do you wish to `accept`/`deny`/`invprivate` this  appeal?',
+                    prompt: 'Do you wish to `accept`/`deny` this  appeal?',
                     type: 'string',
                     validate: text => {
                         if(text == "accept" || text == "deny" ) return true
@@ -28,11 +28,11 @@ module.exports = class credits extends Command {
     }
 
     hasPermission(message) {
-        if (!message.member.roles.has('706999854143897670')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
+        if (!message.member.roles.has('709587776030375937')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
         return true
     }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('770596745411297300', 'AkHVCAMLZ4LMDiGfCmo848rCfW0wVmx-mbXjXJfH_C6vlg8_mP5Vag9eS7tH5O-shDWJ')
+        var webhook = new Discord.WebhookClient('773142242919186452', 'Trcumrbq-din2-L7L_5waCc6VhZFo3-aK9_dlzeUA6cscuDOh-m3hpB5NWLUhRAU_4bQ')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname
