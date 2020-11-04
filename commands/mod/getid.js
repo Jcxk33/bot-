@@ -31,7 +31,7 @@ module.exports = class id extends Command {
     if (target.errorMessage) {
       return msg.edit(`Sorry 😣! You haven't entered a valid Roblox username!`);
     } else {
-      msg.edit(`Wowzers, I got their UserID as \`${target.Id}\`!`);
+      msg.edit(`**Wowzers,** I got their UserID as \`${target.Id}\`!`);
     }
   }
 };
