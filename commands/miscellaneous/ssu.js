@@ -11,7 +11,7 @@ module.exports = class changelog extends Command {
       description: "Posts a server startup to the #ssu channel",
       ownerOnly: true,
       throttling: {
-		usages: 2,
+		usages: 1,
 		duration: 3600,
 	},
       args: [
@@ -52,7 +52,7 @@ module.exports = class changelog extends Command {
       )
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
-    channel.send("@re", Embed);
+    channel.send("@here", Embed);
 
     msgObject.reply(`Congrats 🙌! You have announced a server startup!`);
   }
