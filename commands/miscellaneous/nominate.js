@@ -25,12 +25,16 @@ module.exports = class credits extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("706999196124840009");
     if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "Citizen")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Bots")) {
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
         return true;
-      return "Sorry 😣! You Must be a Citizen!";
-    };
+      } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+    }
+      return "Sorry 😣! Nominations are Closed";
     }
   }
     async run(message, args) {
