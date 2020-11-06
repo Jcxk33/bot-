@@ -6,7 +6,7 @@ module.exports = class credits extends Command {
     constructor(client) {
         super(client, {
             name: 'nominate',
-            description: 'Handles specified target\'s Appeal appeal',
+            description: 'Nominating into an election',
             group: 'miscellaneous',
             guildOnly: true,
             memberName: 'nominate',
@@ -34,8 +34,8 @@ module.exports = class credits extends Command {
     }
   }
     async run(message, args) {
-        let senatecandidate = message.guild.roles.find(r => r.name === "Gubernatorial Elections");
-        let gubernatorialelecte = message.guild.roles.find(r => r.name === "Sheriff Elec");
+        let senatecandidate = message.guild.roles.find(r => r.name === "AKFJHBAKSFHBKAJSBFKAUJSF");
+        let GubernatorialCandidate = message.guild.roles.find(r => r.name === "Gubernatorial Candidate");
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname
@@ -47,8 +47,8 @@ module.exports = class credits extends Command {
               message.member.addRole(senatecandidate)
             message.reply('Successfully joined the Senate Election! 🤗')
             } else {
-            if (args.option == 'Sheriff') {
-              message.member.addRole(gubernatorialelecte)
+            if (args.option == 'Gubernatorial') {
+              message.member.addRole(GubernatorialCandidate)
             message.reply('Successfully joined the Gubernatorial Elections 🤗')
             } else {
               message.reply('Guess there was an error? :shrug:')
