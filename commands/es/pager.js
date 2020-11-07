@@ -16,6 +16,10 @@ module.exports = class pager extends Command {
       memberName: "pager",
       description: "Sends an alert to the pager.",
       guildOnly: true,
+        throttling: {
+		usages: 1,
+		duration: 500,
+	},
       args: [
         {
           type: "string",
