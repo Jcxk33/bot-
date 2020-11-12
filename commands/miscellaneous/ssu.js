@@ -24,8 +24,8 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
+    const MainServer = msgObject.client.guilds.get("769267730041667604");
+    if (msgObject.guild.id == 769267730041667604) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
@@ -36,8 +36,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("706999196124840009")
-      .channels.find("id", "763539950360592414");
+      .get("769267730041667604")
+      .channels.find("id", "774972631156916224");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -48,7 +48,7 @@ module.exports = class changelog extends Command {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[Mayflower Remade](https://www.roblox.com/games/5883511054/New-Haven-County)`
+        `[Mayflower](nogamelinkyet)`
       )
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();

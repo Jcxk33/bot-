@@ -21,7 +21,7 @@ module.exports = class dpager extends Command {
   
   // Permission and Response
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 769674200226988063) {
       return true;
     } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
@@ -43,7 +43,7 @@ module.exports = class dpager extends Command {
   async run(msgObject, { pager }) {
     
     // Login to MongoDB
-    if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 769674200226988063) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -68,11 +68,11 @@ module.exports = class dpager extends Command {
             // If has pager
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "706999196124840009"
+              "769267730041667604"
             );
             
             // Deletes pager
-            let channel = mainserver.channels.find("id", "740496274175819777");
+            let channel = mainserver.channels.find("id", "776513668971233340");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();
