@@ -28,11 +28,11 @@ module.exports = class credits extends Command {
     }
 
     hasPermission(message) {
-        if (!message.member.roles.has('706999854143897670')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
+        if (!message.member.roles.has('769301372805840936')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
         return true
     }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('773142242919186452', 'Trcumrbq-din2-L7L_5waCc6VhZFo3-aK9_dlzeUA6cscuDOh-m3hpB5NWLUhRAU_4bQ')
+        var webhook = new Discord.WebhookClient('776512329725509653', 'mzPDfx9W4KF3jH1aMo2haFGTbeKXi0ytiZ43REIx6lIQhvhCvNNLRT2QTPV9NaQTGDve')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

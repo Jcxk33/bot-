@@ -4,26 +4,20 @@ const request = require("request-promise");
 module.exports = class changelog extends Command {
   constructor(client) {
     super(client, {
-      name: "embed",
-      aliases: ["sayembed"],
+      name: "say",
       group: "miscellaneous",
-      memberName: "embed",
-      description: "Posts an embed with desired content",
+      memberName: "say",
+      description: "Posts a raw message",
       ownerOnly: true,
                               throttling: {
-        usages: 2,
-        duration: 100
+        usages: 1,
+        duration: 60
       },
       args: [
         {
           type: "string",
-          prompt: "What channel do you want to send this in?",
-          key: "channel",
-        },
-        {
-          type: "string",
-          prompt: "What do you want the title to be?",
-          key: "title"
+          prompt: "What channel do you want to send it in? (channel name like `general` not `#general`)",
+          key: "channel"
         },
         {
           type: "string",
@@ -45,14 +39,9 @@ module.exports = class changelog extends Command {
       }
     return "Sorry 😣! You must be a Staff Member!";
   }
-  async run(msgObject, { channel, title, content }) {
-    let embed = new Discord.RichEmbed()
-      .setTitle(title)
-      .setDescription(content)
-      .setColor("RANDOM");
-
+  async run(msgObject, { channel, content }) {
     try {
-      msgObject.guild.channels.find("name", channel).send(embed)
+      msgObject.guild.channels.find("name", channel).send(content)
     } catch(error){
       msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
     }
