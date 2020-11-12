@@ -24,15 +24,18 @@ module.exports = class uban extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Bot")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+      } else if (
+        msgObject.author == this.client.users.get("709627046069927937")
+      ) {
         return true;
-          msgObject.author == this.client.users.get("675794471065092161")
-      {}
-      } else if (msgObject.member.id == 675794471065092161)
+      } else if (msgObject.member.roles.find(role => role.name == "Bots")) {
         return true;
-    return "Sorry 😣! You must be a Mayflower Admin!";
+   } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+        return true;
+   }
+     return "Sorry 😣! You must be a Mayflower Admin!";
   }
   async run(msgObject, { argUser, reason }) {
     
