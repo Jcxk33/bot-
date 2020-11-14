@@ -41,6 +41,8 @@ module.exports = class gban extends Command {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+        return true;
       }
       return "Sorry 😣! You must be a Staff Member!";
     } else {

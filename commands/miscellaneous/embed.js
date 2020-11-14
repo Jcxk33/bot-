@@ -37,13 +37,15 @@ module.exports = class changelog extends Command {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-      }
-    return "Sorry 😣! You must be a Staff Member!";
+   } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+        return true;
+   }
+    return "Sorry 😣! You must be a Mayflower Admin!";
   }
   async run(msgObject, { channel, title, content }) {
     let embed = new Discord.RichEmbed()

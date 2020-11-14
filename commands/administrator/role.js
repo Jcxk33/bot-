@@ -31,7 +31,7 @@ module.exports = class id extends Command {
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Bots")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
    } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
         return true;
