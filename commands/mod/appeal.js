@@ -28,7 +28,7 @@ module.exports = class credits extends Command {
     }
 
     hasPermission(message) {
-        if (!message.member.roles.has('769301372805840936','776548759445700608')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
+        if (!message.member.roles.has('769301372805840936','769301285283299329')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
         return true
     }
     async run(message, args) {
