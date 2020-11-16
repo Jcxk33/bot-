@@ -28,7 +28,7 @@ module.exports = class credits extends Command {
     }
 
     hasPermission(message) {
-        if (!message.member.roles.has('769301993038151700','769301993038151700')) return 'Sorry :tired_face: You must be an ICF Agent :raised_hands:'
+        if (!message.member.roles.has('769301993038151700','769301933009141771')) return 'Sorry :tired_face: You must be an ICF Agent :raised_hands:'
         return true
     }
     async run(message, args) {
