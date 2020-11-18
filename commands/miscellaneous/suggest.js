@@ -24,7 +24,7 @@ module.exports = class suggest extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+      if (msgObject.member.roles.find(role => role.name === "Owner")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")

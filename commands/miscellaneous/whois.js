@@ -4,24 +4,24 @@ const request = require("request-promise");
 module.exports = class whois extends Command {
   constructor(client) {
     super(client, {
-      name: "rolypoly",
+      name: "whois",
       aliases: ["roly"],
       group: "miscellaneous",
-      memberName: "rolypoly",
+      memberName: "whois",
       description: "Checks a user",
       args: [
         {
           type: "user",
           prompt: "What is the User?",
-          key: "argUser"
+          key: "argUser",
         }
       ]
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    const MainServer = msgObject.client.guilds.get("769267730041667604");
+    if (msgObject.guild.id == 769267730041667604) {
+      if (msgObject.member.roles.find(role => role.name === "Admin","Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
@@ -61,7 +61,7 @@ module.exports = class whois extends Command {
       simple: false
     });
     if (data.robloxUsername !== undefined) {
-      editMsg.edit("A roblox account is linked! Fetching data...");
+      editMsg.edit("A roblox account is linked! Fetching data... :brain:");
       let Data = await request({
         uri: `https://api.roblox.com/users/get-by-username?username=${data.robloxUsername}`,
         json: true,
@@ -108,14 +108,14 @@ module.exports = class whois extends Command {
         .setColor("RANDOM")
         .setTitle(Data.Username)
         .setURL(profileLink)
-        .addField("UserID", Data.Id, true)
-        .addField("Account Created", joinDate, true)
-        .addField("Past Names", pastNames, true)
-        .addField("Membership", Plan, true);
-      editMsg.edit("Done!");
+        .addField(":id: UserID", Data.Id, true)
+        .addField(":timer:  Account Created", joinDate, true)
+        .addField(":name_badge: Past Names", pastNames, true)
+        .addField(":money_mouth: Membership", Plan, true);
+      editMsg.edit("Done! :pray: ");
       editMsg.edit(RobloxEmbed);
     } else {
-      editMsg.edit("A roblox account is not linked!");
+      editMsg.edit("A roblox account is not linked!:raised_hands: :raised_hands: ");
       editMsg.delete();
     }
   }
