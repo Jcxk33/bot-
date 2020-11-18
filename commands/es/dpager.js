@@ -23,17 +23,17 @@ module.exports = class dpager extends Command {
   hasPermission(msgObject) {
     if (msgObject.channel.id == 769674200226988063) {
       return true;
-    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Losten Police Department")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Charleston State Police")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Jackson County Sheriffs")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Patterson Police Department")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
+    } else if (msgObject.member.roles.find(role => role.name == "CNG")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
     return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {

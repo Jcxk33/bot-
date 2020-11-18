@@ -30,7 +30,7 @@ module.exports = class pager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 776513668971233340) {
+    if (msgObject.channel.id == 778744682070802453) {
       return true;
     } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
@@ -69,8 +69,8 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("769267730041667604");
-          let channel = mainserver.channels.find("id", "776513668971233340");
+          const mainserver = msgObject.client.guilds.get("754201074935529553");
+          let channel = mainserver.channels.find("id", "778744655613263873");
           channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
@@ -93,7 +93,7 @@ module.exports = class pager extends Command {
               });
               newPAGER.save();
               msgObject.reply(
-                "Cheers, that's been added to <#776513668971233340>!"
+                "Cheers, that's been added to <#778744655613263873>!"
               );
             });
           });
