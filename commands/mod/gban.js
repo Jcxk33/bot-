@@ -31,17 +31,17 @@ module.exports = class gban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("769267730041667604");
-    if (msgObject.guild.id == 769267730041667604) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    const MainServer = msgObject.client.guilds.get("754201074935529553");
+    if (msgObject.guild.id == 754201074935529553) {
+      if (msgObject.member.roles.find(role => role.name === "Senior Management")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
       return "Sorry 😣! You must be a Staff Member!";
@@ -77,8 +77,8 @@ module.exports = class gban extends Command {
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
       const webhook = new Discord.WebhookClient(
-        "773649093909151765",
-        "oPL-Inu2WzsgbRUH00yPRcJzxI0sa2vSQiNp-dYgUrUc9koKNUoagwU-VQS4RsI-byIz"
+        "",
+        "oPL--dYgUrUc9koKNUoagwU-VQS4RsI-byIz"
       );
       webhook.send("", {
         embeds: [
@@ -100,7 +100,7 @@ module.exports = class gban extends Command {
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        "5faebccfa17a854d9ad7ba77"
+        ""
       );
     }
   }

@@ -18,21 +18,6 @@ module.exports = class whois extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("769267730041667604");
-    if (msgObject.guild.id == 769267730041667604) {
-      if (msgObject.member.roles.find(role => role.name === "Admin","Senior Admin")) {
-        return true;
-      } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
-      ) {
-        return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
-        return true;
-      }
-      return "Sorry 😣! You must be a Moderator!";
-    } else {
-    }}
   async run(msgObject, { argUser }) {
     let made = new Date(argUser.createdTimestamp);
     let date = made.toDateString();

@@ -37,8 +37,8 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("729884219701985420")
-      .channels.find("id", "769368824352735232");
+      .get("754201074935529553")
+      .channels.find("id", "754447583870582895");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("Game Suggestion")
