@@ -57,6 +57,6 @@ module.exports = class changelog extends Command {
       .setTimestamp();
     channel.send("@here", Embed);
 
-    msgObject.reply(`Congrats 🙌! You have announced a server startup!`);
+    msgObject.reply(`Congrats :sunglasses:! You have announced a server startup!`);
   }
 };
