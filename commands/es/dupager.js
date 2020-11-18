@@ -26,7 +26,7 @@ module.exports = class dupager extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "ES Command")) {
         return true;
