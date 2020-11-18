@@ -28,7 +28,7 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin",)) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
