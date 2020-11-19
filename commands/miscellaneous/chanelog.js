@@ -21,13 +21,17 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("729884219701985420")
-      .channels.find("id", "729890778469498941");
+      .get("754201074935529553")
+      .channels.find("id", "754202063222734911");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Change Log")
+      .setTitle(":arrow_up: **__Change Log__**")
+      .setAuthor(
+        `${msgObject.member.displayName}`,
+        `${msgObject.author.avatarURL}`
+      )
       .setDescription(description)
-      .setTimestamp();
+      .setTimestamp(1911);
     channel.send(Embed);
   }
 };
