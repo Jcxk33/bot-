@@ -77,8 +77,8 @@ module.exports = class gban extends Command {
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
       const webhook = new Discord.WebhookClient(
-        "",
-        "oPL--dYgUrUc9koKNUoagwU-VQS4RsI-byIz"
+        "754203008983891988",
+        "XqROd4pyt9bZdvi4HFloma8ULY857v0whJ20a0NiRCfc7zezFg7W8hMXlAzhrrrWqSu-"
       );
       webhook.send("", {
         embeds: [
@@ -100,7 +100,7 @@ module.exports = class gban extends Command {
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        ""
+        "5fb5c9b5edf6ff298cd8c762"
       );
     }
   }
