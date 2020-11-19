@@ -24,7 +24,7 @@ module.exports = class getservercommand extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("754201074935529553");
     if (msgObject.guild.id == 754201074935529553) {
-      if (msgObject.member.roles.find(role => role.name === "Senior Management")) {
+      if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
@@ -35,7 +35,7 @@ module.exports = class getservercommand extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry 😣! You must be a Charleston Admin!!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
