@@ -27,10 +27,29 @@ module.exports = class credits extends Command {
         })
     }
 
-    hasPermission(message) {
-        if (!message.member.roles.has('754221677453508678','754221677822345236')) return 'Sorry :tired_face: You must be an ICF Agent :raised_hands:'
-        return true
+    hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("754201074935529553");
+    if (msgObject.guild.id == 754201074935529553) {
+      if (msgObject.member.roles.find(role => role.name === "ICF")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("709627046069927937")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+        return true;
+      }
+      return "Sorry 😣! You must be a Staff Member!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the " +
+        MainServer.name +
+        "!"
+      );
     }
+  }
     async run(message, args) {
         var webhook = new Discord.WebhookClient('754202923726012507', 'ieaUbDs95hQX1kUeUniCW9US5CvSWhUd6KxkG-E3vIXadkYIet7rSbk-SNcxuQSbOUZI')
         var nickname
