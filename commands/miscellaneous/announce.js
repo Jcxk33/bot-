@@ -9,7 +9,7 @@ module.exports = class changelog extends Command {
       group: "miscellaneous",
       memberName: "announce",
       description: "Posts an announcement needed by Staff / Government",
-      ownerOnly: true,
+      ownerOnly: false,
       args: [
         {
           type: "string",
@@ -18,6 +18,20 @@ module.exports = class changelog extends Command {
         }
       ]
     });
+  }
+  hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("709627046069927937")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Server Management")) {
+        return true;
+   } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+        return true;
+   }
+    return "Sorry 😣! You must be a Charleston Moderator!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
