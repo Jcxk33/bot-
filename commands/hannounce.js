@@ -53,7 +53,7 @@ module.exports = class changelog extends Command {
       .setDescription(description)
       .setFooter('State of Charleston', 'https://cdn.discordapp.com/icons/754201074935529553/f4802d09280ac81f7955c478de30ec2c.jpg')
       .setTimestamp();
-    channel.send(Embed);
+     channel.send("@here", Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);
   }
 };
