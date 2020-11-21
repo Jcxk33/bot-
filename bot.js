@@ -75,6 +75,7 @@ client.registry
   .registerGroups([
     ["mod", "Moderation Commands"],
     ["miscellaneous", "Miscellaneous Commands"],
+    ["miscellaneous2", "Miscellaneous Commands"],
     ["administrator", "Administrator Commands"],
     ["es", "ES commands"],
     ["icf", "ICF Commands"],
