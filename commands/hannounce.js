@@ -4,11 +4,11 @@ const request = require("request-promise");
 module.exports = class changelog extends Command {
   constructor(client) {
     super(client, {
-      name: "announce",
-      aliases: ["an"],
+      name: "hannounce",
+      aliases: ["han"],
       group: "miscellaneous",
-      memberName: "announce",
-      description: "Posts an announcement needed by Staff / Government",
+      memberName: "hannounce",
+      description: "Posts an announcement needed by Staff / Government, that tags @here",
       ownerOnly: false,
       args: [
         {
