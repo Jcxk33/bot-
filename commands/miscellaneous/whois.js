@@ -19,14 +19,10 @@ module.exports = class whois extends Command {
     });
   }
   async run(msgObject, { argUser }) {
-    
     let made = new Date(argUser.createdTimestamp);
     let date = made.toDateString();
     let editMessage = await msgObject.reply("Fetching user's data...");
-    let member = argUser.mentions.members.first() || argUser.member,
-  user = member.user;
     let Embed = new Discord.RichEmbed()
-    
       .setAuthor(argUser.tag, argUser.avatarURL)
       .setColor("RANDOM")
       .setTitle("**__User Information__**")
@@ -36,7 +32,7 @@ module.exports = class whois extends Command {
       .addField("**__ID__** :pencil:", argUser.id, true)
       .addField("**__Username__** :speech_balloon:", argUser.username, true)
       .addField("**__Discord Tag__** :performing_arts:", argUser.discriminator, true)
-       .addField('Roles:', argUser.roles.map(r => `${r}`).join(' | '), true)
+      .addField("**__Roles__** :brain: ", argUser.roles, true)
       .addField("**Self Bot** :robot:", argUser.bot, true)
       .setTimestamp();
     editMessage.edit("Done!");
