@@ -24,14 +24,14 @@ module.exports = class id extends Command {
       simple: false
     });
     let msg = await msgObject.reply(
-      `Coolio!! Let's get on with this and get \`${
+      `*Alrighty!!* Let's get on with this and get \`${
         /*target.Username*/ username
       }\`'s id`
     );
     if (target.errorMessage) {
       return msg.edit(`Sorry 😣! You haven't entered a valid Roblox username!`);
     } else {
-      msg.edit(`**Wowzers,** I got their UserID as \`${target.Id}\`!`);
+      msg.edit(`**Wowzers**  I got their UserID as \`${target.Id}\`!`);
     }
   }
 };
