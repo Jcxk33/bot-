@@ -44,10 +44,10 @@ module.exports = class gban extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "*Yikes* 😣! You must be a Staff Member!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the " +
+        "*Sorry* :persevere:! You must use this command in the " +
         MainServer.name +
         "!"
       );
