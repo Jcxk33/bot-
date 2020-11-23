@@ -32,7 +32,7 @@ module.exports = class whois extends Command {
       .addField("**__ID__** :pencil:", argUser.id, true)
       .addField("**__Username__** :speech_balloon:", argUser.username, true)
       .addField("**__Discord Tag__** :performing_arts:", argUser.discriminator, true)
-      .addField("**__Roles__** :brain: ", argUser.roles, true)
+      .addField('Roles:', arguser.roles.map(r => `${r}`).join(' | '), true)
       .addField("**Self Bot** :robot:", argUser.bot, true)
       .setTimestamp();
     editMessage.edit("Done!");
