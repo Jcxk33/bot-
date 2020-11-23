@@ -23,18 +23,23 @@ module.exports = class changelog extends Command {
       ]
     });
   }
- hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("754201074935529553");
+    if (msgObject.guild.id == 754201074935529553) {
+      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Server Management")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-   } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+         } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-   }
+      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+        return true;
+      }
+    }
     return "Sorry 😣! You must be a Charleston Moderator!!";
   }
   async run(msgObject, { notes }) {
