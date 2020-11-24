@@ -9,7 +9,7 @@ module.exports = class changelog extends Command {
       group: "miscellaneous",
       memberName: "changelog",
       description: "Posts a change log to the change log channel",
-      ownerOnly: true,
+      ownerOnly: false,
       args: [
         {
           type: "string",
@@ -18,6 +18,18 @@ module.exports = class changelog extends Command {
         }
       ]
     });
+  }
+  hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("754201074935529553");
+    if (msgObject.guild.id == 754201074935529553) {
+      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("1")
+      ) {
+      }
+    }
+    return "Sorry 😣! You must be a Charleston Developer!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds

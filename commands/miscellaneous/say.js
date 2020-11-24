@@ -11,7 +11,7 @@ module.exports = class changelog extends Command {
       ownerOnly: true,
                               throttling: {
         usages: 1,
-        duration: 60
+        duration: 100
       },
       args: [
         {

@@ -10,6 +10,10 @@ module.exports = class changelog extends Command {
       memberName: "announce",
       description: "Posts an announcement needed by Staff / Government",
       ownerOnly: false,
+      throttling: {
+        usages: 1,
+        duration: 500
+      },
       args: [
         {
           type: "string",
