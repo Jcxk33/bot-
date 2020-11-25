@@ -24,7 +24,7 @@ module.exports = class whois extends Command {
     let editMessage = await msgObject.reply("Fetching user's data...");
 
 let roles = [] 
-msgObject.guild.member(argUser).roles.cache.forEach(role => {
+msgObject.guild.member(argUser).roles.forEach(role => {
 	roles.push(role)
 }) 
 
