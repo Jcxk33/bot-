@@ -45,6 +45,6 @@ module.exports = class changelog extends Command {
       .setDescription(description)
       .setTimestamp(1911);
     channel.send(Embed);
-    
+    msgObject.reply("**Sucessfully** sent the embed 😎 🥳")
   }
 };
