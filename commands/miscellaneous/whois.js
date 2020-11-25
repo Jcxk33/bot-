@@ -22,6 +22,12 @@ module.exports = class whois extends Command {
     let made = new Date(argUser.createdTimestamp);
     let date = made.toDateString();
     let editMessage = await msgObject.reply("Fetching user's data...");
+
+let roles = [] 
+msgObject.guild.member(argUser).roles.cache.forEach(role => {
+	roles.push(role)
+}) 
+
     let Embed = new Discord.RichEmbed()
       .setAuthor(argUser.tag, argUser.avatarURL)
       .setColor("RANDOM")
@@ -32,7 +38,7 @@ module.exports = class whois extends Command {
       .addField("**__ID__** :pencil:", argUser.id, true)
       .addField("**__Username__** :speech_balloon:", argUser.username, true)
       .addField("**__Discord Tag__** :performing_arts:", argUser.discriminator, true)
-      .addField("**__Roles__** :brain: ", argUser.roles, true)
+      .addField("Roles :brain: ", roles.join(", "), true)
       .addField("**Self Bot** :robot:", argUser.bot, true)
       .setTimestamp();
     editMessage.edit("Done!");
