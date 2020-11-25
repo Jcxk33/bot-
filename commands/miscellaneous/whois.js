@@ -40,6 +40,7 @@ module.exports = class whois extends Command {
     let editMsg = await msgObject.reply(
       "Checking if a roblox account is linked..."
     );
+    
     let data = await request({
       uri: `https://verify.eryn.io/api/user/${argUser.id}`,
       json: true,
