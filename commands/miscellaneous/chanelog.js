@@ -45,5 +45,6 @@ module.exports = class changelog extends Command {
       .setDescription(description)
       .setTimestamp(1911);
     channel.send(Embed);
+    
   }
 };
