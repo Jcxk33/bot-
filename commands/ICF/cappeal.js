@@ -41,7 +41,7 @@ module.exports = class credits extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry 😣! You must be a ICF Agent Member!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +

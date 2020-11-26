@@ -29,7 +29,7 @@ module.exports = class changelog extends Command {
       ) {
       }
     }
-    return "Sorry 😣! You must be a Charleston Developer!!";
+    return "Sorry 😣! You must be a Myflower Developer!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds

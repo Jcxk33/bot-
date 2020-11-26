@@ -43,12 +43,12 @@ module.exports = class changelog extends Command {
             } else if (msgObject.member.roles.find(role => role.name == "Cabinet")) {
         return true;
    }
-    return "Sorry 😣! You must be a Charleston Moderator!!";
+    return "Sorry 😣! You must be a Mayflower Moderator!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("754201074935529553")
-      .channels.find("id", "754201808897048588");
+      .get("774306549640200223")
+      .channels.find("id", "774316712082145323");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("**Charleston Announcement**")
