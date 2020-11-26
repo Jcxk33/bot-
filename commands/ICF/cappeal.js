@@ -28,8 +28,8 @@ module.exports = class credits extends Command {
     }
 
     hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("754201074935529553");
-    if (msgObject.guild.id == 754201074935529553) {
+    const MainServer = msgObject.client.guilds.get("774306549640200223");
+    if (msgObject.guild.id == 774306549640200223) {
       if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -51,7 +51,7 @@ module.exports = class credits extends Command {
     }
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('754202923726012507', 'ieaUbDs95hQX1kUeUniCW9US5CvSWhUd6KxkG-E3vIXadkYIet7rSbk-SNcxuQSbOUZI')
+        var webhook = new Discord.WebhookClient('781564781152436244', 'lTIRoUHCBN0_QGutonMO_T6jwsgKMu12bh65oS1-HNjCdUc5eaXJL1KfAx8Gv6k0CSi2')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

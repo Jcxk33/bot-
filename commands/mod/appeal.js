@@ -53,7 +53,7 @@ hasPermission(msgObject) {
     }
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('754203043041378324', 'cvUU-GO1Szippw13-VF9m0MI1vauFPnOCaW3_Alca1ZEzfMV4lC2jvxE1zxKt8FNG062')
+        var webhook = new Discord.WebhookClient('781565073603821568', 'NmVeJBszKW1DJgtxUtprzKnVYAi5kZRrv0Vuw4cS7LcxWqxt9iZ5J5BDX_3nLyy14MZH')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

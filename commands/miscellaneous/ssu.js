@@ -44,8 +44,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("754201074935529553")
-      .channels.find("id", "778623315987398720");
+      .get("774306549640200223")
+      .channels.find("id", "774316712082145323");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(

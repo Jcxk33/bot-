@@ -25,8 +25,8 @@ module.exports = class id extends Command {
     });
   }
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("754201074935529553");
-    if (msgObject.guild.id == 754201074935529553) {
+    const MainServer = msgObject.client.guilds.get("774306549640200223");
+    if (msgObject.guild.id == 774306549640200223) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
