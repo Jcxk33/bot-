@@ -44,7 +44,7 @@ hasPermission(msgObject) {
         return true;
       }
     }
-    return "Sorry 😣! You must be a Charleston Moderator!!";
+    return "Sorry 😣! You must be a Mayflower Moderator!!";
   }
   async run(msgObject, { channel, content }) {
     try {

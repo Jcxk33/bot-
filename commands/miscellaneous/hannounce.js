@@ -43,7 +43,7 @@ module.exports = class changelog extends Command {
             } else if (msgObject.member.roles.find(role => role.name == "Cabinet")) {
         return true;
    }
-    return "Sorry 😣! You must be a Charleston Moderator!!";
+    return "Sorry 😣! You must be a Mayflower Moderator!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
