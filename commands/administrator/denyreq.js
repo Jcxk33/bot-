@@ -22,14 +22,28 @@ module.exports = class denyreq extends Command {
     });
   }
 
-  hasPermission(message) {
-    const validRole = "🎄 | Christmas";
-    if (message.member.roles.some(role => role.name == validRole)) {
-      return true;
-    } else {
-      return "Sorry, :persevere:! You must be a Mayflower Administrator! :grimacing:";
+  hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("774306549640200223");
+    if (msgObject.guild.id == 774306549640200223) {
+      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("709627046069927937")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+        return true;
+         } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
+        return true;
+        } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
+        return true;
+          } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+      }
+       return "Sorry, :persevere:! You must be a Mayflower Administrator! :grimacing:";
     }
-  }
+}
+
 
   async run(message, { desiredPlayer }) {
     let robloxToken =
