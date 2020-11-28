@@ -27,7 +27,7 @@ module.exports = class id extends Command {
 hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("774306549640200223");
     if (msgObject.guild.id == 774306549640200223) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+      if (msgObject.member.roles.find(role => role.name === "JOE")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
