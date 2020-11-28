@@ -64,7 +64,7 @@ module.exports = class denyreq extends Command {
         .handleJoinRequest(groupID, playerID, false)
         .then(() => {
           sentMessage.edit(
-            `${message.author}, Successfully denied **${playerName}**!`
+            `${message.author}, :raised_hands: Successfully denied **${playerName}**!`
           );
         })
         .catch(error => {

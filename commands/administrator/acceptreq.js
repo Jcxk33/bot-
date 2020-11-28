@@ -64,7 +64,7 @@ module.exports = class acceptreq extends Command {
         .handleJoinRequest(groupID, playerID, true)
         .then(() => {
           sentMessage.edit(
-            `${message.author}, Successfully accepted **${playerName}!`
+            `${message.author}, :raised_hands: Successfully accepted **${playerName}**!`
           );
         })
         .catch(error => {
