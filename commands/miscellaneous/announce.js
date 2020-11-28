@@ -51,13 +51,13 @@ module.exports = class changelog extends Command {
       .channels.find("id", "774316712082145323");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("**Charleston Announcement**")
+      .setTitle("**Mayflower**")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter('State of Charleston', 'https://cdn.discordapp.com/icons/754201074935529553/f4802d09280ac81f7955c478de30ec2c.jpg')
+      .setFooter('State of Mayflower', 'https://cdn.discordapp.com/icons/774306549640200223/0daa343074d9e9dc924ed598a841b01e.jpg')
       .setTimestamp();
     channel.send(Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);
