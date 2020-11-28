@@ -2,13 +2,13 @@ const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const roblox = require("noblox.js");
 
-module.exports = class promote extends Command {
+module.exports = class demote extends Command {
   constructor(client) {
     super(client, {
-      name: "promote",
-      description: "Promote people within the group.",
+      name: "demote",
+      description: "Demote people within the group.",
 
-      memberName: "promote",
+      memberName: "demote",
       group: "administrator",
 
       args: [
@@ -69,7 +69,7 @@ module.exports = class promote extends Command {
 
     try {
       await roblox
-        .promote(groupID, playerID)
+        .demote(groupID, playerID)
         .then(() => {
           async function getData() {
             playerNewRank = await roblox.getRankNameInGroup(groupID, playerID);
@@ -78,7 +78,7 @@ module.exports = class promote extends Command {
           setTimeout(() => {
             getData().then(() => {
               sentMessage.edit(
-                `${message.author}, :raised_hands: Successfully promoted **${playerName}** from **${playerOldRank}** to **${playerNewRank}**!`
+                `${message.author}, :raised_hands: Successfully demoted **${playerName}** from **${playerOldRank}** to **${playerNewRank}**!`
               );
             });
           }, 500);
