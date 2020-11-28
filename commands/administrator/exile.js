@@ -2,13 +2,13 @@ const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const roblox = require("noblox.js");
 
-module.exports = class promote extends Command {
+module.exports = class exile extends Command {
   constructor(client) {
     super(client, {
-      name: "promote",
-      description: "Promote people within the group.",
+      name: "exile",
+      description: "Exile people within the group.",
 
-      memberName: "promote",
+      memberName: "exile",
       group: "administrator",
 
       args: [
@@ -43,10 +43,7 @@ module.exports = class promote extends Command {
 
     let playerName;
     let playerID;
-
     let playerRank;
-    let playerOldRank;
-    let playerNewRank;
 
     // Detection System
     await roblox.setCookie(robloxToken);
@@ -55,7 +52,6 @@ module.exports = class promote extends Command {
       playerID = await roblox.getIdFromUsername(desiredPlayer);
       playerName = await roblox.getUsernameFromId(playerID);
       playerRank = await roblox.getRankNameInGroup(groupID, playerID);
-      playerOldRank = playerRank;
     } catch (error) {
       sentMessage.edit(
         `${message.author}, :construction: There has been an error! \`\`\`js\n${error}\`\`\``
@@ -65,19 +61,11 @@ module.exports = class promote extends Command {
 
     try {
       await roblox
-        .promote(groupID, playerID)
+        .exile(groupID, playerID)
         .then(() => {
-          async function getData() {
-            playerNewRank = await roblox.getRankNameInGroup(groupID, playerID);
-          }
-
-          setTimeout(() => {
-            getData().then(() => {
-              sentMessage.edit(
-                `${message.author}, :raised_hands: Successfully promoted **${playerName}** from **${playerOldRank}** to **${playerNewRank}**!`
-              );
-            });
-          }, 500);
+          sentMessage.edit(
+            `${message.author}, :raised_hands: Successfully exiled **${playerName}**!`
+          );
         })
         .catch(error => {
           sentMessage.edit(

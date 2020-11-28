@@ -63,10 +63,6 @@ module.exports = class demote extends Command {
       return;
     }
 
-    sentMessage.edit(
-      `:unicorn: **Player Data**\n\n>>> ${playerName} - ${playerID} - ${playerRank}\n${playerOldRank} - ${playerNewRank}`
-    );
-
     try {
       await roblox
         .demote(groupID, playerID)
