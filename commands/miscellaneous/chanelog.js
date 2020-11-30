@@ -20,8 +20,8 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("774306549640200223");
-    if (msgObject.guild.id == 774306549640200223) {
+    const MainServer = msgObject.client.guilds.get("754146784892157982");
+    if (msgObject.guild.id == 754146784892157982) {
       if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
@@ -29,7 +29,7 @@ module.exports = class changelog extends Command {
       ) {
       }
     }
-    return "Sorry 😣! You must be a Myflower Developer!!";
+    return "Sorry 😣! You must be a Virginia Developer!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
@@ -38,6 +38,7 @@ module.exports = class changelog extends Command {
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(":arrow_up: **__Change Log__**")
+    .setFooter('State of Virginia', 'https://cdn.discordapp.com/icons/754146784892157982/b092312c34107b2ddf8fd699869de285.jpg')
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
