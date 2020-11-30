@@ -34,11 +34,11 @@ module.exports = class changelog extends Command {
   async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("780139458020114432")
-      .channels.find("id", "765355957072560148");
+      .channels.find("id", "783099970412347402");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(":arrow_up: **__Change Log__**")
-    .setFooter('State of Virginia', 'https://cdn.discordapp.com/icons/754146784892157982/b092312c34107b2ddf8fd699869de285.jpg')
+      .setFooter('State of letiVERSITY', 'https://cdn.discordapp.com/icons/780139458020114432/01dabdfb0142c431b901b0df70695fc4.jpg')
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`

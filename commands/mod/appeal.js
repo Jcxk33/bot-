@@ -43,7 +43,7 @@ hasPermission(msgObject) {
       } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry 😣! You must be a LETIVERSITY Moderator!!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
@@ -53,7 +53,7 @@ hasPermission(msgObject) {
     }
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('782782549973532672', 'QWKr82sb5w8-MWEAkrf6fy4f6jpGy5a1SncZv7Byy9CAN1tl98cIkIykmNFRKLPdI-3B')
+        var webhook = new Discord.WebhookClient('783082861452066846', 'AYV1LikFViq6-lkHYRImoMzU4LiIrJvhIXkHmaoGmAmXGONFCKheWDuL_JV6LA8L2FIT')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

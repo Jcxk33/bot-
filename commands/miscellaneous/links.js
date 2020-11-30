@@ -21,15 +21,15 @@ module.exports = class links extends Command {
       .setDescription(
         "The following will provide a list of all current links relating to State of letiVERSITY"
       )
-      .addField("Discord", "[Discord Link](https://discord.gg/DDfp7tC)", true)
+      .addField("Discord", "[Discord Link](https://discord.gg/9n6e3A6J)", true)
       .addField(
         "Group",
-        "[Roblox Link](https://www.roblox.com/groups/6103396/The-State-of-Charleston#!/about)",
+        "[Roblox Link](https://www.roblox.com/groups/8482724/letiVERSlTY#!/about)",
         true
       )
       .addField(
         "Game",
-        "[Roblox Link]( https://www.roblox.com/games/5866088106/Jackson-County-NEW-RELEASE?refPageId=7b0a11c9-ecd6-45b7-8f77-ab540f5c63ff )",
+        "[Roblox Link]( soon )",
         true
       )
          .addField(

@@ -51,7 +51,7 @@ hasPermission(msgObject) {
       `Allow me to work my magic.. :sleeping:`
     );
 
-    let groupID = 7900529;
+    let groupID = 8482724;
 
     let playerName;
     let playerID;

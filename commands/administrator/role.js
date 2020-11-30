@@ -27,7 +27,7 @@ module.exports = class id extends Command {
 hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("780139458020114432");
     if (msgObject.guild.id == 780139458020114432) {
-      if (msgObject.member.roles.find(role => role.name === "JOE")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
@@ -35,13 +35,12 @@ hasPermission(msgObject) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-         } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
       } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
         return true;
       }
     }
-}
+    return "Sorry 😣! You must be a letiVERSITY Admin!";
+  }
   async run(msgObject, { member, role }) {
     let GuildMember = msgObject.guild.members.find(`id`, member.id);
     if (!GuildMember.roles.has(role.id)) {

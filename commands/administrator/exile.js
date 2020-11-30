@@ -40,7 +40,7 @@ hasPermission(msgObject) {
           } else if (msgObject.member.roles.find(role => role.name == "Administrator")) {
         return true;
       }
-       return "Sorry, :persevere:! You must be a Virginia Administrator! :grimacing:";
+       return "Sorry, :persevere:! You must be a letiVERSITY Administrator! :grimacing:";
     }
 }
 
@@ -51,7 +51,7 @@ hasPermission(msgObject) {
       `Allow me to work my magic.. :sleeping:`
     );
 
-    let groupID = 7900529;
+    let groupID = 8482724;
 
     let playerName;
     let playerID;

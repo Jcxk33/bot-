@@ -30,7 +30,7 @@ module.exports = class pager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 783030560452902914) {
+    if (msgObject.channel.id == 780141386161979475) {
       return true;
     } else if (msgObject.member.roles.find(role => role.name == "VSP")) {
         return true;
@@ -67,8 +67,8 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("754146784892157982");
-          let channel = mainserver.channels.find("id", "783030918020595743");
+          const mainserver = msgObject.client.guilds.get("780139458020114432");
+          let channel = mainserver.channels.find("id", "780141384517550091");
           channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
