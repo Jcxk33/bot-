@@ -13,7 +13,7 @@ const oneLine = require('common-tags').oneLine;
 
 // Client
 const client = new commando.CommandoClient({
-  owner: ["675794471065092161","723068427861753917",""],
+  owner: ["675794471065092161", "637738570320445450"],
   commandPrefix: ";",
   unknownCommandResponse: false,
   selfbot: false,
@@ -23,7 +23,7 @@ const client = new commando.CommandoClient({
 // Status
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "Joe Mama" },
+    game: { name: " State of Virginia" },
   });
 });
 
@@ -77,7 +77,6 @@ client.registry
     ["miscellaneous", "Miscellaneous Commands"],
     ["administrator", "Administrator Commands"],
     ["es", "ES commands"],
-    ["icf", "ICF Commands"],
   ])
   .registerDefaults()
   .registerCommandsIn(path.join(__dirname, "commands"));
