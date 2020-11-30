@@ -27,19 +27,17 @@ module.exports = class epager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 769674200226988063) {
+    if (msgObject.channel.id == 783030560452902914) {
       return true;
-    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+    } else if (msgObject.member.roles.find(role => role.name == "VSP")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
+    } else if (msgObject.member.roles.find(role => role.name == "BPD")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+    } else if (msgObject.member.roles.find(role => role.name == "VSP")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+    } else if (msgObject.member.roles.find(role => role.name == "SO")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
     return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {

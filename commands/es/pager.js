@@ -30,17 +30,15 @@ module.exports = class pager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 778744682070802453) {
+    if (msgObject.channel.id == 783030560452902914) {
       return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Losten Police Department")) {
+    } else if (msgObject.member.roles.find(role => role.name == "VSP")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Charleston State Police")) {
+    } else if (msgObject.member.roles.find(role => role.name == "BPD")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Jackson County Sheriffs")) {
+    } else if (msgObject.member.roles.find(role => role.name == "VSP")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Patterson Police Department")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "CNG")) {
+    } else if (msgObject.member.roles.find(role => role.name == "SO")) {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
@@ -69,8 +67,8 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("754201074935529553");
-          let channel = mainserver.channels.find("id", "778744655613263873");
+          const mainserver = msgObject.client.guilds.get("754146784892157982");
+          let channel = mainserver.channels.find("id", "783030918020595743");
           channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
@@ -93,7 +91,7 @@ module.exports = class pager extends Command {
               });
               newPAGER.save();
               msgObject.reply(
-                "Cheers, that's been added to <#778744655613263873>!"
+                "Cheers, that's been added to <#783030918020595743>!"
               );
             });
           });

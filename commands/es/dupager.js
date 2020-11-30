@@ -34,7 +34,7 @@ module.exports = class dupager extends Command {
     return "Sorry 😣! You must be ES Command!";
   }
   async run(msgObject, { pager, argUser }) {
-    if (msgObject.channel.id == 778744754677481482) {
+    if (msgObject.channel.id == 783030560452902914) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -53,9 +53,9 @@ module.exports = class dupager extends Command {
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "754201074935529553"
+              "754146784892157982"
             );
-            let channel = mainserver.channels.find("id", "778744655613263873");
+            let channel = mainserver.channels.find("id", "783030918020595743");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();

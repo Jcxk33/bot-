@@ -21,17 +21,15 @@ module.exports = class dpager extends Command {
   
   // Permission and Response
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 778744682070802453) {
+    if (msgObject.channel.id == 783030560452902914) {
       return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Losten Police Department")) {
+    } else if (msgObject.member.roles.find(role => role.name == "VSP")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Charleston State Police")) {
+    } else if (msgObject.member.roles.find(role => role.name == "BPD")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Jackson County Sheriffs")) {
+    } else if (msgObject.member.roles.find(role => role.name == "VSP")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Patterson Police Department")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "CNG")) {
+    } else if (msgObject.member.roles.find(role => role.name == "SO")) {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
@@ -43,7 +41,7 @@ module.exports = class dpager extends Command {
   async run(msgObject, { pager }) {
     
     // Login to MongoDB
-    if (msgObject.channel.id == 778744682070802453) {
+    if (msgObject.channel.id == 783030560452902914) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -68,11 +66,11 @@ module.exports = class dpager extends Command {
             // If has pager
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "754201074935529553"
+              "754146784892157982"
             );
             
             // Deletes pager
-            let channel = mainserver.channels.find("id", "778744655613263873");
+            let channel = mainserver.channels.find("id", "783030918020595743");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();
