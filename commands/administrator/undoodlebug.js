@@ -25,8 +25,8 @@ module.exports = class uban extends Command {
     });
   }
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("754146784892157982");
-    if (msgObject.guild.id == 754146784892157982) {
+    const MainServer = msgObject.client.guilds.get("780139458020114432");
+    if (msgObject.guild.id == 780139458020114432) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (

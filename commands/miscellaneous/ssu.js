@@ -40,7 +40,7 @@ hasPermission(msgObject) {
         return true;
       }
     }
-    return "Sorry 😣! You must be a Mayflower Moderator!!";
+    return "Sorry 😣! You must be a letiVERSITY Moderator!!";
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds

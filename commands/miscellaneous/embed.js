@@ -50,7 +50,7 @@ hasPermission(msgObject) {
         return true;
       }
     }
-    return "Sorry 😣! You must be a Mayflower Moderator!!";
+    return "Sorry 😣! You must be a letiVERSITY Moderator!!";
   }
   async run(msgObject, { channel, title, content }) {
     let embed = new Discord.RichEmbed()
