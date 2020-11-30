@@ -40,7 +40,7 @@ hasPermission(msgObject) {
           } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
       }
-       return "Sorry, :persevere:! You must be a Mayflower Administrator! :grimacing:";
+       return "Sorry, :persevere:! You must be a Virginia Administrator! :grimacing:";
     }
 }
 

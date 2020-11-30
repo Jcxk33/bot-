@@ -41,7 +41,7 @@ hasPermission(msgObject) {
         return true;
       }
     }
-    return "Sorry 😣! You must be a Mayflower Admin!";
+    return "Sorry 😣! You must be a Virginia Admin!";
   }
   async run(msgObject, { target, reason }) {
     msgObject.reply(

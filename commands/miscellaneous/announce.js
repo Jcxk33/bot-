@@ -47,8 +47,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("774306549640200223")
-      .channels.find("id", "774316712082145323");
+      .get("754146784892157982")
+      .channels.find("id", "754204239819047045");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("**Mayflower**")
@@ -57,7 +57,7 @@ module.exports = class changelog extends Command {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter('State of Mayflower', 'https://cdn.discordapp.com/icons/774306549640200223/0daa343074d9e9dc924ed598a841b01e.jpg')
+      .setFooter('State of Virginia', 'https://cdn.discordapp.com/icons/754146784892157982/b092312c34107b2ddf8fd699869de285.jpg')
       .setTimestamp();
     channel.send(Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);
