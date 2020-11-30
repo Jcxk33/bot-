@@ -34,8 +34,8 @@ module.exports = class changelog extends Command {
     });
   }
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("774306549640200223");
-    if (msgObject.guild.id == 774306549640200223) {
+    const MainServer = msgObject.client.guilds.get("780139458020114432");
+    if (msgObject.guild.id == 780139458020114432) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
@@ -50,7 +50,7 @@ hasPermission(msgObject) {
         return true;
       }
     }
-    return "Sorry 😣! You must be a Virginia Moderator!!";
+    return "Sorry 😣! You must be a Mayflower Moderator!!";
   }
   async run(msgObject, { channel, title, content }) {
     let embed = new Discord.RichEmbed()

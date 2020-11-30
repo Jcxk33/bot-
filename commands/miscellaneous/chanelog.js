@@ -29,11 +29,11 @@ module.exports = class changelog extends Command {
       ) {
       }
     }
-    return "Sorry 😣! You must be a Virginia Developer!!";
+    return "Sorry 😣! You must be a Mayflower Developer!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("754146784892157982")
+      .get("780139458020114432")
       .channels.find("id", "765355957072560148");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
