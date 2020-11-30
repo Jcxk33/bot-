@@ -33,8 +33,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("774306549640200223")
-      .channels.find("id", "774318080565706752");
+      .get("754146784892157982")
+      .channels.find("id", "765355957072560148");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(":arrow_up: **__Change Log__**")

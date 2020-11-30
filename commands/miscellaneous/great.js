@@ -11,8 +11,8 @@ module.exports = class great extends Command {
     });
   }
   async run(msgObject, { target, reason }) {
-    const mainserver = msgObject.client.guilds.get("774306549640200223");
-    let channel = mainserver.channels.find("id", "774306550977658894");
+    const mainserver = msgObject.client.guilds.get("754146784892157982");
+    let channel = mainserver.channels.find("id", "765942925800243251");
     channel
       .fetchMessages()
       .then(messages => {

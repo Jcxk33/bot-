@@ -28,8 +28,8 @@ module.exports = class credits extends Command {
     }
 
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("774306549640200223");
-    if (msgObject.guild.id == 774306549640200223) {
+    const MainServer = msgObject.client.guilds.get("754146784892157982");
+    if (msgObject.guild.id == 754146784892157982) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
@@ -53,7 +53,7 @@ hasPermission(msgObject) {
     }
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('781565073603821568', 'NmVeJBszKW1DJgtxUtprzKnVYAi5kZRrv0Vuw4cS7LcxWqxt9iZ5J5BDX_3nLyy14MZH')
+        var webhook = new Discord.WebhookClient('782782549973532672', 'QWKr82sb5w8-MWEAkrf6fy4f6jpGy5a1SncZv7Byy9CAN1tl98cIkIykmNFRKLPdI-3B')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname
