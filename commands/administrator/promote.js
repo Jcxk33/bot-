@@ -33,7 +33,7 @@ hasPermission(msgObject) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-         } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+         } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
           } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
@@ -49,7 +49,7 @@ hasPermission(msgObject) {
       `Allow me to work my magic.. :sleeping:`
     );
 
-    let groupID = 8141418;
+    let groupID = 7900529;
 
     let playerName;
     let playerID;

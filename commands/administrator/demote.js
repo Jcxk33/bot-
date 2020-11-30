@@ -49,7 +49,7 @@ module.exports = class demote extends Command {
       `Allow me to work my magic.. :sleeping:`
     );
 
-    let groupID = 8141418;
+    let groupID = 7900529;
 
     let playerName;
     let playerID;
