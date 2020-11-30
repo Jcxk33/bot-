@@ -25,17 +25,19 @@ module.exports = class promote extends Command {
 hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("754146784892157982");
     if (msgObject.guild.id == 754146784892157982) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+      if (msgObject.member.roles.find(role => role.name === "¬_¬")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
-         } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
+         } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
         return true;
-          } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
+        return true;
+          } else if (msgObject.member.roles.find(role => role.name == "Administrator")) {
         return true;
       }
        return "Sorry, :persevere:! You must be a Virginia Administrator! :grimacing:";
