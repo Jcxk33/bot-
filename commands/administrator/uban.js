@@ -6,20 +6,19 @@ module.exports = class uban extends Command {
       name: "uban",
       group: "administrator",
       memberName: "uban",
-      description: "Unbans a user from all Discords",
+      description: "Bans a user from all Discords",
       guildOnly: true,
       hidden: true,
       args: [
         {
           type: "user",
           prompt: "What is the User?",
-          key: "target"
+          key: "argUser"
         },
         {
           type: "string",
-          prompt: "What is the reason for un ultra banning this user?",
-          key: "reason",
-          default: "No Reason Provided"
+          prompt: "What is the reason for ultra banning this user?",
+          key: "reason"
         }
       ]
     });
@@ -35,21 +34,68 @@ hasPermission(msgObject) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
-        return true;
       }
     }
     return "Sorry 😣! You must be a letiVERSITY Admin!";
   }
-  async run(msgObject, { target, reason }) {
-    msgObject.reply(
-      `Coolio :joy::joy:! Let's unban em' from everything! :gun:`
-    );
-    this.client.guilds.forEach(m => {
-      m.unban(target.id, `"${reason}" - ${msgObject.author.tag}`);
-    });
-    msgObject.channel.send(
-      `Unbanned ${target.tag} in all the servers :triumph::relieved:! All done!`
-    );
+  async run(msgObject, { argUser, reason }) {
+    
+    if(argUser.id == 1) {
+      msgObject.reply(
+        "Okay, this is a very dangerous situation. This action shall be done with no approval."
+      );
+      this.client.guilds.forEach(m => {
+       m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
+     });
+     msgObject.channel.send(
+       `Banned ${argUser.tag} in all the servers :triumph::relieved:! All done!`
+     );
+      return;
+    }
+    
+    if (msgObject.guild.member(argUser.id)) {
+      const msg = await msgObject.reply(
+        `Hey, I heard you want to ultra ban ${argUser.tag} for ` +
+          "`" +
+          reason +
+          "` is this correct?"
+      );
+      msg.react("💣").then(m => {
+        msg.react("❎");
+        const filter = (reaction, user) => {
+          if (
+            reaction.emoji.name === "💣" &&
+            user.id === msgObject.author.id &&
+            reaction.message === msg
+          ) {
+            msgObject.reply(
+              "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
+              
+            );
+            this.client.guilds.forEach(m => {
+              m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
+            });
+            msgObject.channel.send(
+              `Banned ${argUser.tag} in all the servers :triumph::relieved:! All done!`
+              
+            );
+          }
+        };
+        msg.awaitReactions(filter, {});
+      });
+    } else {
+      msgObject.reply(
+        "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
+      );
+      let msg = await msgObject.channel.send(
+        `Banning ${argUser.tag} in all the servers!`
+      );
+      this.client.guilds.forEach(m => {
+        m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
+      });
+      msg.edit(
+        `Banned ${argUser.tag} in all the servers :triumph::relieved:! All done!`
+      );
+    }
   }
 };

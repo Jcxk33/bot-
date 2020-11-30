@@ -35,8 +35,6 @@ hasPermission(msgObject) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
-        return true;
       }
     }
     return "Sorry 😣! You must be a letiVERSITY Admin!";
