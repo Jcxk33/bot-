@@ -36,6 +36,11 @@ module.exports = class links extends Command {
         "RoVer Website",
         "[RoVer Website](https://rover.link)",
         true
+      )
+         .addField(
+        "Citizenship Appeal",
+        "[RoVer Website](https://docs.google.com/forms/d/e/1FAIpQLSd6nT8MV3KrxsN8XHNc9jhi8Vs0pk0jbGO3cFV3hillnIt1wQ/viewform)",
+        true
       );
 
     msgObject.reply(embed);
