@@ -33,13 +33,13 @@ module.exports = class links extends Command {
         true
       )
          .addField(
-        "RoVer Website",
-        "[RoVer Website](https://rover.link)",
+        "Bloxlink Website",
+        "[Bloxlink Site]https://blox.link/verify/)",
         true
       )
          .addField(
         "Citizenship Appeal",
-        "[RoVer Website](https://docs.google.com/forms/d/e/1FAIpQLSd6nT8MV3KrxsN8XHNc9jhi8Vs0pk0jbGO3cFV3hillnIt1wQ/viewform)",
+        "[Google Docs](https://docs.google.com/forms/d/e/1FAIpQLSd6nT8MV3KrxsN8XHNc9jhi8Vs0pk0jbGO3cFV3hillnIt1wQ/viewform)",
         true
       );
 
