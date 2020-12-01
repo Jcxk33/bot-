@@ -23,31 +23,31 @@ module.exports = class changelog extends Command {
       ]
     });
   }
-    hasPermission(msgObject) {
-        if (msgObject.member.roles.find(role => role.name === "Developer")) {
-          return true;
-        } else if (
-          msgObject.author == this.client.users.get("675794471065092161")
-        ) {
-          return true;
-        } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
-          return true;
-     } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
-          return true;
-              } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+        return true;
+   } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+        return true;
+            } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
 
-              } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
-          return true;
+            } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
+        return true;
    }
     return "Sorry 😣! You must be a letiVERSITY Moderator!!";
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("780139458020114432")
-      .channels.find("id", "780141377832615977");
+      .channels.find("id", "783097199146958898");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("**letiVERSITY POLL**")
+      .setTitle("**LETIVERSITY POLL**")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
@@ -55,9 +55,10 @@ module.exports = class changelog extends Command {
       .setDescription(description)
       .setFooter('State of letiVERSITY', 'https://cdn.discordapp.com/icons/780139458020114432/01dabdfb0142c431b901b0df70695fc4.jpg')
       .setTimestamp();
-    channel.send(Embed);
-    Embed.react("✅")
+    channel.send(Embed).then(Embed => {
+        Embed.react("✅")
       Embed.react("❎")
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Poll!`);
+    });
   }
-};
+};                    
