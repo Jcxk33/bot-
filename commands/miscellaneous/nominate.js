@@ -1,62 +1,62 @@
-const Discord = require("discord.js")
-const { Command } = require("discord.js-commando")
-
-
-module.exports = class nominate extends Command {
-  constructor(client){
-    super(client, {
-      name: "nominate", 
-      description: "nominate for position ",
-      
-      group: "miscellaneous",
-      memberName: "nominate",
-      
-      args: [
-        {
-          type: "string",
-          prompt: "nomination?",
-          key: "nomination",
-          oneOf: ["gubernatorial", "senate", "sheriff"]
-        }
-      ]
-    })
-  }
-  
-  async run(message, { nomination }){
-    const person = message.guild.member(message.author)
-    
-    let govRoleName = "Gubernatorial Candidate"
-    let senateRoleName = "Campaigner"
-    let sheriffRoleName = "Sheriff Candidate"
-    
-    let govRole = message.guild.roles.find(role => role.name == govRoleName).id
-    let senateRole = message.guild.roles.find(role => role.name == senateRoleName).id
-    let sheriffRole = message.guild.roles.find(role => role.name == sheriffRoleName).id
-    
-    console.log(sheriffRole)
-    
-    if(nomination == "gubernatorial"){
-      if(person.roles.find(role => role.id == govRole)){
-        message.channel.send("role")
-      } else {
-        message.channel.send("no role")
-      }
-    } else if(nomination == "senate"){
-      if(person.roles.find(role => role.id == senateRole)){
-        message.channel.send("role")
-      } else {
-        message.channel.send("no role")
-      }
-    } else if(nomination == "sheriff"){
-      if(person.roles.find(role => role.id == sheriffRole)){
-        person.removeRole(sheriffRole)
-        
-        message.reply("un nominated for sheriff")
-      } else {
-        person.addRole(sheriffRole)
-        
-        message.reply("nominated for sheriff")
-      }
+const Discord = require('discord.js')
+const {
+    Command
+} = require('discord.js-commando')
+module.exports = class credits extends Command {
+    constructor(client) {
+        super(client, {
+            name: 'nominate',
+            description: 'Nominating into an election',
+            group: 'miscellaneous',
+            guildOnly: true,
+            memberName: 'nominate',
+            args: [
+                {
+                    key: 'option',
+                    prompt: 'What election would you like to join?',
+                    type: 'string',
+                    validate: text => {
+                        if(text == "Senate" || text == "Gubernatorial") return true
+                    }
+                }
+            ]
+        })
+    }
+  hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("780139458020114432");
+    if (msgObject.guild.id == 780139458020114432) {
+      if (msgObject.member.roles.find(role => role.name === "Citizen")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+    }
+      return "Sorry 😣! You must be a citizen";
     }
   }
+    async run(message, args) {
+        let Campaigner = message.guild.roles.find(r => r.name === "Campaigner");
+        let GubernatorialCandidate = message.guild.roles.find(r => r.name === "Gubernatorial Candidate");
+        var nickname
+        if (message.member.nickname) {
+            nickname = message.member.nickname
+        } else {
+            nickname = message.author.username
+        }
+      
+            if (args.option == 'Senate') {
+              message.member.addRole(Campaigner)
+            message.reply('Successfully joined the Senate Election! 🤗')
+            } else {
+            if (args.option == 'Gubernatorial') {
+              message.member.addRole(GubernatorialCandidate)
+            message.reply('Successfully joined the Gubernatorial Elections 🤗')
+            } else {
+              message.reply('Guess there was an error? :shrug:')
+            }
+    }
+    }
 }
