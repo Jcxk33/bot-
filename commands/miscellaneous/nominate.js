@@ -16,7 +16,7 @@ module.exports = class credits extends Command {
                     prompt: 'What election would you like to join?',
                     type: 'string',
                     validate: text => {
-                        if(text == "Senate" || text == "Gubernatorial") return true
+                        if(text == "senate" || text == "Gubernatorial") return true
                     }
                 }
             ]
@@ -45,7 +45,7 @@ module.exports = class credits extends Command {
             nickname = message.author.username
         }
       
-            if (args.option == 'Senate') {
+            if (args.option == 'senate') {
               message.member.addRole(Campaigner)
             message.reply('Successfully joined the Senate Election! 🤗')
             } else {
