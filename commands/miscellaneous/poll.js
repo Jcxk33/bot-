@@ -44,7 +44,7 @@ hasPermission(msgObject) {
   async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("780139458020114432")
-      .channels.find("id", "783097199146958898");
+      .channels.find("id", "780141377832615977");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("**LETIVERSITY POLL**")
@@ -54,11 +54,10 @@ hasPermission(msgObject) {
       )
       .setDescription(description)
       .setFooter('State of letiVERSITY', 'https://cdn.discordapp.com/icons/780139458020114432/01dabdfb0142c431b901b0df70695fc4.jpg')
-      .setTimestamp();
+      .setTimestamp(1522);
     channel.send(Embed).then(Embed => {
         Embed.react("✅")
       Embed.react("❎")
-        msgObject.reply(`**Congrats** :sunglasses:! You have announced your Poll!`);
     });
   }
 };                    
