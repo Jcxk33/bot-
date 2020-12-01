@@ -31,10 +31,8 @@ module.exports = class credits extends Command {
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
     }
-      return "Sorry 😣! You must be a citizen";
+      return "Sorry 😣! You must be a Citizen";
     }
   }
     async run(message, args) {
