@@ -24,21 +24,24 @@ module.exports = class changelog extends Command {
     });
   }
 hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+    const MainServer = msgObject.client.guilds.get("780139458020114432");
+    if (msgObject.guild.id == 780139458020114432) {
+      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-   } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+         } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-            } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-
-            } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
+             } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
         return true;
-   }
+      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+        return true;
+      }
+    }
     return "Sorry 😣! You must be a letiVERSITY Moderator!!";
   }
   async run(msgObject, { description }) {

@@ -40,6 +40,8 @@ module.exports = class changelog extends Command {
         return true;
        } else if (msgObject.member.roles.find(role => role.name == "Lieutenant Governor")) {
         return true;
+              } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
+        return true;
             } else if (msgObject.member.roles.find(role => role.name == "Cabinet")) {
         return true;
    }

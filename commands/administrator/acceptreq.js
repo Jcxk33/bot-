@@ -37,6 +37,8 @@ hasPermission(msgObject) {
         return true;
         } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
         return true;
+                  } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
+        return true;
           } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
       }
