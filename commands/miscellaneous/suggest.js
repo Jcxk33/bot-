@@ -37,8 +37,8 @@ module.exports = class suggest extends Command {
       )
       .setTimestamp();
     channel.send(Embed).then(Embed => {
-         Embed.react("👍")
-        Embed.react("👎")
+         Embed.react("✔️")
+        Embed.react("❌")
           msgObject.reply(
         "**Congratulations, **suggestion successfully made!:smile: "
       );
