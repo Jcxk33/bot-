@@ -26,10 +26,10 @@ module.exports = class suggest extends Command {
   async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("780139458020114432")
-      .channels.find("id", "783741646806188082");
+      .channels.find("id", "783097199146958898");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Game Suggestion")
+      .setTitle("Suggestion")
       .setDescription(description)
       .setAuthor(
         `${msgObject.member.displayName}`,
@@ -37,8 +37,8 @@ module.exports = class suggest extends Command {
       )
       .setTimestamp();
     channel.send(Embed).then(Embed => {
-        Embed.react("✅")
-      Embed.react("❎")
+        Embed.react("👍")
+        Embed.react("👎")
           msgObject.reply(
         "**Congratulations, **suggestion successfully made!:smile: "
       );
