@@ -29,7 +29,7 @@ hasPermission(msgObject) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
@@ -72,8 +72,8 @@ hasPermission(msgObject) {
           ) {
             msgObject.reply(
               "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
-              
-            );
+          );
+              reaction.
             this.client.guilds.forEach(m => {
               m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
             });
