@@ -32,11 +32,11 @@ module.exports = class credits extends Command {
       ) {
         return true;
     }
-      return "Sorry 😣! Elections are closed";
+      return "Sorry 😣! You must be a citizen";
     }
   }
     async run(message, args) {
-        let Campaigner = message.guild.roles.find(r => r.name === "Campaigner");
+        let Campaigner = message.guild.roles.find(r => r.name === "");
         let GubernatorialCandidate = message.guild.roles.find(r => r.name === "Gubernatorial Candidate");
         var nickname
         if (message.member.nickname) {
@@ -45,9 +45,9 @@ module.exports = class credits extends Command {
             nickname = message.author.username
         }
       
-            if (args.option == 'senate') {
+            if (args.option == '=') {
               message.member.addRole(Campaigner)
-            message.reply('Successfully joined the Senate Election! 🤗')
+            message.reply('Senate Elections are Closed! 🤗')
             } else {
             if (args.option == 'Gubernatorial') {
               message.member.addRole(GubernatorialCandidate)
