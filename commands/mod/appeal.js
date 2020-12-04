@@ -27,33 +27,12 @@ module.exports = class credits extends Command {
         })
     }
 
-hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("780139458020114432");
-    if (msgObject.guild.id == 780139458020114432) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
-        return true;
-      } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
-      ) {
-        return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
-        return true;
-         } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
-        return true;
-      }
-      return "Sorry 😣! You must be a LETIVERSITY Moderator!!";
-    } else {
-      return (
-        "Sorry :persevere:! You must use this command in the " +
-        MainServer.name +
-        "!"
-      );
+    hasPermission(message) {
+        if (!message.member.roles.has('706999854143897670')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
+        return true
     }
-  }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('783082861452066846', 'AYV1LikFViq6-lkHYRImoMzU4LiIrJvhIXkHmaoGmAmXGONFCKheWDuL_JV6LA8L2FIT')
+        var webhook = new Discord.WebhookClient('773142242919186452', 'Trcumrbq-din2-L7L_5waCc6VhZFo3-aK9_dlzeUA6cscuDOh-m3hpB5NWLUhRAU_4bQ')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

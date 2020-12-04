@@ -26,7 +26,7 @@ module.exports = class dupager extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "ES Command")) {
         return true;
@@ -34,7 +34,7 @@ module.exports = class dupager extends Command {
     return "Sorry 😣! You must be ES Command!";
   }
   async run(msgObject, { pager, argUser }) {
-    if (msgObject.channel.id == 780141386161979475) {
+    if (msgObject.channel.id == 746255037931454485) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -53,9 +53,9 @@ module.exports = class dupager extends Command {
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "780139458020114432"
+              "706999196124840009"
             );
-            let channel = mainserver.channels.find("id", "780141386161979475");
+            let channel = mainserver.channels.find("id", "740496274175819777");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();
