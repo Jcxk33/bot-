@@ -32,7 +32,7 @@ module.exports = class credits extends Command {
       ) {
         return true;
     }
-      return "Sorry 😣! You must be a Citizen";
+      return "Sorry 😣! Elections are closed";
     }
   }
     async run(message, args) {
