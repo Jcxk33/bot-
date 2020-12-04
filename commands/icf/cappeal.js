@@ -87,7 +87,7 @@ module.exports = class credits extends Command {
       let playerID = await roblox.getIdFromUsername(args.person);
       playerName = await roblox.getUsernameFromId(playerID)
       
-      await roblox.setRank(groupID, playerID, 242);
+      await roblox.setRank(groupID, playerID, 2);
     }
     
     const embed = new Discord.RichEmbed()
