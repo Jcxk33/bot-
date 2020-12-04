@@ -42,7 +42,7 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("780139458020114432")
+      .get("706999196124840009")
       .channels.find("id", "763539950360592414");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
@@ -54,7 +54,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[Jackson County](https://www.roblox.com/games/5866088106/Jackson-County-NEW-RELEASE?refPageId=27d0ab13-448f-4bae-8ba5-bc01d05edf69#)`
+        `[State of Mayflower](https://www.roblox.com/games/5883511054/New-Haven-County)`
       )
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
