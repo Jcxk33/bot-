@@ -23,9 +23,9 @@ module.exports = class denyreq extends Command {
   }
 
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("780139458020114432");
-    if (msgObject.guild.id == 780139458020114432) {
-      if (msgObject.member.roles.find(role => role.name === "¬_¬")) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
+      if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
@@ -37,12 +37,10 @@ hasPermission(msgObject) {
         return true;
         } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
         return true;
-                } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
-        return true;
-          } else if (msgObject.member.roles.find(role => role.name == "Administrator")) {
+          } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
       }
-       return "Sorry, :persevere:! You must be a letiVERSITY Administrator! :grimacing:";
+       return "Sorry, :persevere:! You must be a ICF Agent! :grimacing:";
     }
 }
 

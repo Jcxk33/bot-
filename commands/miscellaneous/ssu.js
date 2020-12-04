@@ -24,30 +24,26 @@ module.exports = class changelog extends Command {
     });
   }
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("780139458020114432");
-    if (msgObject.guild.id == 780139458020114432) {
-      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
+      if (msgObject.member.roles.find(role => role.name === "BOT")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
-        return true;
          } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-             } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
-        return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
     }
-    return "Sorry 😣! You must be a letiVERSITY Moderator!!";
+    return "Sorry 😣! You must be a Mayflower Moderator!!";
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
       .get("780139458020114432")
-      .channels.find("id", "780141370139475969");
+      .channels.find("id", "763539950360592414");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(

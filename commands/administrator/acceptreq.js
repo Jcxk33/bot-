@@ -23,8 +23,8 @@ module.exports = class acceptreq extends Command {
   }
 
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("780139458020114432");
-    if (msgObject.guild.id == 780139458020114432) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
@@ -36,8 +36,6 @@ hasPermission(msgObject) {
          } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
         return true;
         } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
-        return true;
-                  } else if (msgObject.member.roles.find(role => role.name == "letiVERSITY Overlord")) {
         return true;
           } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
