@@ -38,7 +38,7 @@ module.exports = class blacklist extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.se(role => role.name == "ICF Director")
+        msgObject.member.roles.find(role => role.name == "ICF Director")
       ) {
         return true;
       } else if (
