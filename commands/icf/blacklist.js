@@ -22,8 +22,8 @@ module.exports = class blacklist extends Command {
             },
         {
           type: "string",
-          prompt: "What is the Description?",
-          key: "description"
+          prompt: "What is the Reason?",
+          key: "reason"
         }
       ]
     });
@@ -38,7 +38,7 @@ module.exports = class blacklist extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "ICF Director")
+        msgObject.member.roles.se(role => role.name == "ICF Director")
       ) {
         return true;
       } else if (
@@ -55,14 +55,15 @@ module.exports = class blacklist extends Command {
       );
     }
   }
-  async run(msgObject, { description }) {
+  async run(msgObject, { title }) {
     let channel = this.client.guilds
+    
       .get("706999196124840009")
       .channels.find("id", "742230356048216125");
     let Embed = new Discord.RichEmbed()
       .setColor("")
       .setTitle("**Citizenship Blacklist**")
-      .setDescription(`test's has been Blacklisted from obtaining Citizenship by ${msgObject.member.displayName}`)
+      .setDescription(`${title} has been Blacklisted from obtaining Citizenship by ${msgObject.member.displayName}`)
       .setTimestamp();
     channel.send(Embed).then(Embed => {
           msgObject.reply(
