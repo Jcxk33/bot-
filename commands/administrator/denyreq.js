@@ -23,8 +23,8 @@ module.exports = class denyreq extends Command {
   }
 
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009","784521928659959860");
+    if (msgObject.guild.id == 706999196124840009, 784521928659959860) {
       if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
