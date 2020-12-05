@@ -2,13 +2,13 @@ const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const roblox = require("noblox.js");
 
-module.exports = class exile extends Command {
+module.exports = class getrank extends Command {
   constructor(client) {
     super(client, {
-      name: "exile",
-      description: "Exile people within the group.",
+      name: "getrank",
+      description: "Fetch peoples rank within the group.",
 
-      memberName: "exile",
+      memberName: "getrank",
       group: "administrator",
 
       args: [
@@ -28,7 +28,7 @@ hasPermission(msgObject) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
@@ -64,6 +64,8 @@ hasPermission(msgObject) {
       );
       return;
     }
+    
+    sentMessage.edit(`:raised_hands: **Found it!**  **${playerName}** is of the Rank ``${playerRank}``!`)
 
   }
 };
