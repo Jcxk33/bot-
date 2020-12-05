@@ -1,1 +1,1 @@
-"soon ok glock?"
+"s?"
