@@ -65,7 +65,7 @@ hasPermission(msgObject) {
       return;
     }
     
-    sentMessage.edit(`Wowzers, :raised_hands: **${playerName}** is ranked **${playerRank}** `)
+    sentMessage.edit(`__Wowzers,__  :raised_hands: **${playerName}** is ranked **${playerRank}** `)
 
   }
 };
