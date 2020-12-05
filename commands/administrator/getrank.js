@@ -24,7 +24,7 @@ module.exports = class getrank extends Command {
 
 hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("706999196124840009","784521928659959860");
-    if (msgObject.guild.id == 706999196124840009) {
+    if (msgObject.guild.id == 706999196124840009,784521928659959860) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
@@ -32,6 +32,8 @@ hasPermission(msgObject) {
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+        return true;
+         } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
     }
@@ -65,7 +67,7 @@ hasPermission(msgObject) {
       return;
     }
     
-    sentMessage.edit(`__Wowzers,__  :raised_hands: **${playerName}** is ranked **${playerRank}** `)
+    sentMessage.edit(`__Found It!__  :raised_hands: **${playerName}** is ranked **${playerRank}** `)
 
   }
 };
