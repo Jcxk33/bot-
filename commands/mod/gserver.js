@@ -39,7 +39,7 @@ hasPermission(msgObject) {
           } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
         return true;
       }
-      return "Sorry 😣! You must be a Charleston Admin!!";
+      return "Sorry 😣! You must be a Mayflower Admin!!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +

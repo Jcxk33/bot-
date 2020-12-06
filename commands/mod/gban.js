@@ -46,7 +46,7 @@ hasPermission(msgObject) {
       } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
         return true;
       }
-      return "*Yikes* 😣! You must be a Staff Member!";
+      return "*Yikes* 😣! You must be a Mayflower Moderator!";
     } else {
     }
   }
