@@ -22,8 +22,8 @@ module.exports = class getservercommand extends Command {
     });
   }
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("780139458020114432");
-    if (msgObject.guild.id == 780139458020114432) {
+    const MainServer = msgObject.client.guilds.get("706999196124840009");
+    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
@@ -35,6 +35,8 @@ hasPermission(msgObject) {
          } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+        return true;
+          } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
         return true;
       }
       return "Sorry 😣! You must be a Charleston Admin!!";
@@ -48,7 +50,7 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/5866088106/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/5883511054/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -64,7 +66,7 @@ hasPermission(msgObject) {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[Charleston Link](https://www.roblox.com/games/5866088106/Jackson-County-NEW-RELEASE)\n[Detailed Link](https://games.roblox.com/v1/games/5866088106/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[New Haven County Link](https://www.roblox.com/games/5883511054/New-Haven-County)\n[Detailed Link](https://games.roblox.com/v1/games/5883511054/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
@@ -96,7 +98,7 @@ hasPermission(msgObject) {
           msgObject.reply("Sorry :persevere:! This server does not exist!");
         } else {
           let data = await request({
-            uri: `https://games.roblox.com/v1/games/5866088106/servers/Public?sortOrder=Asc&limit=100`,
+            uri: `https://games.roblox.com/v1/games/5883511054/servers/Public?sortOrder=Asc&limit=100`,
             json: true,
             simple: false
           }).catch(err => {
