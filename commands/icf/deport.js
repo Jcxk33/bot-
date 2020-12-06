@@ -5,13 +5,13 @@ module.exports = class credits extends Command {
   constructor(client) {
     super(client, {
       name: "deport",
-      description: "Handles specified target's citizenship appeal",
+      description: "ICF Uses this to Deport Someone",
       group: "icf",
       guildOnly: true,
       memberName: "deport",
       args: [
         {
-          prompt: "Who's citizenship appeal do you wish to handle?",
+          prompt: "Who's Deportion do you wish to handle?",
           type: "string",
           key: "person"
         }
