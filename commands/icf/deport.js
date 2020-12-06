@@ -69,6 +69,7 @@ module.exports = class credits extends Command {
       let playerID = await roblox.getIdFromUsername(args.person);
       playerName = await roblox.getUsernameFromId(playerID)
       await roblox.setRank(groupID, playerID, 1);
-
+    message.reply(`**Done,** :raised_hands:  Successfully Deported`)
   }
-}
+  }
+    
