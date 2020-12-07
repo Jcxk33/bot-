@@ -37,13 +37,11 @@ module.exports = class suggest extends Command {
       )
       .setTimestamp();
     channel.send(Embed).then(Embed => {
-      async function asd(){
-       await  Embed.react("✔️")
-       await Embed.react("❌")
+        Embed.react("✔️")
+       Embed.react("❌")
           msgObject.reply(
         "**Congratulations, **suggestion successfully made!:smile: "
       );
-      }
     });
   }
 };
