@@ -46,7 +46,7 @@ module.exports = class credits extends Command {
         }
       
             if (args.option == '=') {
-              message.member.addRole(SenateCandidate
+              message.member.addRole(SenateCandidate)
             message.reply('Senate Elections are Closed! 🤗')
             } else {
             if (args.option == 'gubernatorial') {
