@@ -36,7 +36,7 @@ module.exports = class credits extends Command {
     }
   } 
     async run(message, args) {
-        let SenateCandidate = message.guild.roles.find(r => r.name === "Senate");
+        let SenateCandidate = message.guild.roles.find(r => r.name === "Senate Candidate");
         let GubernatorialCandidate = message.guild.roles.find(r => r.name === "Gubernatorial Candidate");
         var nickname
         if (message.member.nickname) {
@@ -45,9 +45,9 @@ module.exports = class credits extends Command {
             nickname = message.author.username
         }
       
-            if (args.option == '=') {
+            if (args.option == 'senate') {
               message.member.addRole(SenateCandidate)
-            message.reply('Senate Elections are Closed! 🤗')
+            message.reply('Successfully Joined Senate Elections 🤗')
             } else {
             if (args.option == 'gubernatorial') {
               message.member.addRole(GubernatorialCandidate)
