@@ -33,7 +33,7 @@ hasPermission(msgObject) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
         return true;
-              } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
+              } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
         return true;
       }
     }
