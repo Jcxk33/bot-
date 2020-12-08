@@ -21,19 +21,19 @@ module.exports = class getservercommand extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
+hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("706999196124840009");
     if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("242876771387572224")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+         } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
       }
-      return "Sorry :persevere:! You must be a Mayflower Moderator!";
+      return "Sorry 😣! You must be a Mayflower Moderator !";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
@@ -48,12 +48,12 @@ module.exports = class getservercommand extends Command {
       json: true,
       simple: false
     }).catch(err => {
-      msgObject.reply("Sorry :frowning2:! There are currently no running servers!");
+      msgObject.reply("Sorry 😣! There are currently no running servers!");
     });
     if (!serverUser) {
       let embed = new Discord.RichEmbed()
         .setAuthor("")
-        .setTitle("Currect Servers")
+        .setTitle("Active Servers")
         .setTimestamp();
       let Servers = 0;
       data.data.forEach(Data => {
@@ -65,10 +65,10 @@ module.exports = class getservercommand extends Command {
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
       if (Servers === 0) {
-        msgObject.reply("Sorry :frowning2:! There are currently no running servers!");
+        msgObject.reply("Sorry 😣! There are currently no running servers!");
       } else {
         msgObject.reply(
-          "Heyo!! :raised_hands: Here's a list of running servers!:smiley: ",
+          "Ayo :raised_hands:! Here's a list of running servers!",
           embed
         );
       }
@@ -86,10 +86,10 @@ module.exports = class getservercommand extends Command {
         }
       });
       if (Servers === 0) {
-        msgObject.reply("Sorry :frowning2:! There are currently no running servers!");
+        msgObject.reply("Sorry 😣! There are currently no running servers!");
       } else {
         if (!valid) {
-          msgObject.reply("Sorry :angry:! This server does not exist!");
+          msgObject.reply("Sorry :persevere:! This server does not exist!");
         } else {
           let data = await request({
             uri: `https://games.roblox.com/v1/games/5883511054/servers/Public?sortOrder=Asc&limit=100`,
@@ -97,7 +97,7 @@ module.exports = class getservercommand extends Command {
             simple: false
           }).catch(err => {
             msgObject.reply(
-              "Sorry :angry:! There are currently no running servers!"
+              "Sorry 😣! There are currently no running servers!"
             );
           });
 
@@ -115,7 +115,7 @@ module.exports = class getservercommand extends Command {
 
               if (Data.playing > 25) {
                 editMessage.edit(
-                  "Sorry :pleading_face:! The information is too large to upload!"
+                  "Sorry 😣! The information is too large to upload!"
                 );
                 return;
               }
@@ -141,7 +141,7 @@ module.exports = class getservercommand extends Command {
                     })
                     .catch(err => {
                       msgObject.reply(
-                        "Sorry :pouting_cat:! There has been an issue with obtaining information!"
+                        "Sorry 😣! There has been an issue with obtaining information!"
                       );
                     });
                 }
