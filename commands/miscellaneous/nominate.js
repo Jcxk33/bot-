@@ -25,7 +25,7 @@ module.exports = class credits extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("706999196124840009");
     if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "blCk")) {
+      if (msgObject.member.roles.find(role => role.name === "Citizen")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -36,7 +36,7 @@ module.exports = class credits extends Command {
     }
   } 
     async run(message, args) {
-        let Campaigner = message.guild.roles.find(r => r.name === "");
+        let SenateCandidate = message.guild.roles.find(r => r.name === "Senate");
         let GubernatorialCandidate = message.guild.roles.find(r => r.name === "Gubernatorial Candidate");
         var nickname
         if (message.member.nickname) {
@@ -46,7 +46,7 @@ module.exports = class credits extends Command {
         }
       
             if (args.option == '=') {
-              message.member.addRole(Campaigner)
+              message.member.addRole(SenateCandidate
             message.reply('Senate Elections are Closed! 🤗')
             } else {
             if (args.option == 'gubernatorial') {
