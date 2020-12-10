@@ -26,13 +26,17 @@ module.exports = class uban extends Command {
 hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("706999196124840009");
     if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+      if (msgObject.member.roles.find(role => role.name === "44")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name == "33")) {
+        return true;
+         } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "ye")) {
         return true;
       }
     }
@@ -70,8 +74,8 @@ hasPermission(msgObject) {
           ) {
             msgObject.reply(
               "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
-          );
-              reaction.
+              
+            );
             this.client.guilds.forEach(m => {
               m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
             });
