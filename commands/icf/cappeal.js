@@ -98,6 +98,14 @@ module.exports = class credits extends Command {
       username: "Citizenship",
       embeds: [embed]
     });
+    
+    const log = new Discord.RichEmbed() 
+    log.setTitle(`Citizenship Management`)
+    log.setColor(`1D37D9`)
+    log.setDescription(`${message.author} has set **${args.person}**'s appeal to \`${choice.toLowerCase()}\`!`)
+    log.setFooter(`ICF Management`, `https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png `) 
+    this.client.channels.get(`786819844996595714`).send(log)
+    
     message.reply("Successfully sent your appeal message! 🤗");
   }
 };
