@@ -92,9 +92,11 @@ module.exports = class pager extends Command {
                 secondarypagerid: ""
               });
               newPAGER.save();
-
-              // m.delete({timeout: 900000})
-              m.delete({ timeout: 30000 });
+              
+              setTimeout(() => {
+                m.delete() 
+                PM.delete() 
+              }, 900000)
               msgObject.reply(
                 "Cheers, that's been added to <#740496274175819777>!"
               );
