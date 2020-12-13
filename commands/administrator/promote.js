@@ -34,7 +34,7 @@ module.exports = class promote extends Command {
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
           } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
         return true;

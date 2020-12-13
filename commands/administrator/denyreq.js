@@ -23,11 +23,8 @@ module.exports = class denyreq extends Command {
   }
 
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get(
-      "784521928659959860"
-    );
-    if ((msgObject.guild.id == 706999196124840009)) {
-      if (msgObject.member.roles.find(role => role.name === "ICF")) {
+  if(msgObject.guild.id == 706999196124840009 || msgObject.guild.id == 784521928659959860){
+     if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -38,16 +35,14 @@ module.exports = class denyreq extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       }
       return "Sorry 😣! You must be a ICF Agent Member!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the " +
-        MainServer.name +
-        "!"
+        "Sorry :persevere:! You must use this command in the ICF / Mayflower Server!"
       );
     }
   }

@@ -24,28 +24,29 @@ module.exports = class acceptreq extends Command {
 
 
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get(
-      "784521928659959860"
-    );
-    if ((msgObject.guild.id == 784521928659959860||706999196124840009)) {
-      if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+  if(msgObject.guild.id == 706999196124840009 || msgObject.guild.id == 784521928659959860){
+     if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "ICF Director")
+      ) {
         return true;
-         } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
-        return true;
-        } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
-        return true;
-          } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
         return true;
       }
-       return "Sorry, :persevere:! You must be a ICF Agent! :grimacing:";
+      return "Sorry 😣! You must be a ICF Agent Member!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the ICF / Mayflower Server!"
+      );
     }
-}
+  }
 
 
   async run(message, { desiredPlayer }) {
