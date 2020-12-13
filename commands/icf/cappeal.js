@@ -29,12 +29,12 @@ module.exports = class credits extends Command {
     });
   }
 
+
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get(
-      "706999196124840009",
       "784521928659959860"
     );
-    if ((msgObject.guild.id == 706999196124840009, 784521928659959860)) {
+    if ((msgObject.guild.id == 706999196124840009)) {
       if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -59,6 +59,7 @@ module.exports = class credits extends Command {
       );
     }
   }
+
   async run(message, args) {
     var webhook = new Discord.WebhookClient(
       "770561695910330388",

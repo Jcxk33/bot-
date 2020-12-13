@@ -28,9 +28,11 @@ module.exports = class blacklist extends Command {
       ]
     });
   }
-    hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009","784521928659959860");
-    if (msgObject.guild.id == 706999196124840009, 784521928659959860) {
+  hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get(
+      "784521928659959860"
+    );
+    if ((msgObject.guild.id == 706999196124840009)) {
       if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -55,6 +57,7 @@ module.exports = class blacklist extends Command {
       );
     }
   }
+
   async run(msgObject, { title }) {
     let channel = this.client.guilds
     
