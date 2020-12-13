@@ -67,6 +67,7 @@ module.exports = class blacklist extends Command {
       .setColor("")
       .setTitle("**Citizenship Blacklist**")
       .setDescription(`${title} has been Blacklisted from obtaining Citizenship by ${msgObject.member.displayName}`)
+      .setFooter("ICF Management")
       .setTimestamp();
     channel.send(Embed).then(Embed => {
           msgObject.reply(
