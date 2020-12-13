@@ -22,26 +22,34 @@ module.exports = class getrank extends Command {
     });
   }
 
-hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009","784521928659959860");
-    if (msgObject.guild.id == 706999196124840009,784521928659959860) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+  hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get(
+      "784521928659959860"
+    );
+    if ((msgObject.guild.id == 706999196124840009)) {
+      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "ICF Director")
+      ) {
         return true;
-           } else if (msgObject.member.roles.find(role => role.name == "ICF")) {
-        return true;
-                 } else if (msgObject.member.roles.find(role => role.name == "ICF Director")) {
-        return true;
-         } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Senior Admin")
+      ) {
         return true;
       }
+      return "Sorry 😣! You must be a ICF Agent Member!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the " +
+        MainServer.name +
+        "!"
+      );
     }
-    return "Sorry 😣! You must be a Mayflower Admin!";
   }
 
 
