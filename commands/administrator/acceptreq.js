@@ -27,7 +27,7 @@ module.exports = class acceptreq extends Command {
     const MainServer = msgObject.client.guilds.get(
       "784521928659959860"
     );
-    if ((msgObject.guild.id == 784521928659959860)) {
+    if ((msgObject.guild.id == 784521928659959860||706999196124840009)) {
       if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
