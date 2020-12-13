@@ -71,7 +71,7 @@ module.exports = class pager extends Command {
         if (!pg || pg === null) {
           const mainserver = msgObject.client.guilds.get("706999196124840009");
           let channel = mainserver.channels.find("id", "740496274175819777");
-          channel.send("@here").then(PM => {
+          channel.send("@mod").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
               .setTitle("New Pager!")
@@ -92,6 +92,9 @@ module.exports = class pager extends Command {
                 secondarypagerid: ""
               });
               newPAGER.save();
+
+              // m.delete({timeout: 900000})
+              m.delete({ timeout: 30000 });
               msgObject.reply(
                 "Cheers, that's been added to <#740496274175819777>!"
               );
