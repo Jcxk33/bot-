@@ -62,7 +62,7 @@ module.exports = class blacklist extends Command {
       .setColor("")
       .setTitle("**Citizenship Blacklist**")
       .setDescription(`${title} has been Blacklisted from obtaining Citizenship by ${msgObject.member.displayName}`)
-      .setFooter("ICF Management")
+      .setFooter("ICF Management", "https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png")
       .setTimestamp();
     channel.send(Embed).then(Embed => {
           msgObject.reply(
