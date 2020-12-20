@@ -46,6 +46,16 @@ hasPermission(msgObject) {
       msgObject.reply(
         "Modified roles for " + member.user.tag + " | + " + role.name
       );
+       const log = new Discord.RichEmbed();
+    log.setTitle(`Command Logging`);
+    log.setColor(`1D37D9`);
+    log.setDescription(`${msgObject.member.displayName} has roled  ${member} ${role}!! `);
+    log.setFooter(
+      `Mayflower Command Logging`,
+      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
+    );
+    log.setTimestamp();
+    this.client.channels.get(`790345391912517632`).send(log);
     } else {
       GuildMember.removeRole(role.id);
       msgObject.reply(

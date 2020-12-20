@@ -65,7 +65,7 @@ module.exports = class getrank extends Command {
   const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-    log.setDescription(`${message.author} has ran getrank on  **${desiredPlayer}**!`);
+    log.setDescription(`${message.author} has ran getrank on **${desiredPlayer}**!`);
     log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`

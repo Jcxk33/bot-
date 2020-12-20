@@ -75,7 +75,7 @@ module.exports = class demote extends Command {
     const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-    log.setDescription(`${message.author} has demoted **${desiredPlayer}'s Request!**!`);
+    log.setDescription(`${message.author} has demoted **${desiredPlayer}**!`);
     log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png `
