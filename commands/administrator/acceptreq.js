@@ -74,6 +74,16 @@ module.exports = class acceptreq extends Command {
       );
       return;
     }
+    const log = new Discord.RichEmbed();
+    log.setTitle(`Citizenship Management`);
+    log.setColor(`1D37D9`);
+    log.setDescription(`${message.author} has deported **${args.desiredPlayer}**!`);
+    log.setFooter(
+      `ICF Management`,
+      `https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png `
+    );
+    log.setTimestamp();
+    this.client.channels.get(`786819844996595714`).send(log);
 
     try {
       await roblox
