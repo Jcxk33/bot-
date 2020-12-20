@@ -48,7 +48,17 @@ module.exports = class promote extends Command {
         let sentMessage = await message.reply(
       `Allow me to work my magic.. :sleeping:`
     );
-
+  const log = new Discord.RichEmbed();
+    log.setTitle(`Command Logging`);
+    log.setColor(`1D37D9`);
+    log.setDescription(`${message.author} has Promoted  **${desiredPlayer}**!`);
+    log.setFooter(
+      `Mayflower Command Logging`,
+      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
+    );
+    log.setTimestamp();
+    this.client.channels.get(`790345391912517632`).send(log);
+    
     let groupID = 5837961;
 
     let playerName;

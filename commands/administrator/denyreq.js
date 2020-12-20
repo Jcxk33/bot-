@@ -73,7 +73,16 @@ module.exports = class denyreq extends Command {
       );
       return;
     }
-
+  const log = new Discord.RichEmbed();
+    log.setTitle(`Command Logging`);
+    log.setColor(`1D37D9`);
+    log.setDescription(`${message.author} has accepted  **${desiredPlayer}'s Request!**!`);
+    log.setFooter(
+      `Mayflower Command Logging`,
+      `https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png `
+    );
+    log.setTimestamp();
+    this.client.channels.get(`790345391912517632`).send(log);
     try {
       await roblox
         .handleJoinRequest(groupID, playerID, false)

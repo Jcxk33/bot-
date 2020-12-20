@@ -75,15 +75,15 @@ module.exports = class acceptreq extends Command {
       return;
     }
     const log = new Discord.RichEmbed();
-    log.setTitle(`Citizenship Management`);
+    log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-    log.setDescription(`${message.author} has deported **${args.Username}**!`);
+    log.setDescription(`${message.author} has accepted  **${Username}'s Request!**!`);
     log.setFooter(
-      `ICF Test`,
-      `https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png `
+      `Mayflower Command Logging`,
+      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
     );
     log.setTimestamp();
-    this.client.channels.get(`786819844996595714`).send(log);
+    this.client.channels.get(`790345391912517632`).send(log);
 
     try {
       await roblox
