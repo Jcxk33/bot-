@@ -40,6 +40,7 @@ hasPermission(msgObject) {
     }
     return "Sorry 😣! You must be a Mayflower Moderator!!";
   }
+  
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
       .get("706999196124840009")
@@ -56,10 +57,21 @@ hasPermission(msgObject) {
         `:link: Link`,
         `[State of Mayflower](https://www.roblox.com/games/5883511054/New-Haven-County)`
       )
+    
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
-    channel.send("@here", Embed);
+    channel.send("@hre", Embed);
 
     msgObject.reply(`Congrats :sunglasses:! You have announced a server startup!`);
+                const log = new Discord.RichEmbed();
+    log.setTitle(`Command Logging`);
+    log.setColor(`1D37D9`);
+    log.setDescription(`${msgObject.member} has Announced an SSU for **${notes}**!! `);
+    log.setFooter(
+      `Mayflower Command Logging`,
+      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
+    );
+    log.setTimestamp();
+    this.client.channels.get(`790345391912517632`).send(log);
   }
 };
