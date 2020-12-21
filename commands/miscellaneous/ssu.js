@@ -12,7 +12,7 @@ module.exports = class changelog extends Command {
       ownerOnly: true,
       throttling: {
 		usages: 1,
-		duration: 8000,
+		duration: 400,
 	},
       args: [
         {
@@ -60,7 +60,7 @@ hasPermission(msgObject) {
     
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
-    channel.send("@ere", Embed);
+    channel.send("@here", Embed);
 
     msgObject.reply(`Congrats :sunglasses:! You have announced a server startup!`);
                 const log = new Discord.RichEmbed();
