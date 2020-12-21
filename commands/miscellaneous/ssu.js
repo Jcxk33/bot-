@@ -60,7 +60,7 @@ hasPermission(msgObject) {
     
       .addField(`:book: Notes`, `${notes}`)
       .setTimestamp();
-    channel.send("@hre", Embed);
+    channel.send("@ere", Embed);
 
     msgObject.reply(`Congrats :sunglasses:! You have announced a server startup!`);
                 const log = new Discord.RichEmbed();
