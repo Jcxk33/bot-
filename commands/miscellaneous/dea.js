@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const request = require("request-promise");
-module.exports = class notcinders extends Command {
+module.exports = class dea extends Command {
   constructor(client) {
     super(client, {
-      name: "notcinders",
+      name: "dea",
       group: "miscellaneous",
-      memberName: "notcinders",
-      description: "Posts a raw message",
+      memberName: "dea",
+      description: "Posts a message",
       ownerOnly: true,
                               throttling: {
         usages: 1,
@@ -35,7 +35,7 @@ hasPermission(msgObject) {
         return true;
       }
     }
-  return ("Agent NotCINDERS, DEA")
+  return ("Drug Enforcement Agency")
   }
 
     }

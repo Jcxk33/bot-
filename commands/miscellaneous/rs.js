@@ -41,6 +41,7 @@ msgObject.guild.member(argUser).roles.forEach(role => {
       .addField("**__Discord Tag__** :performing_arts:", argUser.discriminator, true)
       .addField("Roles :brain: ", roles.join(", "), true)
       .addField("**Self Bot** :robot:", argUser.bot, true)
+      .setFooter("State of Mayflower")
       .setTimestamp();
     editMessage.edit("Done!");
     editMessage.edit(Embed);
