@@ -21,7 +21,7 @@ const client = new commando.CommandoClient({
 });
 
 // Status
-client.once("ready", () => {
+client.oce("ready", () => {
   client.user.setPresence({
     game: { name: "With Cleo" },
   });
