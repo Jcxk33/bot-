@@ -54,13 +54,16 @@ hasPermission(msgObject) {
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
     );
-    log.setTimestamp();
+    log.setTimestamp(); 
+      
     this.client.channels.get(`790345391912517632`).send(log);
     } else {
       GuildMember.removeRole(role.id);
       msgObject.reply(
         "Modified roles for " + member.user.tag + " | - " + role.name
+        
       );
     }
   }
 };
+
