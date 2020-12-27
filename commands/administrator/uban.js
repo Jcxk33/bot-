@@ -26,17 +26,11 @@ module.exports = class uban extends Command {
 hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("706999196124840009");
     if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "44")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
-        return true;
-      } else if (msgObject.member.roles.find(role => role.name == "33")) {
-        return true;
-         } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
-      } else if (msgObject.member.roles.find(role => role.name == "ye")) {
         return true;
       }
     }
@@ -44,7 +38,7 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { argUser, reason }) {
     
-    if(argUser.id == 1) {
+    if(argUser.id == 451158541823377438) {
       msgObject.reply(
         "Okay, this is a very dangerous situation. This action shall be done with no approval."
       );

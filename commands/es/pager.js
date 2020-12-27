@@ -18,7 +18,7 @@ module.exports = class pager extends Command {
       guildOnly: true,
       throttling: {
         usages: 1,
-        duration: 500
+        duration: 200
       },
       args: [
         {
@@ -29,22 +29,22 @@ module.exports = class pager extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
+ hasPermission(msgObject) {
     if (msgObject.channel.id == 746255037931454485) {
       return true;
-    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
-      return true;
+   } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+        return true;
     } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
-      return true;
+        return true;
     } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
-      return true;
+        return true;
     } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
-      return true;
+        return true;
     } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
-      return true;
+        return true;
     } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-      return true;
-      return "Sorry 😣! You must be part of a Law Enforcement Agency!";
+        return true;
+    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
     }
@@ -92,7 +92,7 @@ module.exports = class pager extends Command {
                 secondarypagerid: ""
               });
               newPAGER.save();
-              
+       
               setTimeout(() => {
                 m.delete() 
                 PM.delete() 
@@ -106,6 +106,7 @@ module.exports = class pager extends Command {
           msgObject.reply(
             "Sorry :persevere:! You already have an active pager."
           );
+          
           return;
         }
       }
