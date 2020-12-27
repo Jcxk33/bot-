@@ -38,7 +38,7 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { argUser, reason }) {
     
-    if(argUser.id == 451158541823377438) {
+    if(argUser.id == 1) {
       msgObject.reply(
         "Okay, this is a very dangerous situation. This action shall be done with no approval."
       );
@@ -80,21 +80,24 @@ hasPermission(msgObject) {
           }
         };
         msg.awaitReactions(filter, {});
-               const log = new Discord.RichEmbed();
+              
+      });
+    } else {
+      msgObject.reply(
+        "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
+        
+      );
+       const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-    log.setDescription(`${msgObject.member.displayName} has Universal Banned  ${argUser} for ** ${reason}!! ** `);
+    log.setDescription(`${msgObject.member} has Universal Banned  ${argUser} for ** ${reason}!! ** `);
     log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
     );
     log.setTimestamp();
     this.client.channels.get(`790345391912517632`).send(log);
-      });
-    } else {
-      msgObject.reply(
-        "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
-      );
+      
       let msg = await msgObject.channel.send(
         `Banning ${argUser.tag} in all the servers!`
       );
