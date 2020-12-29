@@ -74,6 +74,7 @@ module.exports = class credits extends Command {
                 .setTimestamp()
                 .setTitle(`${args.target}'s Appeal`)
                 .setDescription(choice)
+            .setField(${msgObject.member.displayName})
             webhook.send('', {
                 username: 'Appeal',
                 embeds: [embed]
