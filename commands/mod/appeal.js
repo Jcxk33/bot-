@@ -73,8 +73,11 @@ module.exports = class credits extends Command {
             const embed = new Discord.RichEmbed()
                 .setTimestamp()
                 .setTitle(`${args.target}'s Appeal`)
+                 .setAuthor(
+        `${args.msgObject.DisplayaName}`,
+        `${args.msgOject.avatarURL}`
+      )
                 .setDescription(choice)
-            .setField(${msgObject.member.displayName})
             webhook.send('', {
                 username: 'Appeal',
                 embeds: [embed]
