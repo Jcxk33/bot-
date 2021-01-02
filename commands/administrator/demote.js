@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const roblox = require("noblox.js");
-const boob = require("request-promise");
+const boob = require("request");
 
 module.exports = class demote extends Command {
   constructor(client) {
@@ -98,16 +98,26 @@ module.exports = class demote extends Command {
       //   return
       // })
       
-      boob({uri: `https://verify.eryn.io/api/user/${message.author.id}`}).then(info => {
-        if(info.body.status == "ok"){
-          success = true 
-          playerAuthorID = info.body.robloxId
-        } else {
-          success = false 
-        }
-      }).catch(error => {
-        
+      let data = boob({
+        uri: `https://verify.eryn.io/api/user/${message.author.id}`,
+        json: true,
+        simple: false,      
       })
+      
+      
+      //.then(info => {
+      //   if(info.body.status == "ok"){
+      //     success = true 
+      //     playerAuthorID = info.body.robloxId
+      //   } else {
+      //     success = false 
+      //   }
+      // }).catch(error => {
+      //   sentMessage.edit(`${message.author}, :construction: There has been an error! \`\`\`js\n${error}\`\`\``)
+      //   return 
+      // })
+      
+      console.log(data)
       
       if(success == true){
         playerAuthor = await roblox.getUsernameFromId(playerAuthorID)
