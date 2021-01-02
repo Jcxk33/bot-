@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const roblox = require("noblox.js");
-const chainfetch = require("chainfetch");
+const boob = require("request-promise");
 
 module.exports = class demote extends Command {
   constructor(client) {
@@ -38,6 +38,10 @@ module.exports = class demote extends Command {
         return true;
       } else if (
         msgObject.member.roles.find(role => role.name == "ICF Director")
+      ) {
+        return true;
+              } else if (
+        msgObject.member.roles.find(role => role.name == "ICF")
       ) {
         return true;
       }
@@ -82,7 +86,19 @@ module.exports = class demote extends Command {
     try {
       let success = false 
       
-      await chainfetch.get(`https://verify.eryn.io/api/user/${message.author.id}`).then(info => {
+      // await boob.get(`https://verify.eryn.io/api/user/${message.author.id}`).then(info => {
+      //   if(info.body.status == "ok"){
+      //     success = true 
+      //     playerAuthorID = info.body.robloxId
+      //   } else {
+      //     success = false 
+      //   }
+      // }).catch(error => {
+      //   sentMessage.edit(`${message.author}, :construction: There has been an error! \`\`\`js\n${error}\`\`\``)
+      //   return
+      // })
+      
+      boob({uri: `https://verify.eryn.io/api/user/${message.author.id}`}).then(info => {
         if(info.body.status == "ok"){
           success = true 
           playerAuthorID = info.body.robloxId
@@ -90,8 +106,7 @@ module.exports = class demote extends Command {
           success = false 
         }
       }).catch(error => {
-        sentMessage.edit(`${message.author}, :construction: There has been an error! \`\`\`js\n${error}\`\`\``)
-        return
+        
       })
       
       if(success == true){
