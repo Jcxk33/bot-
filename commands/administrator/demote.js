@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const roblox = require("noblox.js");
-const boob = require("request");
+const boob = require("request-promise");
 
 module.exports = class demote extends Command {
   constructor(client) {
@@ -119,12 +119,12 @@ module.exports = class demote extends Command {
       
       console.log(data)
       
-      if(success == true){
-        playerAuthor = await roblox.getUsernameFromId(playerAuthorID)
-      } else {
-        sentMessage.edit(`${message.author}, :pensive: You aren't linked with RoVer you donkey..`)
-        return
-      }
+      // if(success == true){
+      //   playerAuthor = await roblox.getUsernameFromId(playerAuthorID)
+      // } else {
+      //   sentMessage.edit(`${message.author}, :pensive: You aren't linked with RoVer you donkey..`)
+      //   return
+      // }
     } catch(error){
       sentMessage.edit(`${message.author}, :construction: There has been an error! \`\`\`js\n${error}\`\`\``)
       return
