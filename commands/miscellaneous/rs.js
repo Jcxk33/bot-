@@ -8,7 +8,7 @@ module.exports = class whois extends Command {
       aliases: ["whois"],
       group: "miscellaneous",
       memberName: "rs",
-      ownerOnly: true,
+      ownerOnly: false,
       description: "Checks a user",
       args: [
         {
