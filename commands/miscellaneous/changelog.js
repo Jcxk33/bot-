@@ -37,7 +37,7 @@ module.exports = class changelog extends Command {
       .channels.find("id", "729890778469498941");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle(`:arrow_up:  Gunfights **__Change Log__**`)
+      .setTitle(`:arrow_up:   **__Change Log__**`)
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`

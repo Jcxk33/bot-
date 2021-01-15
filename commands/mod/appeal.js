@@ -27,10 +27,18 @@ module.exports = class credits extends Command {
         })
     }
 
-    hasPermission(message) {
-        if (!message.member.roles.has('729884588549341224','729884589279150121')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
-        return true
-    }
+     hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Bots")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+        return true;
+      }
+       return("Sorry you must be a Gunfights Staff member!")
+  }
     async run(message, args) {
         var webhook = new Discord.WebhookClient('775721564603809813', '7LJVUQ09ieW0J3JouW0pKnFd_zT_D-5f-ECaBJnAI6uX8KkQjMSENojP6-3gcls0lFdT')
         var nickname
