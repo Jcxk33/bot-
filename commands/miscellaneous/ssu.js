@@ -50,7 +50,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[State of Mayflower](https://www.roblox.com/games/5883511054/New-Haven-County)`
+        `[NHC Gunfights](https://www.roblox.com/games/5604561827/NHC-Gunfights-WP)`
       )
     
       .addField(`:book: Notes`, `${notes}`)

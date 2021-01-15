@@ -26,24 +26,24 @@ module.exports = class changelog extends Command {
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Head Moaator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Bot Developer")) {
         return true;
       }
   return("Sorry You must be a gunfights Development Member")
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("706999196124840009")
-      .channels.find("id", "710089758835212392");
+      .get("729884219701985420")
+      .channels.find("id", "729890778469498941");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle(":arrow_up: **__Change Log__**")
+      .setTitle(`:arrow_up:  Gunfights **__Change Log__**`)
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter("State of Mayflower")
+      .setFooter("gunfights")
       .setTimestamp(1911);
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")
