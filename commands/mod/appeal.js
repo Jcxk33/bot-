@@ -27,35 +27,12 @@ module.exports = class credits extends Command {
         })
     }
 
-   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
-        return true;
-      } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
-      ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
-      ) {
-        return true;
-           } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
-      ) {
-        return true;
-      }
-      return "Sorry 😣! You must be a ICF Agent Member!";
-    } else {
-      return (
-        "Sorry :persevere:! You must use this command in the " +
-        MainServer.name +
-        "!"
-      );
+    hasPermission(message) {
+        if (!message.member.roles.has('729884588549341224','729884589279150121')) return 'Sorry :tired_face: You must be a Moderator! :raised_hands:'
+        return true
     }
-  }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('773142242919186452', 'Trcumrbq-din2-L7L_5waCc6VhZFo3-aK9_dlzeUA6cscuDOh-m3hpB5NWLUhRAU_4bQ')
+        var webhook = new Discord.WebhookClient('775721564603809813', '7LJVUQ09ieW0J3JouW0pKnFd_zT_D-5f-ECaBJnAI6uX8KkQjMSENojP6-3gcls0lFdT')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

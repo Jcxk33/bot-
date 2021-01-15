@@ -9,7 +9,7 @@ module.exports = class changelog extends Command {
       group: "miscellaneous",
       memberName: "embed",
       description: "Posts an embed with desired content",
-      ownerOnly: true,
+      ownerOnly: false,
                               throttling: {
         usages: 2,
         duration: 100
@@ -33,7 +33,18 @@ module.exports = class changelog extends Command {
       ]
     });
   }
-
+hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("709627046069927937")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+        return true;
+      }
+  return("Sorry You must be a gunfights Staff Member")
+  }
   
   async run(msgObject, { channel, title, content }) {
     let embed = new Discord.RichEmbed()

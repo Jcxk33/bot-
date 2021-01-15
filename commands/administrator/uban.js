@@ -24,17 +24,16 @@ module.exports = class uban extends Command {
     });
   }
 hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+        return true;
       }
-    }
-    return "Sorry 😣! You must be a Mayflower Admin!";
+  return("Sorry You must be a gunfights Staff Member")
   }
   async run(msgObject, { argUser, reason }) {
     
@@ -92,11 +91,12 @@ hasPermission(msgObject) {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Universal Banned  ${argUser} for ** ${reason}! ** `);
     log.setFooter(
-      `Mayflower Command Logging`,
-      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
+      `GunFights Command Logging`,
+      `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
     );
-    log.setTimestamp();
-    this.client.channels.get(`790345391912517632`).send(log);
+    log.setTimestamp(); 
+      
+    this.client.channels.get(`799567798900490280`).send(log);
       
       let msg = await msgObject.channel.send(
         `Banning ${argUser.tag} in all the servers!`

@@ -20,16 +20,16 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
       if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("123214124")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Head Moaator")) {
+        return true;
       }
-    }
-    return "Sorry 😣! You must be a Myflower Developer!!";
+  return("Sorry You must be a gunfights Development Member")
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
