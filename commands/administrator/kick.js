@@ -37,7 +37,7 @@ module.exports = class kick extends Command {
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Major General")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
           } else if (msgObject.member.roles.find(role => role.name == "Brigadier General")) {
         return true;

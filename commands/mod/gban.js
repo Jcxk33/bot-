@@ -39,7 +39,7 @@ module.exports = class gban extends Command {
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
       }
       return "Sorry 😣! You must be a Staff Member!";
