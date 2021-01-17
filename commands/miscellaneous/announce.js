@@ -34,7 +34,7 @@ module.exports = class changelog extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
       }
-  return("Sorry You must be a gunfights Staff Member")
+  return("Sorry :frown: You must be a Gunfights Staff Member")
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds

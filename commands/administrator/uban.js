@@ -30,10 +30,10 @@ hasPermission(msgObject) {
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Head Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
       }
-  return("Sorry You must be a gunfights Staff Member")
+  return("Sorry :frown: You must be a Gunfights Staff Member")
   }
   async run(msgObject, { argUser, reason }) {
     

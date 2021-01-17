@@ -8,7 +8,7 @@ module.exports = class changelog extends Command {
       group: "miscellaneous",
       memberName: "say",
       description: "Posts a raw message",
-      ownerOnly: true,
+      ownerOnly: false,
                               throttling: {
         usages: 1,
         duration: 100
@@ -26,6 +26,18 @@ module.exports = class changelog extends Command {
         }
       ]
     });
+  }
+  hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("709627046069927937")
+      ) {
+        return true;
+      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+        return true;
+      }
+  return("Sorry :frown: You must be a Gunfights Staff Member")
   }
   
   async run(msgObject, { channel, content }) {

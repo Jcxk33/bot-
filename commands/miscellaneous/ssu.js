@@ -33,13 +33,13 @@ hasPermission(msgObject) {
       } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
       }
-  return("Sorry You must be a gunfights Staff Member")
+  return("Sorry :frown: You must be a Gunfights Staff Member")
   }
   
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("706999196124840009")
-      .channels.find("id", "763539950360592414");
+      .get("729884219701985420")
+      .channels.find("id", "747422941641441320");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(

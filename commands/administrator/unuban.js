@@ -34,7 +34,7 @@ hasPermission(msgObject) {
       } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
         return true;
       }
-  return("Sorry You must be a gunfights Staff Member")
+  return("Sorry :frown: You must be a Gunfights Staff Member")
   }
   async run(msgObject, { target, reason }) {
     msgObject.reply(

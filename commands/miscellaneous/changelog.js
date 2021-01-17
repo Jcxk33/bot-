@@ -29,7 +29,7 @@ module.exports = class changelog extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Bot Developer")) {
         return true;
       }
-  return("Sorry You must be a gunfights Development Member")
+  return("Sorry :frown: You must be a Gunfights Development Member")
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds

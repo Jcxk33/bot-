@@ -26,34 +26,19 @@ module.exports = class kick extends Command {
             ]
         })
     }
-   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get(
-      "759963799213572146"
-    );
-    if ((msgObject.guild.id == 759963799213572146)) {
-      if (msgObject.member.roles.find(role => role.name === "Colonel")) {
+          hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Owner")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
         return true;
-          } else if (msgObject.member.roles.find(role => role.name == "Brigadier General")) {
-        return true;
-                } else if (msgObject.member.roles.find(role => role.name == "Command Sergeant Major")) {
-        return true;
-                     } else if (msgObject.member.roles.find(role => role.name == "Major General's Aid")) {
-        return true;
-                      } else if (msgObject.member.roles.find(role => role.name == "Deputy Command Sergeant Major")) {
+        } else if (msgObject.member.roles.find(role => role.name == "asdas")) {
         return true;
       }
-     return "Sorry 😣! You must be a Colonel+ to run this command";
-    } else {
-      return (
-        "Sorry :persevere:! You must use this command in the National Guard Server Server!"
-      );
-    }
+  return("Sorry You must be a Virgina Owner")
   }
 
 
@@ -69,11 +54,11 @@ module.exports = class kick extends Command {
     log.setColor(`1D37D9`);
     log.setDescription(`${message.member.displayName} has kicked ${person} `);
    log.setFooter(
-      `GunFights Command Logging`,
-      `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
+      `Virgina Command Logging`,
+      `https://cdn.discordapp.com/icons/798271839217778689/baec9fa4e9fd515fbbc0ecf7d020aa87.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`799567798900490280`).send(log);
+    this.client.channels.get(`799784503026778113`).send(log);
     }
 }
