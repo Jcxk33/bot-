@@ -26,21 +26,20 @@ module.exports = class kick extends Command {
             ]
         })
     }
-          hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Owner")) {
+      hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Developer")) {
+      } else if (msgObject.member.roles.find(role => role.name == "aasdasd")) {
         return true;
-        } else if (msgObject.member.roles.find(role => role.name == "asdas")) {
+        } else if (msgObject.member.roles.find(role => role.name == "asdasdas")) {
         return true;
       }
-  return("Sorry You must be a Virgina Owner")
+  return("Sorry You must be a Red Haven Admin")
   }
-
 
     async run(message, { person, reason }){
         message.guild.member(person).kick(reason).then(() => {

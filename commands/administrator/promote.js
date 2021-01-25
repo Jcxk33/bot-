@@ -23,39 +23,23 @@ module.exports = class promote extends Command {
   }
 
 
-  hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get(
-      "759963799213572146"
-    );
-    if ((msgObject.guild.id == 759963799213572146)) {
-      if (msgObject.member.roles.find(role => role.name === "Colonel")) {
+     hasPermission(msgObject) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Major General")) {
+      } else if (msgObject.member.roles.find(role => role.name == "aasdasd")) {
         return true;
-          } else if (msgObject.member.roles.find(role => role.name == "Brigadier General")) {
-        return true;
-                } else if (msgObject.member.roles.find(role => role.name == "Command Sergeant Major")) {
-        return true;
-                     } else if (msgObject.member.roles.find(role => role.name == "Major General's Aid")) {
-        return true;
-                      } else if (msgObject.member.roles.find(role => role.name == "Deputy Command Sergeant Major")) {
+        } else if (msgObject.member.roles.find(role => role.name == "asdasdas")) {
         return true;
       }
-     return "Sorry 😣! You must be a Colonel+ to run this command";
-    } else {
-      return (
-        "Sorry :persevere:! You must use this command in the National Guard Server Server!"
-      );
-    }
+  return("Sorry You must be a Red Haven Admin")
   }
 
-
   async run(message, { desiredPlayer }) {
-    let robloxToken = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_D9BD4E4384E948FAD6895C9F8010B2B6FBCB7447E5B4B10287663D0A84117DB87F71EB925363FB8F8283CD942116A89D819F1D4C72FF60DDAD715BCC9B8A20832B177160F424153F152FCEC3A2B8A5E8AB2CADF0DCA1C1D581D911B1F9A5A400D3DDD0CAB6D31543FA69B5FAA94F0FA55C54B8BFE492CE1AF4F212F1EC0016D69836ECC92170EEB65E8C6A1995C66B169E41679865E81E03FBF6304A79B9EFBCC1B37133FF1529AD15002151D8E55CB6940DC81E4716E651A4BC6CEE2CFFC8A3D391B1CE4248F4E8B1F665DA8C9E2B91C32C53D9B8404CF9B8A258BD8FCB9FABE2A882DC664BF3CE2E25E56BF8E524890A11BB813401F08EB97CDEFAA2D36188FEEBC7B62BF81A28ABF8D0E8E9CDEA8D277441D1F2E921349E3551DBE93F56A56E9B5BAE"
+      let robloxToken = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_6A5AE15C875C03F8320FD6E8119CBCD1FA5B4F402B3ECFF5D5C48061E2296DF93871694C3B7ABF07EA4EEC2284888BE8217B295C679E3F2EA23975A6371857FD6480373B084E6A4D112435FA5EA142F801867F8AE99B1AFE3434160CC212B1D2380641753F27862C08034A2EE9FCD90A42526EB220B4C24CED2A7FF4772D70F1A03992B2C735B29FD71E172285A5DD92435E0BA0CE523EB57E2B4211F91881FFAFE24B318713E51062AF41A50DFC2E2E0F24C16452714A34B9C1023042FE0A0B758EE328B3C42EFC60E4C446235B59C6DB6F5D67F11E388EBE4BE6807FF48ED3C46570DF859BDBC130D8353EFFBDA0804F5811FAB963AFAA6FB5A09108A09308D6A005548F7E2E3A028FC3A80C099D9E56F6ADB62EECEF9E26407AE691F978779B18D769A9FDE285F96A77FCE248AED45B1E932C"
         let sentMessage = await message.reply(
       `Allow me to work my magic.. :sleeping:`
     );
@@ -70,7 +54,7 @@ module.exports = class promote extends Command {
     log.setTimestamp();
     this.client.channels.get(`795735978764402688`).send(log);
     
-    let groupID = 5282563;
+    let groupID = 6366045;
 
     let playerName;
     let playerID;

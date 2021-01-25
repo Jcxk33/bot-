@@ -66,11 +66,12 @@ module.exports = class credits extends Command {
     log.setColor(`1D37D9`);
     log.setDescription(`${message.author} has deported **${args.person}**!`);
     log.setFooter(
-      `ICF Management`,
-      `https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png `
+      `RedHaven Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
-    log.setTimestamp();
-    this.client.channels.get(`799788766432067595`).send(log);
+    log.setTimestamp(); 
+      
+    this.client.channels.get(`803326837786148944`).send(log);
     
     
     message.reply(`**Done,** :raised_hands:  Successfully Deported`);
