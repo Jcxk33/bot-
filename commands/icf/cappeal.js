@@ -31,7 +31,7 @@ module.exports = class credits extends Command {
 
 
   hasPermission(msgObject) {
-  if(msgObject.guild.id == 800898562786590771 || msgObject.guild.id == 800898562786590771){
+  if(msgObject.guild.id == 798271839217778689 || msgObject.guild.id == 798271839217778689){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -50,7 +50,7 @@ module.exports = class credits extends Command {
       return "Sorry 😣! You must be a ICF Agent Member!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the Red Havem Server"
+        "Sorry :persevere:! You must use this command in the Virginia Server"
       );
     }
   }
@@ -107,13 +107,12 @@ module.exports = class credits extends Command {
         args.person
       }**'s appeal to \`${choice.toLowerCase()}\`!`
     );
-     log.setFooter(
-      `RedHaven Command Logging`,
-      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
+    log.setFooter(
+      `ICF Management`,
+      `https://cdn.discordapp.com/attachments/784521929348349978/786638482650562630/ICFJDN.png `
     );
-    log.setTimestamp(); 
-      
-    this.client.channels.get(`803326837786148944`).send(log);
+    log.setTimestamp();
+    this.client.channels.get(`799788766432067595`).send(log);
 
     message.reply("Successfully sent your appeal message! 🤗");
   }
