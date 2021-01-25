@@ -25,18 +25,19 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("729884219701985420")
-      .channels.find("id", "769368824352735232");
+      .get("800898562786590771")
+      .channels.find("id", "801633065364619325");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has suggested **${description}**!! `);
-    log.setFooter(
-      `GunFights Command Logging`,
-      `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
+     log.setFooter(
+      `RedHaven Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
-    this.client.channels.get(`799567798900490280`).send(log);
+      
+    this.client.channels.get(`803326837786148944`).send(log);
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("Suggestion")

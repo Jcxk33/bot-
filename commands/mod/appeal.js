@@ -28,19 +28,19 @@ module.exports = class credits extends Command {
     }
 
      hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Bots")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-       return("Sorry you must be a Gunfights Staff member!")
+       return("Sorry you must be a Red Haven Moderator or Admin!")
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('775721564603809813', '7LJVUQ09ieW0J3JouW0pKnFd_zT_D-5f-ECaBJnAI6uX8KkQjMSENojP6-3gcls0lFdT')
+        var webhook = new Discord.WebhookClient('803328190684725319', 'rD_5ny088Q8xY4cv5syeu8EOhJqdMvEv-1tBgNGGNf7iGyRCeSfwZRpmsneTsXcBlTrR')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

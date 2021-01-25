@@ -34,10 +34,10 @@ module.exports = class changelog extends Command {
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-  return("Sorry :frown: You must be a Gunfights Staff Member")
+  return("Sorry :frown: You must be a Red Haven Staff Member")
   }
   
   async run(msgObject, { channel, content }) {

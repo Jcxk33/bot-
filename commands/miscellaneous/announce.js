@@ -31,24 +31,24 @@ module.exports = class changelog extends Command {
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-  return("Sorry :frown: You must be a Gunfights Staff Member")
+  return("Sorry :frown: You must be a Red Haven Moderator or admin!")
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("729884219701985420")
-      .channels.find("id", "729889187930832947");
+      .get("800898562786590771")
+      .channels.find("id", "800909968794189835");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("**Gunfights**")
+      .setTitle("**Red Havem**")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter('State of Gunfights', 'https://cdn.discordapp.com/icons/774306549640200223/0daa343074d9e9dc924ed598a841b01e.jpg')
+      .setFooter('State of RedHaven', 'hhttps://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
       .setTimestamp();
     channel.send(Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);

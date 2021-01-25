@@ -19,9 +19,9 @@ module.exports = class links extends Command {
     const embed = new Discord.RichEmbed()
       .setTitle("Informational Links")
       .setDescription(
-        "The following will provide a list of all current links relating to gunFIGHTS"
+        "The following will provide a list of all current links relating to Red Havem"
       )
-      .addField("Discord", "[Discord Link](https://discord.gg/HQcJqtD)", true)
+      .addField("Discord", "[Discord Link](https://discord.gg/8np84asnpp)", true)
       .addField(
         "Group",
         "[Roblox Link](https://www.roblox.com/my/groups)",
@@ -29,7 +29,7 @@ module.exports = class links extends Command {
       )
       .addField(
         "Game",
-        "[Roblox Link]( https://www.roblox.com/games/5604561827/NHC-Gunfights-WP?refPageId=337cfa23-275e-450a-a080-232f69a520a0 )",
+        "[Roblox Link](  https://web.roblox.com/games/5049349655/Red-Haven-County?refPageId=fe976df8-88f6-4b26-ad6d-78328cfb844a )",
         true
       )
          .addField(

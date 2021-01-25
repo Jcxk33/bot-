@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "b3e86d17c55b6dc170e3e426e4e1a491",
-  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
+  "",
+  ""
 );
 
 module.exports = class gban extends Command {
@@ -75,8 +75,8 @@ module.exports = class gban extends Command {
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
       const webhook = new Discord.WebhookClient(
-        "729909303149854741",
-        "SZVzBmXYKfDjKU8uPPNE4T2IRkFs2YkNZC7eUnDuClD72UVqF6JhPWAWLLuJFISf-OJp"
+        "",
+        "-OJp"
       );
       webhook.send("", {
         embeds: [

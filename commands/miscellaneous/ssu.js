@@ -27,19 +27,19 @@ hasPermission(msgObject) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-  return("Sorry :frown: You must be a Gunfights Staff Member")
+       return("Sorry you must be a Red Haven Moderator or Admin!")
   }
   
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("729884219701985420")
-      .channels.find("id", "747422941641441320");
+      .get("800898562786590771")
+      .channels.find("id", "801579582414913617");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -50,7 +50,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[NHC Gunfights](https://www.roblox.com/games/5604561827/NHC-Gunfights-WP)`
+        `[NHC Gunfights](https://web.roblox.com/games/5049349655/Red-Haven-County?refPageId=fe976df8-88f6-4b26-ad6d-78328cfb844a)`
       )
     
       .addField(`:book: Notes`, `${notes}`)
@@ -63,11 +63,11 @@ hasPermission(msgObject) {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Announced an SSU for **${notes}**!! `);
      log.setFooter(
-      `GunFights Command Logging`,
-      `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
+      `RedHaven Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`799567798900490280`).send(log);
+    this.client.channels.get(`803326837786148944`).send(log);
   }
 };

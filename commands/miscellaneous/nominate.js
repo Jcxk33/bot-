@@ -23,16 +23,16 @@ module.exports = class credits extends Command {
         })
     }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("706999196124840009");
-    if (msgObject.guild.id == 706999196124840009) {
-      if (msgObject.member.roles.find(role => role.name === "Citizen")) {
+    const MainServer = msgObject.client.guilds.get("800898562786590771");
+    if (msgObject.guild.id == 800898562786590771) {
+      if (msgObject.member.roles.find(role => role.name === "yea")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
     }
-      return "Sorry 😣! nominations are closed";
+      return "Sorry 😣! elections are closed";
     }
   } 
     async run(message, args) {

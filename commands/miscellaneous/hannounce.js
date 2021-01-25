@@ -24,40 +24,30 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("709627046069927937")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Server Management")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
-   } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
-        return true;
-     } else if (msgObject.member.roles.find(role => role.name == "Governor")) {
-        return true;
-            } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
-       } else if (msgObject.member.roles.find(role => role.name == "Lieutenant Governor")) {
-        return true;
-            } else if (msgObject.member.roles.find(role => role.name == "Cabinet")) {
-        return true;
-   }
-    return "Sorry 😣! You must be a Virginia Moderator!!";
+      }
+  return("Sorry :frown: You must be a Red Haven Moderator or admin!")
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("754146784892157982")
-      .channels.find("id", "754204239819047045");
+      .get("800898562786590771")
+      .channels.find("id", "800909968794189835");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("**Mayflower Announcement**")
+      .setTitle("**Red Haven Announcement**")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter('State of Virginia', 'https://cdn.discordapp.com/icons/754146784892157982/b092312c34107b2ddf8fd699869de285.jpg')
+      .setFooter('State of RedHaven', 'hhttps://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
       .setTimestamp();
      channel.send("@here", Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);
