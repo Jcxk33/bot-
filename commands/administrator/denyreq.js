@@ -67,13 +67,13 @@ module.exports = class denyreq extends Command {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${message.author} has denied  **${desiredPlayer}'s Request!**!`);
-    log.setFooter(
-      `Virgina Command Logging`,
-      `https://cdn.discordapp.com/icons/798271839217778689/baec9fa4e9fd515fbbc0ecf7d020aa87.jpg`
+     log.setFooter(
+      `RedHaven Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`799784503026778113`).send(log);
+    this.client.channels.get(`803326837786148944`).send(log);
     try {
       await roblox
         .handleJoinRequest(groupID, playerID, false)

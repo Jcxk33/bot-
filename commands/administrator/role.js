@@ -47,13 +47,13 @@ hasPermission(msgObject) {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has roled  ${member} ${role}! `);
-    log.setFooter(
-      `GunFights Command Logging`,
-      `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
+     log.setFooter(
+      `RedHaven Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`799567798900490280`).send(log);
+    this.client.channels.get(`803326837786148944`).send(log);
     } else {
       GuildMember.removeRole(role.id);
       msgObject.reply(
