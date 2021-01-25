@@ -41,14 +41,14 @@ module.exports = class changelog extends Command {
       .get("800898562786590771")
       .channels.find("id", "800909968794189835");
     let Embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle("**Red Havem**")
+     .setColor("RANDOM")
+      .setTitle("**Red Haven Announcement**")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter('State of RedHaven', 'hhttps://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
+      .setFooter('State of RedHaven', 'https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
       .setTimestamp();
     channel.send(Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);

@@ -47,9 +47,9 @@ module.exports = class changelog extends Command {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter('State of RedHaven', 'hhttps://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
+      .setFooter('State of RedHaven', 'https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
       .setTimestamp();
-     channel.send("@here", Embed);
+     channel.send("@h", Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);
   }
 };
