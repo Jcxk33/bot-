@@ -30,10 +30,10 @@ hasPermission(msgObject) {
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "hsdfsdfsd")) {
         return true;
       }
-  return("Sorry You must be a Red Haven Moderator or Admin!")
+  return("Sorry You must be a Red Haven Admin!")
   }
   async run(msgObject, { argUser, reason }) {
     
@@ -91,12 +91,12 @@ hasPermission(msgObject) {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Universal Banned  ${argUser} for ** ${reason}! ** `);
     log.setFooter(
-      `GunFights Command Logging`,
-      `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
+      `RedHaven Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`799567798900490280`).send(log);
+    this.client.channels.get(`803326837786148944`).send(log);
       
       let msg = await msgObject.channel.send(
         `Banning ${argUser.tag} in all the servers!`

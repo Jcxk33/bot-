@@ -50,7 +50,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[NHC Gunfights](https://web.roblox.com/games/5049349655/Red-Haven-County?refPageId=fe976df8-88f6-4b26-ad6d-78328cfb844a)`
+        `[Red Haven](https://web.roblox.com/games/5049349655/Red-Haven-County?refPageId=fe976df8-88f6-4b26-ad6d-78328cfb844a)`
       )
     
       .addField(`:book: Notes`, `${notes}`)

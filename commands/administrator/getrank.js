@@ -55,11 +55,12 @@ hasPermission(msgObject) {
     log.setColor(`1D37D9`);
     log.setDescription(`${message.author} has ran getrank on **${desiredPlayer}**!`);
     log.setFooter(
-     `National Guard Command Logging`,
-      `https://cdn.discordapp.com/attachments/768153252733779998/795735743418073138/ec227276d45b21c33ba037c1012cbccd.png`
+      `RedHaven Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
-    log.setTimestamp();
-    this.client.channels.get(`795735978764402688`).send(log);
+    log.setTimestamp(); 
+      
+    this.client.channels.get(`803326837786148944`).send(log);
     
     try {
       playerID = await roblox.getIdFromUsername(desiredPlayer);
