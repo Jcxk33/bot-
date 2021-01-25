@@ -28,13 +28,13 @@ hasPermission(msgObject) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-  return("Sorry You must be a gunfights Staff Member")
+  return("Sorry You must be a Red Haven Moderator or Admin!")
   }
   async run(msgObject, { member, role }) {
     let GuildMember = msgObject.guild.members.find(`id`, member.id);

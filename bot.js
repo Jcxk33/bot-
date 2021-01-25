@@ -13,7 +13,7 @@ const oneLine = require('common-tags').oneLine;
 
 // Client
 const client = new commando.CommandoClient({
-  owner: ["669518615199875082", "675794471065092161"],
+  owner: ["", "733153352954806325"],
   commandPrefix: ";",
   unknownCommandResponse: false,
   selfbot: false,
@@ -23,7 +23,7 @@ const client = new commando.CommandoClient({
 // Status
 client.once("ready", () => {
   client.user.setPresence({
-    game: { name: "With GunFights" },
+    game: { name: "With Red Havem" },
   });
 });
 

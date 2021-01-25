@@ -30,19 +30,19 @@ module.exports = class gban extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("729884219701985420");
-    if (msgObject.guild.id == 729884219701985420) {
+    hasPermission(msgObject) {
+    const MainServer = msgObject.client.guilds.get("800898562786590771");
+    if (msgObject.guild.id == 800898562786590771) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("242876771387572224")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry :persevere:! You must be a Admin or Moderator Member!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +

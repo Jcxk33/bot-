@@ -26,21 +26,18 @@ module.exports = class kick extends Command {
             ]
         })
     }
-      hasPermission(msgObject) {
+     hasPermission(msgObject) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "aasdasd")) {
-        return true;
-        } else if (msgObject.member.roles.find(role => role.name == "asdasdas")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-  return("Sorry You must be a Red Haven Admin")
+  return("Sorry You must be a Red Haven Moderator or Admin!")
   }
-
     async run(message, { person, reason }){
         message.guild.member(person).kick(reason).then(() => {
             message.reply(`successfully kicked ${person.user.tag}`)
