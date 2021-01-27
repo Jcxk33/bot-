@@ -43,7 +43,7 @@ module.exports = class changelog extends Command {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter("gunfights")
+      .setFooter("Red Haven")
       .setTimestamp(1911);
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")
