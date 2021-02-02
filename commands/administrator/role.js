@@ -48,7 +48,7 @@ hasPermission(msgObject) {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has roled  ${member} ${role}! `);
     log.setFooter(
-      `RedHaven Command Logging`,
+      `Red Haven Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
