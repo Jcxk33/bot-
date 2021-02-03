@@ -9,7 +9,6 @@ const request = require("request-promise");``
 const path = require("path");
 const config = require(path.join(__dirname, "config", "config.json"));
 const oneLine = require('common-tags').oneLine;
-const Constants = require()
 
 
 // Client
@@ -22,10 +21,14 @@ const client = new commando.CommandoClient({
 });
 
 // Status
-client.once("ready", () => {
-  client.user.setPresence({
-    game: { name: "With KarlXYZ" },
-  });
+const Constants = require('discord.js/src/util/Constants.js')
+Constants.DefaultOptions.ws.properties.$browser = `Discord iOS`
+client.on("ready",() => {
+client.user.setActivity('', { type: 1, browser: "DISCORD IOS"})
+.then(console.log)
+.catch(console.error);
+console.log("logged in")
+
 });
 
 
