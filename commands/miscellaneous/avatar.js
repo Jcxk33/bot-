@@ -21,7 +21,7 @@ module.exports = class avatar extends Command {
   async run(msgObject, { argUser }) {
     let Embed = new Discord.RichEmbed()
       .setAuthor(argUser.tag, argUser.avatarURL)
-      .setColor("#2F3137")
+      .setColor("RANDOM")
       .setTitle("Avatar")
       .setImage(argUser.avatarURL)
       .setTimestamp();

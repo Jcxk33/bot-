@@ -20,16 +20,28 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Developer")) {
+  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
+     if (msgObject.member.roles.find(role => role.name === "")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("709627046069927937")
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Bot Developer")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
         return true;
       }
-  return("Sorry :frown: You must be a Gunfights Development Member")
+      return "Sorry 😣! You must be a Developer !";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+      );
+    }
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds

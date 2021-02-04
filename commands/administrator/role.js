@@ -25,16 +25,28 @@ module.exports = class id extends Command {
     });
   }
 hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
+     if (msgObject.member.roles.find(role => role.name === "kjgasdkjasnd")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Moderator")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
         return true;
       }
-  return("Sorry You must be a Red Haven Admin!")
+      return "Sorry 😣! You must be a Moderator or Admin!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+      );
+    }
   }
   async run(msgObject, { member, role }) {
     let GuildMember = msgObject.guild.members.find(`id`, member.id);

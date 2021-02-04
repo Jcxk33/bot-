@@ -25,15 +25,15 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("800898562786590771")
-      .channels.find("id", "801633065364619325");
+      .get("790148683097571338")
+      .channels.find("id", "802909860597202945");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has suggested **${description}**!! `);
      log.setFooter(
-      `RedHaven Command Logging`,
-      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
+      `Mayflower Command Logging`,
+      `https://cdn.discordapp.com/icons/800898562786590771/992d0fe8b8ef622128a7750259f1b863.jpg`
     );
     log.setTimestamp(); 
       

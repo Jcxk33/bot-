@@ -20,7 +20,7 @@ module.exports = class credits extends Command {
   }
 
   hasPermission(msgObject) {
-  if(msgObject.guild.id == 800898562786590771 || msgObject.guild.id == 800898562786590771){
+  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -39,7 +39,7 @@ module.exports = class credits extends Command {
       return "Sorry 😣! You must be a ICF Agent Member!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Red Haven!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }
