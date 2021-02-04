@@ -56,8 +56,8 @@ module.exports = class blacklist extends Command {
   async run(msgObject, { title }) {
     let channel = this.client.guilds
     
-      .get("798271839217778689")
-      .channels.find("id", "799788766432067595");
+      .get("790148683097571338")
+      .channels.find("id", "807014389596684328");
     let Embed = new Discord.RichEmbed()
       .setColor("")
       .setTitle("**Citizenship Blacklist**")
@@ -66,7 +66,7 @@ module.exports = class blacklist extends Command {
       .setTimestamp();
     channel.send(Embed).then(Embed => {
           msgObject.reply(
-        "**Congratulations,** :grin:This user has been blacklisted!"
+        "**Congratulations,** :grin: This user has been blacklisted!"
       );
     });
   }

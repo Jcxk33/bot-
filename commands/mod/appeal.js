@@ -27,20 +27,32 @@ module.exports = class credits extends Command {
         })
     }
 
-     hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    hasPermission(msgObject) {
+  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
+     if (msgObject.member.roles.find(role => role.name === "kjgasdkjasnd")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Moderator")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
         return true;
       }
-       return("Sorry you must be a Red Haven Moderator or Admin!")
+      return "Sorry 😣! You must be a Moderator or Admin!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+      );
+    }
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('803328190684725319', 'rD_5ny088Q8xY4cv5syeu8EOhJqdMvEv-1tBgNGGNf7iGyRCeSfwZRpmsneTsXcBlTrR')
+        var webhook = new Discord.WebhookClient('807013557920333895', 'Tji_1XW7oPlzasdWkRw5F3FqiV83nTapJ_2xiwWHDHVrAGYAU-yw4q4tqq8aFyb9aDm2')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname
