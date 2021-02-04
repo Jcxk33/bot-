@@ -31,18 +31,18 @@ module.exports = class gban extends Command {
     });
   }
     hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("800898562786590771");
-    if (msgObject.guild.id == 800898562786590771) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    const MainServer = msgObject.client.guilds.get("790148683097571338");
+    if (msgObject.guild.id == 790148683097571338) {
+      if (msgObject.member.roles.find(role => role.name === "asd")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("242876771387572224")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "asd")) {
         return true;
       }
-      return "Sorry :persevere:! You must be a Admin or Moderator Member!";
+      return "Sorry :persevere:! Command under development";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
