@@ -66,12 +66,12 @@ module.exports = class credits extends Command {
     log.setColor(`1D37D9`);
     log.setDescription(`${message.author} has deported **${args.person}**!`);
     log.setFooter(
-      `RedHaven Command Logging`,
+      `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`803326837786148944`).send(log);
+    this.client.channels.get(`807012671983583303`).send(log);
     
     
     message.reply(`**Done,** :raised_hands:  Successfully Deported`);

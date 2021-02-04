@@ -62,7 +62,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[Red Haven](https://web.roblox.com/games/5049349655/Red-Haven-County?refPageId=fe976df8-88f6-4b26-ad6d-78328cfb844a)`
+        `[New Haven County](https://www.roblox.com/games/6178625025/New-Haven-County?refPageId=7c04ffe7-08e7-42a2-a002-852df208e861#)`
       )
     
       .addField(`:book: Notes`, `${notes}`)
@@ -75,11 +75,11 @@ hasPermission(msgObject) {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Announced an SSU for **${notes}**!! `);
      log.setFooter(
-      `RedHaven Command Logging`,
+      `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`803326837786148944`).send(log);
+    this.client.channels.get(`807012671983583303`).send(log);
   }
 };
