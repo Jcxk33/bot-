@@ -45,8 +45,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("729884219701985420")
-      .channels.find("id", "729890778469498941");
+      .get("790148683097571338")
+      .channels.find("id", "790148683390910470");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(`:arrow_up:   **__Change Log__**`)
@@ -55,7 +55,7 @@ module.exports = class changelog extends Command {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter("Red Haven")
+      .setFooter("Mayflower")
       .setTimestamp(1911);
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")
