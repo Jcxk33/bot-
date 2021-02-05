@@ -108,7 +108,7 @@ module.exports = class gban extends Command {
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        "5c89d17fc1f5c123da59010d"
+        "601d65a08db3284901ce96a3"
   
       );
     }
