@@ -56,7 +56,7 @@ module.exports = class changelog extends Command {
       )
       .setDescription(description)
       .setFooter("Mayflower")
-      .setTimestamp(1911);
+      .setTimestamp();
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")
   }
