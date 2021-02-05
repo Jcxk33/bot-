@@ -42,7 +42,7 @@ module.exports = class gban extends Command {
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry :persevere:! Command Under Development";
+      return "Sorry :persevere:! You must be a Mayflower Moderator or Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
@@ -93,7 +93,7 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      editMessage.edit(`**Wowzers,** Your command has been executed in-game`);
+      editMessage.edit("**Wowzers,** Your command has been executed in-game on server `5825bc96-7d0a-4299-b9c1-a0d1b56a3843`");
   const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
