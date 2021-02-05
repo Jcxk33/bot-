@@ -12,14 +12,14 @@ module.exports = class EightballCommand extends (
       description: "What do you think?",
       throttling: {
         usages: 1,
-        duration: 100,
+        duration: 10,
       },
       guildOnly: false,
     });
   }
 
   run(message) {
-    var things = ["Yes", "No", "Likely", "Unlikely", "Absolutetly Not", "I think you know the answer","Probably", "I Would Usually Smirk at that, but no"];
+    var things = ["Yes", "No", "Likely", "Unlikely", "Absolutely Not", "I think you know the answer","Probably", "I would usually Smirk at that, but no"];
     var thing = things[Math.floor(Math.random() * things.length)];
 
     return message.reply(thing);
