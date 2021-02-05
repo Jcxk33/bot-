@@ -18,7 +18,7 @@
     "request-promise": "^4.2.5",
     "trello": "^0.10.0",
     "winston": "^3.2.1",
-    "noblox.js": "^4.7.3",
+    "noblox.js": "^4.8.2",
     "common-tags": "^1.8.0",
     "chainfetch": "^1.2.2"
   }
