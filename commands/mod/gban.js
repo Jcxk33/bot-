@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "6dabafe697b7566ddb4ef277f428adfb",
-  "ac7aa4846fa858c4aee72c1d42f60ad1f75129b48f29d719074875d70269a9eb"
+  "b3e86d17c55b6dc170e3e426e4e1a491",
+  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
 );
 
 module.exports = class gban extends Command {
@@ -33,16 +33,16 @@ module.exports = class gban extends Command {
     hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("790148683097571338");
     if (msgObject.guild.id == 790148683097571338) {
-      if (msgObject.member.roles.find(role => role.name === "asd")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("242876771387572224")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "asd")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry :persevere:! Command under development";
+      return "Sorry :persevere:! Command Under Development";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
@@ -99,16 +99,16 @@ module.exports = class gban extends Command {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Gamebanned **${username}** for **${reason}**! `);
      log.setFooter(
-      `GunFights Command Logging`,
+      `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`799567798900490280`).send(log);
-trello.removeCard(
+    this.client.channels.get(`807012671983583303`).send(log);
+trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        "5f93cf66f83aa15a57bf5747"
+        "5c89d17fc1f5c123da59010d"
   
       );
     }
