@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "",
-  ""
+  "6dabafe697b7566ddb4ef277f428adfb",
+  "ac7aa4846fa858c4aee72c1d42f60ad1f75129b48f29d719074875d70269a9eb"
 );
 
 module.exports = class gban extends Command {
@@ -105,7 +105,7 @@ module.exports = class gban extends Command {
     log.setTimestamp(); 
       
     this.client.channels.get(`799567798900490280`).send(log);
-trello.addCard(
+trello.removeCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
         "5f93cf66f83aa15a57bf5747"
