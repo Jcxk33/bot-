@@ -75,8 +75,8 @@ module.exports = class gban extends Command {
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
       const webhook = new Discord.WebhookClient(
-        "",
-        "-OJp"
+        "796085580550766592",
+        "VyaWHI5y9xujcPu7dLrjR1kgeW3ywrCJDHLlz2FD5fGOnYRXD7zR_TyZf_3hWrzMM0OC"
       );
       webhook.send("", {
         embeds: [
