@@ -15,7 +15,7 @@ module.exports = class acceptreq extends Command {
         {
           type: "string",
           prompt: "What is their Roblox username?",
-          key: "Username",
+         key: "Username",
           label: "username"
         }
       ]
