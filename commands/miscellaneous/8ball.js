@@ -19,7 +19,7 @@ module.exports = class EightballCommand extends (
   }
 
   run(message) {
-    var things = ["Yes", "No", "Likely", "Unlikely", "Absolutely Not", "I think you know the answer","Probably", "I would usually Smirk at that, but no"];
+    var things = ["Yes", "No", "Likely", "Unlikely", "Absolutely Not", "I think you know the answer","Probably", "I would usually Smirk at that, but no","Of course!","Uh Duh 🙄"];
     var thing = things[Math.floor(Math.random() * things.length)];
 
     return message.reply(thing);
