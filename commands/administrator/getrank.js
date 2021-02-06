@@ -31,7 +31,7 @@ module.exports = class getrank extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "ICF Director")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       } else if (
@@ -39,7 +39,7 @@ module.exports = class getrank extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a ICF Agent Member!";
+      return "Sorry 😣! You must be a Mayflower Moderator or Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the ICF / Mayflower Server!"
