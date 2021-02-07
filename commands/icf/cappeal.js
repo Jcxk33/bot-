@@ -7,7 +7,6 @@ module.exports = class credits extends Command {
       name: "cappeal",
       description: "Handles specified target's citizenship appeal",
       group: "icf",
-      guildOnly: true,
       memberName: "cappeal",
       args: [
         {
@@ -30,7 +29,7 @@ module.exports = class credits extends Command {
   }
 
 
-  hhasPermission(msgObject) {
+  hasPermission(msgObject) {
   if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
