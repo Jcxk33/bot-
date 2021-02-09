@@ -9,6 +9,10 @@ module.exports = class whois extends Command {
       group: "miscellaneous",
       memberName: "rs",
       ownerOnly: false,
+      throttling: {
+		usages: 1,
+		duration: 20,
+	},
       description: "Checks a user",
       args: [
         {
