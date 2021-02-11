@@ -39,10 +39,13 @@ module.exports = class suggest extends Command {
       
     this.client.channels.get(`807012671983583303`).send(log);
     let Embed = new Discord.RichEmbed()
-      .setColor("#00f80a")
-      .setTitle(`${msgObject.member} has made a new Suggestion`)
+      .setColor("RANDOM")
+      .setTitle("Suggestion")
       .setDescription(description)
-      .setAuthor("Suggestion")
+      .setAuthor(
+        `${msgObject.member.displayName}`,
+        `${msgObject.author.avatarURL}`
+      )
     
       .setTimestamp();
     channel.send(Embed).then(Embed => {
