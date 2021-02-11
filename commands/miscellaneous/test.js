@@ -16,8 +16,8 @@ module.exports = class test extends Command {
       },
       args: [
       ]
-    }
-          }
+    });
+  }
   hasPermission(msgObject) {
     if (
       msgObject.guild.id == 790148683097571338 ||
@@ -52,8 +52,8 @@ module.exports = class test extends Command {
       .setURL("/")
       .setAuthor(
         "State of Mayflower",
-        "https://i.imgur.com/wSTFkRM.png"
-        
+        "https://i.imgur.com/wSTFkRM.png",
+        ""
       )
       .setDescription("The links will lead to official sites maintained by the owners")
       .setThumbnail("https://i.imgur.com/wSTFkRM.png")
