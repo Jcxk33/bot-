@@ -20,7 +20,7 @@ module.exports = class acceptreq extends Command {
         }
       ]
     });
-  }
+  } 
 
     hasPermission(msgObject) {
   if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
