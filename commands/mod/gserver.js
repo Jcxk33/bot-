@@ -27,7 +27,7 @@ module.exports = class getservercommand extends Command {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("242876771387572224")
+        msgObject.author == this.client.users.get("662816272861364255")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
