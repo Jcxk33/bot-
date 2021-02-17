@@ -16,7 +16,31 @@ class PurgeCommand extends commando.Command {
             ]
         });
     }
-
+  
+hasPermission(msgObject) {
+  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
+     if (msgObject.member.roles.find(role => role.name === "")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
+        return true;
+      }
+      return "Sorry 😣! You must be a Developer!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+      );
+    }
+}
     run(msg, { numToPurge }) {
         let channel = msg.channel;
 
