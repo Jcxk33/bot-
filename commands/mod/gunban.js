@@ -3,8 +3,8 @@ const { Command } = require("discord.js-commando");
 const Trello = require("trello");
 const request = require("request-promise");
 var trello = new Trello(
-  "518a844f03a7b166f21a19d62a2b3da8",
-  "bd175d77a563fdcf48e4c9cb5d65ac405e89cb9d36ccd50d530345996b398522"
+  "b3e86d17c55b6dc170e3e426e4e1a491",
+  "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
 );
 
 module.exports = class gunban extends Command {
@@ -30,18 +30,18 @@ module.exports = class gunban extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("719627673839861830");
-    if (msgObject.guild.id == 719627673839861830) {
+    const MainServer = msgObject.client.guilds.get("790148683097571338");
+    if (msgObject.guild.id == 790148683097571338) {
       if (msgObject.member.roles.find(role => role.name === "Bots")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("662816272861364255")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Staff")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry 😣! You must be a Moderator or Admin";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
@@ -74,12 +74,12 @@ module.exports = class gunban extends Command {
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
       editMessage.edit(
-        `Congrats 🙌! Your command will be executed in-game shortly!`
+        `Wowzers! Successfully unbanned **${username}**`
       );
-      trello.addCard(
-        `${editMessage.channel.id} ${editMessage.id} ${authorData.robloxId} unban ${data.Id} ${reason}`,
+      trello.deleteCard(
+        `${username}`,
         "",
-        "5ee960e547fae818225edf58"
+        "601d65a08db3284901ce96a3"
       );
     }
   }
