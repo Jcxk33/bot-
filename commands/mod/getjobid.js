@@ -13,6 +13,7 @@ module.exports = class getjobid extends Command {
       memberName: "getjobid",
       description: "Retrieves given players jobid",
       guildOnly: true,
+      ownerOnly: true,
       args: [
         {
           type: "string",

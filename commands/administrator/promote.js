@@ -24,7 +24,7 @@ module.exports = class promote extends Command {
 
 
      hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
+  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338 ){
      if (msgObject.member.roles.find(role => role.name === "kjgasdkjasnd")) {
         return true;
       } else if (
