@@ -7,6 +7,7 @@ var trello = new Trello(
   "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
 );
 
+
 module.exports = class gunban extends Command {
   constructor(client) {
     super(client, {
@@ -76,11 +77,13 @@ module.exports = class gunban extends Command {
       editMessage.edit(
         `Wowzers! Successfully unbanned **${username}**`
       );
-      trello.deleteCard(
-        `${username}`,
+      trello.deleteCard(`${username}`,
         "",
-        "601d65a08db3284901ce96a3"
+        "601d65a08db3284901ce96a3",
+            
+               console.log(${username})         
       );
+      
     }
   }
 };
