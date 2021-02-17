@@ -78,10 +78,8 @@ module.exports = class gunban extends Command {
         `Wowzers! Successfully unbanned **${username}**`
       );
       trello.deleteCard(`${username}`,
-        "",
         "601d65a08db3284901ce96a3",
-            
-               console.log(${username})         
+        console.log(`${username}`)         
       );
       
     }
