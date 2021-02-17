@@ -36,7 +36,7 @@ module.exports = class changelog extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Developer !";
+      return "Sorry 😣! You must be a Developer!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
@@ -49,7 +49,7 @@ module.exports = class changelog extends Command {
       .channels.find("id", "790148683390910470");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle(`:arrow_up:   **__Change Log__**`)
+      .setTitle(`**__Change Log__**`)
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`

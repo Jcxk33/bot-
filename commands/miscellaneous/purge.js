@@ -53,11 +53,11 @@ hasPermission(msgObject) {
         else if (channel.type === 'text') {
             return channel.fetchMessages({limit: numToPurge})
                 .then(msgs => channel.bulkDelete(msgs))
-                .then(msgs => msg.reply (`🙏 Successfully deleted ${msgs.size} message(s)`))
+                .then(msgs => msg.reply (`🙏 Successfully deleted ${msgs.size} message(s)!`))
                 .catch(console.error);
         }
         else {
-            return msg.reply('Purge command only available in Text Channels');
+            return msg.reply('Sorry ☹️ You must use this command in a text channel!');
         }
     }
 };
