@@ -13,7 +13,7 @@ module.exports = class StrawpollCommand extends Command {
 			description: 'Generates a Strawpoll with the options you provide.',
       throttling: {
 		usages: 1,
-		duration: 200,
+		duration: 40,
 	},
 			credit: [
 				{
