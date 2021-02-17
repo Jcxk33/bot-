@@ -81,6 +81,11 @@ hasPermission(msgObject) {
               "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
               
             );
+            
+          } else {
+return
+        
+      ;
             this.client.guilds.forEach(m => {
               m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
             });
