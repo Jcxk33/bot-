@@ -19,6 +19,7 @@
     "mongoose": "^5.10.9",
     "noblox.js": "^4.8.2",
     "node-superfetch": "^0.1.11",
+    "random-js": "^2.1.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
     "trello": "^0.10.0",
