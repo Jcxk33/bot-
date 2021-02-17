@@ -32,6 +32,55 @@ console.log("logged in")
 });
 
 
+
+
+
+
+
+
+
+app.get('/', async (request, response) => {
+     response.sendStatus(200);
+});
+
+app.get(`/get-request`, async (request, response) => {
+    response.status(200).send(client.request);
+});
+
+app.post(`/verify-request`, async (request, response) => {
+    let commandRequest = client.request;
+    if(commandRequest === "No request") return response.sendStatus(200);
+    let successStatus = request.headers.success;
+    let message = request.headers.message;
+
+    let channel = client.channels.cache.get(commandRequest.channelID);
+    if(!channel) {
+        return response.sendStatus(200);
+    }
+
+    if(successStatus == "true") {
+        if("moderator" in request.headers) {
+            channel.send(`<@${commandRequest.authorID}>`);
+            let embed = client.embedMaker(client.users.cache.get(commandRequest.authorID), "Success", message)
+            embed.addField("Ban Information", `**Moderator**: ${request.headers.moderator}\n**Reason**: ${request.headers.reason}`);
+            channel.send(embed);
+        } else {
+            channel.send(`<@${commandRequest.authorID}>`);
+            channel.send(client.embedMaker(client.users.cache.get(commandRequest.authorID), "Success", message));
+        }
+    } else {
+        channel.send(`<@${commandRequest.authorID}>`);
+        channel.send(client.embedMaker(client.users.cache.get(commandRequest.authorID), "Failure", message));
+    }
+
+    client.request = "No request";
+
+    return response.sendStatus(200);
+});
+
+
+
+
 // CONSOLE LOGGERS FOR ANY ERRORS ETC
 client
 	.on('error', console.error)
