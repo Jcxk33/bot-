@@ -93,7 +93,7 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      editMessage.edit("**Wowzers,** Your command has been executed in-game on server `5825bc96-7d0a-4299-b9c1-a0d1b56a3843`");
+      editMessage.edit("**Wowzers,** Your command has been executed in-game on server `5359f16e-d5b1-42d4-bcc0-b7126e91448d`");
   const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
