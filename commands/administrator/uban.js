@@ -81,11 +81,6 @@ hasPermission(msgObject) {
               "Coolio :joy::joy:! Let's ban em' from everything! :gun:"
               
             );
-            
-          } else {
-return
-        
-      ;
             this.client.guilds.forEach(m => {
               m.ban(argUser.id, `"${reason}" - ${msgObject.author.tag}`);
             });
@@ -107,13 +102,12 @@ return
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Universal Banned  ${argUser} for ** ${reason}! ** `);
-   log.setFooter(
+    log.setFooter(
       `Mayflower Command Logging`,
-      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
+      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
     );
-    log.setTimestamp(); 
-      
-    this.client.channels.get(`807012671983583303`).send(log);
+    log.setTimestamp();
+    this.client.channels.get(`790345391912517632`).send(log);
       
       let msg = await msgObject.channel.send(
         `Banning ${argUser.tag} in all the servers!`
