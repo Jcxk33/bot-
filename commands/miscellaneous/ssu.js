@@ -24,8 +24,8 @@ module.exports = class changelog extends Command {
     });
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "kjgasdkjasnd")) {
+  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -51,7 +51,7 @@ hasPermission(msgObject) {
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
       .get("790148683097571338")
-      .channels.find("id", "793519251301335061");
+      .channels.find("id", "813968936012873728");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -62,7 +62,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[New Haven County](https://www.roblox.com/games/6178625025/New-Haven-County?refPageId=7c04ffe7-08e7-42a2-a002-852df208e861#)`
+        `[New Haven County](https://www.roblox.com/games/6432437697/New-Haven-County-Remastered#)`
       )
     
       .addField(`:book: Notes`, `${notes}`)

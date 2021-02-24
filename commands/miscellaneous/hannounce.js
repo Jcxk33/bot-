@@ -24,8 +24,8 @@ module.exports = class changelog extends Command {
     });
   }
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "kjgasdkjasnd")) {
+  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -49,8 +49,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("790148683097571338")
-      .channels.find("id", "790154438278643722");
+        .get("801647258386300978")
+      .channels.find("id", "813962312556871720");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("**Mayflower Announcement**")

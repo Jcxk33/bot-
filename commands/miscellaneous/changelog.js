@@ -20,15 +20,15 @@ module.exports = class changelog extends Command {
     });
   }
   hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "")) {
+  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       } else if (
@@ -36,7 +36,7 @@ module.exports = class changelog extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Developer!";
+      return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"

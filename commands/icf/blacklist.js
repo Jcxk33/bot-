@@ -30,22 +30,22 @@ module.exports = class blacklist extends Command {
   }
   hasPermission(msgObject) {
   if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "ICF")) {
+     if (msgObject.member.roles.find(role => role.name === "asd")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("sadasd")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "ICF Director")
+        msgObject.member.roles.find(role => role.name == "asd")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "sd")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a ICF Agent Member!";
+      return "Sorry 😣! ICF Commands are disabled";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"

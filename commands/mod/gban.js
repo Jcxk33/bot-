@@ -98,13 +98,13 @@ module.exports = class gban extends Command {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Gamebanned **${username}** for **${reason}**! `);
-     log.setFooter(
+      log.setFooter(
       `Mayflower Command Logging`,
-      `https://cdn.discordapp.com/icons/729884219701985420/ed159f1ba6b46d1ad5529c42ffb4b68e.jpg`
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`807012671983583303`).send(log);
+    this.client.channels.get(`813967149017071627`).send(log);
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,

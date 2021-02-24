@@ -23,9 +23,9 @@ module.exports = class uban extends Command {
       ]
     });
   }
-hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "kjgasdkjasnd")) {
+  hasPermission(msgObject) {
+  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -102,13 +102,14 @@ hasPermission(msgObject) {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Universal Banned  ${argUser} for ** ${reason}! ** `);
-    log.setFooter(
+     log.setFooter(
       `Mayflower Command Logging`,
-      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
-    log.setTimestamp();
-    this.client.channels.get(`790345391912517632`).send(log);
+    log.setTimestamp(); 
       
+    this.client.channels.get(`813967149017071627`).send(log);
+
       let msg = await msgObject.channel.send(
         `Banning ${argUser.tag} in all the servers!`
       );

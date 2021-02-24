@@ -25,8 +25,8 @@ module.exports = class changelog extends Command {
   }
   
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "kjgasdkjasnd")) {
+  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -50,17 +50,17 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("800898562786590771")
-      .channels.find("id", "800909968794189835");
+      .get("801647258386300978")
+      .channels.find("id", "813962312556871720");
     let Embed = new Discord.RichEmbed()
      .setColor("RANDOM")
-      .setTitle("**Red Haven Announcement**")
+      .setTitle("**Mayflower Announcement**")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter('State of RedHaven', 'https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
+      .setFooter('State of Mayflower', 'https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg')
       .setTimestamp();
     channel.send(Embed);
         msgObject.reply(`**Congrats** :sunglasses:! You have announced your Announcement!`);

@@ -23,8 +23,8 @@ module.exports = class getrank extends Command {
   }
 
   hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "ICF")) {
+  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -39,10 +39,10 @@ module.exports = class getrank extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Mayflower Moderator or Admin!";
+      return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the ICF / Mayflower Server!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }
@@ -66,12 +66,14 @@ module.exports = class getrank extends Command {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${message.author} has ran getrank on **${desiredPlayer}**!`);
-    log.setFooter(
+     log.setFooter(
       `Mayflower Command Logging`,
-      `https://cdn.discordapp.com/icons/706999196124840009/a7ab98d9916c3482d5c4f0156b786b60.png?size=128`
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
-    log.setTimestamp();
-    this.client.channels.get(`807012671983583303`).send(log);
+    log.setTimestamp(); 
+      
+    this.client.channels.get(`813967149017071627`).send(log);
+
     
     try {
       playerID = await roblox.getIdFromUsername(desiredPlayer);

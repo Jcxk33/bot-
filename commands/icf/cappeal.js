@@ -31,22 +31,22 @@ module.exports = class credits extends Command {
 
   hasPermission(msgObject) {
   if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "ICF")) {
+     if (msgObject.member.roles.find(role => role.name === "asd")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("sadasd")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "ICF Director")
+        msgObject.member.roles.find(role => role.name == "asd")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "sd")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a ICF Agent Member!";
+      return "Sorry 😣! ICF Commands are disabled";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
@@ -105,13 +105,14 @@ module.exports = class credits extends Command {
         args.person
       }**'s appeal to \`${choice.toLowerCase()}\`!`
     );
-     log.setFooter(
+      log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`807012671983583303`).send(log);
+    this.client.channels.get(`813967149017071627`).send(log);
+
     
 
     message.reply("Successfully sent your appeal message! 🤗");
