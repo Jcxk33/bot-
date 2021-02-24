@@ -37,7 +37,7 @@ module.exports = class uban extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asdsad")
+        msgObject.member.roles.find(role => role.name == "Moderator ")
       ) {
         return true;
       }

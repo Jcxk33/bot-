@@ -39,6 +39,10 @@ module.exports = class say extends Command {
         msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
+         } else if (
+        msgObject.member.roles.find(role => role.name == "Owner")
+      ) {
+        return true;
       } else if (
         msgObject.member.roles.find(role => role.name == "Admin")
       ) {
@@ -58,12 +62,10 @@ module.exports = class say extends Command {
       msgObject.guild.channels.find("name", channel).send(content)
       
     } catch(error){
-      
-      msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
-      const log = new Discord.RichEmbed();
+       const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-    log.setDescription(` ${msgObject.member } `);
+    log.setDescription(`${msgObject.user} has ran the say command and said ${content}`);
   log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
@@ -71,6 +73,8 @@ module.exports = class say extends Command {
     log.setTimestamp(); 
       
     this.client.channels.get(`813967149017071627`).send(log);
+      msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
+    
     }
   }
 };

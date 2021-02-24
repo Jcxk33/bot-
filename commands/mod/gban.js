@@ -33,16 +33,16 @@ module.exports = class gban extends Command {
     hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("801647258386300978");
     if (msgObject.guild.id == 801647258386300978) {
-      if (msgObject.member.roles.find(role => role.name === "asd")) {
+      if (msgObject.member.roles.find(role => role.name === "asdasd")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("asda")
+        msgObject.author == this.client.users.get("asd")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "asdasd")) {
+      } else if (msgObject.member.roles.find(role => role.name == "sadds")) {
         return true;
       }
-      return "Sorry :persevere:! You must be a Mayflower Moderator or Admin!";
+      return "Sorry :persevere:! Command will be finished tomorrow!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
