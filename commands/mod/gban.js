@@ -31,15 +31,15 @@ module.exports = class gban extends Command {
     });
   }
     hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("790148683097571338");
-    if (msgObject.guild.id == 790148683097571338) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    const MainServer = msgObject.client.guilds.get("801647258386300978");
+    if (msgObject.guild.id == 801647258386300978) {
+      if (msgObject.member.roles.find(role => role.name === "asd")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("asda")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (msgObject.member.roles.find(role => role.name == "asdasd")) {
         return true;
       }
       return "Sorry :persevere:! You must be a Mayflower Moderator or Admin!";
@@ -108,7 +108,7 @@ module.exports = class gban extends Command {
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        "601d65a08db3284901ce96a3"
+        ""
   
       );
     }

@@ -22,8 +22,8 @@ module.exports = class getservercommand extends Command {
     });
   }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("790148683097571338");
-    if (msgObject.guild.id == 790148683097571338) {
+    const MainServer = msgObject.client.guilds.get("801647258386300978");
+    if (msgObject.guild.id == 801647258386300978) {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
@@ -44,7 +44,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/6178625025/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/6432437697/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -60,7 +60,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[State of Mayflower](https://www.roblox.com/games/6178625025/New-Haven-County)\n[Detailed Link](https://games.roblox.com/v1/games/6178625025/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[State of Mayflower](https://www.roblox.com/games/6432437697/New-Haven-County-Remastered#)\n[Detailed Link](https://games.roblox.com/v1/games/6432437697/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);

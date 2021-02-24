@@ -22,39 +22,39 @@ module.exports = class getrank extends Command {
     });
   }
 
-  hasPermission(msgObject) {
+         hasPermission(msgObject) {
   if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+     if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "asdasd")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "asdsad")
       ) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! This command is disabled"
       );
     }
   }
 
 
   async run(message, { desiredPlayer }) {
-    let robloxToken = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_610E4DFDE859056F21079F9F5FD48BF586B95275DC0FAAB55DED89DD78A54AE0C652530CC641F264232330F7AFC24E6945A0DFE5147E96E8C238211B424504D25E1FA9A8BB57EDB1B6C798C26CE41CCA1BFA752865DC738CE79F711D8DC271220F60D91EF74B4ED19F710D945F6C38DACD06C59157BEE950FFCBEAE4C94C124AEB62EE6E56A53AF1DF4E30A95DB5F30961100E16155F7F8A5B21F9E18FDBFB465256A564A2E3FE8F8F72DB06A7F686D8C67779DBCDAE890BB20BB09831330A4D477450149E575429BF435875C817F3F7331D15807BE39355FA290E37D1E521672921B3F172876308F082BDDE6FC8446C8B93E881BE1570412366DEB65EE673D5018185FDE7FE21A8D1FB8EB00126F5B6754B056F091D4EF2B369783C36C58441884939CC"
+      let robloxToken = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_292FA5A86E7AB2EB3A37C6E3F728A1D187FF74C78899726139C1880C9B5A654427CB3ECD32A9AB88661270C4A2ECDED4779E3829C6ED62198AE344B915419B3A8161583A40A63EF4A7017D865935AAE52E1DFD45059E66947A4E6720A0F6B44241ED2502DE70CCF08C5ED47903129F9112BEAE3F9A0FE5943E2AF9D7D9A25A8C93F813E30A7B615A5E0F1045844BC9516B5A67E81BD261BB37F81765273439CDC4E844FEBC34C6567EF95F7925C49564C3659EC52EBD512279EABFC34C02D1EF32E584F4D142DAF86BE7B2BE08F62AC00552096C6A4EDB6D84D7F261308EA6C34052F1BEEF0E3361AD52F68BC249EFAB1581B03CCE5CAD122F1E9CE0EF4AA19B187FE45A1657DC3E50BF3EF629903BC9DB7575B354C36924C581F6C2400A918B198D1A7C"
     let sentMessage = await message.reply(
       `Allow me to work my magic.. :sleeping:`
     );
 
-    let groupID = 7563230;
+    let groupID = 9660403;
 
     let playerName;
     let playerID;
