@@ -28,25 +28,25 @@ module.exports = class ban extends Command {
     }
         hasPermission(msgObject) {
   if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+     if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "Owner")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "asdsad")
       ) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! This command is disabled in this server"
       );
     }
   }

@@ -22,7 +22,7 @@ module.exports = class getrank extends Command {
     });
   }
 
-         hasPermission(msgObject) {
+        hasPermission(msgObject) {
   if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
@@ -31,7 +31,7 @@ module.exports = class getrank extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asdasd")
+        msgObject.member.roles.find(role => role.name == "Owner")
       ) {
         return true;
       } else if (
@@ -42,7 +42,7 @@ module.exports = class getrank extends Command {
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
-        "Sorry :persevere:! This command is disabled"
+        "Sorry :persevere:! This command is disabled in this server"
       );
     }
   }

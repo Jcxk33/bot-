@@ -35,7 +35,7 @@ module.exports = class kick extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asdasd")
+        msgObject.member.roles.find(role => role.name == "Owner")
       ) {
         return true;
       } else if (
@@ -46,7 +46,7 @@ module.exports = class kick extends Command {
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
-        "Sorry :persevere:! This command is disabled"
+        "Sorry :persevere:! This command is disabled in this server"
       );
     }
   }
