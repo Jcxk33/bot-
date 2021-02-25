@@ -33,16 +33,16 @@ module.exports = class gban extends Command {
     hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("801647258386300978");
     if (msgObject.guild.id == 801647258386300978) {
-      if (msgObject.member.roles.find(role => role.name === "asdasd")) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("asd")
+        msgObject.author == this.client.users.get("Owner")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "sadds")) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry :persevere:! Command will be finished tomorrow!";
+      return "Sorry :persevere:! You must be an Admin or a Moderator! ";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +
@@ -108,7 +108,7 @@ module.exports = class gban extends Command {
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        ""
+        "603704bf495af939209503cd"
   
       );
     }
