@@ -27,13 +27,16 @@ module.exports = class getservercommand extends Command {
       if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("662816272861364255")
+        msgObject.author == this.client.users.get("Owner")
+      ) {
+          } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry :persevere:! You must be a Admin or Moderator Member!";
+      return "Sorry :persevere:! You must be an Admin or a Moderator! ";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the " +

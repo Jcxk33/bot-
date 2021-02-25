@@ -38,6 +38,9 @@ module.exports = class gban extends Command {
       } else if (
         msgObject.author == this.client.users.get("Owner")
       ) {
+          } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
         return true;
       } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
@@ -75,8 +78,8 @@ module.exports = class gban extends Command {
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
       const webhook = new Discord.WebhookClient(
-        "796085580550766592",
-        "VyaWHI5y9xujcPu7dLrjR1kgeW3ywrCJDHLlz2FD5fGOnYRXD7zR_TyZf_3hWrzMM0OC"
+        "814324400324739083",
+        "X46sDp0N8Qr7wFCWAVQnj24CoNjeHIGBCuf53Sdhv3QrPcceVNpCmUa1e-7pBOz-X0xE"
       );
       webhook.send("", {
         embeds: [
@@ -93,7 +96,7 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      editMessage.edit("**Wowzers,** Your command has been executed in-game on server `5359f16e-d5b1-42d4-bcc0-b7126e91448d`");
+      editMessage.edit("**Wowzers,** Your command has been executed in-game on server `7dccd8c9-6a6b-4d7d-b2fc-df3cfa650e98`");
   const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);

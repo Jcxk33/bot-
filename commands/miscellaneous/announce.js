@@ -25,26 +25,26 @@ module.exports = class changelog extends Command {
   }
   
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+    const MainServer = msgObject.client.guilds.get("801647258386300978");
+    if (msgObject.guild.id == 801647258386300978) {
+      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
+        msgObject.author == this.client.users.get("Owner")
+      ) {
+          } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
-      ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
-      ) {
+      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry :persevere:! You must be an Admin or a Moderator! ";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! You must use this command in the " +
+        MainServer.name +
+        "!"
       );
     }
   }
