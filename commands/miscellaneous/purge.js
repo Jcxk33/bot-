@@ -33,6 +33,10 @@ hasPermission(msgObject) {
         msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
+        } else if (
+        msgObject.member.roles.find(role => role.name == "Senior Admin")
+      ) {
+        return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {

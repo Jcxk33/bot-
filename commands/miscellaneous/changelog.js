@@ -22,10 +22,10 @@ module.exports = class changelog extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("801647258386300978");
     if (msgObject.guild.id == 801647258386300978) {
-      if (msgObject.member.roles.find(role => role.name === "")) {
+      if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("Owner")
+        msgObject.author == this.client.users.get("Developer")
       ) {
           } else if (
         msgObject.author == this.client.users.get("675794471065092161")

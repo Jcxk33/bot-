@@ -39,12 +39,12 @@ module.exports = class say extends Command {
         msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
-         } else if (
-        msgObject.member.roles.find(role => role.name == "Owner")
-      ) {
-        return true;
       } else if (
         msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
+        return true;
+        } else if (
+        msgObject.member.roles.find(role => role.name == "Senior Admin")
       ) {
         return true;
       }
