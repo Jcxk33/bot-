@@ -12,7 +12,7 @@ module.exports = class suggest extends Command {
       ownerOnly: false,
                         throttling: {
         usages: 1,
-        duration: 40
+        duration: 20
       },
       args: [
         {
@@ -38,8 +38,6 @@ module.exports = class suggest extends Command {
       
     this.client.channels.get(`813967149017071627`).send(log);
 
-      
-    this.client.channels.get(`807012671983583303`).send(log);
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("Suggestion")
