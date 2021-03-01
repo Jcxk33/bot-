@@ -5,12 +5,12 @@ class PurgeCommand extends commando.Command {
             name: 'purge',
             group: 'miscellaneous', // like your !roll command
             memberName: 'purge',
-            description: 'Purge some messages from a Text Channel.',
+            description: 'Purges specified messages in a channel',
             args: [
                 {
                     key: 'numToPurge',
                     label: 'number',
-                    prompt: 'Please input a number ( > 0) of messages to be deleted.',
+                    prompt: 'How many messages would you like to delete?',
                     type: 'integer'
                 }
             ]
@@ -18,27 +18,27 @@ class PurgeCommand extends commando.Command {
     }
   
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+  if(msgObject.guild.id == 706999196124840009 || msgObject.guild.id == 706999196124840009){
+     if (msgObject.member.roles.find(role => role.name === "asdas")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "asdas")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "asdasd")
       ) {
         return true;
         } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
+        msgObject.member.roles.find(role => role.name == "asdasd")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be the bot owner!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
@@ -50,14 +50,14 @@ hasPermission(msgObject) {
 
         // fail if number of messages to purge is invalid
         if (numToPurge <= 0) {
-            return msg.reply('Purge number must be greater than 0');
+            return msg.reply('You must specify a number above 0');
         }
 
         // channel type must be text for .bulkDelete to be available
         else if (channel.type === 'text') {
             return channel.fetchMessages({limit: numToPurge})
                 .then(msgs => channel.bulkDelete(msgs))
-                .then(msgs => msg.reply (`🙏 Successfully deleted ${msgs.size} message(s)!`))
+                .then(msgs => msg.reply (`🙏 Successfully deleted ${msgs.size} messages!`))
                 .catch(console.error);
         }
         else {
