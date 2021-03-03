@@ -28,30 +28,9 @@ hasPermission(msgObject) {
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
-      ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
-      ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
-      ) {
-        return true;
-        } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
-      ) {
-        return true;
-      }
-      return "Sorry 😣! You must be a Moderator or Admin!";
-    } else {
-      return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }
-  
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
       .get("790148683097571338")
