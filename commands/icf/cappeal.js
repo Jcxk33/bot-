@@ -56,8 +56,8 @@ module.exports = class credits extends Command {
 
   async run(message, args) {
     var webhook = new Discord.WebhookClient(
-      "799035539013107764",
-      "TpwvV8iWKqsuyrmvBJTLCVqHpDU08lPubs6aal2OCszOV9usSbXYFNwJ12lB1DzTPzEn"
+      "816769286051725362",
+      "R9nUWPzbMPTnDsvIqjnUYeIrGvSJ6QdSUkeVPKhk2xDLRuEoKzfgYC4euB6tcLnDMmbK"
     );
     var nickname;
     if (message.member.nickname) {
