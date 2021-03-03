@@ -26,11 +26,10 @@ module.exports = class changelog extends Command {
 hasPermission(msgObject) {
   if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
-        return true;
-      } else if (
-      );
-    }
+      
+     }
   }
+}
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
       .get("790148683097571338")
