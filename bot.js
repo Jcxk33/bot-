@@ -33,20 +33,6 @@ console.log("logged in")
 
 
 
-client.embedMaker = function embedMaker(author, title, description) {
-    const embed = new Discord.RichEmbed();
-    embed.setColor(process.env.embedColor);
-    embed.setAuthor(author.tag, author.displayAvatarURL());
-    embed.setTitle(title);
-    embed.setDescription(description);
-    embed.setFooter('pept#1111 Is sexy');
-    return embed;
-}
-
-
-
-
-
 app.get('/', async (request, response) => {
      response.sendStatus(200);
 });

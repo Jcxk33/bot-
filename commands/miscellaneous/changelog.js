@@ -55,7 +55,7 @@ module.exports = class changelog extends Command {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter("Mayflower")
+      .setFooter("State of Mayflower","https://cdn.discordapp.com/icons/760507778476277831/c3919375525fddc15592d839d70587b6.png")
       .setTimestamp();
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")
