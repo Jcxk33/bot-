@@ -30,27 +30,27 @@ module.exports = class gban extends Command {
       ]
     });
   }
-    hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("801647258386300978");
-    if (msgObject.guild.id == 801647258386300978) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+     hasPermission(msgObject) {
+  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("Owner")
-      ) {
-          } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Moderator")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
         return true;
       }
-      return "Sorry :persevere:! You must be an Admin or a Moderator! ";
+      return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the " +
-        MainServer.name +
-        "!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }
@@ -78,8 +78,8 @@ module.exports = class gban extends Command {
         `Ooooh, we've also got your UserID as \`${authorData.robloxId}\`!`
       );
       const webhook = new Discord.WebhookClient(
-        "814324400324739083",
-        "X46sDp0N8Qr7wFCWAVQnj24CoNjeHIGBCuf53Sdhv3QrPcceVNpCmUa1e-7pBOz-X0xE"
+        "816764633658556418",
+        "_PBN6RL4HtbWclzi9MP6KH2iCTls-nqkKDEP5rh5v9JtFy3cc1OSQ5n6FKs9auEKhjPU"
       );
       webhook.send("", {
         embeds: [
@@ -101,17 +101,17 @@ module.exports = class gban extends Command {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Gamebanned **${username}** for **${reason}**! `);
-      log.setFooter(
+     log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`813967149017071627`).send(log);
+    this.client.channels.get(`816765185057619989`).send(log);
 trello.addCard(
         `${data.Username}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
-        "603704bf495af939209503cd"
+        ""
   
       );
     }

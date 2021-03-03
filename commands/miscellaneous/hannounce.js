@@ -24,7 +24,7 @@ module.exports = class changelog extends Command {
     });
   }
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
@@ -39,10 +39,6 @@ module.exports = class changelog extends Command {
         msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
-        } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
-      ) {
-        return true;
       }
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
@@ -53,8 +49,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-        .get("801647258386300978")
-      .channels.find("id", "813962312556871720");
+        .get("816741621558804520")
+      .channels.find("id", "816760505258999888");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("**Mayflower Announcement**")

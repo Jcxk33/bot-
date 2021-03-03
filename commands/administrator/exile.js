@@ -95,7 +95,7 @@ module.exports = class exile extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`813967149017071627`).send(log);
+    this.client.channels.get(`816765185057619989`).send(log);
     } catch (error) {
       sentMessage.edit(
         `${message.author}, :construction: There has been an error! \`\`\`js\n${error}\`\`\``

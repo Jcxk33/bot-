@@ -54,13 +54,13 @@ module.exports = class promote extends Command {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${message.author} has Promoted **${desiredPlayer}**!`);
-    log.setFooter(
+   log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`813967149017071627`).send(log);
+    this.client.channels.get(`816765185057619989`).send(log);
 
     
     let groupID = 9660403;

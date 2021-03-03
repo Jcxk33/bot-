@@ -18,27 +18,23 @@ class PurgeCommand extends commando.Command {
     }
   
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 706999196124840009 || msgObject.guild.id == 706999196124840009){
-     if (msgObject.member.roles.find(role => role.name === "asdas")) {
+  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asdas")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asdasd")
-      ) {
-        return true;
-        } else if (
-        msgObject.member.roles.find(role => role.name == "asdasd")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be the bot owner!";
+      return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"

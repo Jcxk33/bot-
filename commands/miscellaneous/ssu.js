@@ -24,16 +24,33 @@ module.exports = class changelog extends Command {
     });
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
+  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
-      
-     }
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Moderator")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
+        return true;
+      }
+      return "Sorry 😣! You must be a Moderator or Admin!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+      );
+    }
   }
-}
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("790148683097571338")
-      .channels.find("id", "813968936012873728");
+      .get("816741621558804520")
+      .channels.find("id", "816763535219884032");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -62,6 +79,6 @@ hasPermission(msgObject) {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`807012671983583303`).send(log);
+    this.client.channels.get(`816765185057619989`).send(log);
   }
 };
