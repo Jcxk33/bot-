@@ -25,27 +25,23 @@ module.exports = class changelog extends Command {
   }
   
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 801647258386300978 || msgObject.guild.id == 801647258386300978){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
+     if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
-      ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.author == this.client.users.get("ICF Director")
       ) {
         return true;
       } else if (
         msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
-        } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
+      } else if (
+        msgObject.member.roles.find(role => role.name == "sd")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a member of the ICF";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
@@ -54,8 +50,8 @@ module.exports = class changelog extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("801647258386300978")
-      .channels.find("id", "813962312556871720");
+      .get("816741621558804520")
+      .channels.find("id", "816760505258999888");
     let Embed = new Discord.RichEmbed()
      .setColor("RANDOM")
       .setTitle("**Mayflower Announcement**")

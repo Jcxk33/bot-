@@ -29,15 +29,15 @@ module.exports = class blacklist extends Command {
     });
   }
   hasPermission(msgObject) {
-  if(msgObject.guild.id == 790148683097571338 || msgObject.guild.id == 790148683097571338){
-     if (msgObject.member.roles.find(role => role.name === "asd")) {
+  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
+     if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("sadasd")
+        msgObject.author == this.client.users.get("ICF Director")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asd")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       } else if (
@@ -45,7 +45,7 @@ module.exports = class blacklist extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! ICF Commands are disabled";
+      return "Sorry 😣! You must be a member of the ICF";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
