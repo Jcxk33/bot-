@@ -59,7 +59,7 @@ module.exports = class uban extends Command {
       const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-    log.setDescription(`${msgObject.member} has Universal Banned  ${user} for ** ${reason}! ** `);
+    log.setDescription(`${msgObject.member} has Un-Universal Banned ${target}`);
      log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
