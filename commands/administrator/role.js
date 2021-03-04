@@ -31,16 +31,6 @@ module.exports = class id extends Command {
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Owner")
-      ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
-      ) {
-        return true;
-      }
       return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
@@ -48,6 +38,7 @@ module.exports = class id extends Command {
       );
     }
   }
+}
   async run(msgObject, { member, role }) {
     let GuildMember = msgObject.guild.members.find(`id`, member.id);
     if (!GuildMember.roles.has(role.id)) {
