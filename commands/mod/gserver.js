@@ -47,7 +47,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/6432437697/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/6474583313/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
