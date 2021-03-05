@@ -75,7 +75,7 @@ hasPermission(msgObject) {
     log.setDescription(`${msgObject.member} has Announced an SSU for **${notes}**!! `);
      log.setFooter(
       `Mayflower Command Logging`,
-      `htt  ps://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
+      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
