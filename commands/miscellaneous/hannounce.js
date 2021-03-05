@@ -12,7 +12,7 @@ module.exports = class changelog extends Command {
       ownerOnly: false,
       throttling: {
         usages: 1,
-        duration: 2000
+        duration: 200
       },
       args: [
         {
