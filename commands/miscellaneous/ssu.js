@@ -21,7 +21,7 @@ module.exports = class changelog extends Command {
           key: "notes"
         }
       ]
-    });
+    });  
   }
 hasPermission(msgObject) {
   if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
