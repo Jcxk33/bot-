@@ -17,7 +17,7 @@ module.exports = class changelog extends Command {
       args: [
         {
           type: "string",
-          prompt: "What are the notes for the ssu?",
+          prompt: "What are the notes for the ssu?",  
           key: "notes"
         }
       ]
