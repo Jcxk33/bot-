@@ -38,22 +38,4 @@ module.exports = class suggest extends Command {
       
     this.client.channels.get(`816765185057619989`).send(log);
 
-    let Embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle("Suggestion")
-      .setDescription(description)
-      .setAuthor(
-        `${msgObject.member.displayName}`,
-        `${msgObject.author.avatarURL}`
-      )
     
-      .setTimestamp();
-    channel.send(Embed).then(Embed => {
-        Embed.react("✔️")
-       Embed.react("❌")
-          msgObject.reply(
-        "**Congratulations, **suggestion successfully made!:smile: "
-      );
-    });
-  }
-};
