@@ -25,18 +25,18 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("816741621558804520")
-      .channels.find("id", "816760707097427998");
+      .get("808115419842871346")
+      .channels.find("id", "819566550784016405");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-     log.setFooter(
+      log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`816765185057619989`).send(log);
+    this.client.channels.get(`819758083650617408`).send(log);
 
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")

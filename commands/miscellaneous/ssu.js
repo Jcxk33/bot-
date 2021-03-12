@@ -24,7 +24,7 @@ module.exports = class changelog extends Command {
     });  
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
+  if(msgObject.guild.id == 808115419842871346 || msgObject.guild.id == 808115419842871346){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
@@ -49,8 +49,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("816741621558804520")
-      .channels.find("id", "816763535219884032");
+      .get("818358192991240213")
+      .channels.find("id", "818358192991240213");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -61,7 +61,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[New Haven County](https://www.roblox.com/games/6432437697/New-Haven-County-Remastered#)`
+        `[New Haven County](https://www.roblox.com/games/6490093106/New-Haven-County?refPageId=2ad69900-d878-4300-8b73-5a26840d2005)`
       )
     
       .addField(`:book: Notes`, `${notes}`)
@@ -73,12 +73,12 @@ hasPermission(msgObject) {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has Announced an SSU for **${notes}**!! `);
-     log.setFooter(
+    log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`816765185057619989`).send(log);
+    this.client.channels.get(`819758083650617408`).send(log);
   }
 };

@@ -19,34 +19,34 @@ module.exports = class changelog extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("816741621558804520");
-    if (msgObject.guild.id == 816741621558804520) {
-      if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+ hasPermission(msgObject) {
+  if(msgObject.guild.id == 808115419842871346 || msgObject.guild.id == 808115419842871346){
+     if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("Developer")
-      ) {
-          } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "")) {
+      } else if (
+        msgObject.member.roles.find(role => role.name == "asd")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "asdasd")
+      ) {
         return true;
       }
-      return "Sorry :persevere:! You must be Developer"
+      return "Sorry 😣! You must be a Developer";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the " +
-        MainServer.name +
-        "!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("816741621558804520")
-      .channels.find("id", "816760627962839121");
+      .get("808115419842871346")
+      .channels.find("id", "808115420175138905");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(`**__Change Log__**`)
