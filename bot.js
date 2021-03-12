@@ -24,7 +24,7 @@ const client = new commando.CommandoClient({
 const Constants = require('discord.js/src/util/Constants.js')
 Constants.DefaultOptions.ws.properties.$browser = `Discord iOS`
 client.on("ready",() => {
-client.user.setActivity('with London', { type: 1, browser: "DISCORD IOS"})
+client.user.setActivity('with London', { type: 2, browser: "DISCORD IOS"})
   .then(console.log)
   .catch(console.error);
   console.log("logged in")
