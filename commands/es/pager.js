@@ -18,7 +18,7 @@ module.exports = class pager extends Command {
       guildOnly: true,
       throttling: {
         usages: 1,
-        duration: 200
+        duration: 300
       },
       args: [
         {
@@ -32,17 +32,7 @@ module.exports = class pager extends Command {
  hasPermission(msgObject) {
     if (msgObject.channel.id == 746255037931454485) {
       return true;
-   } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
-        return true;
-    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+   } else if (msgObject.member.roles.find(role => role.name == "Sheriff's Office")) {
         return true;
     return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
@@ -78,7 +68,7 @@ module.exports = class pager extends Command {
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5883511054/New-Haven-County?refPageId=021519da-3ed4-468a-9bc2-d1d014beddc9#)`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/5071031824/Archived-County-GRAND-REOPENING?refPageId=a065b08b-1cab-4024-8410-213ca9d51a69)`
               )
               .setTimestamp()
               .setColor("RED");
@@ -92,13 +82,8 @@ module.exports = class pager extends Command {
                 secondarypagerid: ""
               });
               newPAGER.save();
-       
-              setTimeout(() => {
-                m.delete() 
-                PM.delete() 
-              }, 900000)
               msgObject.reply(
-                "Cheers, that's been added to <#740496274175819777>!"
+                "Cheers, that's been added to <#732646327434870801>!"
               );
             });
           });
