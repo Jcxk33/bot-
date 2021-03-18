@@ -13,11 +13,18 @@ module.exports = class EightballCommand extends (
       throttling: {
         usages: 1,
         duration: 10,
+         guildOnly: false,
       },
-      guildOnly: false,
+                  args: [
+        {
+          type: "string",
+          prompt: "What is the question?",
+          key: "description"
+         }
+      ]
     });
   }
-
+  
   run(message) {
     var things = ["Yes", "No", "Likely", "Unlikely", "Absolutely Not", "I think you know the answer","Probably", "I would usually Smirk at that, but no","Of course!","Uh Duh 🙄"];
     var thing = things[Math.floor(Math.random() * things.length)];
