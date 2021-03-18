@@ -77,12 +77,12 @@ module.exports = class acceptreq extends Command {
     log.setColor(`1D37D9`);
     log.setDescription(`${message.author} has accepted  **${Username}'s** Group Request!!`);
   log.setFooter(
-      `Mayflower Command Logging`,
+     `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`813967149017071627`).send(log);
+    this.client.channels.get(`819758083650617408`).send(log);
 
     try {
       await roblox
