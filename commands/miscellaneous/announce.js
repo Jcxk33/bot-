@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+  const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const request = require("request-promise");
 module.exports = class changelog extends Command {
