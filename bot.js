@@ -131,4 +131,4 @@ client.registry
 
 
 // Client Login
-client.login(process.env.token);
+client.login(config.token);
