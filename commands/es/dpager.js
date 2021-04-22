@@ -20,26 +20,21 @@ module.exports = class dpager extends Command {
   }
   
   // Permission and Response
- hasPermission(msgObject) {
-    if (msgObject.channel.id == 808115419842871346) {
+  hasPermission(msgObject) {
+    if (msgObject.channel.id == 746255037931454485) {
       return true;
-   } else if (msgObject.member.roles.find(role => role.name == "SO")) {
+    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
-     } else if (msgObject.member.roles.find(role => role.name == "NG")) {
+    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
         return true;
-       } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
+    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
         return true;
-         } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
         return true;
-           } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
         return true;
-             } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-              } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
-                   } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
-        return true;
-               
     return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
@@ -48,7 +43,7 @@ module.exports = class dpager extends Command {
   async run(msgObject, { pager }) {
     
     // Login to MongoDB
-    if (msgObject.channel.id == 818538680637587516) {
+    if (msgObject.channel.id == 746255037931454485) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -73,11 +68,11 @@ module.exports = class dpager extends Command {
             // If has pager
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "808115419842871346"
+              "706999196124840009"
             );
             
             // Deletes pager
-            let channel = mainserver.channels.find("id", "818538756726456362");
+            let channel = mainserver.channels.find("id", "740496274175819777");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();

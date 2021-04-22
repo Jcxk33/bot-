@@ -30,25 +30,10 @@ module.exports = class pager extends Command {
     });
   }
  hasPermission(msgObject) {
-    if (msgObject.channel.id == 808115419842871346) {
+    if (msgObject.channel.id == 746255037931454485) {
       return true;
-   } else if (msgObject.member.roles.find(role => role.name == "SO")) {
+   } else if (msgObject.member.roles.find(role => role.name == "Sheriff's Office")) {
         return true;
-     } else if (msgObject.member.roles.find(role => role.name == "NG")) {
-        return true;
-       } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
-        return true;
-         } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
-        return true;
-           } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
-        return true;
-             } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
-        return true;
-              } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
-        return true;
-                   } else if (msgObject.member.roles.find(role => role.name == "Senior Admin")) {
-        return true;
-               
     return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
       return "Sorry :persevere:! You must use this in #es-general!";
@@ -74,8 +59,8 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("808115419842871346");
-          let channel = mainserver.channels.find("id", "818538756726456362");
+          const mainserver = msgObject.client.guilds.get("706999196124840009");
+          let channel = mainserver.channels.find("id", "740496274175819777");
           channel.send("@here").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
@@ -98,7 +83,7 @@ module.exports = class pager extends Command {
               });
               newPAGER.save();
               msgObject.reply(
-                "Cheers, that's been added to <#818538756726456362>!"
+                "Cheers, that's been added to <#732646327434870801>!"
               );
             });
           });
