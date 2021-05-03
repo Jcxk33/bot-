@@ -23,9 +23,9 @@ module.exports = class exile extends Command {
   }
 
 
- hasPermission(msgObject) {
-  if(msgObject.guild.id == 808115419842871346 || msgObject.guild.id == 808115419842871346){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+  hasPermission(msgObject) {
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -82,7 +82,7 @@ module.exports = class exile extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`819758083650617408`).send(log);
+    this.client.channels.get(`832707054590361684`).send(log);
     try {
       await roblox
         .exile(groupID, playerID)

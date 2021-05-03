@@ -27,20 +27,20 @@ module.exports = class say extends Command {
       ]
     });
   }
-   hasPermission(msgObject) {
-  if(msgObject.guild.id == 808115419842871346 || msgObject.guild.id == 808115419842871346){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+hasPermission(msgObject) {
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asd")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asdasd")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       }

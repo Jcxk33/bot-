@@ -30,7 +30,7 @@ module.exports = class credits extends Command {
 
 
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 808115419842871346 || msgObject.guild.id == 808115419842871346){
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -56,8 +56,8 @@ module.exports = class credits extends Command {
 
   async run(message, args) {
     var webhook = new Discord.WebhookClient(
-      "819763301462048768",
-      "PDDW65tixtk4Mc49pyhG0novbeutUh3kB5dpSopTMm7E6qB9pVULaR9FMRL7ZKIfGsem"
+      "838872567225516162",
+      "PWWWGLmWrWFTn0AdXkJ1fZUrgNmU16G3jKtB9zqOwodnC1YK39e6MmwjQcGGdh5o9-lW"
     );
     var nickname;
     if (message.member.nickname) {
@@ -111,7 +111,7 @@ module.exports = class credits extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`813967149017071627`).send(log);
+    this.client.channels.get(`832707054590361684`).send(log);
 
     
 

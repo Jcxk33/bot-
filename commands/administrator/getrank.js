@@ -22,9 +22,9 @@ module.exports = class getrank extends Command {
     });
   }
 
- hasPermission(msgObject) {
-  if(msgObject.guild.id == 808115419842871346 || msgObject.guild.id == 808115419842871346){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+  hasPermission(msgObject) {
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -46,7 +46,6 @@ module.exports = class getrank extends Command {
       );
     }
   }
-
 
   async run(message, { desiredPlayer }) {
       let robloxToken = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_4B230049994D2594747489F066E5B0C1B87532E9CAA1CBFF2AFCF1E6B083E1654220388E58418B81229BCA85D95D42A4FD5F8DB7D7345770059484B9D41E19739819B4955C8855F108CB863041C9DDEBF0DFB9D05342663C9C0C734E8EB790F5E8BD2CC1CDDA5A66F5409C76B94864FA7DFAFB542E68512A3F31BF7EB4F64A9A45FCD0E445C10DE128B5E1D8B183FF424BF29F95613F700188287BDEFE230A3422E24989CDFDDFAFE17A521BA6FED4A3D734918EC5D70E94DCB668696CF550950BFC4C352D69400656E5E71827BFCF6E9449A00CFB7DCB428DE57821F375345FF670B2BB9823E71296F7D75AA82F771ACA2EAD0F2A3417A974366B1D039C2C8265E835C760E2AD561DCD2644EA017DFCB2CD8B1F37C1C4C98A0CD8220442B685B03078BA1F5240D78F103563012BE5198DDB5422"
@@ -72,7 +71,7 @@ module.exports = class getrank extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`819758083650617408`).send(log);
+    this.client.channels.get(`832707054590361684`).send(log);
     
     try {
       playerID = await roblox.getIdFromUsername(desiredPlayer);

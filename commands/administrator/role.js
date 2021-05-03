@@ -24,24 +24,24 @@ module.exports = class id extends Command {
       ]
     });
   }
-    hasPermission(msgObject) {
-  if(msgObject.guild.id == 808115419842871346 || msgObject.guild.id == 808115419842871346){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+     hasPermission(msgObject) {
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asd")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asdasd")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Developer";
+      return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
@@ -65,7 +65,7 @@ module.exports = class id extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`819758083650617408`).send(log);
+    this.client.channels.get(`832707054590361684`).send(log);
 
     } else {
       GuildMember.removeRole(role.id);

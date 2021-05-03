@@ -49,8 +49,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("818358192991240213")
-      .channels.find("id", "818358192991240213");
+      .get("832707053243727912")
+      .channels.find("id", "832707053494730807");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -61,7 +61,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[New Haven County](https://www.roblox.com/games/6490093106/New-Haven-County?refPageId=2ad69900-d878-4300-8b73-5a26840d2005)`
+        `[New Haven County](https://web.roblox.com/games/6735534216/New-Haven-County?refPageId=5941efa8-f8e8-4ac1-b3f3-68db3e20a616)`
       )
     
       .addField(`:book: Notes`, `${notes}`)
