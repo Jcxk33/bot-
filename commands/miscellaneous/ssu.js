@@ -79,6 +79,6 @@ hasPermission(msgObject) {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`819758083650617408`).send(log);
+    this.client.channels.get(`832707054590361684`).send(log);
   }
 };

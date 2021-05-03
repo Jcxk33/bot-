@@ -28,7 +28,7 @@ module.exports = class credits extends Command {
     }
 
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
@@ -52,7 +52,7 @@ module.exports = class credits extends Command {
     }
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('816764880224911441', 'P9q8m8sVtWqVBoNAd-TnaqMG1nmEIEL59BGgHfk2l1pAzaUtIsnh_307Pv1JYbF5snaP')
+        var webhook = new Discord.WebhookClient('838875543809163264', 'kwtATuv92y2u7yoGW0FNiDLDbul-Mkp3Fr-ji6GDs2SSiVsOcLLadkrqXUJNZ0hiGwnl')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

@@ -22,8 +22,8 @@ module.exports = class getservercommand extends Command {
     });
   }
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
