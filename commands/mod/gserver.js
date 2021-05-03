@@ -47,7 +47,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/6474583313/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/6735534216/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -63,7 +63,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[State of Mayflower](https://www.roblox.com/games/6474583313/State-of-Mayflower#)\n[Detailed Link](https://games.roblox.com/v1/games/6474583313/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[State of Mayflower](https://www.roblox.com/games/6735534216/State-of-Mayflower#)\n[Detailed Link](https://games.roblox.com/v1/games/6735534216/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
@@ -95,7 +95,7 @@ module.exports = class getservercommand extends Command {
           msgObject.reply("Sorry :angry:! This server does not exist!");
         } else {
           let data = await request({
-            uri: `https://games.roblox.com/v1/games/6474583313/servers/Public?sortOrder=Asc&limit=100`,
+            uri: `https://games.roblox.com/v1/games/6735534216/servers/Public?sortOrder=Asc&limit=100`,
             json: true,
             simple: false
           }).catch(err => {
