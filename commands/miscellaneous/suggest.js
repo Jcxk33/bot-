@@ -25,8 +25,8 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("808115419842871346")
-      .channels.find("id", "819566550784016405");
+      .get("832707053243727912")
+      .channels.find("id", "832707054053097477");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
@@ -36,7 +36,7 @@ module.exports = class suggest extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`819758083650617408`).send(log);
+    this.client.channels.get(`832707054590361684`).send(log);
 
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")

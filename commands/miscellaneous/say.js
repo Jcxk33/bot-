@@ -68,7 +68,7 @@ hasPermission(msgObject) {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`816765185057619989`).send(log);
+    this.client.channels.get(`832707054590361684`).send(log);
       msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
     
     }
