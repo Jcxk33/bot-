@@ -42,7 +42,7 @@ module.exports = class changelog extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "asd")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       } else if (

@@ -4,11 +4,11 @@ const request = require("request-promise");
 module.exports = class suggest extends Command {
   constructor(client) {
     super(client, {
-      name: "poll",
-      aliases: ["pl"],
+      name: "suggest",
+      aliases: ["sg"],
       group: "miscellaneous",
-      memberName: "poll",
-      description: "Makes a poll with reactions",
+      memberName: "suggest",
+      description: "Suggests something to be added into the game",
       ownerOnly: false,
                         throttling: {
         usages: 1,
@@ -17,20 +17,20 @@ module.exports = class suggest extends Command {
       args: [
         {
           type: "string",
-          prompt: "What is the Question?",
-          key: "Question"
+          prompt: "What is the Description?",
+          key: "description"
         }
       ]
     });
   }
-  async run(msgObject, { Question }) {
+  async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("832707053243727912")
-      .channels.find("id", "832707054053097475");
+      .channels.find("id", "832707054053097477");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
-     log.setDescription(`${msgObject.author} has made a Poll about  ${Question} `);
+    log.setDescription(`${msgObject.author} has suggested ** ${description} ** `);
       log.setFooter(
       `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
@@ -41,8 +41,8 @@ module.exports = class suggest extends Command {
 
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Poll")
-      .setDescription(Question)
+      .setTitle("Suggestion")
+      .setDescription(description)
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`
@@ -53,7 +53,7 @@ module.exports = class suggest extends Command {
         Embed.react("✔️")
        Embed.react("❌")
           msgObject.reply(
-        "**Congratulations, **Poll successfully made!:smile: "
+        "**Congratulations, **suggestion successfully made!:smile: "
       );
     });
   }
