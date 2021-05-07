@@ -12,7 +12,7 @@ module.exports = class EightballCommand extends (
       description: "What do you think?",
       throttling: {
         usages: 1,
-        duration: 10,
+        duration: 18,
          guildOnly: false,
       },
                   args: [

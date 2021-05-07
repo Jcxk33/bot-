@@ -9,6 +9,10 @@ module.exports = class DickCommand extends Command {
 			group: 'miscellaneous',
 			memberName: 'dick',
 			description: 'Determines your dick size.',
+          throttling: {
+        usages: 1,
+        duration: 20
+      },
 			nsfw: false,
 			args: [
 				{
