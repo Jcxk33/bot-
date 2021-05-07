@@ -23,6 +23,30 @@ module.exports = class suggest extends Command {
       ]
     });
   }
+   hasPermission(msgObject) {
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+        return true;
+      } else if (
+        msgObject.author == this.client.users.get("675794471065092161")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Developer")
+      ) {
+        return true;
+      } else if (
+        msgObject.member.roles.find(role => role.name == "Admin")
+      ) {
+        return true;
+      }
+      return "Sorry 😣! You must be a Developer or Admin!";
+    } else {
+      return (
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+      );
+    }
+  }
   async run(msgObject, { Question }) {
     let channel = this.client.guilds
       .get("832707053243727912")
