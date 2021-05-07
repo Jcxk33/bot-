@@ -25,13 +25,25 @@ module.exports = class dupager extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+ hasPermission(msgObject) {
+    if (msgObject.channel.id == 832707053243727912) {
+      return true;
+  } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "ES Command")) {
+    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
         return true;
-      }
-    return "Sorry 😣! You must be ES Command!";
+    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
+    } else {
+      return "Sorry :persevere:! You must use this in #es-general!";
+    }
   }
   async run(msgObject, { pager, argUser }) {
     if (msgObject.channel.id == 746255037931454485) {

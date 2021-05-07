@@ -26,10 +26,10 @@ module.exports = class epager extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
-    if (msgObject.channel.id == 746255037931454485) {
+ hasPermission(msgObject) {
+    if (msgObject.channel.id == 832707053243727912) {
       return true;
-    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+  } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
         return true;
@@ -88,9 +88,9 @@ module.exports = class epager extends Command {
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "706999196124840009"
+              "832707053243727912"
             );
-            let channel = mainserver.channels.find("id", "740496274175819777");
+            let channel = mainserver.channels.find("id", "832707054053097481");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.edit(newem);
