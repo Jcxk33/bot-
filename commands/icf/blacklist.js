@@ -29,7 +29,7 @@ module.exports = class blacklist extends Command {
     });
   }
   hasPermission(msgObject) {
-  if(msgObject.guild.id == 816741621558804520 || msgObject.guild.id == 816741621558804520){
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -56,8 +56,8 @@ module.exports = class blacklist extends Command {
   async run(msgObject, { title }) {
     let channel = this.client.guilds
     
-      .get("790148683097571338")
-      .channels.find("id", "807014389596684328");
+      .get("832707053243727912")
+      .channels.find("id", "840621591271440424");
     let Embed = new Discord.RichEmbed()
       .setColor("")
       .setTitle("**Citizenship Blacklist**")
