@@ -12,7 +12,7 @@ module.exports = class suggest extends Command {
       ownerOnly: false,
                         throttling: {
         usages: 1,
-        duration: 20
+        duration: 200
       },
       args: [
         {
