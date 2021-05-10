@@ -28,7 +28,7 @@ module.exports = class credits extends Command {
     }
 
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 821026835159973948 || msgObject.guild.id == 821026835159973948){
+  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
