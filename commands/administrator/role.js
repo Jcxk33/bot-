@@ -33,7 +33,7 @@ module.exports = class id extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "asa")
       ) {
         return true;
       } else if (
@@ -41,7 +41,7 @@ module.exports = class id extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
