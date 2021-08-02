@@ -15,7 +15,7 @@ const oneLine = require('common-tags').oneLine;
 const client = new commando.CommandoClient({
   owner: ["675794471065092161", "509015814079381504"],
   commandPrefix: ";",
-  unknownCommandResponse: true,
+  unknownCommandResponse: false,
   selfbot: false,
   commandEditableDuration: 60
 });
