@@ -28,18 +28,18 @@ module.exports = class ban extends Command {
     }
          hasPermission(msgObject) {
   if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
-     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+     if (msgObject.member.roles.find(role => role.name === "Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "Command Team")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Staff")
       ) {
         return true;
       }

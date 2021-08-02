@@ -21,24 +21,24 @@ module.exports = class denyreq extends Command {
       ]
     });
   }
-  hasPermission(msgObject) {
+hasPermission(msgObject) {
   if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
-     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+     if (msgObject.member.roles.find(role => role.name === "Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "Co-Founder")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Head Administrator")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a Command team Member!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
