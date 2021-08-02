@@ -45,8 +45,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("832707053243727912")
-      .channels.find("id", "832707053494730806");
+      .get("871166263945216040")
+      .channels.find("id", "871166775960694875");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(`**__Change Log__**`)
@@ -55,7 +55,7 @@ hasPermission(msgObject) {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter("State of Mayflower","https://cdn.discordapp.com/icons/760507778476277831/c3919375525fddc15592d839d70587b6.png")
+      .setFooter("Mayflower Warzone","https://cdn.discordapp.com/attachments/871214104445063168/871630333156659231/287e1bb92219de515155ab4d81cf0c03.png")
       .setTimestamp();
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")

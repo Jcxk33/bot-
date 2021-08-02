@@ -11,14 +11,14 @@ const pagerSchema = require(path.join(
 module.exports = class pager extends Command {
   constructor(client) {
     super(client, {
-      name: "pager",
+      name: "modpager",
       group: "es",
-      memberName: "pager",
+      memberName: "mpager",
       description: "Sends an alert to the pager.",
       guildOnly: true,
       throttling: {
         usages: 1,
-        duration: 300
+        duration: 3000
       },
       args: [
         {
@@ -32,7 +32,7 @@ module.exports = class pager extends Command {
  hasPermission(msgObject) {
     if (msgObject.channel.id == 871166263945216040) {
       return true;
-  } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+  } else if (msgObject.member.roles.find(role => role.name == "Verified")) {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
         return true;
@@ -44,9 +44,9 @@ module.exports = class pager extends Command {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
+    return "Sorry 😣! You must be Verified!";
     } else {
-      return "Sorry :persevere:! You must use this in #es-general!";
+      return "Sorry :persevere:! You must use this in #bot-commands!";
     }
   }
   async run(msgObject, { reason }) {
@@ -69,16 +69,16 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("832707053243727912");
-          let channel = mainserver.channels.find("id", "832707054053097481");
-          channel.send("@here").then(PM => {
+          const mainserver = msgObject.client.guilds.get("871166263945216040");
+          let channel = mainserver.channels.find("id", "871880239377170462");
+          channel.send("@Staff").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
-              .setTitle("New Pager!")
+              .setTitle("New Mod-Pager!")
               .setDescription(reason)
               .addField(
                 "Links",
-                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://web.roblox.com/games/6735534216/New-Haven-County?refPageId=5941efa8-f8e8-4ac1-b3f3-68db3e20a616)`
+                `[Roblox Profile](https://www.roblox.com/users/${authorData.robloxId}/profile)\n\[Game Link](https://www.roblox.com/games/7182509907/Plymouth-Warzone)`
               )
               .setTimestamp()
               .setColor("RED");
@@ -93,7 +93,7 @@ module.exports = class pager extends Command {
               });
               newPAGER.save();
               msgObject.reply(
-                "Cheers, that's been added to <#832707054053097481>!"
+                "Cheers, that's been added to <#871880239377170462>!"
               );
             });
           });
