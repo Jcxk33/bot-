@@ -27,4 +27,4 @@ module.exports = class avatar extends Command {
       .setTimestamp();
     msgObject.channel.send(Embed);
   }
-};
+};  

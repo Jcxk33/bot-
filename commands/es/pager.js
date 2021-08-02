@@ -71,7 +71,7 @@ module.exports = class pager extends Command {
         if (!pg || pg === null) {
           const mainserver = msgObject.client.guilds.get("871166263945216040");
           let channel = mainserver.channels.find("id", "871880239377170462");
-          channel.send("@Staff").then(PM => {
+          channel.send("<@&871166754351636540>").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
               .setTitle("New Mod-Pager!")

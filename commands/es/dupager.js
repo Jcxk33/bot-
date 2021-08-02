@@ -28,7 +28,7 @@ module.exports = class dupager extends Command {
  hasPermission(msgObject) {
     if (msgObject.channel.id == 871166263945216040) {
       return true;
-  } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
+  } else if (msgObject.member.roles.find(role => role.name == "Verified")) {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
         return true;
@@ -40,13 +40,13 @@ module.exports = class dupager extends Command {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
+    return "Sorry 😣! You must be Verified";
     } else {
-      return "Sorry :persevere:! You must use this in #es-general!";
+      return "Sorry :persevere:! You must use this in #bot-commands!";
     }
   }
   async run(msgObject, { pager, argUser }) {
-    if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 871166780318572624) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -65,9 +65,9 @@ module.exports = class dupager extends Command {
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "706999196124840009"
+              "871166263945216040"
             );
-            let channel = mainserver.channels.find("id", "740496274175819777");
+            let channel = mainserver.channels.find("id", "871880239377170462");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();
