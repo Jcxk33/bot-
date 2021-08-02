@@ -123,8 +123,7 @@ client.registry
     ["mod", "Moderation Commands"],
     ["miscellaneous", "Miscellaneous Commands"],
     ["administrator", "Administrator Commands"],
-    ["es", "ES commands"],
-    ["icf", "ICF commands"],
+    ["es", "ES commands"]
   ])
   .registerDefaults()
   .registerCommandsIn(path.join(__dirname, "commands"));

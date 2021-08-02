@@ -27,24 +27,24 @@ module.exports = class credits extends Command {
         })
     }
 
-   hasPermission(msgObject) {
-  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
-     if (msgObject.member.roles.find(role => role.name === "Developer")) {
+        hasPermission(msgObject) {
+  if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
+     if (msgObject.member.roles.find(role => role.name === "Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "Command Team")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Staff")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a Staff Member!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
@@ -52,7 +52,7 @@ module.exports = class credits extends Command {
     }
   }
     async run(message, args) {
-        var webhook = new Discord.WebhookClient('838875543809163264', 'kwtATuv92y2u7yoGW0FNiDLDbul-Mkp3Fr-ji6GDs2SSiVsOcLLadkrqXUJNZ0hiGwnl')
+        var webhook = new Discord.WebhookClient('871515526906642462', 'h7Zh74qOJdwK8ZgTeDF9IhSUQClsb40Zn9YE4twVmfCsqqanfMU2raPnE7zeVw03Kfbv')
         var nickname
         if (message.member.nickname) {
             nickname = message.member.nickname

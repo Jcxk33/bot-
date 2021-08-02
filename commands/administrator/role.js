@@ -60,12 +60,12 @@ module.exports = class id extends Command {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.member} has roled  ${member} ${role}! `);
       log.setFooter(
-      `Mayflower Command Logging`,
+    `Warzone Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`832707054590361684`).send(log);
+    this.client.channels.get(`871166806193225728`).send(log);
 
     } else {
       GuildMember.removeRole(role.id);

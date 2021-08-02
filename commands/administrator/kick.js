@@ -26,24 +26,24 @@ module.exports = class kick extends Command {
             ]
         })
     }
-   hasPermission(msgObject) {
+        hasPermission(msgObject) {
   if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
-     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+     if (msgObject.member.roles.find(role => role.name === "Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Moderator")
+        msgObject.member.roles.find(role => role.name == "Command Team")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Staff")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a Staff Member!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"
@@ -61,11 +61,11 @@ module.exports = class kick extends Command {
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);
        log.setFooter(
-      `Mayflower Command Logging`,
+      `Warzone Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`83270705459036168422`).send(log);
+    this.client.channels.get(`871166806193225728`).send(log);
     }
 }
