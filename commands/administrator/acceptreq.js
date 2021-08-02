@@ -23,7 +23,7 @@ module.exports = class acceptreq extends Command {
   } 
 
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+  if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
      if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (

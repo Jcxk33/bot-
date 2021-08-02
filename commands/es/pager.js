@@ -30,7 +30,7 @@ module.exports = class pager extends Command {
     });
   }
  hasPermission(msgObject) {
-    if (msgObject.channel.id == 832707053243727912) {
+    if (msgObject.channel.id == 871166263945216040) {
       return true;
   } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
