@@ -31,26 +31,26 @@ module.exports = class gban extends Command {
     });
   }
      hasPermission(msgObject) {
-  if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
+  if(msgObject.guild.id == 872320431015755787 || msgObject.guild.id == 872320431015755787){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("870821970994921514")
+        msgObject.author == this.client.users.get("871981356773699584")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Game Moderator")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Rosewood!"
+        "Sorry :persevere:! You must use this command in Independence County!"
       );
     }
   }
@@ -96,18 +96,7 @@ module.exports = class gban extends Command {
       editMessage.edit(
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
-      editMessage.edit("Insane, Your command has been executed in-game!");
-  const log = new Discord.RichEmbed();
-    log.setTitle(`Command Logging`);
-    log.setColor(`1D37D9`);
-    log.setDescription(`${msgObject.member} has Gamebanned **${username}** for **${reason}**! `);
-     log.setFooter(
-      `Mayflower Command Logging`,
-      `https://cdn.discordapp.com/emojis/778159140219912212.png?v=1`
-    );
-    log.setTimestamp(); 
-      
-    this.client.channels.get(`820208777072082945`).send(log);
+      editMessage.edit("Insane, your command has been executed in-game!");
 trello.addCard(
         `${username}:${data.Id}`,
         `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
