@@ -46,7 +46,7 @@ module.exports = class ban extends Command {
       return "Sorry 😣! You must be a Staff Member!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! You must use this command in Independence County!"
       );
     }
   }

@@ -34,14 +34,14 @@ module.exports = class getservercommand extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Founder")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Moderator or Admin!";
+      return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! You must use this command in Independence County!"
       );
     }
   }

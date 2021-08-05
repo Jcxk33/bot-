@@ -43,7 +43,7 @@ module.exports = class uban extends Command {
       return "Sorry 😣! You must be a Command team Member!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! You must use this command in the Independence County!"
       );
     }
   }
