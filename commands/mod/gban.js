@@ -31,7 +31,7 @@ module.exports = class gban extends Command {
     });
   }
      hasPermission(msgObject) {
-  if(msgObject.guild.id == 872320431015755787 || msgObject.guild.id == 872320431015755787){
+  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
      if (msgObject.member.roles.find(role => role.name === "Developer")) {
         return true;
       } else if (

@@ -22,7 +22,7 @@ module.exports = class getservercommand extends Command {
     });
   }
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
+  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (

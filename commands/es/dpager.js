@@ -21,7 +21,7 @@ module.exports = class dpager extends Command {
   
   // Permission and Response
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 867863166691180604) {
       return true;
     } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;

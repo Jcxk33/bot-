@@ -27,7 +27,7 @@ module.exports = class kick extends Command {
         })
     }
         hasPermission(msgObject) {
-  if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
+  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (

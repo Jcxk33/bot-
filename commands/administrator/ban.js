@@ -27,7 +27,7 @@ module.exports = class ban extends Command {
         })
     }
          hasPermission(msgObject) {
-  if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
+  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
      if (msgObject.member.roles.find(role => role.name === "Founder")) {
         return true;
       } else if (
@@ -43,10 +43,10 @@ module.exports = class ban extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in Independence County!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }

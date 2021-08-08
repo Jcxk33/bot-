@@ -23,8 +23,8 @@ module.exports = class acceptreq extends Command {
   } 
 
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
-     if (msgObject.member.roles.find(role => role.name === "Founder")) {
+  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
+     if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -39,7 +39,7 @@ module.exports = class acceptreq extends Command {
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Command team Member!";
+      return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"

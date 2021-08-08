@@ -22,8 +22,8 @@ module.exports = class credits extends Command {
         })
     }
   hasPermission(msgObject) {
-    const MainServer = msgObject.client.guilds.get("800898562786590771");
-    if (msgObject.guild.id == 800898562786590771) {
+    const MainServer = msgObject.client.guilds.get("867863166691180604");
+    if (msgObject.guild.id == 867863166691180604) {
       if (msgObject.member.roles.find(role => role.name === "yea")) {
         return true;
       } else if (

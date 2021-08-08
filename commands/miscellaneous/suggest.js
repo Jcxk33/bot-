@@ -25,7 +25,7 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("871166263945216040")
+      .get("867863166691180604")
       .channels.find("id", "871553770331443202");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);

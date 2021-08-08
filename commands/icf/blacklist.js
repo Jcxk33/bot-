@@ -56,7 +56,7 @@ module.exports = class blacklist extends Command {
   async run(msgObject, { title }) {
     let channel = this.client.guilds
     
-      .get("790148683097571338")
+      .get("867863166691180604")
       .channels.find("id", "807014389596684328");
     let Embed = new Discord.RichEmbed()
       .setColor("")
