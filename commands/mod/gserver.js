@@ -23,7 +23,7 @@ module.exports = class getservercommand extends Command {
   }
  hasPermission(msgObject) {
   if(msgObject.guild.id == 832707053243727912 || msgObject.guild.id == 832707053243727912){
-     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+     if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
@@ -34,14 +34,14 @@ module.exports = class getservercommand extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Founder")
+        msgObject.member.roles.find(role => role.name == "Senior Admin")
       ) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in Independence County!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }

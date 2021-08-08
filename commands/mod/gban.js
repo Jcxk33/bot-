@@ -50,7 +50,7 @@ module.exports = class gban extends Command {
       return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in Independence County!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }
