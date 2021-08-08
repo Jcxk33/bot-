@@ -11,9 +11,9 @@ const pagerSchema = require(path.join(
 module.exports = class pager extends Command {
   constructor(client) {
     super(client, {
-      name: "modpager",
+      name: "pager",
       group: "es",
-      memberName: "mpager",
+      memberName: "pager",
       description: "Sends an alert to the pager.",
       guildOnly: true,
       throttling: {
@@ -32,7 +32,7 @@ module.exports = class pager extends Command {
  hasPermission(msgObject) {
     if (msgObject.channel.id == 871166263945216040) {
       return true;
-  } else if (msgObject.member.roles.find(role => role.name == "Verified")) {
+  } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
         return true;
@@ -44,7 +44,7 @@ module.exports = class pager extends Command {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
-    return "Sorry 😣! You must be Verified!";
+    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
       return "Sorry :persevere:! You must use this in #bot-commands!";
     }
@@ -74,7 +74,7 @@ module.exports = class pager extends Command {
           channel.send("<@&867863167337103360>").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
-              .setTitle("New Mod-Pager!")
+              .setTitle("New Pager!")
               .setDescription(reason)
               .addField(
                 "Links",
