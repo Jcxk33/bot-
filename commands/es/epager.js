@@ -27,7 +27,7 @@ module.exports = class epager extends Command {
     });
   }
   hasPermission(msgObject) {
-    if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 867863167337103362) {
       return true;
     } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
@@ -50,7 +50,7 @@ module.exports = class epager extends Command {
 
 
                           
-    if (msgObject.channel.id == 867863166691180604) {
+    if (msgObject.channel.id == 867863167337103360) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -88,7 +88,7 @@ module.exports = class epager extends Command {
             );
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "706999196124840009"
+              "867863166691180604"
             );
             let channel = mainserver.channels.find("id", "867863167337103360");
             channel.fetchMessage(pg.pagerid).then(daMsg => {

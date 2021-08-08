@@ -55,7 +55,7 @@ hasPermission(msgObject) {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter("Mayflower Warzone","https://cdn.discordapp.com/attachments/871214104445063168/871630333156659231/287e1bb92219de515155ab4d81cf0c03.png")
+      .setFooter("State of Mayflower","https://cdn.discordapp.com/icons/867863166691180604/9861a1b18abd3207ccf144e36fc8e9cd.png")
       .setTimestamp();
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")

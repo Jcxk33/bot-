@@ -46,7 +46,7 @@ module.exports = class pager extends Command {
         return true;
     return "Sorry 😣! You must be part of a Law Enforcement Agency!";
     } else {
-      return "Sorry :persevere:! You must use this in #bot-commands!";
+      return "Sorry :persevere:! You must use this in #es-general!";
     }
   }
   async run(msgObject, { reason }) {
