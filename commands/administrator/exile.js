@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+ const Discord = require("discord.js");
 const { Command } = require("discord.js-commando");
 const roblox = require("noblox.js");
 
@@ -19,7 +19,7 @@ module.exports = class exile extends Command {
           label: "username"
         }
       ]
-    });
+    }); 
   }
 
 
@@ -104,4 +104,4 @@ module.exports = class exile extends Command {
       return;
     }
   }
-};
+}; 
