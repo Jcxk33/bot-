@@ -7,33 +7,42 @@ const pagerSchema = require(path.join(
   __dirname + "/../../models",
   "pagersch.js"
 ));
-
-module.exports = class dupager extends Command {
+// Command Constructor
+module.exports = class dpager extends Command {
   constructor(client) {
     super(client, {
-      name: "dupager",
+      name: "dpager",
       group: "es",
-      memberName: "dupager",
+      memberName: "dpager",
       description: "Deletes a user's post from pagers",
-      guildOnly: true,
-      args: [
-        {
-          type: "user",
-          prompt: "Who's pager do you want to delete?",
-          key: "argUser"
-        }
-      ]
+      guildOnly: true
     });
   }
+  
+  // Permission and Response
   hasPermission(msgObject) {
-      if (msgObject.member.roles.find(role => role.name === "Admin")) {
+    if (msgObject.channel.id == 746255037931454485) {
+      return true;
+    } else if (msgObject.member.roles.find(role => role.name == "LPD")) {
         return true;
-      } else if (msgObject.member.roles.find(role => role.name == "ES Command")) {
+    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
         return true;
-      }
-    return "Sorry 😣! You must be ES Command!";
+    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
+        return true;
+    } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
+        return true;
+    return "Sorry 😣! You must be part of a Law Enforcement Agency!";
+    } else {
+      return "Sorry :persevere:! You must use this in #es-general!";
+    }
   }
-  async run(msgObject, { pager, argUser }) {
+  async run(msgObject, { pager }) {
+    
+    // Login to MongoDB
     if (msgObject.channel.id == 746255037931454485) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
@@ -42,39 +51,51 @@ module.exports = class dupager extends Command {
           useUnifiedTopology: true
         }
       );
+      
+      // Finds Pager
       pagerSchema.findOne(
         {
-          pagerplayer: argUser.id
+          pagerplayer: msgObject.author.id
         },
+        
+        // If No Pager
         (err, pg) => {
           if (!pg || pg === null) {
             msgObject.reply(
-              "Sorry :persevere:! " + argUser + " doesn't have any active pagers."
+              "Sorry :persevere:! You don't have any active pagers."
             );
+            
+            // If has pager
           } else {
             const mainserver = msgObject.client.guilds.get(
               "706999196124840009"
             );
+            
+            // Deletes pager
             let channel = mainserver.channels.find("id", "740496274175819777");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();
               }
             });
+            
+            // Deletes a second pager if user has created one.
             channel.fetchMessage(pg.pagertagid).then(daNextMsg => {
               if (daNextMsg) {
                 daNextMsg.delete();
               }
             });
-            pg.remove();
-            msgObject.reply("Successfully deleted " + argUser + "'s pager.");
-            return;
             
-            argUser.send("Next time delete your own pager, Don't make ES Command do it! 😣")
+            // Removes it from mongodb
+            pg.remove();
+            msgObject.reply("Successfully deleted your pager.");
+            return;
           }
         }
       );
     } else {
+      
+      // If bypassed channel
       msgObject.reply(
         "Sorry :persevere:! You must use this in #es-general, how'd you bypass that?"
       );

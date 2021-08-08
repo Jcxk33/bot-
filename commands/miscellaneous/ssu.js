@@ -25,22 +25,22 @@ module.exports = class changelog extends Command {
   }
 hasPermission(msgObject) {
   if(msgObject.guild.id == 871166263945216040 || msgObject.guild.id == 871166263945216040){
-     if (msgObject.member.roles.find(role => role.name === "Founder")) {
+     if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Command Team")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Staff")
+        msgObject.member.roles.find(role => role.name == "Developer")
       ) {
         return true;
       }
-      return "Sorry 😣! You must be a Staff Member!";
+      return "Sorry 😣! You must be a Moderator or Admin!";
     } else {
       return (
         "Sorry :persevere:! You must use this command in the State of Mayflower!"

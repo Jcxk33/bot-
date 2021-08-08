@@ -4,8 +4,8 @@ const request = require("request-promise");
 module.exports = class whois extends Command {
   constructor(client) {
     super(client, {
-      name: "rs",
-      aliases: ["whois"],
+      name: "whois",
+      aliases: ["rs"],
       group: "miscellaneous",
       memberName: "rs",
       ownerOnly: false,
