@@ -106,7 +106,7 @@ module.exports = class credits extends Command {
       }**'s appeal to \`${choice.toLowerCase()}\`!`
     );
       log.setFooter(
-      `Rosewood Command Logging`,
+      `Mayflower Command Logging`,
       `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
     );
     log.setTimestamp(); 
