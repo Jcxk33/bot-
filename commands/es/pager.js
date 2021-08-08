@@ -69,9 +69,9 @@ module.exports = class pager extends Command {
       },
       (err, pg) => {
         if (!pg || pg === null) {
-          const mainserver = msgObject.client.guilds.get("871166263945216040");
-          let channel = mainserver.channels.find("id", "871880239377170462");
-          channel.send("<@&871166754351636540>").then(PM => {
+          const mainserver = msgObject.client.guilds.get("867863166691180604");
+          let channel = mainserver.channels.find("id", "867863167337103360");
+          channel.send("<@&867863167337103360>").then(PM => {
             let embed = new Discord.RichEmbed()
               .setAuthor(msgObject.member.displayName)
               .setTitle("New Mod-Pager!")
@@ -93,7 +93,7 @@ module.exports = class pager extends Command {
               });
               newPAGER.save();
               msgObject.reply(
-                "Cheers, that's been added to <#871880239377170462>!"
+                "Cheers, that's been added to <#867863167337103360>!"
               );
             });
           });

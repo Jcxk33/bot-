@@ -49,8 +49,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-        .get("871166263945216040")
-      .channels.find("id", "871166773725118565");
+        .get("867863166691180604")
+      .channels.find("id", "867863166917279746");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("**Mayflower Announcement**")

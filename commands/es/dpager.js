@@ -68,11 +68,11 @@ module.exports = class dpager extends Command {
             // If has pager
           } else {
             const mainserver = msgObject.client.guilds.get(
-              "706999196124840009"
+              "867863166691180604"
             );
             
             // Deletes pager
-            let channel = mainserver.channels.find("id", "740496274175819777");
+            let channel = mainserver.channels.find("id", "867863167337103360");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.delete();

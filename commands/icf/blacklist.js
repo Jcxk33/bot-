@@ -57,7 +57,7 @@ module.exports = class blacklist extends Command {
     let channel = this.client.guilds
     
       .get("867863166691180604")
-      .channels.find("id", "807014389596684328");
+      .channels.find("id", "874063768898916362");
     let Embed = new Discord.RichEmbed()
       .setColor("")
       .setTitle("**Citizenship Blacklist**")

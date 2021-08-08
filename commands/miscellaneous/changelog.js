@@ -46,7 +46,7 @@ hasPermission(msgObject) {
   async run(msgObject, { description }) {
     let channel = this.client.guilds
       .get("867863166691180604")
-      .channels.find("id", "871166775960694875");
+      .channels.find("id", "867863166917279752");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(`**__Change Log__**`)

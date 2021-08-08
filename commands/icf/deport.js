@@ -71,7 +71,7 @@ module.exports = class credits extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`813967149017071627`).send(log);
+    this.client.channels.get(`867863167853133824`).send(log);
 
     
     

@@ -50,7 +50,7 @@ module.exports = class epager extends Command {
 
 
                           
-    if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 867863166691180604) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {
@@ -90,7 +90,7 @@ module.exports = class epager extends Command {
             const mainserver = msgObject.client.guilds.get(
               "706999196124840009"
             );
-            let channel = mainserver.channels.find("id", "740496274175819777");
+            let channel = mainserver.channels.find("id", "867863167337103360");
             channel.fetchMessage(pg.pagerid).then(daMsg => {
               if (daMsg) {
                 daMsg.edit(newem);
