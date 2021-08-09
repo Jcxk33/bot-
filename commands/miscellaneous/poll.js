@@ -61,7 +61,7 @@ module.exports = class suggest extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`871166806193225728`).send(log);
+    this.client.channels.get(`867863167853133824`).send(log);
 
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
