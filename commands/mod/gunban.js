@@ -87,7 +87,7 @@ module.exports = class gban extends Command {
             author: {
               name: `${authorData.robloxUsername}`
             },
-            title: `unbanned ${data.Username}`,
+            title: `Ubanned ${data.Username}`,
             description: `"${reason}"`
           }
         ]
@@ -97,9 +97,8 @@ module.exports = class gban extends Command {
         `Congrats 🙌! Your command will be executed in-game shortly!`
       );
       editMessage.edit("Insane, your command has been executed in-game!");
-trello.addCard(
-        `${username}:${data.Id}`,
-        `Moderator: ${authorData.robloxUsername}\nReason: ${reason}`,
+trello.deleteCard(
+  "name":,{asername}:${data.Id}`,
         "61106cb151f4dc2307ee9554"
   
       );
