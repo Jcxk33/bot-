@@ -32,12 +32,12 @@ module.exports = class suggest extends Command {
     log.setColor(`1D37D9`);
     log.setDescription(`${msgObject.author} has suggested ** ${description} ** `);
       log.setFooter(
-     `Warzone Command Logging`,
-      `https://cdn.discordapp.com/icons/800898562786590771/37333243b8096739df4b9a019f48e79b.jpg`
+     `State of Mayflower Command Logging`,
+      `https://cdn.discordapp.com/icons/867863166691180604/9861a1b18abd3207ccf144e36fc8e9cd.png`
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`871166806193225728`).send(log);
+    this.client.channels.get(`867863167853133824`).send(log);
 
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
