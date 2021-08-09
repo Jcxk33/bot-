@@ -29,7 +29,7 @@ module.exports = class links extends Command {
       )
       .addField(
         "Game",
-        "[Roblox Link **N/A**]( https://www.roblox.com/games/1/New-Haven-County )",
+        "[Roblox Link]( https://www.roblox.com/games/6735534216/New-Haven-County )",
         true
       )
          .addField(

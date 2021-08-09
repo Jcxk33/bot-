@@ -63,7 +63,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[Plymouth Warzone](https://www.roblox.com/games/7182509907/Plymouth-Warzone)\n[Detailed Link](https://games.roblox.com/v1/games/7182509907/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[Plymouth Warzone](https://www.roblox.com/games/6735534216/Plymouth-Warzone)\n[Detailed Link](https://games.roblox.com/v1/games/6735534216/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
@@ -77,8 +77,8 @@ module.exports = class getservercommand extends Command {
       }
     } else {
       var trello = new Trello(
-        "b3e86d17c55b6dc170e3e426e4e1a491",
-        "f2ef765f0ae529428cafc0f675d6da19273c2a3c4b9bd32efba2e7c9ad649cc9"
+        "33c4644733ac7670dc1f0378911c3716",
+        "9a224ecff7ece350dd6a38cbaf8d20575807691b8e745a494628537a8f84b5dc"
       );
       let Servers = 0;
       let valid = false;
@@ -95,7 +95,7 @@ module.exports = class getservercommand extends Command {
           msgObject.reply("Sorry :angry:! This server does not exist!");
         } else {
           let data = await request({
-            uri: `https://games.roblox.com/v1/games/7182509907/servers/Public?sortOrder=Asc&limit=100`,
+            uri: `https://games.roblox.com/v1/games/6735534216/servers/Public?sortOrder=Asc&limit=100`,
             json: true,
             simple: false
           }).catch(err => {
