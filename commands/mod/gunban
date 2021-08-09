@@ -98,7 +98,7 @@ module.exports = class gban extends Command {
       );
       editMessage.edit("Insane, your command has been executed in-game!");
 trello.deleteCard(
-  "name":,{asername}:${data.Id}`,
+        `${username}:${data.Id}`,
         "61106cb151f4dc2307ee9554"
   
       );
