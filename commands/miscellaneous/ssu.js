@@ -81,6 +81,5 @@ hasPermission(msgObject) {
       
     this.client.channels.get(`867863167853133824`).send(log);
       
-    this.client.channels.get(`867863167853133824`).send(log);
   }
 };
