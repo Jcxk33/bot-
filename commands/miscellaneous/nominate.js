@@ -24,7 +24,7 @@ module.exports = class credits extends Command {
   hasPermission(msgObject) {
     const MainServer = msgObject.client.guilds.get("867863166691180604");
     if (msgObject.guild.id == 867863166691180604) {
-      if (msgObject.member.roles.find(role => role.name === "yea")) {
+      if (msgObject.member.roles.find(role => role.name === "Verified")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("675794471065092161")
