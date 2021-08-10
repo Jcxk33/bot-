@@ -184,7 +184,7 @@ module.exports = class getservercommand extends Command {
           trello.addCard(
              `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
              "",
-            "61126ffb5deaee770f5696f0"
+            "6110926e9ed55c857f1fc09a"
           );
         }
       }
