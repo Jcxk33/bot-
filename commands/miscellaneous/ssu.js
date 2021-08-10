@@ -61,7 +61,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[New Haven County](https://web.roblox.com/games/6735534216/New-Haven-County?refPageId=5941efa8-f8e8-4ac1-b3f3-68db3e20a616)`
+        `[New Haven County](https://web.roblox.com/games/7230858020/New-Haven-County?refPageId=5941efa8-f8e8-4ac1-b3f3-68db3e20a616)`
       )
     
       .addField(`:book: Notes`, `${notes}`)
