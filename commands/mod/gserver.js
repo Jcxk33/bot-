@@ -151,18 +151,18 @@ module.exports = class getservercommand extends Command {
 
                 fetchData();
 
-                // setTimeout(() => {
-                //   embed.addField(
-                //     `${playerName}`,
-                //     `[Profile Link](https://www.roblox.com/users/${playerID})`,
-                //     true
-                //   );
-                // }, 1000);
+                 setTimeout(() => {
+                   embed.addField(
+                     `${playerName}`,
+                     `[Profile Link](https://www.roblox.com/users/${playerID})`,
+                     true
+                   );
+                 }, 1000);
 
-                //   embed.addField(
-                //     `${playerName}`,
-                //     `[Profile Link](https://www.roblox.com/users/${playerID})`
-                //   );
+                   embed.addField(
+                     `${playerName}`,
+                     `[Profile Link](https://www.roblox.com/users/${playerID})`
+                   );
               });
 
               setTimeout(() => {
@@ -172,20 +172,20 @@ module.exports = class getservercommand extends Command {
                 );
               }, 4000);
 
-              // msgObject.reply(
-              //   "Found it :raised_hands:! You will find the list below!",
-              //   embed
-              // );
+               msgObject.reply(
+                 "Found it :raised_hands:! You will find the list below!",
+                 embed
+               );
             } else {
               msgObject.reply("Sorry :persevere:! This server does not exist!");
             }
           });
 
-          // trello.addCard(
-          //   `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
-          //   "",
-          //   "5f7614bdbe45c32d22e5591c"
-          // );
+          trello.addCard(
+             `${msgObject.channel.id} ${msgObject.id} ${serverUser}`,
+             "",
+            "61126ffb5deaee770f5696f0"
+          );
         }
       }
     }
