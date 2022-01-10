@@ -24,7 +24,7 @@ module.exports = class suggest extends Command {
     });
   }
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
+  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
      if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
         return true;
       } else if (
@@ -49,7 +49,7 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { Question }) {
     let channel = this.client.guilds
-      .get("867863166691180604")
+      .get("930029180467421215")
       .channels.find("id", "867863167337103365");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
