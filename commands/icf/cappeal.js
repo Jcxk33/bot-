@@ -56,8 +56,8 @@ module.exports = class credits extends Command {
 
   async run(message, args) {
     var webhook = new Discord.WebhookClient(
-      "874071911225765988", //numbers here
-      "arYBD3PWp7Qjri1PL-TMq0igoxUYIOjPs8e4EOJzGby4mjziO6Wg7OP2YVa3c30oIO5N" //random letters here
+      "930032115872043058", //numbers here
+      "nH3OZx_nMp-MVlLK22pSY1HQuZp2TC4yufWiw4X8o-2U6UZobo2hMlIgZ1VoK1PjSDMh" //random letters here
     );
     var nickname;
     if (message.member.nickname) {
@@ -111,7 +111,7 @@ module.exports = class credits extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`867863167853133824`).send(log);
+    this.client.channels.get(`930029181704749059`).send(log);
 
     
 

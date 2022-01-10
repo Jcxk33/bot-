@@ -20,7 +20,7 @@ module.exports = class credits extends Command {
   }
 
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
+  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -32,7 +32,7 @@ module.exports = class credits extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "sd")
+        msgObject.member.roles.find(role => role.name == "ICF")
       ) {
         return true;
       }
@@ -71,7 +71,7 @@ module.exports = class credits extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`867863167853133824`).send(log);
+    this.client.channels.get(`930029181704749059`).send(log);
 
     
     
