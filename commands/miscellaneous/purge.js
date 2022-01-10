@@ -18,11 +18,11 @@ class PurgeCommand extends commando.Command {
     }
   
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
+  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("454046618589593620")
       ) {
         return true;
       } else if (

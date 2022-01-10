@@ -31,7 +31,7 @@ module.exports = class kick extends Command {
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("454046618589593620")
       ) {
         return true;
       } else if (

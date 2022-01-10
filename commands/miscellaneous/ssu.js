@@ -24,11 +24,11 @@ module.exports = class changelog extends Command {
     });  
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
+  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("675794471065092161")
+        msgObject.author == this.client.users.get("454046618589593620")
       ) {
         return true;
       } else if (
@@ -49,8 +49,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("867863166691180604")
-      .channels.find("id", "867863166917279753");
+      .get("930029180467421215")
+      .channels.find("id", "930035907694821406");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
