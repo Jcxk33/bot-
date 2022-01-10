@@ -22,7 +22,7 @@ module.exports = class denyreq extends Command {
     });
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 867863166691180604 || msgObject.guild.id == 867863166691180604){
+  if(msgObject.guild.id == 800952646852411413 || msgObject.guild.id == 800952646852411413){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
