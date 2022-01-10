@@ -24,7 +24,7 @@ module.exports = class demote extends Command {
 
 
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 800952646852411413 || msgObject.guild.id == 800952646852411413){
+  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (

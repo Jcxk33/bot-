@@ -34,7 +34,7 @@ module.exports = class dupager extends Command {
     return "Sorry 😣! You must be ES Command!";
   }
   async run(msgObject, { pager, argUser }) {
-    if (msgObject.channel.id == 746255037931454485) {
+    if (msgObject.channel.id == 930029181000114178) {
       mongoose.connect(
         "mongodb+srv://Azflakes:LEODOJ667@testingroblox.4ykci.mongodb.net/mayFLOWData?retryWrites=true&w=majority",
         {

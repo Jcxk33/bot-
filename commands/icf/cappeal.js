@@ -30,7 +30,7 @@ module.exports = class credits extends Command {
 
 
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 874071911225765988 || msgObject.guild.id == 874071911225765988){
+  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -42,7 +42,7 @@ module.exports = class credits extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "sd")
+        msgObject.member.roles.find(role => role.name == "ICF")
       ) {
         return true;
       }

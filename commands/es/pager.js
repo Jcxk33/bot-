@@ -30,17 +30,17 @@ module.exports = class pager extends Command {
     });
   }
  hasPermission(msgObject) {
-    if (msgObject.channel.id == 871166263945216040) {
+    if (msgObject.channel.id == 930029181000114178) {
       return true;
-  } else if (msgObject.member.roles.find(role => role.name == "Moderator")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Lander Police Department")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "MSP")) {
+    } else if (msgObject.member.roles.find(role => role.name == "State Police")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NHCSO")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Sheriff’s Office")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "PPD")) {
+    } else if (msgObject.member.roles.find(role => role.name == "Plymouth Police Department")) {
         return true;
-    } else if (msgObject.member.roles.find(role => role.name == "NGMP")) {
+    } else if (msgObject.member.roles.find(role => role.name == "National Guard Military Police")) {
         return true;
     } else if (msgObject.member.roles.find(role => role.name == "Admin")) {
         return true;
