@@ -29,7 +29,7 @@ module.exports = class credits extends Command {
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
       ) {
-        return false;
+        return true;
     }
       return "Sorry 😣! elections are closed";
     }

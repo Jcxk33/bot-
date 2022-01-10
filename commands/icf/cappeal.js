@@ -41,10 +41,6 @@ module.exports = class credits extends Command {
         msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "ICF")
-      ) {
-        return true;
       }
       return "Sorry 😣! You must be a member of the ICF";
     } else {
@@ -111,7 +107,7 @@ module.exports = class credits extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`930029181704749059`).send(log);
+    this.client.channels.get(`930039623193882624`).send(log);
 
     
 
