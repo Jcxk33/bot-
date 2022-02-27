@@ -25,7 +25,7 @@ module.exports = class id extends Command {
     });
   }
      hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
+  if(msgObject.guild.id == 933442884311601223 || msgObject.guild.id == 933442884311601223){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
@@ -44,7 +44,7 @@ module.exports = class id extends Command {
       return "Sorry 😣! You must be an Admin!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! You must use this command in the State of Bluewic!"
       );
     }
   }
@@ -65,7 +65,7 @@ module.exports = class id extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`867863167853133824`).send(log);
+    this.client.channels.get(`933442886463258685`).send(log);
 
     } else {
       GuildMember.removeRole(role.id);
