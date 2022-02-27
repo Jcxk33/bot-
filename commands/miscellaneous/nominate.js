@@ -27,7 +27,7 @@ module.exports = class credits extends Command {
       if (msgObject.member.roles.find(role => role.name === "Verified")) {
         return false;
       } else if (
-        msgObject.author == this.client.users.get("454046618589593620")
+        msgObject.author == this.client.users.get("349299789026033664")
       ) {
         return true;
     }
