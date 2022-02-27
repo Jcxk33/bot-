@@ -25,7 +25,7 @@ module.exports = class id extends Command {
     });
   }
      hasPermission(msgObject) {
-  if(msgObject.guild.id == 933442884311601223 || msgObject.guild.id == 933442884311601223){
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
@@ -33,7 +33,7 @@ module.exports = class id extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Administrators")
       ) {
         return true;
       } else if (
