@@ -13,7 +13,7 @@ const oneLine = require("common-tags").oneLine;
 
 // Client
 const client = new commando.CommandoClient({
-  owner: ["833054383024504883"],
+  owner: ["349299789026033664"],
   commandPrefix: ";",
   unknownCommandResponse: false,
   selfbot: false,
