@@ -24,8 +24,8 @@ module.exports = class suggest extends Command {
     });
   }
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
-     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+     if (msgObject.member.roles.find(role => role.name === "Havencrest Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
@@ -36,7 +36,7 @@ module.exports = class suggest extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Administrators")
       ) {
         return true;
       }
@@ -49,8 +49,8 @@ module.exports = class suggest extends Command {
   }
   async run(msgObject, { Question }) {
     let channel = this.client.guilds
-      .get("930029180467421215")
-      .channels.find("id", "867863167337103365");
+      .get("946202898218487898")
+      .channels.find("id", "946894557893754910");
         const log = new Discord.RichEmbed();
     log.setTitle(`Command Logging`);
     log.setColor(`1D37D9`);

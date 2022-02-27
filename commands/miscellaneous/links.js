@@ -19,7 +19,7 @@ module.exports = class links extends Command {
     const embed = new Discord.RichEmbed()
       .setTitle("Informational Links")
       .setDescription(
-        "The following will provide a list of all current links relating to Mayflower"
+        "The following will provide a list of all current links relating to the Nation of Havencrest"
       )
       .addField("Discord", "[Discord Link](https://discord.gg/NkwQsqP86k)", true)
       .addField(
