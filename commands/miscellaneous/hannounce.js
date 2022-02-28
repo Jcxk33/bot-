@@ -24,8 +24,8 @@ module.exports = class changelog extends Command {
     });
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
-     if (msgObject.member.roles.find(role => role.name === "Admin")) {
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+     if (msgObject.member.roles.find(role => role.name === "Administrator")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
@@ -36,7 +36,7 @@ hasPermission(msgObject) {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Havencrest Founder")
       ) {
         return true;
       }
@@ -49,11 +49,11 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-        .get("930029180467421215")
-      .channels.find("id", "930029180773613625");
+        .get("946202898218487898")
+      .channels.find("id", "946530205445529661");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("**Mayflower Announcement**")
+      .setTitle("**Nation of Havencrest Announcement**")
       .setAuthor(
         `${msgObject.member.displayName}`,
         `${msgObject.author.avatarURL}`

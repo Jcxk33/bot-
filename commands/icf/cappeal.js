@@ -30,7 +30,7 @@ module.exports = class credits extends Command {
 
 
    hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
      if (msgObject.member.roles.find(role => role.name === "ICF")) {
         return true;
       } else if (
@@ -38,7 +38,7 @@ module.exports = class credits extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Administrator")
       ) {
         return true;
       }
@@ -73,7 +73,7 @@ module.exports = class credits extends Command {
     }
 
     let playerName = args.person;
-    if (choice == "Accepted") {
+    if (choice == "lol") {
       let robloxToken = ""
       await roblox.setCookie(robloxToken);
 

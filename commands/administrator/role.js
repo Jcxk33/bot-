@@ -26,7 +26,7 @@ module.exports = class id extends Command {
   }
      hasPermission(msgObject) {
   if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
-     if (msgObject.member.roles.find(role => role.name === "Admin")) {
+     if (msgObject.member.roles.find(role => role.name === "Havencrest Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
@@ -37,14 +37,14 @@ module.exports = class id extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
+        msgObject.member.roles.find(role => role.name == "Havencrest Co-Founder")
       ) {
         return true;
       }
       return "Sorry 😣! You must be an Admin!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Bluewic!"
+        "Sorry :persevere:! You must use this command in havencrest!"
       );
     }
   }
