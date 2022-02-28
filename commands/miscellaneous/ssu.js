@@ -24,8 +24,8 @@ module.exports = class changelog extends Command {
     });  
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
-     if (msgObject.member.roles.find(role => role.name === "Admin")) {
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+     if (msgObject.member.roles.find(role => role.name === "Administrators")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
@@ -49,8 +49,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("930029180467421215")
-      .channels.find("id", "930035907694821406");
+      .get("946202898218487898")
+      .channels.find("id", "946530205445529661");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -61,7 +61,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[New Haven County](https://web.roblox.com/games/7230858020/New-Haven-County?refPageId=5941efa8-f8e8-4ac1-b3f3-68db3e20a616)`
+        `[Muskoka County](https://www.roblox.com/games/8894808113/Muskoka-County)`
       )
     
       .addField(`:book: Notes`, `${notes}`)
