@@ -27,26 +27,26 @@ module.exports = class ban extends Command {
         })
     }
          hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
-     if (msgObject.member.roles.find(role => role.name === "Founder")) {
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+     if (msgObject.member.roles.find(role => role.name === "Havencrest Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Command Team")
+        msgObject.member.roles.find(role => role.name == "Administrators")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Staff")
+        msgObject.member.roles.find(role => role.name == "Moderator")
       ) {
         return true;
       }
       return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the State of Mayflower!"
+        "Sorry :persevere:! You must use this command in the Nation of Havencrest!"
       );
     }
   }

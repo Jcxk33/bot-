@@ -23,7 +23,7 @@ module.exports = class getservercommand extends Command {
   }
  hasPermission(msgObject) {
   if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
-     if (msgObject.member.roles.find(role => role.name === "Admin")) {
+     if (msgObject.member.roles.find(role => role.name === "Administrators")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
@@ -34,7 +34,7 @@ module.exports = class getservercommand extends Command {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
+        msgObject.member.roles.find(role => role.name == "Havencrest Founder")
       ) {
         return true;
       }
@@ -47,7 +47,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/7230858020/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/8894808113/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -56,14 +56,14 @@ module.exports = class getservercommand extends Command {
     if (!serverUser) {
       let embed = new Discord.RichEmbed()
         .setAuthor("")
-        .setTitle("Currect Servers")
+        .setTitle("Current Servers")
         .setTimestamp();
       let Servers = 0;
       data.data.forEach(Data => {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[New Haven County](https://www.roblox.com/games/7230858020/New-Haven-County)\n[Detailed Link](https://games.roblox.com/v1/games/7230858020/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[New Haven County](https://www.roblox.com/games/8894808113/New-Haven-County)\n[Detailed Link](https://games.roblox.com/v1/games/8894808113/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);
@@ -95,7 +95,7 @@ module.exports = class getservercommand extends Command {
           msgObject.reply("Sorry :angry:! This server does not exist!");
         } else {
           let data = await request({
-            uri: `https://games.roblox.com/v1/games/7230858020/servers/Public?sortOrder=Asc&limit=100`,
+            uri: `https://games.roblox.com/v1/games/8894808113/servers/Public?sortOrder=Asc&limit=100`,
             json: true,
             simple: false
           }).catch(err => {

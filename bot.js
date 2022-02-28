@@ -25,7 +25,7 @@ const Constants = require("discord.js/src/util/Constants.js");
 Constants.DefaultOptions.ws.properties.$browser = `Discord iOS`;
 client.on("ready", () => {
   client.user
-    .setActivity("with Noosrate", { type: 1, browser: "DISCORD IOS" })
+    .setActivity("with Nusrat's stuff ;)", { type: 1, browser: "DISCORD IOS" })
     .then(console.log)
     .catch(console.error);
   console.log("logged in");
