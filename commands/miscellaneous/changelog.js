@@ -20,15 +20,15 @@ module.exports = class changelog extends Command {
     });
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
-     if (msgObject.member.roles.find(role => role.name === "Senior Admin")) {
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+     if (msgObject.member.roles.find(role => role.name === "Havencrest Founder")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Admin")
+        msgObject.member.roles.find(role => role.name == "Administrators")
       ) {
         return true;
       } else if (
@@ -45,8 +45,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { description }) {
     let channel = this.client.guilds
-      .get("930029180467421215")
-      .channels.find("id", "930036632688680970");
+      .get("946202898218487898")
+      .channels.find("id", "947508929003413534");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(`**__Change Log__**`)
@@ -55,7 +55,7 @@ hasPermission(msgObject) {
         `${msgObject.author.avatarURL}`
       )
       .setDescription(description)
-      .setFooter("State of Mayflower","https://cdn.discordapp.com/icons/867863166691180604/9861a1b18abd3207ccf144e36fc8e9cd.png")
+        .setFooter("Nation of Havencrest","https://cdn.discordapp.com/icons/867863166691180604/9861a1b18abd3207ccf144e36fc8e9cd.png")
       .setTimestamp();
     channel.send(Embed);
     msgObject.reply("**Sucessfully** sent the embed 😎 🥳")

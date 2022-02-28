@@ -36,7 +36,7 @@ hasPermission(msgObject) {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Developer")
+        msgObject.member.roles.find(role => role.name == "Havencrest Founder")
       ) {
         return true;
       }

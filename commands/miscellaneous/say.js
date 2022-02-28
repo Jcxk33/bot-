@@ -28,8 +28,8 @@ module.exports = class say extends Command {
     });
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 930029180467421215 || msgObject.guild.id == 930029180467421215){
-     if (msgObject.member.roles.find(role => role.name === "Admin")) {
+  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+     if (msgObject.member.roles.find(role => role.name === "Administrators")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
@@ -40,7 +40,7 @@ hasPermission(msgObject) {
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Senior Admin")
+        msgObject.member.roles.find(role => role.name == "Havencrest Founder")
       ) {
         return true;
       }
