@@ -22,11 +22,11 @@ module.exports = class getservercommand extends Command {
     });
   }
  hasPermission(msgObject) {
-  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+  if(msgObject.guild.id == 964306940563963904 || msgObject.guild.id == 964306940563963904){
      if (msgObject.member.roles.find(role => role.name === "Administrators")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("454046618589593620")
+        msgObject.author == this.client.users.get("708499283002785883")
       ) {
         return true;
       } else if (
@@ -47,7 +47,7 @@ module.exports = class getservercommand extends Command {
   }
   async run(msgObject, { serverUser }) {
     let data = await request({
-      uri: `https://games.roblox.com/v1/games/8894808113/servers/Public?sortOrder=Asc&limit=100`,
+      uri: `https://games.roblox.com/v1/games/7743505493/servers/Public?sortOrder=Asc&limit=100`,
       json: true,
       simple: false
     }).catch(err => {
@@ -63,7 +63,7 @@ module.exports = class getservercommand extends Command {
         Servers = Servers + 1;
         embed.addField(
           `Server ${Data.playing}/${Data.maxPlayers} ${Data.id}`,
-          `[New Haven County](https://www.roblox.com/games/8894808113/New-Haven-County)\n[Detailed Link](https://games.roblox.com/v1/games/8894808113/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
+          `[New Haven County](https://www.roblox.com/games/7743505493/cityWARE)\n[Detailed Link](https://games.roblox.com/v1/games/7743505493/servers/Public?sortOrder=Asc&limit=100jobId=${Data.id})`
         );
       });
       embed.setDescription(`There are currently ${Servers} servers.`);

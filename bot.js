@@ -13,7 +13,7 @@ const oneLine = require("common-tags").oneLine;
 
 // Client
 const client = new commando.CommandoClient({
-  owner: ["349299789026033664"],
+  owner: ["708499283002785883"],
   commandPrefix: ";",
   unknownCommandResponse: false,
   selfbot: false,
@@ -25,7 +25,7 @@ const Constants = require("discord.js/src/util/Constants.js");
 Constants.DefaultOptions.ws.properties.$browser = `Discord iOS`;
 client.on("ready", () => {
   client.user
-    .setActivity("with Nusrat's stuff ;)", { type: 1, browser: "DISCORD IOS" })
+    .setActivity("with Cleo;)", { type: 1, browser: "DISCORD IOS" })
     .then(console.log)
     .catch(console.error);
   console.log("logged in");
