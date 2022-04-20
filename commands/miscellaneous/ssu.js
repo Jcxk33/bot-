@@ -25,7 +25,7 @@ module.exports = class changelog extends Command {
   }
 hasPermission(msgObject) {
   if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
-     if (msgObject.member.roles.find(role => role.name === "Administrators")) {
+     if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
