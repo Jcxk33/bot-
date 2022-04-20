@@ -24,11 +24,11 @@ module.exports = class changelog extends Command {
     });  
   }
 hasPermission(msgObject) {
-  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+  if(msgObject.guild.id == 964306940563963904 || msgObject.guild.id == 964306940563963904){
      if (msgObject.member.roles.find(role => role.name === "Admin")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("454046618589593620")
+        msgObject.author == this.client.users.get("708499283002785883")
       ) {
         return true;
       } else if (
@@ -49,8 +49,8 @@ hasPermission(msgObject) {
   }
   async run(msgObject, { notes }) {
     let channel = this.client.guilds
-      .get("946202898218487898")
-      .channels.find("id", "946530205445529661");
+      .get("964306940563963904")
+      .channels.find("id", "966472664824819734");
     let Embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(
@@ -61,7 +61,7 @@ hasPermission(msgObject) {
       .setDescription(`${msgObject.author} is conducting a server startup!`)
       .addField(
         `:link: Link`,
-        `[Muskoka County](https://www.roblox.com/games/8894808113/Muskoka-County)`
+        `[New Haven County](https://www.roblox.com/games/7743505493/cityWARE)`
       )
     
       .addField(`:book: Notes`, `${notes}`)
@@ -79,7 +79,7 @@ hasPermission(msgObject) {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`867863167853133824`).send(log);
+    this.client.channels.get(`964310595929264149`).send(log);
       
   }
 };

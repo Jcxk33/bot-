@@ -29,20 +29,16 @@ module.exports = class say extends Command {
   }
 hasPermission(msgObject) {
   if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
-     if (msgObject.member.roles.find(role => role.name === "Administrators")) {
+     if (msgObject.member.roles.find(role => role.name === "Moderator")) {
         return true;
       } else if (
         msgObject.author == this.client.users.get("454046618589593620")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Developer")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Havencrest Founder")
-      ) {
-        return true;
+        return true;    
       }
       return "Sorry 😣! You must be an Admin!";
     } else {
@@ -67,7 +63,7 @@ hasPermission(msgObject) {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`871166806193225728`).send(log);
+    this.client.channels.get(`964310595929264149`).send(log);
       msgObject.reply(`Sorry 😣! There has been an error while running this command!\n\n\`\`\`js\n${error}\`\`\``)
     
     }
