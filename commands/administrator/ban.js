@@ -27,15 +27,15 @@ module.exports = class ban extends Command {
         })
     }
          hasPermission(msgObject) {
-  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+  if(msgObject.guild.id == 964306940563963904 || msgObject.guild.id == 964306940563963904){
      if (msgObject.member.roles.find(role => role.name === "Havencrest Founder")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("454046618589593620")
+        msgObject.author == this.client.users.get("708499283002785883")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Administrators")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       } else if (
@@ -46,7 +46,7 @@ module.exports = class ban extends Command {
       return "Sorry 😣! You must be a Moderator!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in the Nation of Havencrest!"
+        "Sorry :persevere:! You must use this command in the State of Mayflower!"
       );
     }
   }
@@ -67,7 +67,7 @@ module.exports = class ban extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`871166806193225728`).send(log);
+    this.client.channels.get(`964310595929264149`).send(log);
 
     }
 }

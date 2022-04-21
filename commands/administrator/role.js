@@ -25,26 +25,22 @@ module.exports = class id extends Command {
     });
   }
      hasPermission(msgObject) {
-  if(msgObject.guild.id == 946202898218487898 || msgObject.guild.id == 946202898218487898){
+  if(msgObject.guild.id == 964306940563963904 || msgObject.guild.id == 964306940563963904){
      if (msgObject.member.roles.find(role => role.name === "Havencrest Founder")) {
         return true;
       } else if (
-        msgObject.author == this.client.users.get("454046618589593620")
+        msgObject.author == this.client.users.get("708499283002785883")
       ) {
         return true;
       } else if (
-        msgObject.member.roles.find(role => role.name == "Administrators")
-      ) {
-        return true;
-      } else if (
-        msgObject.member.roles.find(role => role.name == "Havencrest Co-Founder")
+        msgObject.member.roles.find(role => role.name == "Admin")
       ) {
         return true;
       }
       return "Sorry 😣! You must be an Admin!";
     } else {
       return (
-        "Sorry :persevere:! You must use this command in havencrest!"
+        "Sorry :persevere:! You must use this command in Mayflower!"
       );
     }
   }
@@ -65,7 +61,7 @@ module.exports = class id extends Command {
     );
     log.setTimestamp(); 
       
-    this.client.channels.get(`933442886463258685`).send(log);
+    this.client.channels.get(`964310595929264149`).send(log);
 
     } else {
       GuildMember.removeRole(role.id);
